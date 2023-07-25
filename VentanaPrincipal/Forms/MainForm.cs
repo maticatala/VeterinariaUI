@@ -15,12 +15,12 @@ using Color = System.Drawing.Color;
 
 namespace VentanaPrincipal
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -70,8 +70,6 @@ namespace VentanaPrincipal
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-
-
             }
         }
 
@@ -107,22 +105,48 @@ namespace VentanaPrincipal
         private void btnDueños_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
+            loadform(new dueñosForm());
         }
 
         private void btnMascotas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
+            
+            loadform(mascotasForm.singletonMascotas());
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            
             Reset();
         }
 
+        //RESETEAR EL ESTILO DE LOS BOTONES
         private void Reset()
         {
             DisableButton();
             leftBorderBtn.Visible = false;
+        }
+
+        //CARGAR VISTAS EN EL PANEL PRINCIPAL
+        public void loadform(Form form)
+        {
+            if (this.mainPanel.Controls.Count > 0)
+            {
+                this.mainPanel.Controls.RemoveAt(0);
+            }
+            Form formHijo = form;
+            form.TopLevel = false;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.Dock = DockStyle.Fill;
+            lblPage.Text = formHijo.Text;
+            mainPanel.Controls.Add(formHijo);
+            formHijo.Show();
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
