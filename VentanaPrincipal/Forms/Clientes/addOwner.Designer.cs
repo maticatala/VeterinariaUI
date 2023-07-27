@@ -1,4 +1,6 @@
-﻿namespace VentanaPrincipal
+﻿using CapaEntidades.Entities;
+
+namespace VentanaPrincipal
 {
     partial class addOwner
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNumeroDocumento = new System.Windows.Forms.Label();
             this.lblTipoDocumento = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -39,115 +42,146 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.txtAltura = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdd = new VentanaPrincipal.RJButton();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNumeroDocumento
             // 
             this.lblNumeroDocumento.AutoSize = true;
-            this.lblNumeroDocumento.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(22, 29);
+            this.lblNumeroDocumento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroDocumento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(15, 79);
             this.lblNumeroDocumento.Name = "lblNumeroDocumento";
-            this.lblNumeroDocumento.Size = new System.Drawing.Size(154, 17);
+            this.lblNumeroDocumento.Size = new System.Drawing.Size(145, 17);
             this.lblNumeroDocumento.TabIndex = 0;
-            this.lblNumeroDocumento.Text = "Numero de documento:";
+            this.lblNumeroDocumento.Text = "Numero de documento";
             // 
             // lblTipoDocumento
             // 
             this.lblTipoDocumento.AutoSize = true;
-            this.lblTipoDocumento.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDocumento.Location = new System.Drawing.Point(22, 63);
+            this.lblTipoDocumento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDocumento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTipoDocumento.Location = new System.Drawing.Point(15, 135);
             this.lblTipoDocumento.Name = "lblTipoDocumento";
-            this.lblTipoDocumento.Size = new System.Drawing.Size(127, 17);
+            this.lblTipoDocumento.Size = new System.Drawing.Size(123, 17);
             this.lblTipoDocumento.TabIndex = 1;
             this.lblTipoDocumento.Text = "Tipo de documento";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(22, 99);
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNombre.Location = new System.Drawing.Point(15, 24);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(61, 17);
+            this.lblNombre.Size = new System.Drawing.Size(57, 17);
             this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "Nombre";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(22, 136);
+            this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblApellido.Location = new System.Drawing.Point(161, 27);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(60, 17);
+            this.lblApellido.Size = new System.Drawing.Size(56, 17);
             this.lblApellido.TabIndex = 3;
-            this.lblApellido.Text = "Apellido:";
+            this.lblApellido.Text = "Apellido";
             // 
             // lblCalle
             // 
             this.lblCalle.AutoSize = true;
-            this.lblCalle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalle.Location = new System.Drawing.Point(22, 177);
+            this.lblCalle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCalle.Location = new System.Drawing.Point(15, 174);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(39, 17);
+            this.lblCalle.Size = new System.Drawing.Size(36, 17);
             this.lblCalle.TabIndex = 4;
-            this.lblCalle.Text = "Calle:";
+            this.lblCalle.Text = "Calle";
             // 
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAltura.Location = new System.Drawing.Point(22, 214);
+            this.lblAltura.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltura.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblAltura.Location = new System.Drawing.Point(164, 174);
             this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(48, 17);
+            this.lblAltura.Size = new System.Drawing.Size(42, 17);
             this.lblAltura.TabIndex = 5;
-            this.lblAltura.Text = "Altura:";
+            this.lblAltura.Text = "Altura";
             // 
             // txtNumeroDocumento
             // 
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(180, 29);
+            this.txtNumeroDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.txtNumeroDocumento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumeroDocumento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(18, 99);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
-            this.txtNumeroDocumento.Size = new System.Drawing.Size(183, 20);
-            this.txtNumeroDocumento.TabIndex = 6;
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(263, 20);
+            this.txtNumeroDocumento.TabIndex = 3;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(180, 99);
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(18, 47);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(183, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(180, 136);
+            this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(160, 47);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(183, 20);
-            this.txtApellido.TabIndex = 8;
+            this.txtApellido.Size = new System.Drawing.Size(121, 20);
+            this.txtApellido.TabIndex = 2;
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(180, 177);
+            this.txtCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.txtCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCalle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalle.Location = new System.Drawing.Point(18, 194);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(183, 20);
-            this.txtCalle.TabIndex = 9;
+            this.txtCalle.Size = new System.Drawing.Size(117, 20);
+            this.txtCalle.TabIndex = 5;
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(180, 214);
+            this.txtAltura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.txtAltura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAltura.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAltura.Location = new System.Drawing.Point(164, 194);
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(183, 20);
-            this.txtAltura.TabIndex = 10;
+            this.txtAltura.Size = new System.Drawing.Size(117, 20);
+            this.txtAltura.TabIndex = 6;
             // 
-            // comboBox1
+            // cbTipoDocumento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbTipoDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.cbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoDocumento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoDocumento.FormattingEnabled = true;
+            this.cbTipoDocumento.Items.AddRange(new object[] {
             "DNI",
             "PASAPORTE"});
-            this.comboBox1.Location = new System.Drawing.Point(180, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 21);
-            this.comboBox1.TabIndex = 11;
+            this.cbTipoDocumento.Location = new System.Drawing.Point(167, 135);
+            this.cbTipoDocumento.Name = "cbTipoDocumento";
+            this.cbTipoDocumento.Size = new System.Drawing.Size(114, 28);
+            this.cbTipoDocumento.TabIndex = 4;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(CapaEntidades.Entities.Cliente);
             // 
             // btnAdd
             // 
@@ -159,21 +193,23 @@
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(286, 265);
+            this.btnAdd.Location = new System.Drawing.Point(12, 246);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(86, 30);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Agregar";
+            this.btnAdd.Size = new System.Drawing.Size(269, 36);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Registrar";
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // addOwner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 307);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(300, 297);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbTipoDocumento);
             this.Controls.Add(this.txtAltura);
             this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.txtApellido);
@@ -186,7 +222,8 @@
             this.Controls.Add(this.lblTipoDocumento);
             this.Controls.Add(this.lblNumeroDocumento);
             this.Name = "addOwner";
-            this.Text = "addOwner";
+            this.Text = "Cliente";
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +242,8 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.TextBox txtAltura;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTipoDocumento;
         private RJButton btnAdd;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
     }
 }
