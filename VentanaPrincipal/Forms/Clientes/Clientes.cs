@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using CapaEntidades.Entities;
-using CapaEntidades.ValueObjects;
 
 //Referencias
 using CapaNegocio.Models;
@@ -41,7 +40,7 @@ namespace VentanaPrincipal
 
         private void btnAddOwner_Click(object sender, EventArgs e)
         {
-            addOwner formAddOwner = new addOwner(EntityState.Added);
+            addOwner formAddOwner = new addOwner();
             formAddOwner.ShowDialog();
             cargarTabla();
         }
@@ -53,10 +52,17 @@ namespace VentanaPrincipal
                 string nameColumn = cgvOwners.Columns[e.ColumnIndex].Name;
                 if (nameColumn == "edit")
                 {
-                    addOwner formAddOwner = new addOwner(EntityState.Modified);
-                    formAddOwner.editar(cgvOwners.CurrentRow, "Editar");
+                    Cliente c = new Cliente()
+                    {
+                        NumeroDocumento = cgvOwners.CurrentRow.Cells[0].Value.ToString(),
+                        TipoDocumento = cgvOwners.CurrentRow.Cells[1].Value.ToString(),
+                        Nombre = cgvOwners.CurrentRow.Cells[2].Value.ToString(),
+                        Apellido = cgvOwners.CurrentRow.Cells[3].Value.ToString(),
+                        Calle = cgvOwners.CurrentRow.Cells[4].Value.ToString(),
+                        Altura = Convert.ToInt32(cgvOwners.CurrentRow.Cells[5].Value)
+                    };
+                    addOwner formAddOwner = new addOwner(c);
                     formAddOwner.ShowDialog();
-                    cargarTabla();
                     txtBuscar.Text = string.Empty;
                 }
                 else if (nameColumn == "delete")
@@ -64,15 +70,13 @@ namespace VentanaPrincipal
                     DialogResult opt = MessageBox.Show("¿Desea eliminar permanentemente el cliente?", "Cuidado",MessageBoxButtons.OKCancel);
                     if (opt == DialogResult.OK)
                     {
-                        Cliente c = new Cliente();
-                        c.NumeroDocumento = cgvOwners.CurrentRow.Cells[0].Value.ToString();
-                        c.TipoDocumento = cgvOwners.CurrentRow.Cells[1].Value.ToString();
-                        c.State = EntityState.Deleted;
-                        string result = cN_Cliente.SaveChanges(c);
+                        string nroDoc = cgvOwners.CurrentRow.Cells[0].Value.ToString();
+                        string tipoDoc = cgvOwners.CurrentRow.Cells[1].Value.ToString();
+                        string result = cN_Cliente.Delete(nroDoc, tipoDoc);
                         MessageBox.Show(result);
-                        cargarTabla();
                     }
                 }
+                cargarTabla();
             }
         }
 

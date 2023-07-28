@@ -29,7 +29,7 @@ namespace CapaDatos.Repository
         {
             selectAll = "SELECT * FROM clientes";
             insert = "INSERT INTO clientes VALUES (@nroDoc,@tipoDoc,@nombre,@apellido,@calle,@altura)";
-            update = "UPDATE clientes SET nroDoc=@nroDoc,tipoDoc=@tipoDoc,nombre=@nombre,apellido=@apellido,calle=@calle,altura=@altura WHERE nroDoc=@nroDoc";
+            update = "UPDATE clientes SET nroDoc=@nroDoc,tipoDoc=@tipoDoc,nombre=@nombre,apellido=@apellido,calle=@calle,altura=@altura WHERE nroDoc=@oldNroDoc and tipoDoc=@oldTipoDoc";
             delete = "DELETE FROM clientes WHERE nroDoc=@nroDoc and tipoDoc=@tipoDoc";
         }
         public int Add(Cliente cliente) //Llega como parametro una instancia de cliente desde la capa de negocios. Retorna un entero, que especifica cuantos registros se añadieron 
@@ -79,6 +79,16 @@ namespace CapaDatos.Repository
 
         public int Update(Cliente cliente)
         {
+            throw new NotImplementedException();
+        }
+
+        public int Remove(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Update(Cliente cliente, string nroDoc, string tipoDoc)
+        {
             parameters = new List<MySqlParameter>();
             parameters.Add(new MySqlParameter("@nroDoc", cliente.NumeroDocumento));
             parameters.Add(new MySqlParameter("@tipoDoc", cliente.TipoDocumento));
@@ -86,12 +96,9 @@ namespace CapaDatos.Repository
             parameters.Add(new MySqlParameter("@apellido", cliente.Apellido));
             parameters.Add(new MySqlParameter("@calle", cliente.Calle));
             parameters.Add(new MySqlParameter("@altura", cliente.Altura));
+            parameters.Add(new MySqlParameter("@oldNroDoc", nroDoc));
+            parameters.Add(new MySqlParameter("@oldTipoDOc", tipoDoc));
             return ExecuteNonQuery(update);
-        }
-
-        public int Remove(string id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

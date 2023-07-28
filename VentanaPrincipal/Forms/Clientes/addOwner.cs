@@ -3,7 +3,6 @@ using System.Windows.Forms;
 
 //Referencias
 using CapaEntidades.Entities;
-using CapaEntidades.ValueObjects;
 using CapaNegocio.Exceptions;
 using CapaNegocio.Models;
 
@@ -11,43 +10,54 @@ namespace VentanaPrincipal
 {
     public partial class addOwner : Form
     {
-        CN_Cliente cN_Cliente = new CN_Cliente();
-        Cliente c = new Cliente();
+        Cliente clienteOriginal;
 
-        public addOwner(EntityState estado)
+        public addOwner()
         {
             InitializeComponent();
-            c.State = estado;
+            btnAdd.Text = "Registrar";
         }
-
-        public void editar(DataGridViewRow filaSeleccionada, string btnText)
+        
+        public addOwner(Cliente cliente)
         {
-            txtNumeroDocumento.Text = filaSeleccionada.Cells[0].Value.ToString();
-            cbTipoDocumento.Text = filaSeleccionada.Cells[1].Value.ToString(); 
-            txtNombre.Text = filaSeleccionada.Cells[2].Value.ToString(); 
-            txtApellido.Text = filaSeleccionada.Cells[3].Value.ToString(); 
-            txtCalle.Text = filaSeleccionada.Cells[4].Value.ToString(); 
-            txtAltura.Text = filaSeleccionada.Cells[5].Value.ToString(); 
-            btnAdd.Text = btnText;
+            InitializeComponent();
+            this.clienteOriginal = cliente;
+            txtNumeroDocumento.Text = cliente.NumeroDocumento;
+            cbTipoDocumento.Text = cliente.TipoDocumento;
+            txtNombre.Text = cliente.Nombre;
+            txtApellido.Text = cliente.Apellido;
+            txtCalle.Text = cliente.Calle;
+            txtAltura.Text = cliente.Altura.ToString();
+            btnAdd.Text = "Actualizar";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            c.NumeroDocumento = txtNumeroDocumento.Text;
-            c.TipoDocumento = cbTipoDocumento.Text;
-            c.Nombre = txtNombre.Text;
-            c.Apellido = txtApellido.Text;
-            c.Calle = txtCalle.Text;
-            c.Altura = Convert.ToInt32(txtAltura.Text);
+            CN_Cliente clienteNegocio = new CN_Cliente();
+            Cliente clienteActual = new Cliente();
+            clienteActual.NumeroDocumento = txtNumeroDocumento.Text;
+            clienteActual.TipoDocumento = cbTipoDocumento.Text;
+            clienteActual.Nombre = txtNombre.Text;
+            clienteActual.Apellido = txtApellido.Text;
+            clienteActual.Calle = txtCalle.Text;
+            clienteActual.Altura = Convert.ToInt32(txtAltura.Text);
 
-            bool valid = new Helps.DataValidation(c).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
+            bool valid = new Helps.DataValidation(clienteActual).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
             if (valid)
             {
                 try
                 {
-                    string result = cN_Cliente.SaveChanges(c);//Este método retorna un mensaje, asi que lo guardamos para mostrarlo.
-                    Close();
+                    string result;
+                    if (clienteOriginal == null)
+                    {
+                        result = clienteNegocio.Add(clienteActual);
+                    } else
+                    {
+                        result = clienteNegocio.Update(clienteActual, clienteOriginal.NumeroDocumento, clienteOriginal.TipoDocumento);
+                    }
+
                     MessageBox.Show(result);
+                    this.Close();
                 }
                 catch (RegistroDuplicadoException ex)
                 {

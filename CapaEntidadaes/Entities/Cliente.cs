@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using CapaEntidades.ValueObjects;
 
 namespace CapaEntidades.Entities
 {
@@ -17,7 +16,6 @@ namespace CapaEntidades.Entities
         private string apellido;
         private string calle;
         private int altura;
-        private EntityState state;
 
         //PROPIEDADES /VALIDACIONES DE DATOS
         [Required(ErrorMessage = "El campo Numero de Documento es requerido")]
@@ -43,7 +41,5 @@ namespace CapaEntidades.Entities
         [Required(ErrorMessage = "El campo Numero de Documento es requerido")]
         [RegularExpression("^[1-9]\\d*$", ErrorMessage = "Debe ingresar un número positivo")]
         public int Altura { get => altura; set => altura = value; }
-
-        public EntityState State { get => state; set => state = value; }
     }
 }
