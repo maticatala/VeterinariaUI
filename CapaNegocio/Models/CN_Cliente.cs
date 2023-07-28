@@ -8,6 +8,8 @@ using CapaDatos.Contracts;
 using CapaEntidades.Entities;
 using CapaEntidades.ValueObjects;
 using CapaNegocio.Exceptions;
+using System;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Models
 {
@@ -39,7 +41,7 @@ namespace CapaNegocio.Models
                         message = "Modificado correctamente";
                         break;
                     case EntityState.Deleted:
-                        clienteRepository.Remove(c.NumeroDocumento);
+                        clienteRepository.Remove(c.NumeroDocumento, c.TipoDocumento);
                         message = "Eliminado correctamente";
                         break;
                 }
