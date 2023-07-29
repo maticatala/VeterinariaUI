@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 //Referencias
 using CapaEntidades.Entities;
@@ -80,6 +81,16 @@ namespace VentanaPrincipal
             txtApellido.Text = string.Empty;
             txtCalle.Text = string.Empty;
             txtAltura.Text = string.Empty;
+        }
+
+        private void lblApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNumeroDocumento_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
