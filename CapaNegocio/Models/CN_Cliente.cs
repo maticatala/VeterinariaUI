@@ -25,58 +25,22 @@ namespace CapaNegocio.Models
 
         public string Add(Cliente c)
         {
-            string message = null;
-            try
-            {
-                clienteRepository.Add(c);
-                message = "Registrado correctamente";
-            }
-            catch (MySqlException ex)
-            {
-                evaluateException(ex);
-            }
-            return message;
+            clienteRepository.Add(c);
+            return "Registrado correctamente";
         }
         
         public string Update(Cliente c, string oldNroDoc, string oldTipoDoc)
         {
-            string message = null;
-            try
-            {
-                clienteRepository.Update(c, oldNroDoc, oldTipoDoc);
-                message = "Modificado correctamente";
-            }
-            catch (MySqlException ex)
-            {
-                evaluateException(ex);
-            }
-            return message;
+            clienteRepository.Update(c, oldNroDoc, oldTipoDoc);
+            return "Modificado correctamente";
         }
 
         public string Delete(string nroDoc, string tipoDoc)
         {
-            string message = null;
-            try
-            {
-                clienteRepository.Remove(nroDoc, tipoDoc);
-                message = "Eliminado correctamente";
-            }
-            catch (MySqlException ex)
-            {
-                evaluateException(ex);
-            }
-            return message;
+            clienteRepository.Remove(nroDoc, tipoDoc);
+            return "Eliminado correctamente";
         }
 
-        private void evaluateException(MySqlException ex)
-        {
-            if (ex != null && ex.Number == 1062)
-                //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
-                throw new RegistroDuplicadoException("Registro duplicado");
-            else
-                //Si el problema se debe a otro motivo, lanzamos la excepcion generica
-                throw ex;
-        }
 
         public List<Cliente> getAll()
         {

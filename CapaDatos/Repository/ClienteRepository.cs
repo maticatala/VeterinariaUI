@@ -12,6 +12,7 @@ using System.Windows.Forms;
 //Referencias
 using CapaDatos.Contracts;
 using CapaEntidades.Entities;
+using CapaDatos.Exceptions;
 
 namespace CapaDatos.Repository
 {
@@ -44,8 +45,21 @@ namespace CapaDatos.Repository
             parameters.Add(new MySqlParameter("@calle", cliente.Calle));
             parameters.Add(new MySqlParameter("@altura", cliente.Altura));
 
+
             //Ejecutamos el metodo ExecuteNonQuery de la clase repositorio maestra, este metodo requiere que enviemos un comando sql
-            return ExecuteNonQuery(insert);
+            try
+            {
+                return ExecuteNonQuery(insert);
+            } catch (MySqlException ex)
+            {
+                if (ex != null && ex.Number == 1062)
+                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
+                    throw new RegistroDuplicadoException("Registro duplicado");
+                else
+                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
+                    throw ex;
+            }
+
         }
 
         public IEnumerable<Cliente> GetAll()
@@ -75,6 +89,7 @@ namespace CapaDatos.Repository
             parameters.Add(new MySqlParameter("@nroDoc", nroDoc));
             parameters.Add(new MySqlParameter("@tipoDoc", tipoDoc));
             return ExecuteNonQuery(delete);
+
         }
 
         public int Update(Cliente cliente)
@@ -98,7 +113,20 @@ namespace CapaDatos.Repository
             parameters.Add(new MySqlParameter("@altura", cliente.Altura));
             parameters.Add(new MySqlParameter("@oldNroDoc", nroDoc));
             parameters.Add(new MySqlParameter("@oldTipoDOc", tipoDoc));
-            return ExecuteNonQuery(update);
+            
+            try
+            {
+                return ExecuteNonQuery(update);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex != null && ex.Number == 1062)
+                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
+                    throw new RegistroDuplicadoException("Registro duplicado");
+                else
+                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
+                    throw ex;
+            }
         }
     }
 }
