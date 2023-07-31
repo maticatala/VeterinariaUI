@@ -4,7 +4,6 @@ using System.Windows.Markup;
 
 //Referencias
 using CapaEntidades.Entities;
-using CapaNegocio.Exceptions;
 using CapaNegocio.Models;
 
 namespace VentanaPrincipal
@@ -41,7 +40,7 @@ namespace VentanaPrincipal
             clienteActual.Nombre = txtNombre.Text;
             clienteActual.Apellido = txtApellido.Text;
             clienteActual.Calle = txtCalle.Text;
-            clienteActual.Altura = Convert.ToInt32(txtAltura.Text);
+            clienteActual.Altura = txtAltura.Text;
 
             bool valid = new Helps.DataValidation(clienteActual).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
             if (valid)
@@ -60,15 +59,10 @@ namespace VentanaPrincipal
                     MessageBox.Show(result);
                     this.Close();
                 }
-                catch (RegistroDuplicadoException ex)
-                {
-                    //Muestra el mensaje de la excepcion generada por ser un registro duplicado
-                    MessageBox.Show(ex.Message);
-                }
                 catch (Exception ex)
                 {
                     // Manejo de otras excepciones
-                    MessageBox.Show("Ocurrió un error: " + ex.Message);
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             

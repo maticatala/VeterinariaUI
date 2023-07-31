@@ -59,7 +59,7 @@ namespace VentanaPrincipal
                         Nombre = cgvOwners.CurrentRow.Cells[2].Value.ToString(),
                         Apellido = cgvOwners.CurrentRow.Cells[3].Value.ToString(),
                         Calle = cgvOwners.CurrentRow.Cells[4].Value.ToString(),
-                        Altura = Convert.ToInt32(cgvOwners.CurrentRow.Cells[5].Value)
+                        Altura = cgvOwners.CurrentRow.Cells[5].Value.ToString()
                     };
                     addOwner formAddOwner = new addOwner(c);
                     formAddOwner.ShowDialog();

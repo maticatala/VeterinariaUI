@@ -6,7 +6,6 @@ using MySql.Data.MySqlClient;
 using CapaDatos.Repository;
 using CapaDatos.Contracts;
 using CapaEntidades.Entities;
-using CapaNegocio.Exceptions;
 using System;
 using System.Windows.Forms;
 

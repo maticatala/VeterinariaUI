@@ -15,7 +15,7 @@ namespace CapaEntidades.Entities
         private string nombre;
         private string apellido;
         private string calle;
-        private int altura;
+        private string altura;
 
         //PROPIEDADES /VALIDACIONES DE DATOS
         [Required(ErrorMessage = "El campo Numero de Documento es requerido")]
@@ -38,8 +38,8 @@ namespace CapaEntidades.Entities
         [RegularExpression("^[A-Za-z0-9\\s]+$", ErrorMessage = "La calle solo debe contener letras, números y espacios")]
         public string Calle { get => calle; set => calle = value; }
 
-        [Required(ErrorMessage = "El campo Numero de Documento es requerido")]
+        [Required(ErrorMessage = "El campo Numero de altura es requerido")]
         [RegularExpression("^[1-9]\\d*$", ErrorMessage = "Debe ingresar un número positivo")]
-        public int Altura { get => altura; set => altura = value; }
+        public string Altura { get => altura; set => altura = value; }
     }
 }

@@ -77,7 +77,7 @@ namespace CapaDatos.Repository
                     Nombre = item[2].ToString(),
                     Apellido = item[3].ToString(),
                     Calle = item[4].ToString(),
-                    Altura = Convert.ToInt32(item[5])
+                    Altura = item[5].ToString()
                 });
             }
             return listClientes;
