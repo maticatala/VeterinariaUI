@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaNegocio.Exceptions
+namespace CapaDatos.Exceptions
 {
     public class RegistroDuplicadoException: Exception
     {

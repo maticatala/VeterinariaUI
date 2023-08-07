@@ -6,8 +6,8 @@ using MySql.Data.MySqlClient;
 using CapaDatos.Repository;
 using CapaDatos.Contracts;
 using CapaEntidades.Entities;
-using CapaEntidades.ValueObjects;
-using CapaNegocio.Exceptions;
+using System;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Models
 {
@@ -21,40 +21,25 @@ namespace CapaNegocio.Models
         {
             clienteRepository = new ClienteRepository(); //Inicializamos la interfaz del repositorio, No usamos directamente la clase concreta ClienteRepository, lo hacemos mediante su interfaz, donde estan declarados los metodos. De esta manera tendremos bajo acoplamiento y mantenemos encapsulada la clase concreta.
         }
-        public string SaveChanges(Cliente c)
+
+        public string Add(Cliente c)
         {
-            string message = null;
-            try
-            {
-                //Dependiendo del estado de la entidad realizaremos un add, update o delete.
-                switch (c.State)
-                {
-                    case EntityState.Added:
-                        //Ejecutar reglas de negocio / calculos
-                        clienteRepository.Add(c); 
-                        message = "Registrado correctamente";
-                        break;
-                    case EntityState.Modified:
-                        clienteRepository.Update(c);
-                        message = "Modificado correctamente";
-                        break;
-                    case EntityState.Deleted:
-                        clienteRepository.Remove(c.NumeroDocumento);
-                        message = "Eliminado correctamente";
-                        break;
-                }
-            }
-            catch (MySqlException ex)
-            {
-                if (ex != null && ex.Number == 1062)
-                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
-                    throw new RegistroDuplicadoException("Registro duplicado");
-                else
-                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
-                    throw ex;
-            }
-            return message;
+            clienteRepository.Add(c);
+            return "Registrado correctamente";
         }
+        
+        public string Update(Cliente c, string oldNroDoc, string oldTipoDoc)
+        {
+            clienteRepository.Update(c, oldNroDoc, oldTipoDoc);
+            return "Modificado correctamente";
+        }
+
+        public string Delete(string nroDoc, string tipoDoc)
+        {
+            clienteRepository.Remove(nroDoc, tipoDoc);
+            return "Eliminado correctamente";
+        }
+
 
         public List<Cliente> getAll()
         {

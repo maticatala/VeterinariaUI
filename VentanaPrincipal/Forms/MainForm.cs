@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using FontAwesome.Sharp;
-using Transitions;
 using Color = System.Drawing.Color;
 //using Color = System.Drawing.Color;
 
