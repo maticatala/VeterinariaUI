@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 //Referencias
 using System.Data;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace CapaDatos.Repository
 {
     //Se encarga de ejecutar los comandos SQL, la usaremos en todos los repositorios
     public abstract class MasterRepository : Repository
     {
-        protected List<MySqlParameter> parameters;
+        protected List<SqlParameter> parameters;
 
         //Se utiliza para ejecutar métodos de no consulta, como insertar, editar y eliminar datos
         protected int ExecuteNonQuery(string sql) {
@@ -21,12 +22,12 @@ namespace CapaDatos.Repository
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new MySqlCommand())
+                using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
                     command.CommandText = sql;
                     command.CommandType = CommandType.Text;//No es recomendado el uso de procedimientos almacenados que contengan lógica de negocios ya que se sacrifica el mantenimiento a cambio de rendimiento
-                    foreach (MySqlParameter item in parameters)
+                    foreach (SqlParameter item in parameters)
                     {
                         command.Parameters.Add(item);
                     }
@@ -43,12 +44,12 @@ namespace CapaDatos.Repository
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new MySqlCommand())
+                using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
                     command.CommandText = sql;
                     command.CommandType = CommandType.Text;
-                    MySqlDataReader reader = command.ExecuteReader();//Ejecuta el lector para leer filas de tablas
+                    SqlDataReader reader = command.ExecuteReader();//Ejecuta el lector para leer filas de tablas
                     using (var table = new DataTable()) //Creamos un objeto DataTable
                     {
                         table.Load(reader);//Cargamos el resultado del lector a la tabla

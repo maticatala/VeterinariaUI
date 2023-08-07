@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using MySql.Data;
-using MySqlX.XDevAPI;
 using System.Data;
-using System.Windows.Forms;
 
 //Referencias
+//using MySql.Data.MySqlClient;
+//using MySql.Data;
+//using MySqlX.XDevAPI;
 using CapaDatos.Contracts;
 using CapaEntidades.Entities;
 using CapaDatos.Exceptions;
+using System.Data.SqlClient;
 
 namespace CapaDatos.Repository
 {
@@ -35,22 +32,22 @@ namespace CapaDatos.Repository
         }
         public int Add(Cliente cliente) //Llega como parametro una instancia de cliente desde la capa de negocios. Retorna un entero, que especifica cuantos registros se añadieron 
         {
-            parameters = new List<MySqlParameter>();//Creamos una lista de parametros
+            parameters = new List<SqlParameter>();//Creamos una lista de parametros
             
             //Agregamos a la lista de parametros cada uno de ellos utilizando las property de la clase Cliente
-            parameters.Add(new MySqlParameter("@nroDoc", cliente.NumeroDocumento));
-            parameters.Add(new MySqlParameter("@tipoDoc", cliente.TipoDocumento));
-            parameters.Add(new MySqlParameter("@nombre", cliente.Nombre));
-            parameters.Add(new MySqlParameter("@apellido", cliente.Apellido));
-            parameters.Add(new MySqlParameter("@calle", cliente.Calle));
-            parameters.Add(new MySqlParameter("@altura", cliente.Altura));
+            parameters.Add(new SqlParameter("@nroDoc", cliente.NumeroDocumento));
+            parameters.Add(new SqlParameter("@tipoDoc", cliente.TipoDocumento));
+            parameters.Add(new SqlParameter("@nombre", cliente.Nombre));
+            parameters.Add(new SqlParameter("@apellido", cliente.Apellido));
+            parameters.Add(new SqlParameter("@calle", cliente.Calle));
+            parameters.Add(new SqlParameter("@altura", cliente.Altura));
 
 
             //Ejecutamos el metodo ExecuteNonQuery de la clase repositorio maestra, este metodo requiere que enviemos un comando sql
             try
             {
                 return ExecuteNonQuery(insert);
-            } catch (MySqlException ex)
+            } catch (SqlException ex)
             {
                 if (ex != null && ex.Number == 1062)
                     //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
@@ -85,9 +82,9 @@ namespace CapaDatos.Repository
 
         public int Remove(String nroDoc, String tipoDoc)
         {
-            parameters = new List<MySqlParameter>();
-            parameters.Add(new MySqlParameter("@nroDoc", nroDoc));
-            parameters.Add(new MySqlParameter("@tipoDoc", tipoDoc));
+            parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@nroDoc", nroDoc));
+            parameters.Add(new SqlParameter("@tipoDoc", tipoDoc));
             return ExecuteNonQuery(delete);
 
         }
@@ -104,21 +101,21 @@ namespace CapaDatos.Repository
 
         public int Update(Cliente cliente, string nroDoc, string tipoDoc)
         {
-            parameters = new List<MySqlParameter>();
-            parameters.Add(new MySqlParameter("@nroDoc", cliente.NumeroDocumento));
-            parameters.Add(new MySqlParameter("@tipoDoc", cliente.TipoDocumento));
-            parameters.Add(new MySqlParameter("@nombre", cliente.Nombre));
-            parameters.Add(new MySqlParameter("@apellido", cliente.Apellido));
-            parameters.Add(new MySqlParameter("@calle", cliente.Calle));
-            parameters.Add(new MySqlParameter("@altura", cliente.Altura));
-            parameters.Add(new MySqlParameter("@oldNroDoc", nroDoc));
-            parameters.Add(new MySqlParameter("@oldTipoDOc", tipoDoc));
+            parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@nroDoc", cliente.NumeroDocumento));
+            parameters.Add(new SqlParameter("@tipoDoc", cliente.TipoDocumento));
+            parameters.Add(new SqlParameter("@nombre", cliente.Nombre));
+            parameters.Add(new SqlParameter("@apellido", cliente.Apellido));
+            parameters.Add(new SqlParameter("@calle", cliente.Calle));
+            parameters.Add(new SqlParameter("@altura", cliente.Altura));
+            parameters.Add(new SqlParameter("@oldNroDoc", nroDoc));
+            parameters.Add(new SqlParameter("@oldTipoDOc", tipoDoc));
             
             try
             {
                 return ExecuteNonQuery(update);
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 if (ex != null && ex.Number == 1062)
                     //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
