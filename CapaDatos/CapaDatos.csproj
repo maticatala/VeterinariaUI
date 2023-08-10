@@ -89,6 +89,7 @@
     <Compile Include="Repository\ClienteRepository.cs" />
     <Compile Include="Repository\MasterRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\VeterinarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

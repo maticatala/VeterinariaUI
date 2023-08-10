@@ -266,6 +266,12 @@
     <Compile Include="Forms\Mascotas\mascotasForm.Designer.cs">
       <DependentUpon>mascotasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Veterinarios\VeterinariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Veterinarios\VeterinariosForm.Designer.cs">
+      <DependentUpon>VeterinariosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helps\DataValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -290,6 +296,9 @@
     <EmbeddedResource Include="Forms\Mascotas\mascotasForm.resx">
       <DependentUpon>mascotasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Veterinarios\VeterinariosForm.resx">
+      <DependentUpon>VeterinariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -308,6 +317,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaEntidades.Cliente.datasource" />
+    <None Include="Properties\DataSources\CapaEntidades.Entities.Veterinario.datasource" />
+    <None Include="Properties\DataSources\CapaNegocio.Models.CN_Veterinario.datasource" />
     <None Include="Properties\DataSources\Owner.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -367,6 +378,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
