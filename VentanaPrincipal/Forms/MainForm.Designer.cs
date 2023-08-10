@@ -363,7 +363,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Name = "MainForm";
-            this.Text = "Responsive SideBar";
+            this.Text = "PawPalace";
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
