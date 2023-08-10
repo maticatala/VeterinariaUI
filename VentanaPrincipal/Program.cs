@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VentanaPrincipal.Forms.Usuarios;
 
 namespace VentanaPrincipal
 {
@@ -17,7 +18,7 @@ namespace VentanaPrincipal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRegistro());
+            Application.Run(new frmLogin());
         }
     }
 }

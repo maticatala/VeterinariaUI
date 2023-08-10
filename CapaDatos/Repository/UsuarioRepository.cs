@@ -121,6 +121,11 @@ namespace CapaDatos.Repository
         {
             throw new NotImplementedException();
         }
+
+        public string ctrlLogin(string usuario, string password)
+        {
+            throw new NotImplementedException();
+        }
         //public bool existeUsuario(string usuario)
         //{
         //    SqlDataReader reader;
