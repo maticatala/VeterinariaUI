@@ -2,11 +2,14 @@
 using CapaDatos.Contracts;
 using CapaDatos.Exceptions;
 using CapaEntidadaes.Entities;
+using NPOI.SS.Formula.Functions;
+using Org.BouncyCastle.Bcpg;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,10 +31,10 @@ namespace CapaDatos.Repository
             insert = "INSERT INTO usuarios (n_usuario, password, id, tipo_usuario, conPassword) VALUES(@n_usuario, @password, @id, @tipo_usuario, @conPassword)";
             update = "UPDATE usuarios SET n_usuario=@n_usuario, password=@password, id=@tipo_usuario, tipo_usuario=@tipo_usuario, conPassword=@conPassword";
             delete = "DELETE FROM usuarios WHERE n_usuario=@n_usuario and tipo_usuario=@tipo_usuario";
-            
+
         }
 
-       public int Add(Usuario usuario)
+        public int Add(Usuario usuario)
         {
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@n_usuario", usuario.N_usuario));
@@ -57,10 +60,10 @@ namespace CapaDatos.Repository
 
         public IEnumerable<Usuario> GetAll()
         {
-            
+
             var tableResult = ExecuteReader(selectAll);
             var listUsuario = new List<Usuario>();
-            
+
             foreach (DataRow item in tableResult.Rows)
             {
                 listUsuario.Add(new Usuario
@@ -73,6 +76,28 @@ namespace CapaDatos.Repository
                 });
             }
             return listUsuario;
+        }
+
+        public bool Login(string username, string password)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM usuarios WHERE n_usuario=@n_usuario and password=@password";
+                    command.Parameters.AddWithValue("@n_usuario", username);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
+                    else { return false; }
+                }
+            }
         }
 
         public bool ExisteUsuario(int id, string usuario)
@@ -93,13 +118,8 @@ namespace CapaDatos.Repository
             }
         }
 
-        
 
-
-
-
-
-        public int Remove(String n_usuario, String tipo_usuario)
+    public int Remove(String n_usuario, String tipo_usuario)
         {
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@n_usuario", n_usuario));

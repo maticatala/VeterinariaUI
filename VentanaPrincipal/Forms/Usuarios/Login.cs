@@ -1,12 +1,14 @@
 ﻿using CapaDatos.Contracts;
 using CapaDatos.Repository;
 using CapaEntidadaes.Entities;
+using Models;
 using Sistema;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -76,27 +78,53 @@ namespace VentanaPrincipal.Forms.Usuarios
         {
             string usuario = txtUsuario.Text;
             string password = txtPassword.Text;
-
-            try
+            if (txtUsuario.Text != "")
             {
-                UsuarioRepository ctrl = new UsuarioRepository();
-                string respuesta = ctrl.ctrlLogin(usuario, password);
-                if (respuesta.Length > 0)
+                if (txtPassword.Text != "")
                 {
-                    MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MainForm frm = new MainForm();
-                    frm.Visible = true;
-                    this.Visible = false;
+                    UserModel user = new UserModel();
+                    var validLogin = user.LoginUser(txtUsuario.Text, txtPassword.Text);
+                    if(validLogin == true)
+                    {
+                        MainForm frm = new MainForm();
+                        frm.Visible = true;
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        msgErrror("Usuario o Contraseña Incorrectos!");
+                        txtUsuario.Clear();
+                        txtPassword.Clear();
 
+                    }
                 }
+                else msgErrror("Por Favor Ingrese la Contraseña!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                msgErrror("Por Favor Ingrese Nombre de Usuario!");
             }
+
+            //try
+            //{
+            //    UsuarioRepository ctrl = new UsuarioRepository();
+            //    string respuesta = ctrl.ctrlLogin(usuario, password);
+            //    if (respuesta.Length > 0)
+            //    {
+            //        MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    else
+            //    {
+            //        MainForm frm = new MainForm();
+            //        frm.Visible = true;
+            //        this.Visible = false;
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         public string ctrlLogin(string usuario, string password)
@@ -138,7 +166,13 @@ namespace VentanaPrincipal.Forms.Usuarios
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-
+            
+           
+        }
+        private void msgErrror(string msg)
+        {
+            lblErrorMessage.Text = "   "+msg;
+            lblErrorMessage.Visible = true;
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
