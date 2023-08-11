@@ -86,5 +86,20 @@ namespace VentanaPrincipal
         {
 
         }
+
+        private void cbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTipoDocumento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -71,6 +71,7 @@ namespace VentanaPrincipal
             this.lblTipoDocumento.Size = new System.Drawing.Size(144, 21);
             this.lblTipoDocumento.TabIndex = 1;
             this.lblTipoDocumento.Text = "Tipo de documento";
+            this.lblTipoDocumento.Click += new System.EventHandler(this.lblTipoDocumento_Click);
             // 
             // lblNombre
             // 
@@ -131,6 +132,7 @@ namespace VentanaPrincipal
             this.cbTipoDocumento.Name = "cbTipoDocumento";
             this.cbTipoDocumento.Size = new System.Drawing.Size(125, 28);
             this.cbTipoDocumento.TabIndex = 4;
+            this.cbTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.cbTipoDocumento_SelectedIndexChanged);
             // 
             // clienteBindingSource
             // 
@@ -225,6 +227,7 @@ namespace VentanaPrincipal
             this.txtNombre.Size = new System.Drawing.Size(137, 35);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.UnderlinedStyle = true;
+            this.txtNombre.Load += new System.EventHandler(this.txtNombre_Load);
             // 
             // btnAdd
             // 

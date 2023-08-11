@@ -29,66 +29,9 @@ namespace VentanaPrincipal.Forms.Usuarios
 
         private void btnIngresa_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string password = txtPassword.Text;
-
-            try
-            {
-                UsuarioRepository ctrl = new UsuarioRepository();
-                string respuesta = ctrl.ctrlLogin(usuario, password);
-                if (respuesta.Length > 0)
-                {
-                    MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MainForm frm = new MainForm();
-                    frm.Visible = true;
-                    this.Visible = false;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
-        public string ctrlLogin(string usuario, string password)
-        {
-            UsuarioRepository modelo = new UsuarioRepository();
-            string respuesta = "";
-            Usuario datosUsuarios = null;
-
-            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
-            {
-                respuesta = "Debe llenar todos los campos!";
-            }
-            else
-            {
-
-                if (datosUsuarios == null)
-                {
-                    respuesta = "El usuario no existe!";
-                }
-                else
-                {
-                    if (datosUsuarios.Password != generarSHA1(password))
-                    {
-                        respuesta = "El usuario y/o la contraseña no coinciden!";
-                    }
-                    else
-                    {
-
-                        Session.id = datosUsuarios.Id;
-                        Session.usuario = usuario;
-                        Session.nombre = datosUsuarios.Nombre;
-                        Session.id_tipo = datosUsuarios.Id_tipo;
-
-                    }
-                }
-            }
-            return respuesta;
-        }
+        
 
         private string generarSHA1(string cadena)
         {
@@ -127,6 +70,80 @@ namespace VentanaPrincipal.Forms.Usuarios
             }
 
             
+        }
+
+        private void btnIngresa_Click_1(object sender, EventArgs e)
+        {
+            string usuario = txtUsuario.Text;
+            string password = txtPassword.Text;
+
+            try
+            {
+                UsuarioRepository ctrl = new UsuarioRepository();
+                string respuesta = ctrl.ctrlLogin(usuario, password);
+                if (respuesta.Length > 0)
+                {
+                    MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MainForm frm = new MainForm();
+                    frm.Visible = true;
+                    this.Visible = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public string ctrlLogin(string usuario, string password)
+        {
+            UsuarioRepository modelo = new UsuarioRepository();
+            string respuesta = "";
+            Usuario datosUsuarios = null;
+
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
+            {
+                respuesta = "Debe llenar todos los campos!";
+            }
+            else
+            {
+                //datosUsuarios = modelo.porUsuario(usuario);
+                if (datosUsuarios == null)
+                    {
+                        respuesta = "El usuario no existe!";
+                    }
+                    else
+                    {
+                        if (datosUsuarios.Password != generarSHA1(password))
+                        {
+                            respuesta = "El usuario y/o la contraseña no coinciden!";
+                        }
+                        else
+                        {
+
+                            Session.id = datosUsuarios.Id;
+                            Session.n_usuario = usuario;
+                            Session.password = datosUsuarios.Password;
+                            Session.tipo_usuario = datosUsuarios.Tipo_usuario;
+
+                        }
+                    }
+            }
+            return respuesta;
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -2,6 +2,8 @@
 using CapaNegocio.Models;
 using System;
 using System.Windows.Forms;
+using VentanaPrincipal;
+using VentanaPrincipal.Helps;
 
 namespace Sistema
 {
@@ -23,13 +25,12 @@ namespace Sistema
         {
             CN_Usuario usuarioNegocio = new CN_Usuario();
             Usuario usuarioActual = new Usuario();
-            usuarioActual.Nombre = txtNombre.Text;
+            usuarioActual.N_usuario = txtNombre.Text;
             usuarioActual.Password = txtPassword.Text;
             usuarioActual.ConPassword = txtConPassword.Text;
-            usuarioActual.Nombre = txtNombre.Text;
-            usuarioActual.TipoUsuario = cbUsuario.Text;
+            usuarioActual.Tipo_usuario = cbUsuario.Text;
 
-            bool valid = new VentanaPrincipal.Helps.DataValidation(usuarioActual).Validate();
+            bool valid = new DataValidation(usuarioActual).Validate();
 
             if (valid)
             {
@@ -41,6 +42,11 @@ namespace Sistema
                         result = usuarioNegocio.Add(usuarioActual);
                     }
                     this.Close();
+
+                    MainForm frm = new MainForm();
+                    frm.Visible = true;
+                    this.Visible = false;
+
                 }
                 catch (Exception ex)
                 {
@@ -58,6 +64,16 @@ namespace Sistema
             txtNombre.Text = string.Empty;
             txtNombre.Text = string.Empty;
             txtPassword.Text = string.Empty;
+        }
+
+        private void cbUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

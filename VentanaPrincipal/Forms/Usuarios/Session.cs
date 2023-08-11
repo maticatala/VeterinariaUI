@@ -8,8 +8,8 @@ namespace VentanaPrincipal.Forms.Usuarios
 {
     internal class Session
     {
-        public static int id, id_tipo;
-        public static string usuario, nombre;
+        public static int id;
+        public static string n_usuario, password, codPassword, tipo_usuario;
 
     }
 }

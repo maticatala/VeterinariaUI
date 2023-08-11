@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using FontAwesome.Sharp;
+using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
 //using Color = System.Drawing.Color;
 
@@ -146,6 +147,13 @@ namespace VentanaPrincipal
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            frm.Visible = true;
+            this.Visible = false;
         }
     }
 }
