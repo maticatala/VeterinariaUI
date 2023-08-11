@@ -41,9 +41,10 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistrar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRegistrar.Location = new System.Drawing.Point(193, 427);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
@@ -86,6 +87,7 @@
             this.txtConPassword.PasswordChar = '*';
             this.txtConPassword.Size = new System.Drawing.Size(373, 24);
             this.txtConPassword.TabIndex = 14;
+            this.txtConPassword.TextChanged += new System.EventHandler(this.txtConPassword_TextChanged);
             // 
             // label3
             // 
@@ -155,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(484, 577);
             this.Controls.Add(this.cbUsuario);
             this.Controls.Add(this.btnRegistrar);

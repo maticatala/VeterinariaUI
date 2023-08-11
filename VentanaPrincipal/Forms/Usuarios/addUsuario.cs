@@ -52,6 +52,7 @@ namespace Sistema
                 {
                     // Manejo de otras excepciones
                     MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Limpiar();
                 }
             }
 
@@ -72,6 +73,11 @@ namespace Sistema
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

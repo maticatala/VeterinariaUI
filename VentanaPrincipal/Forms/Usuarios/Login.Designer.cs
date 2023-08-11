@@ -99,7 +99,9 @@
             // btnRegistro
             // 
             this.btnRegistro.BackColor = System.Drawing.Color.Red;
-            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRegistro.Location = new System.Drawing.Point(156, 437);
             this.btnRegistro.Margin = new System.Windows.Forms.Padding(5);
             this.btnRegistro.Name = "btnRegistro";
@@ -112,10 +114,11 @@
             // lblErrorMessage
             // 
             this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMessage.ForeColor = System.Drawing.Color.Red;
             this.lblErrorMessage.Location = new System.Drawing.Point(61, 259);
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(96, 16);
+            this.lblErrorMessage.Size = new System.Drawing.Size(121, 18);
             this.lblErrorMessage.TabIndex = 11;
             this.lblErrorMessage.Text = "Error Message";
             this.lblErrorMessage.Visible = false;
@@ -124,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(423, 540);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.btnRegistro);
