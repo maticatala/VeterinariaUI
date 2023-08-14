@@ -28,7 +28,7 @@ namespace CapaDatos.Repository
         public UsuarioRepository()
         {
             selectAll = "SELECT * FROM usuarios";
-            insert = "INSERT INTO usuarios (n_usuario, password, id, tipo_usuario, conPassword) VALUES(@n_usuario, @password, @id, @tipo_usuario, @conPassword)";
+            insert = "INSERT INTO usuarios (n_usuario, password, tipo_usuario) VALUES(@n_usuario, @password, @tipo_usuario)";
             update = "UPDATE usuarios SET n_usuario=@n_usuario, password=@password, id=@tipo_usuario, tipo_usuario=@tipo_usuario, conPassword=@conPassword";
             delete = "DELETE FROM usuarios WHERE n_usuario=@n_usuario and tipo_usuario=@tipo_usuario";
 
@@ -39,8 +39,6 @@ namespace CapaDatos.Repository
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@n_usuario", usuario.N_usuario));
             parameters.Add(new SqlParameter("@password", usuario.Password));
-            parameters.Add(new SqlParameter("@id", usuario.Id));
-            parameters.Add(new SqlParameter("@conPassword", usuario.ConPassword));
             parameters.Add(new SqlParameter("@tipo_usuario", usuario.Tipo_usuario));
 
             try
@@ -71,8 +69,7 @@ namespace CapaDatos.Repository
                     Id = (int)item[0],
                     N_usuario = item[1].ToString(),
                     Password = item[2].ToString(),
-                    ConPassword = item[3].ToString(),
-                    Tipo_usuario = item[4].ToString()
+                    Tipo_usuario = item[3].ToString()
                 });
             }
             return listUsuario;
@@ -144,7 +141,6 @@ namespace CapaDatos.Repository
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@n_usuario", usuario.N_usuario));
             parameters.Add(new SqlParameter("@password", usuario.Password));
-            parameters.Add(new SqlParameter("@conPassword", usuario.ConPassword));
             parameters.Add(new SqlParameter("@tipo_usuario", usuario.Tipo_usuario));
             parameters.Add(new SqlParameter("@oldN_Usuario", n_u));
             parameters.Add(new SqlParameter("oldT_Usuario",t_u));

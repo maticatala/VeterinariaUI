@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CapaDatos.Repository
 {

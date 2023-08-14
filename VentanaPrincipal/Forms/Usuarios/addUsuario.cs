@@ -26,11 +26,19 @@ namespace Sistema
             CN_Usuario usuarioNegocio = new CN_Usuario();
             Usuario usuarioActual = new Usuario();
             usuarioActual.N_usuario = txtNombre.Text;
-            usuarioActual.Password = txtPassword.Text;
-            usuarioActual.ConPassword = txtConPassword.Text;
             usuarioActual.Tipo_usuario = cbUsuario.Text;
 
+
             bool valid = new DataValidation(usuarioActual).Validate();
+
+            if (txtPassword.Text == txtConPassword.Text)
+                usuarioActual.Password = txtPassword.Text;
+            else
+            {
+                lblConfirmar.Text = "Las contraseñas no coinciden";
+                valid = false;
+            }
+                
 
             if (valid)
             {

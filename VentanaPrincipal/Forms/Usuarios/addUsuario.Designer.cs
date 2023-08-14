@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbUsuario = new System.Windows.Forms.ComboBox();
+            this.lblConfirmar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -153,12 +154,21 @@
             this.cbUsuario.TabIndex = 18;
             this.cbUsuario.SelectedIndexChanged += new System.EventHandler(this.cbUsuario_SelectedIndexChanged);
             // 
+            // lblConfirmar
+            // 
+            this.lblConfirmar.AutoSize = true;
+            this.lblConfirmar.Location = new System.Drawing.Point(69, 380);
+            this.lblConfirmar.Name = "lblConfirmar";
+            this.lblConfirmar.Size = new System.Drawing.Size(0, 16);
+            this.lblConfirmar.TabIndex = 19;
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(484, 577);
+            this.Controls.Add(this.lblConfirmar);
             this.Controls.Add(this.cbUsuario);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtPassword);
@@ -190,5 +200,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbUsuario;
+        private System.Windows.Forms.Label lblConfirmar;
     }
 }
