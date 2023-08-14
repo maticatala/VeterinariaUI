@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,27 +41,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cgvVeterinarios = new System.Windows.Forms.DataGridView();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.btnAddVeterinario = new VentanaPrincipal.RJButton();
-            this.cNVeterinarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.veterinarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.veterinarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.matriculaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alturaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.altura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAddVeterinario = new VentanaPrincipal.RJButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvVeterinarios)).BeginInit();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cNVeterinarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.veterinarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,25 +123,25 @@
             this.cgvVeterinarios.ColumnHeadersHeight = 45;
             this.cgvVeterinarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.cgvVeterinarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Matricula,
-            this.Apellido,
-            this.Nombre,
-            this.Telefono,
-            this.calle,
-            this.altura,
+            this.matriculaDataGridViewTextBoxColumn1,
+            this.nombreDataGridViewTextBoxColumn1,
+            this.apellidoDataGridViewTextBoxColumn1,
+            this.calleDataGridViewTextBoxColumn1,
+            this.alturaDataGridViewTextBoxColumn1,
+            this.telefonoDataGridViewTextBoxColumn1,
             this.editar,
             this.delete});
             this.cgvVeterinarios.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cgvVeterinarios.DataSource = this.veterinarioBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cgvVeterinarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cgvVeterinarios.DefaultCellStyle = dataGridViewCellStyle4;
             this.cgvVeterinarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cgvVeterinarios.EnableHeadersVisualStyles = false;
             this.cgvVeterinarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
@@ -149,17 +153,18 @@
             this.cgvVeterinarios.RowHeadersVisible = false;
             this.cgvVeterinarios.RowHeadersWidth = 51;
             this.cgvVeterinarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.cgvVeterinarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            this.cgvVeterinarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.cgvVeterinarios.RowTemplate.Height = 24;
             this.cgvVeterinarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cgvVeterinarios.Size = new System.Drawing.Size(969, 404);
             this.cgvVeterinarios.TabIndex = 0;
+            this.cgvVeterinarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvVeterinarios_CellClick);
             this.cgvVeterinarios.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvVeterinarios_CellMouseEnter);
             // 
             // panelMain
@@ -173,38 +178,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(969, 404);
             this.panelMain.TabIndex = 0;
-            // 
-            // btnAddVeterinario
-            // 
-            this.btnAddVeterinario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddVeterinario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddVeterinario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddVeterinario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddVeterinario.BorderRadius = 5;
-            this.btnAddVeterinario.BorderSize = 0;
-            this.btnAddVeterinario.FlatAppearance.BorderSize = 0;
-            this.btnAddVeterinario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddVeterinario.ForeColor = System.Drawing.Color.White;
-            this.btnAddVeterinario.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddVeterinario.Location = new System.Drawing.Point(752, 19);
-            this.btnAddVeterinario.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddVeterinario.Name = "btnAddVeterinario";
-            this.btnAddVeterinario.Size = new System.Drawing.Size(200, 49);
-            this.btnAddVeterinario.TabIndex = 5;
-            this.btnAddVeterinario.Text = "Añadir Veterinario";
-            this.btnAddVeterinario.TextColor = System.Drawing.Color.White;
-            this.btnAddVeterinario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddVeterinario.UseVisualStyleBackColor = false;
-            this.btnAddVeterinario.Click += new System.EventHandler(this.rjButton1_Click);
-            // 
-            // cNVeterinarioBindingSource
-            // 
-            this.cNVeterinarioBindingSource.DataSource = typeof(CapaNegocio.Models.CN_Veterinario);
-            // 
-            // veterinarioBindingSource
-            // 
-            this.veterinarioBindingSource.DataSource = typeof(CapaEntidades.Entities.Veterinario);
             // 
             // matriculaDataGridViewTextBoxColumn
             // 
@@ -254,18 +227,94 @@
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             this.telefonoDataGridViewTextBoxColumn.Width = 105;
             // 
-            // delete
+            // dataGridViewImageColumn1
             // 
-            this.delete.FillWeight = 30F;
-            this.delete.HeaderText = "";
-            this.delete.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
-            this.delete.MinimumWidth = 6;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
+            this.dataGridViewImageColumn1.DataPropertyName = "Editar";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewImageColumn1.FillWeight = 30F;
+            this.dataGridViewImageColumn1.HeaderText = "Acción";
+            this.dataGridViewImageColumn1.Image = global::VentanaPrincipal.Properties.Resources.edit_FILL0_wght400_GRAD0_opsz24;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 485;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewImageColumn2.FillWeight = 30F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 484;
+            // 
+            // veterinarioBindingSource
+            // 
+            this.veterinarioBindingSource.DataSource = typeof(CapaEntidades.Entities.Veterinario);
+            // 
+            // matriculaDataGridViewTextBoxColumn1
+            // 
+            this.matriculaDataGridViewTextBoxColumn1.DataPropertyName = "Matricula";
+            this.matriculaDataGridViewTextBoxColumn1.FillWeight = 60F;
+            this.matriculaDataGridViewTextBoxColumn1.HeaderText = "Matricula";
+            this.matriculaDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.matriculaDataGridViewTextBoxColumn1.Name = "matriculaDataGridViewTextBoxColumn1";
+            this.matriculaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.FillWeight = 45F;
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn1
+            // 
+            this.apellidoDataGridViewTextBoxColumn1.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn1.FillWeight = 45F;
+            this.apellidoDataGridViewTextBoxColumn1.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.apellidoDataGridViewTextBoxColumn1.Name = "apellidoDataGridViewTextBoxColumn1";
+            this.apellidoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // calleDataGridViewTextBoxColumn1
+            // 
+            this.calleDataGridViewTextBoxColumn1.DataPropertyName = "Calle";
+            this.calleDataGridViewTextBoxColumn1.FillWeight = 45F;
+            this.calleDataGridViewTextBoxColumn1.HeaderText = "Calle";
+            this.calleDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.calleDataGridViewTextBoxColumn1.Name = "calleDataGridViewTextBoxColumn1";
+            this.calleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // alturaDataGridViewTextBoxColumn1
+            // 
+            this.alturaDataGridViewTextBoxColumn1.DataPropertyName = "Altura";
+            this.alturaDataGridViewTextBoxColumn1.FillWeight = 30F;
+            this.alturaDataGridViewTextBoxColumn1.HeaderText = "Altura";
+            this.alturaDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.alturaDataGridViewTextBoxColumn1.Name = "alturaDataGridViewTextBoxColumn1";
+            this.alturaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn1
+            // 
+            this.telefonoDataGridViewTextBoxColumn1.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn1.FillWeight = 45F;
+            this.telefonoDataGridViewTextBoxColumn1.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.telefonoDataGridViewTextBoxColumn1.Name = "telefonoDataGridViewTextBoxColumn1";
+            this.telefonoDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // editar
             // 
             this.editar.DataPropertyName = "Editar";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.editar.DefaultCellStyle = dataGridViewCellStyle2;
             this.editar.FillWeight = 30F;
             this.editar.HeaderText = "Acción";
             this.editar.Image = global::VentanaPrincipal.Properties.Resources.edit_FILL0_wght400_GRAD0_opsz24;
@@ -273,59 +322,40 @@
             this.editar.Name = "editar";
             this.editar.ReadOnly = true;
             // 
-            // altura
+            // delete
             // 
-            this.altura.DataPropertyName = "Altura";
-            this.altura.FillWeight = 30F;
-            this.altura.HeaderText = "Altura";
-            this.altura.MinimumWidth = 6;
-            this.altura.Name = "altura";
-            this.altura.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.delete.FillWeight = 30F;
+            this.delete.HeaderText = "";
+            this.delete.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.delete.MinimumWidth = 6;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
             // 
-            // calle
+            // btnAddVeterinario
             // 
-            this.calle.DataPropertyName = "Calle";
-            this.calle.FillWeight = 45F;
-            this.calle.HeaderText = "Calle";
-            this.calle.MinimumWidth = 6;
-            this.calle.Name = "calle";
-            this.calle.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.FillWeight = 45F;
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.FillWeight = 45F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.FillWeight = 45F;
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Matricula
-            // 
-            this.Matricula.DataPropertyName = "Matricula";
-            this.Matricula.FillWeight = 50F;
-            this.Matricula.HeaderText = "Matricula";
-            this.Matricula.MinimumWidth = 6;
-            this.Matricula.Name = "Matricula";
-            this.Matricula.ReadOnly = true;
+            this.btnAddVeterinario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddVeterinario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddVeterinario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddVeterinario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddVeterinario.BorderRadius = 5;
+            this.btnAddVeterinario.BorderSize = 0;
+            this.btnAddVeterinario.FlatAppearance.BorderSize = 0;
+            this.btnAddVeterinario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddVeterinario.ForeColor = System.Drawing.Color.White;
+            this.btnAddVeterinario.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddVeterinario.Location = new System.Drawing.Point(752, 19);
+            this.btnAddVeterinario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddVeterinario.Name = "btnAddVeterinario";
+            this.btnAddVeterinario.Size = new System.Drawing.Size(200, 49);
+            this.btnAddVeterinario.TabIndex = 5;
+            this.btnAddVeterinario.Text = "Añadir Veterinario";
+            this.btnAddVeterinario.TextColor = System.Drawing.Color.White;
+            this.btnAddVeterinario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddVeterinario.UseVisualStyleBackColor = false;
+            this.btnAddVeterinario.Click += new System.EventHandler(this.btnAddVeterinario_Click);
             // 
             // veterinariosForm
             // 
@@ -343,7 +373,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvVeterinarios)).EndInit();
             this.panelMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cNVeterinarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.veterinarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -357,21 +386,22 @@
         private RJButton btnAddVeterinario;
         private System.Windows.Forms.DataGridView cgvVeterinarios;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.BindingSource cNVeterinarioBindingSource;
         private System.Windows.Forms.BindingSource veterinarioBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn altura;
-        private System.Windows.Forms.DataGridViewImageColumn editar;
-        private System.Windows.Forms.DataGridViewImageColumn delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn calleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alturaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn editar;
+        private System.Windows.Forms.DataGridViewImageColumn delete;
     }
 }

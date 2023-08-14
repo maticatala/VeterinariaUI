@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 //Referencias
 using CapaNegocio.Models;
+using CapaEntidades.Entities;
 
 namespace VentanaPrincipal.Forms.Veterinarios
 {
@@ -21,14 +22,12 @@ namespace VentanaPrincipal.Forms.Veterinarios
             InitializeComponent();
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
-
-        }
+   
 
         private void veterinariosForm_Load(object sender, EventArgs e)
         {
             cargarTabla();
+            cgvVeterinarios.RowTemplate.Height = 55;
         }
 
         private void cargarTabla()
@@ -60,6 +59,46 @@ namespace VentanaPrincipal.Forms.Veterinarios
                 {
                     // Cambiar el cursor a su valor predeterminado en caso contrario
                     cgvVeterinarios.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void btnAddVeterinario_Click(object sender, EventArgs e)
+        {
+            addVeterinario formAddVeterinario = new addVeterinario();
+            formAddVeterinario.ShowDialog();
+            cargarTabla();
+        }
+
+        private void cgvVeterinarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > 0)
+            {
+                string nameColumn = cgvVeterinarios.Columns[e.ColumnIndex].Name;
+                if(nameColumn == "editar")
+                {
+                    Veterinario vet = new Veterinario()
+                    {
+                        Matricula = cgvVeterinarios.CurrentRow.Cells[0].Value.ToString(),
+                        Nombre = cgvVeterinarios.CurrentRow.Cells[1].Value.ToString(),
+                        Apellido = cgvVeterinarios.CurrentRow.Cells[2].Value.ToString(),
+                        Calle = cgvVeterinarios.CurrentRow.Cells[3].Value.ToString(),
+                        Altura = cgvVeterinarios.CurrentRow.Cells[4].Value.ToString(),
+                        Telefono = cgvVeterinarios.CurrentRow.Cells[5].Value.ToString(),
+
+                    };
+                    addOwner formAddOwner = new addOwner();
+                    formAddOwner.ShowDialog();
+                    
+                }
+                else if(nameColumn == "delete")
+                {
+                    DialogResult opt = MessageBox.Show("¿Desea eliminar permanentemente el Veterinario?", "Cuidado", MessageBoxButtons.OKCancel);
+                    if(opt == DialogResult.OK)
+                    {
+                        string matricula = cgvVeterinarios.CurrentRow.Cells[0].Value.ToString();
+                        string result = cN_Veterinario.delete(matricula);
+                    }
                 }
             }
         }

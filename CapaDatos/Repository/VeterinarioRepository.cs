@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using CapaDatos.Contracts;
 using CapaEntidades.Entities;
 using System.Data.SqlClient;
+using CapaDatos.Exceptions;
+
 
 namespace CapaDatos.Repository
 {
@@ -20,15 +22,41 @@ namespace CapaDatos.Repository
         private string delete;
         public VeterinarioRepository() {
             selectAll = "SELECT * FROM veterinarios";
+            insert = "INSERT INTO veterinarios VALUES (@nroMatricula,@nombre,@apellido,@calle,@altura,@telefono)";
+            delete = "DELETE FROM veterinarios WHERE nroMatricula=@nroMatricula";
         }
         public int Add(Veterinario vet)
         {
-            throw new NotImplementedException();
+            parameters = new List<SqlParameter>();
+
+            parameters.Add(new SqlParameter("@nroMatricula", vet.Matricula));
+            parameters.Add(new SqlParameter("@nombre", vet.Nombre));
+            parameters.Add(new SqlParameter("@apellido", vet.Apellido));
+            parameters.Add(new SqlParameter("@calle", vet.Calle));
+            parameters.Add(new SqlParameter("@altura", vet.Altura));
+            parameters.Add(new SqlParameter("@telefono", vet.Telefono));
+
+            try
+            {
+                return ExecuteNonQuery(insert);
+            }
+            catch (SqlException ex)
+            {
+                if (ex != null && ex.Number == 2627)
+                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
+                    throw new RegistroDuplicadoException("Registro duplicado");
+                else
+                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
+                    throw ex;
+            }
+
         }
 
         public int Remove(string matricula)
         {
-            throw new NotImplementedException();
+            parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@nroMatricula",matricula));
+            return ExecuteNonQuery(delete);
         }
 
         public int Update(Veterinario vet)

@@ -28,6 +28,18 @@ namespace CapaNegocio.Models
             listVeterinarios = veterinarioDataModel.ToList();
             return listVeterinarios;
         }
+
+        public string Add(Veterinario vet)
+        {
+            veterinarioRepository.Add(vet);
+            return "Registrado correctamente";
+        }
+
+        public string delete(string matricula)
+        {
+            veterinarioRepository.Remove(matricula);
+            return "Eliminado correctamente";
+        }
          
     }
 }
