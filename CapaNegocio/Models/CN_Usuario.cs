@@ -28,8 +28,6 @@ namespace CapaNegocio.Models
             return "Registrado Correctamente";
         }
 
-
-
         public List<Usuario> GetAll()
         {
             var usuarioDataModel = usuarioRepository.GetAll();
@@ -37,7 +35,10 @@ namespace CapaNegocio.Models
             return listUsuarios;
         }
 
-    }
+        public Usuario LoginUser(string username, string password)
+        {
+            return usuarioRepository.getOne(username, password);
+        }
 
-    
+    }
 }

@@ -51,7 +51,7 @@ namespace Sistema
                     }
                     this.Close();
 
-                    MainForm frm = new MainForm();
+                    MainForm frm = new MainForm(usuarioActual);
                     frm.Visible = true;
                     this.Visible = false;
 

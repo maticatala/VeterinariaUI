@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using CapaEntidadaes.Entities;
 using FontAwesome.Sharp;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
@@ -20,12 +21,15 @@ namespace VentanaPrincipal
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        public MainForm()
+        private Usuario user;
+
+        public MainForm(Usuario user)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             Controls.Add(leftBorderBtn);
+            this.user = user;
         }
         //Structs
         private struct RGBColors
@@ -67,7 +71,7 @@ namespace VentanaPrincipal
 
                 //Left border panel
                 leftBorderBtn.BackColor = RGBColors.color_primary;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y + panelControls.Height);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
             }
@@ -151,9 +155,58 @@ namespace VentanaPrincipal
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            frmLogin frm = new frmLogin();
-            frm.Visible = true;
-            this.Visible = false;
+            this.Close();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (user.Tipo_usuario != "ADMINISTRADOR")
+            {
+                btnRegistrar.Visible = false;
+            }
+            lvlUsername.Text = user.N_usuario;
+            lblRol.Text = user.Tipo_usuario;
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMax_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Normal;
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        int m, mx, my;
+
+        private void panelControls_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+        }
+
+        private void panelControls_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+            }
+        }
+
+        private void panelControls_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
         }
     }
 }

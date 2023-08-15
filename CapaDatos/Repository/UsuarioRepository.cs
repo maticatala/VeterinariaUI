@@ -12,6 +12,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaDatos.Repository
 {
@@ -58,7 +59,6 @@ namespace CapaDatos.Repository
 
         public IEnumerable<Usuario> GetAll()
         {
-
             var tableResult = ExecuteReader(selectAll);
             var listUsuario = new List<Usuario>();
 
@@ -75,48 +75,33 @@ namespace CapaDatos.Repository
             return listUsuario;
         }
 
-        public bool Login(string username, string password)
+        public Usuario getOne(string username, string password)
         {
-            using (var connection = GetConnection())
+            Usuario usuarioEncontrado = new Usuario();
+            string query = $"SELECT * FROM usuarios WHERE n_usuario = '{username}' and password = '{password}' ";
+            
+            var tableResult = ExecuteReader(query);
+
+            if (tableResult.Rows.Count > 0)
             {
-                connection.Open();
-                using (var command = new SqlCommand())
+                foreach (DataRow item in tableResult.Rows)
                 {
-                    command.Connection = connection;
-                    command.CommandText = "SELECT * FROM usuarios WHERE n_usuario=@n_usuario and password=@password";
-                    command.Parameters.AddWithValue("@n_usuario", username);
-                    command.Parameters.AddWithValue("@password", password);
-                    command.CommandType = System.Data.CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        return true;
-                    }
-                    else { return false; }
+                    usuarioEncontrado.Id = (int)item[0];
+                    usuarioEncontrado.N_usuario = item[1].ToString();
+                    usuarioEncontrado.Password = item[2].ToString();
+                    usuarioEncontrado.Tipo_usuario = item[3].ToString();
                 }
             }
-        }
-
-        public bool ExisteUsuario(int id, string usuario)
-        {
-            using (SqlConnection conexion = new SqlConnection("sqlserverconex")) // Reemplaza "cadena_de_conexion" con tu cadena de conexión real
+            else
             {
-                conexion.Open();
-
-                string sql = "SELECT id and n_usuario FROM usuarios WHERE n_usuario = @n_usuario and id=@id";
-                using (SqlCommand comando = new SqlCommand(sql, conexion))
-                {
-                    comando.Parameters.AddWithValue("@usuario", usuario);
-                    using (SqlDataReader reader = comando.ExecuteReader())
-                    {
-                        return reader.HasRows;
-                    }
-                }
+                throw new RegistroInexistenteException("Usuario o Contraseña Incorrectos");
             }
+
+            return usuarioEncontrado;
         }
 
 
-    public int Remove(String n_usuario, String tipo_usuario)
+        public int Remove(String n_usuario, String tipo_usuario)
         {
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@n_usuario", n_usuario));
@@ -169,46 +154,5 @@ namespace CapaDatos.Repository
         {
             throw new NotImplementedException();
         }
-        //public bool existeUsuario(string usuario)
-        //{
-        //    SqlDataReader reader;
-        //    SqlConnection conexion = Conexion.getConexion();
-        //    conexion.Open();
-
-        //    string sql = "SELECT id FROM usuarios WHERE usuario LIKE @usuario";
-        //    SqlCommand comando = new SqlCommand(sql, conexion);
-        //    comando.Parameters.AddWithValue("@usuario", usuario);
-        //    reader = comando.ExecuteReader();
-        //    if (reader.HasRows)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    { return false; }
-        //}
-
-        //public Usuarios porUsuario(string usuario)
-        //{
-        //    SqlDataReader reader;
-        //    SqlConnection conexion = Conexion.getConexion();
-        //    conexion.Open();
-
-        //    string sql = "SELECT id, password, nombre, id_tipo FROM usuarios WHERE usuario LIKE @usuario";
-        //    SqlCommand comando = new SqlCommand(sql, conexion);
-        //    comando.Parameters.AddWithValue("@usuario", usuario);
-        //    reader = comando.ExecuteReader();
-        //    Usuarios usr = null;
-
-        //    while (reader.Read())
-        //    {
-        //        usr = new Usuarios();
-        //        usr.Id = int.Parse(reader["id"].ToString());
-        //        usr.Password = reader["password"].ToString();
-        //        usr.Nombre = reader["nombre"].ToString();
-        //        usr.Id_tipo = int.Parse(reader["id_tipo"].ToString());
-
-        //    }
-        //    return usr;
-        //}
     }
 }
