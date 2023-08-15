@@ -101,5 +101,9 @@ namespace VentanaPrincipal
             }
         }
 
+        private void cgvOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

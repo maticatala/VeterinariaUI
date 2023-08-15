@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CapaDatos.Repository
 {
@@ -19,7 +20,7 @@ namespace CapaDatos.Repository
 
         public Repository()//Constructor
         {
-            connectionString = ConfigurationManager.ConnectionStrings["sqlserverconex"].ConnectionString;//Obtiene el connectionString del app.config de la capa de presentacion
+            connectionString = ConfigurationManager.ConnectionStrings["sqlserverconexMati"].ConnectionString;//Obtiene el connectionString del app.config de la capa de presentacion
         }
 
         //Este metodo es protegido ya que quiero que solo pueda ser utilizado por la misma clase y las clases que deriven de ellas
