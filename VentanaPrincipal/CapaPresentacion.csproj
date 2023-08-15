@@ -266,6 +266,19 @@
     <Compile Include="Forms\Mascotas\mascotasForm.Designer.cs">
       <DependentUpon>mascotasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Usuarios\addUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios\addUsuario.Designer.cs">
+      <DependentUpon>addUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Usuarios\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Usuarios\Session.cs" />
     <Compile Include="Helps\DataValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -289,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Mascotas\mascotasForm.resx">
       <DependentUpon>mascotasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\addUsuario.resx">
+      <DependentUpon>addUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -344,6 +363,10 @@
     <None Include="Resources\icons8-plus-math-25.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{9867C7A3-DB43-494C-BDB7-63DCBF3E7E7D}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaEntidadaes\CapaEntidades.csproj">
       <Project>{6937a9aa-2848-49db-8674-0b9e1be87957}</Project>
       <Name>CapaEntidades</Name>
