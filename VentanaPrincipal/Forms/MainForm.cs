@@ -196,6 +196,12 @@ namespace VentanaPrincipal
             my = e.Y;
         }
 
+        private void btnVeterinarios_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color_dark);
+            loadform(new Forms.Veterinarios.veterinariosForm());
+        }
+
         private void panelControls_MouseMove(object sender, MouseEventArgs e)
         {
             if (m == 1)

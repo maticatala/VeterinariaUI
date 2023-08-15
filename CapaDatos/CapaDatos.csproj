@@ -143,6 +143,7 @@
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Contracts\IClienteRepository.cs" />
     <Compile Include="Contracts\IUsuarioRepository.cs" />
+    <Compile Include="Contracts\IVeterinarioRepository.cs" />
     <Compile Include="Exceptions\RegistroDuplicadoException.cs" />
     <Compile Include="Exceptions\RegistroInexistenteException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Repository\MasterRepository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\VeterinarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

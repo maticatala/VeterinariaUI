@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Models\CN_Cliente.cs" />
     <Compile Include="Models\CN_Usuario.cs" />
+    <Compile Include="Models\CN_Veterinario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
