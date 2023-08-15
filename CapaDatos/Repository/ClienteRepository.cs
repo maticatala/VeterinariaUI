@@ -49,7 +49,7 @@ namespace CapaDatos.Repository
                 return ExecuteNonQuery(insert);
             } catch (SqlException ex)
             {
-                if (ex != null && ex.Number == 1062)
+                if (ex != null && ex.Number == 2627)
                     //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
                     throw new RegistroDuplicadoException("Registro duplicado");
                 else
@@ -117,7 +117,7 @@ namespace CapaDatos.Repository
             }
             catch (SqlException ex)
             {
-                if (ex != null && ex.Number == 1062)
+                if (ex != null && ex.Number == 2627)
                     //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
                     throw new RegistroDuplicadoException("Registro duplicado");
                 else

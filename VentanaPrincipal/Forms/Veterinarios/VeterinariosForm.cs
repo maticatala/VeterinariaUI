@@ -27,7 +27,7 @@ namespace VentanaPrincipal.Forms.Veterinarios
         private void veterinariosForm_Load(object sender, EventArgs e)
         {
             cargarTabla();
-            cgvVeterinarios.RowTemplate.Height = 55;
+            
         }
 
         private void cargarTabla()
@@ -72,7 +72,7 @@ namespace VentanaPrincipal.Forms.Veterinarios
 
         private void cgvVeterinarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if(e.RowIndex >= 0)
             {
                 string nameColumn = cgvVeterinarios.Columns[e.ColumnIndex].Name;
                 if(nameColumn == "editar")
@@ -87,7 +87,7 @@ namespace VentanaPrincipal.Forms.Veterinarios
                         Telefono = cgvVeterinarios.CurrentRow.Cells[5].Value.ToString(),
 
                     };
-                    addOwner formAddOwner = new addOwner();
+                    addVeterinario formAddOwner = new addVeterinario(vet);
                     formAddOwner.ShowDialog();
                     
                 }
@@ -100,6 +100,7 @@ namespace VentanaPrincipal.Forms.Veterinarios
                         string result = cN_Veterinario.delete(matricula);
                     }
                 }
+                cargarTabla();
             }
         }
     }

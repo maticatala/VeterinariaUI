@@ -54,7 +54,15 @@ namespace VentanaPrincipal.Forms.Veterinarios
             {
                 try
                 {
-                    string result = cN_Veterinario.Add(veterinario);
+                    string result;
+                    if (veterinarioOriginal != null)
+                    {
+                        result = cN_Veterinario.Update(veterinario, veterinarioOriginal.Matricula);
+                    }
+                    else
+                    {
+                        result = cN_Veterinario.Add(veterinario);
+                    }
 
                     MessageBox.Show(result);
                     Close();

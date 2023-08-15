@@ -160,7 +160,8 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
             this.cgvVeterinarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.cgvVeterinarios.RowTemplate.Height = 24;
+            this.cgvVeterinarios.RowTemplate.Height = 55;
+            this.cgvVeterinarios.RowTemplate.ReadOnly = true;
             this.cgvVeterinarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cgvVeterinarios.Size = new System.Drawing.Size(969, 404);
             this.cgvVeterinarios.TabIndex = 0;

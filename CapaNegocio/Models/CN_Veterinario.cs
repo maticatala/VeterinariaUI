@@ -13,7 +13,7 @@ namespace CapaNegocio.Models
 {
     public class CN_Veterinario
     {
-        private IGenericRepository<Veterinario, string> veterinarioRepository;
+        private IVeterinarioRepository veterinarioRepository;
         private List<Veterinario> listVeterinarios;
 
         public CN_Veterinario()
@@ -39,6 +39,12 @@ namespace CapaNegocio.Models
         {
             veterinarioRepository.Remove(matricula);
             return "Eliminado correctamente";
+        }
+
+        public string Update(Veterinario vet, string oldMatricula)
+        {
+            veterinarioRepository.Update(vet, oldMatricula);
+            return "Actualizado correctamente";
         }
          
     }
