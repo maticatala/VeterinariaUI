@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidadaes.Entities;
 using FontAwesome.Sharp;
+using VentanaPrincipal.Forms;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
 //using Color = System.Drawing.Color;
@@ -94,6 +96,7 @@ namespace VentanaPrincipal
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
+            loadform(new dashboardForm());
         }
 
         private void btnServicios_Click(object sender, EventArgs e)
@@ -166,7 +169,10 @@ namespace VentanaPrincipal
             }
             lvlUsername.Text = user.N_usuario;
             lblRol.Text = user.Tipo_usuario;
+            
+            //Llamar al evento click de dashboard
 
+            btnDashboard.PerformClick();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -194,6 +200,11 @@ namespace VentanaPrincipal
             m = 1;
             mx = e.X;
             my = e.Y;
+        }
+
+        private void lblPage_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void panelControls_MouseMove(object sender, MouseEventArgs e)

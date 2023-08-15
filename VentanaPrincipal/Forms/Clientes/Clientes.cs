@@ -105,5 +105,15 @@ namespace VentanaPrincipal
         {
 
         }
+
+        private void clienteBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ownerBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
