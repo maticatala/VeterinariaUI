@@ -32,17 +32,8 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnInicio = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lvlUsername = new System.Windows.Forms.Label();
-            this.lblHola = new System.Windows.Forms.Label();
-            this.lblRol = new System.Windows.Forms.Label();
-            this.lblPage = new System.Windows.Forms.Label();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.panelControls = new System.Windows.Forms.Panel();
-            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRegistrar = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.btnServicios = new FontAwesome.Sharp.IconButton();
@@ -50,17 +41,26 @@
             this.btnDueños = new FontAwesome.Sharp.IconButton();
             this.btnMascotas = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
-            this.btnInicio = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lvlUsername = new System.Windows.Forms.Label();
+            this.lblHola = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblPage = new System.Windows.Forms.Label();
+            this.panelControls = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnMax = new FontAwesome.Sharp.IconButton();
             this.btnMin = new FontAwesome.Sharp.IconButton();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
+            this.panelControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLogo
@@ -98,6 +98,18 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "PawPalace";
             // 
+            // btnInicio
+            // 
+            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
+            this.btnInicio.Location = new System.Drawing.Point(10, 12);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(63, 63);
+            this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnInicio.TabIndex = 0;
+            this.btnInicio.TabStop = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Transparent;
@@ -114,120 +126,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 641);
             this.panelMenu.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lblPage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(220, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 12, 10, 0);
-            this.panel1.Size = new System.Drawing.Size(980, 63);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lvlUsername);
-            this.panel2.Controls.Add(this.lblHola);
-            this.panel2.Controls.Add(this.lblRol);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(829, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(90, 51);
-            this.panel2.TabIndex = 1;
-            // 
-            // lvlUsername
-            // 
-            this.lvlUsername.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lvlUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lvlUsername.Location = new System.Drawing.Point(31, 0);
-            this.lvlUsername.Name = "lvlUsername";
-            this.lvlUsername.Size = new System.Drawing.Size(59, 25);
-            this.lvlUsername.TabIndex = 2;
-            this.lvlUsername.Text = "Matias";
-            this.lvlUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblHola
-            // 
-            this.lblHola.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblHola.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblHola.Location = new System.Drawing.Point(0, 0);
-            this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(37, 25);
-            this.lblHola.TabIndex = 1;
-            this.lblHola.Text = "Hola,";
-            this.lblHola.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblRol
-            // 
-            this.lblRol.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblRol.Location = new System.Drawing.Point(0, 25);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(90, 26);
-            this.lblRol.TabIndex = 0;
-            this.lblRol.Text = "Admin";
-            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPage
-            // 
-            this.lblPage.AutoSize = true;
-            this.lblPage.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblPage.Location = new System.Drawing.Point(16, 12);
-            this.lblPage.Name = "lblPage";
-            this.lblPage.Size = new System.Drawing.Size(95, 37);
-            this.lblPage.TabIndex = 1;
-            this.lblPage.Text = "Home";
-            this.lblPage.Click += new System.EventHandler(this.lblPage_Click);
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(220, 92);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(980, 578);
-            this.mainPanel.TabIndex = 3;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
-            // 
-            // panelControls
-            // 
-            this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.panelControls.Controls.Add(this.btnExit);
-            this.panelControls.Controls.Add(this.btnMax);
-            this.panelControls.Controls.Add(this.btnMin);
-            this.panelControls.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControls.Location = new System.Drawing.Point(0, 0);
-            this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(1200, 29);
-            this.panelControls.TabIndex = 0;
-            this.panelControls.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControls_MouseDown);
-            this.panelControls.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControls_MouseMove);
-            this.panelControls.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelControls_MouseUp);
-            // 
-            // mySqlCommand1
-            // 
-            this.mySqlCommand1.CacheAge = 0;
-            this.mySqlCommand1.Connection = null;
-            this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::VentanaPrincipal.Properties.Resources._179836;
-            this.pictureBox1.Location = new System.Drawing.Point(919, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnRegistrar
             // 
@@ -396,17 +294,103 @@
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // btnInicio
+            // panel1
             // 
-            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
-            this.btnInicio.Location = new System.Drawing.Point(10, 12);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(63, 63);
-            this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnInicio.TabIndex = 0;
-            this.btnInicio.TabStop = false;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblPage);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(220, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 12, 10, 0);
+            this.panel1.Size = new System.Drawing.Size(980, 63);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lvlUsername);
+            this.panel2.Controls.Add(this.lblHola);
+            this.panel2.Controls.Add(this.lblRol);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(829, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(90, 51);
+            this.panel2.TabIndex = 1;
+            // 
+            // lvlUsername
+            // 
+            this.lvlUsername.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lvlUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvlUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lvlUsername.Location = new System.Drawing.Point(31, 0);
+            this.lvlUsername.Name = "lvlUsername";
+            this.lvlUsername.Size = new System.Drawing.Size(59, 25);
+            this.lvlUsername.TabIndex = 2;
+            this.lvlUsername.Text = "Matias";
+            this.lvlUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHola
+            // 
+            this.lblHola.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblHola.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lblHola.Location = new System.Drawing.Point(0, 0);
+            this.lblHola.Name = "lblHola";
+            this.lblHola.Size = new System.Drawing.Size(37, 25);
+            this.lblHola.TabIndex = 1;
+            this.lblHola.Text = "Hola,";
+            this.lblHola.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRol
+            // 
+            this.lblRol.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lblRol.Location = new System.Drawing.Point(0, 25);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(90, 26);
+            this.lblRol.TabIndex = 0;
+            this.lblRol.Text = "Admin";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::VentanaPrincipal.Properties.Resources._179836;
+            this.pictureBox1.Location = new System.Drawing.Point(919, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblPage
+            // 
+            this.lblPage.AutoSize = true;
+            this.lblPage.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lblPage.Location = new System.Drawing.Point(16, 12);
+            this.lblPage.Name = "lblPage";
+            this.lblPage.Size = new System.Drawing.Size(95, 37);
+            this.lblPage.TabIndex = 1;
+            this.lblPage.Text = "Home";
+            this.lblPage.Click += new System.EventHandler(this.lblPage_Click);
+            // 
+            // panelControls
+            // 
+            this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.panelControls.Controls.Add(this.btnExit);
+            this.panelControls.Controls.Add(this.btnMax);
+            this.panelControls.Controls.Add(this.btnMin);
+            this.panelControls.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControls.Location = new System.Drawing.Point(0, 0);
+            this.panelControls.Name = "panelControls";
+            this.panelControls.Size = new System.Drawing.Size(1200, 29);
+            this.panelControls.TabIndex = 0;
+            this.panelControls.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControls_MouseDown);
+            this.panelControls.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControls_MouseMove);
+            this.panelControls.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelControls_MouseUp);
             // 
             // btnExit
             // 
@@ -460,6 +444,22 @@
             this.btnMin.UseVisualStyleBackColor = false;
             this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(220, 92);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(980, 578);
+            this.mainPanel.TabIndex = 3;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,19 +471,20 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelControls);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PawPalace";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panelControls.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
+            this.panelControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -500,7 +501,6 @@
         private System.Windows.Forms.Label lblNombre;
         private FontAwesome.Sharp.IconButton btnLogOut;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPage;
         private System.Windows.Forms.Panel panel2;
@@ -514,6 +514,7 @@
         private FontAwesome.Sharp.IconButton btnMin;
         private System.Windows.Forms.Panel panelMenu;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }
 

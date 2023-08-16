@@ -124,8 +124,7 @@ namespace VentanaPrincipal
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            
-            Reset();
+            btnDashboard.PerformClick();
         }
 
         //RESETEAR EL ESTILO DE LOS BOTONES

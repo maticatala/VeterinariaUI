@@ -16,5 +16,8 @@ namespace CapaDatos.Contracts
         int Update(Cliente cliente, string nroDoc, string tipoDoc);
         //Otros metodos
         //Si nuestras entidades solo necesitan los 4 métodos basicos entonces se puede implementar directamente el repositorio genérico.
+
+        int getCount();
     }
+
 }

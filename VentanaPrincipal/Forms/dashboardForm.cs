@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace VentanaPrincipal.Forms
 
         private void dashboardForm_Load(object sender, EventArgs e)
         {
-
+            CN_Cliente cliente = new CN_Cliente();
+            lblDueños.Text = cliente.getCount().ToString();
         }
 
         private void horaFecha_Tick(object sender, EventArgs e)
@@ -29,6 +31,36 @@ namespace VentanaPrincipal.Forms
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

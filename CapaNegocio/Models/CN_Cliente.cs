@@ -64,5 +64,10 @@ namespace CapaNegocio.Models
                 e.Calle.ToLower().Contains(filter.ToLower()) ||
                 e.Altura.ToString().Contains(filter)); //Consulta lambda
         }
+
+        public int getCount()
+        {
+            return clienteRepository.getCount();
+        }
     }
 }

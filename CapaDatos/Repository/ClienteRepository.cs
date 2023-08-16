@@ -10,6 +10,7 @@ using CapaDatos.Contracts;
 using CapaEntidades.Entities;
 using CapaDatos.Exceptions;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CapaDatos.Repository
 {
@@ -124,6 +125,15 @@ namespace CapaDatos.Repository
                     //Si el problema se debe a otro motivo, lanzamos la excepcion generica
                     throw ex;
             }
+        }
+
+        public int getCount()
+        {
+            string query = "SELECT COUNT(*) AS TotalRows FROM clientes";
+            var tableResult = ExecuteReader(query);
+            DataRow dr = tableResult.Rows[0];
+            int resultado = (int)dr[0];
+            return resultado;
         }
     }
 }
