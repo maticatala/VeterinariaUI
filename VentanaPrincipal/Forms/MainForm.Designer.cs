@@ -34,7 +34,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnInicio = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
-            this.btnMascotas = new FontAwesome.Sharp.IconButton();
             this.btnDueños = new FontAwesome.Sharp.IconButton();
             this.btnHistoriaClinica = new FontAwesome.Sharp.IconButton();
             this.btnServicios = new FontAwesome.Sharp.IconButton();
@@ -133,30 +132,6 @@
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // btnMascotas
-            // 
-            this.btnMascotas.BackColor = System.Drawing.Color.Transparent;
-            this.btnMascotas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMascotas.FlatAppearance.BorderSize = 0;
-            this.btnMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMascotas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnMascotas.IconChar = FontAwesome.Sharp.IconChar.Paw;
-            this.btnMascotas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnMascotas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMascotas.IconSize = 32;
-            this.btnMascotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMascotas.Location = new System.Drawing.Point(0, 146);
-            this.btnMascotas.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMascotas.Name = "btnMascotas";
-            this.btnMascotas.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnMascotas.Size = new System.Drawing.Size(220, 60);
-            this.btnMascotas.TabIndex = 3;
-            this.btnMascotas.Text = "Mascotas";
-            this.btnMascotas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMascotas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMascotas.UseVisualStyleBackColor = false;
-            this.btnMascotas.Click += new System.EventHandler(this.btnMascotas_Click);
-            // 
             // btnDueños
             // 
             this.btnDueños.BackColor = System.Drawing.Color.Transparent;
@@ -169,13 +144,13 @@
             this.btnDueños.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDueños.IconSize = 32;
             this.btnDueños.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDueños.Location = new System.Drawing.Point(0, 206);
+            this.btnDueños.Location = new System.Drawing.Point(0, 146);
             this.btnDueños.Margin = new System.Windows.Forms.Padding(0);
             this.btnDueños.Name = "btnDueños";
             this.btnDueños.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnDueños.Size = new System.Drawing.Size(220, 60);
             this.btnDueños.TabIndex = 4;
-            this.btnDueños.Text = "Dueños";
+            this.btnDueños.Text = "Dueños / Mascotas";
             this.btnDueños.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDueños.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDueños.UseVisualStyleBackColor = false;
@@ -193,7 +168,7 @@
             this.btnHistoriaClinica.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHistoriaClinica.IconSize = 32;
             this.btnHistoriaClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistoriaClinica.Location = new System.Drawing.Point(0, 266);
+            this.btnHistoriaClinica.Location = new System.Drawing.Point(0, 206);
             this.btnHistoriaClinica.Margin = new System.Windows.Forms.Padding(0);
             this.btnHistoriaClinica.Name = "btnHistoriaClinica";
             this.btnHistoriaClinica.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
@@ -217,7 +192,7 @@
             this.btnServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnServicios.IconSize = 32;
             this.btnServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServicios.Location = new System.Drawing.Point(0, 326);
+            this.btnServicios.Location = new System.Drawing.Point(0, 266);
             this.btnServicios.Margin = new System.Windows.Forms.Padding(0);
             this.btnServicios.Name = "btnServicios";
             this.btnServicios.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
@@ -237,7 +212,6 @@
             this.panelMenu.Controls.Add(this.btnServicios);
             this.panelMenu.Controls.Add(this.btnHistoriaClinica);
             this.panelMenu.Controls.Add(this.btnDueños);
-            this.panelMenu.Controls.Add(this.btnMascotas);
             this.panelMenu.Controls.Add(this.btnDashboard);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -258,7 +232,7 @@
             this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrar.IconSize = 32;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(0, 386);
+            this.btnRegistrar.Location = new System.Drawing.Point(0, 326);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
@@ -481,7 +455,6 @@
 
         #endregion
         private FontAwesome.Sharp.IconButton btnDashboard;
-        private FontAwesome.Sharp.IconButton btnMascotas;
         private FontAwesome.Sharp.IconButton btnDueños;
         private FontAwesome.Sharp.IconButton btnHistoriaClinica;
         private FontAwesome.Sharp.IconButton btnServicios;

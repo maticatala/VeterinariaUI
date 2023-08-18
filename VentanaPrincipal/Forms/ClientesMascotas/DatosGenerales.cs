@@ -1,38 +1,42 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Windows.Markup;
-
-//Referencias
-using CapaEntidades.Entities;
+﻿using CapaEntidades.Entities;
 using CapaNegocio.Models;
+using MySqlX.XDevAPI;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace VentanaPrincipal
+namespace VentanaPrincipal.Forms.Clientes
 {
-    public partial class addOwner : Form
+    public partial class DatosGenerales : Form
     {
         Cliente clienteOriginal;
 
-        public addOwner()
+        public DatosGenerales()
         {
             InitializeComponent();
-            btnAdd.Text = "Registrar";
+            btnDelete.Enabled = false;
         }
-        
-        public addOwner(Cliente cliente)
+
+        public DatosGenerales(Cliente cliente)
         {
             InitializeComponent();
-            this.clienteOriginal = cliente;
             txtNumeroDocumento.Text = cliente.NumeroDocumento;
             cbTipoDocumento.Text = cliente.TipoDocumento;
             txtNombre.Text = cliente.Nombre;
             txtApellido.Text = cliente.Apellido;
             txtCalle.Text = cliente.Calle;
-            txtAltura.Text = cliente.Altura.ToString();
-            btnAdd.Text = "Actualizar";
+            txtAltura.Text = cliente.Altura;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            formAdd ventanaAddOwner = Owner as formAdd;
             CN_Cliente clienteNegocio = new CN_Cliente();
             Cliente clienteActual = new Cliente();
             clienteActual.NumeroDocumento = txtNumeroDocumento.Text;
@@ -51,13 +55,14 @@ namespace VentanaPrincipal
                     if (clienteOriginal == null)
                     {
                         result = clienteNegocio.Add(clienteActual);
-                    } else
+                        ventanaAddOwner.cargarCliente(clienteNegocio.findByDoc(clienteActual.NumeroDocumento));
+                    }
+                    else
                     {
-                        result = clienteNegocio.Update(clienteActual, clienteOriginal.NumeroDocumento, clienteOriginal.TipoDocumento);
+                        result = clienteNegocio.Update(clienteActual);
                     }
 
                     MessageBox.Show(result);
-                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -65,8 +70,8 @@ namespace VentanaPrincipal
                     MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
         }
+
         private void Limpiar()
         {
             txtNumeroDocumento.Text = string.Empty;
@@ -75,31 +80,6 @@ namespace VentanaPrincipal
             txtApellido.Text = string.Empty;
             txtCalle.Text = string.Empty;
             txtAltura.Text = string.Empty;
-        }
-
-        private void lblApellido_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNumeroDocumento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTipoDocumento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

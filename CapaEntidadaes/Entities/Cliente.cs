@@ -10,6 +10,7 @@ namespace CapaEntidades.Entities
 {
     public class Cliente
     {
+        private int idCliente;
         private string numeroDocumento;
         private string tipoDocumento;
         private string nombre;
@@ -41,5 +42,7 @@ namespace CapaEntidades.Entities
         [Required(ErrorMessage = "El campo Numero de altura es requerido")]
         [RegularExpression("^[1-9]\\d*$", ErrorMessage = "Debe ingresar un número positivo")]
         public string Altura { get => altura; set => altura = value; }
+
+        public int IdCliente { get => idCliente; set => idCliente = value; }
     }
 }

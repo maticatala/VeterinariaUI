@@ -28,15 +28,15 @@ namespace CapaNegocio.Models
             return "Registrado correctamente";
         }
         
-        public string Update(Cliente c, string oldNroDoc, string oldTipoDoc)
+        public string Update(Cliente c)
         {
-            clienteRepository.Update(c, oldNroDoc, oldTipoDoc);
+            clienteRepository.Update(c);
             return "Modificado correctamente";
         }
 
-        public string Delete(string nroDoc, string tipoDoc)
+        public string Delete(int idCliente)
         {
-            clienteRepository.Remove(nroDoc, tipoDoc);
+            clienteRepository.Remove(idCliente);
             return "Eliminado correctamente";
         }
 
@@ -47,6 +47,11 @@ namespace CapaNegocio.Models
             listClientes = new List<Cliente>();
             listClientes = clienteDataModel.ToList();
             return listClientes;
+        }
+
+        public Cliente findByDoc(string nroDoc)
+        {
+            return clienteRepository.findByDoc(nroDoc);
         }
 
         public IEnumerable<Cliente> FindById(string filter) 
@@ -63,6 +68,11 @@ namespace CapaNegocio.Models
                 e.Apellido.ToLower().Contains(filter.ToLower()) || 
                 e.Calle.ToLower().Contains(filter.ToLower()) ||
                 e.Altura.ToString().Contains(filter)); //Consulta lambda
+        }
+
+        public List<Mascota> getMacotas(int idCliente)
+        {
+            return clienteRepository.getMascotas(idCliente);
         }
     }
 }

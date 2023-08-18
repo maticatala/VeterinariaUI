@@ -1,6 +1,6 @@
 ﻿using CapaDatos.Contracts;
 using CapaDatos.Repository;
-using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using CapaNegocio.Models;
 using Sistema;
 using System;
