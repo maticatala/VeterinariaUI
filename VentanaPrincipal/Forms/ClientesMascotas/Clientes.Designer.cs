@@ -31,11 +31,14 @@ namespace VentanaPrincipal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
+            this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cgvOwners = new System.Windows.Forms.DataGridView();
             this.NumeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,57 +53,84 @@ namespace VentanaPrincipal
             this.lblDueño = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnAddOwner = new VentanaPrincipal.RJButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddOwner = new VentanaPrincipal.RJButton();
             this.nroHCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codRazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codEspecieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelMain.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cgvOwners)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ownerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelMain
-            // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelMain.Controls.Add(this.dgvMascotas);
-            this.panelMain.Controls.Add(this.cgvOwners);
-            this.panelMain.Location = new System.Drawing.Point(37, 158);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(980, 437);
-            this.panelMain.TabIndex = 0;
             // 
             // dgvMascotas
             // 
+            this.dgvMascotas.AllowUserToAddRows = false;
+            this.dgvMascotas.AllowUserToDeleteRows = false;
+            this.dgvMascotas.AllowUserToResizeColumns = false;
+            this.dgvMascotas.AllowUserToResizeRows = false;
             this.dgvMascotas.AutoGenerateColumns = false;
-            this.dgvMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMascotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMascotas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMascotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMascotas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvMascotas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMascotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMascotas.ColumnHeadersHeight = 45;
+            this.dgvMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMascotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nroHCDataGridViewTextBoxColumn,
-            this.fechaNacDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1,
-            this.sexoDataGridViewTextBoxColumn,
-            this.idClienteDataGridViewTextBoxColumn,
             this.codRazaDataGridViewTextBoxColumn,
             this.codEspecieDataGridViewTextBoxColumn});
             this.dgvMascotas.DataSource = this.mascotaBindingSource;
-            this.dgvMascotas.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvMascotas.Location = new System.Drawing.Point(588, 0);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMascotas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMascotas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMascotas.EnableHeadersVisualStyles = false;
+            this.dgvMascotas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.dgvMascotas.Location = new System.Drawing.Point(610, 3);
             this.dgvMascotas.Name = "dgvMascotas";
-            this.dgvMascotas.Size = new System.Drawing.Size(392, 437);
+            this.dgvMascotas.ReadOnly = true;
+            this.dgvMascotas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMascotas.RowHeadersVisible = false;
+            this.dgvMascotas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvMascotas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMascotas.RowTemplate.Height = 55;
+            this.dgvMascotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMascotas.Size = new System.Drawing.Size(400, 453);
             this.dgvMascotas.TabIndex = 2;
+            // 
+            // mascotaBindingSource
+            // 
+            this.mascotaBindingSource.DataSource = typeof(CapaEntidades.Entities.Mascota);
             // 
             // cgvOwners
             // 
@@ -131,7 +161,7 @@ namespace VentanaPrincipal
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.cgvOwners.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cgvOwners.Cursor = System.Windows.Forms.Cursors.Default;
             this.cgvOwners.DataSource = this.clienteBindingSource;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
@@ -142,10 +172,10 @@ namespace VentanaPrincipal
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.cgvOwners.DefaultCellStyle = dataGridViewCellStyle5;
-            this.cgvOwners.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cgvOwners.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cgvOwners.EnableHeadersVisualStyles = false;
             this.cgvOwners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.cgvOwners.Location = new System.Drawing.Point(0, 0);
+            this.cgvOwners.Location = new System.Drawing.Point(3, 3);
             this.cgvOwners.Name = "cgvOwners";
             this.cgvOwners.ReadOnly = true;
             this.cgvOwners.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -161,7 +191,7 @@ namespace VentanaPrincipal
             this.cgvOwners.RowTemplate.Height = 55;
             this.cgvOwners.RowTemplate.ReadOnly = true;
             this.cgvOwners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cgvOwners.Size = new System.Drawing.Size(563, 437);
+            this.cgvOwners.Size = new System.Drawing.Size(601, 453);
             this.cgvOwners.TabIndex = 0;
             this.cgvOwners.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvOwners_CellClick);
             this.cgvOwners.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvOwners_CellDoubleClick);
@@ -220,8 +250,6 @@ namespace VentanaPrincipal
             // 
             // panelSearch
             // 
-            this.panelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSearch.BackColor = System.Drawing.Color.Transparent;
             this.panelSearch.Controls.Add(this.txtMascota);
             this.panelSearch.Controls.Add(this.lblMascota);
@@ -229,10 +257,11 @@ namespace VentanaPrincipal
             this.panelSearch.Controls.Add(this.lblBusqueda);
             this.panelSearch.Controls.Add(this.txtBuscar);
             this.panelSearch.Controls.Add(this.btnAddOwner);
-            this.panelSearch.Location = new System.Drawing.Point(37, 24);
+            this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSearch.Location = new System.Drawing.Point(20, 20);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panelSearch.Size = new System.Drawing.Size(980, 128);
+            this.panelSearch.Size = new System.Drawing.Size(1013, 128);
             this.panelSearch.TabIndex = 1;
             // 
             // txtMascota
@@ -248,27 +277,32 @@ namespace VentanaPrincipal
             // lblMascota
             // 
             this.lblMascota.AutoSize = true;
-            this.lblMascota.Location = new System.Drawing.Point(362, 52);
+            this.lblMascota.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMascota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lblMascota.Location = new System.Drawing.Point(362, 48);
             this.lblMascota.Name = "lblMascota";
-            this.lblMascota.Size = new System.Drawing.Size(48, 13);
+            this.lblMascota.Size = new System.Drawing.Size(59, 17);
             this.lblMascota.TabIndex = 6;
             this.lblMascota.Text = "Mascota";
             // 
             // lblDueño
             // 
             this.lblDueño.AutoSize = true;
-            this.lblDueño.Location = new System.Drawing.Point(33, 52);
+            this.lblDueño.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDueño.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lblDueño.Location = new System.Drawing.Point(16, 48);
             this.lblDueño.Name = "lblDueño";
-            this.lblDueño.Size = new System.Drawing.Size(39, 13);
+            this.lblDueño.Size = new System.Drawing.Size(48, 17);
             this.lblDueño.TabIndex = 5;
             this.lblDueño.Text = "Dueño";
             // 
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(33, 15);
+            this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.Location = new System.Drawing.Point(15, 9);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(55, 13);
+            this.lblBusqueda.Size = new System.Drawing.Size(82, 21);
             this.lblBusqueda.TabIndex = 4;
             this.lblBusqueda.Text = "Busqueda";
             // 
@@ -277,33 +311,11 @@ namespace VentanaPrincipal
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtBuscar.Location = new System.Drawing.Point(36, 68);
+            this.txtBuscar.Location = new System.Drawing.Point(19, 68);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(244, 18);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // btnAddOwner
-            // 
-            this.btnAddOwner.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddOwner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddOwner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddOwner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddOwner.BorderRadius = 5;
-            this.btnAddOwner.BorderSize = 0;
-            this.btnAddOwner.FlatAppearance.BorderSize = 0;
-            this.btnAddOwner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddOwner.ForeColor = System.Drawing.Color.White;
-            this.btnAddOwner.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddOwner.Location = new System.Drawing.Point(804, 52);
-            this.btnAddOwner.Name = "btnAddOwner";
-            this.btnAddOwner.Size = new System.Drawing.Size(150, 45);
-            this.btnAddOwner.TabIndex = 1;
-            this.btnAddOwner.Text = "Nuevo";
-            this.btnAddOwner.TextColor = System.Drawing.Color.White;
-            this.btnAddOwner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddOwner.UseVisualStyleBackColor = false;
-            this.btnAddOwner.Click += new System.EventHandler(this.btnAddOwner_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -322,79 +334,108 @@ namespace VentanaPrincipal
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             // 
-            // mascotaBindingSource
+            // btnAddOwner
             // 
-            this.mascotaBindingSource.DataSource = typeof(CapaEntidades.Entities.Mascota);
+            this.btnAddOwner.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddOwner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddOwner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddOwner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddOwner.BorderRadius = 5;
+            this.btnAddOwner.BorderSize = 0;
+            this.btnAddOwner.FlatAppearance.BorderSize = 0;
+            this.btnAddOwner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOwner.ForeColor = System.Drawing.Color.White;
+            this.btnAddOwner.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddOwner.Location = new System.Drawing.Point(837, 52);
+            this.btnAddOwner.Name = "btnAddOwner";
+            this.btnAddOwner.Size = new System.Drawing.Size(150, 45);
+            this.btnAddOwner.TabIndex = 1;
+            this.btnAddOwner.Text = "Nuevo";
+            this.btnAddOwner.TextColor = System.Drawing.Color.White;
+            this.btnAddOwner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddOwner.UseVisualStyleBackColor = false;
+            this.btnAddOwner.Click += new System.EventHandler(this.btnAddOwner_Click);
             // 
             // nroHCDataGridViewTextBoxColumn
             // 
             this.nroHCDataGridViewTextBoxColumn.DataPropertyName = "NroHC";
             this.nroHCDataGridViewTextBoxColumn.HeaderText = "NroHC";
             this.nroHCDataGridViewTextBoxColumn.Name = "nroHCDataGridViewTextBoxColumn";
-            // 
-            // fechaNacDataGridViewTextBoxColumn
-            // 
-            this.fechaNacDataGridViewTextBoxColumn.DataPropertyName = "FechaNac";
-            this.fechaNacDataGridViewTextBoxColumn.HeaderText = "FechaNac";
-            this.fechaNacDataGridViewTextBoxColumn.Name = "fechaNacDataGridViewTextBoxColumn";
+            this.nroHCDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
             this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // sexoDataGridViewTextBoxColumn
-            // 
-            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            // 
-            // idClienteDataGridViewTextBoxColumn
-            // 
-            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "IdCliente";
-            this.idClienteDataGridViewTextBoxColumn.HeaderText = "IdCliente";
-            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // codRazaDataGridViewTextBoxColumn
             // 
             this.codRazaDataGridViewTextBoxColumn.DataPropertyName = "CodRaza";
             this.codRazaDataGridViewTextBoxColumn.HeaderText = "CodRaza";
             this.codRazaDataGridViewTextBoxColumn.Name = "codRazaDataGridViewTextBoxColumn";
+            this.codRazaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // codEspecieDataGridViewTextBoxColumn
             // 
             this.codEspecieDataGridViewTextBoxColumn.DataPropertyName = "CodEspecie";
             this.codEspecieDataGridViewTextBoxColumn.HeaderText = "CodEspecie";
             this.codEspecieDataGridViewTextBoxColumn.Name = "codEspecieDataGridViewTextBoxColumn";
+            this.codEspecieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.panelSearch);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(20);
+            this.panel1.Size = new System.Drawing.Size(1053, 627);
+            this.panel1.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvMascotas, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cgvOwners, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 148);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 459);
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // dueñosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lime;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1053, 627);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dueñosForm";
             this.Text = "Dueños";
             this.Load += new System.EventHandler(this.dueñosForm_Load);
-            this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cgvOwners)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.panelSearch.ResumeLayout(false);
             this.panelSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ownerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.DataGridView cgvOwners;
         private System.Windows.Forms.Panel panelSearch;
         private RJButton btnAddOwner;
@@ -420,13 +461,12 @@ namespace VentanaPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.BindingSource mascotaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroHCDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codRazaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codEspecieDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource mascotaBindingSource;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

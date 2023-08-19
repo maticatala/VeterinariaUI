@@ -87,6 +87,7 @@ namespace VentanaPrincipal
             this.panelDisplay.Name = "panelDisplay";
             this.panelDisplay.Size = new System.Drawing.Size(1083, 585);
             this.panelDisplay.TabIndex = 12;
+            this.panelDisplay.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDisplay_Paint);
             // 
             // clienteBindingSource
             // 
@@ -100,7 +101,9 @@ namespace VentanaPrincipal
             this.ClientSize = new System.Drawing.Size(1083, 585);
             this.Controls.Add(this.panelSelection);
             this.Controls.Add(this.panelDisplay);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "formAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";

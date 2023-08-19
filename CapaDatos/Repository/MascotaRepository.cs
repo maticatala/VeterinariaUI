@@ -12,6 +12,7 @@ using CapaDatos.Exceptions;
 using System.Data.SqlClient;
 using MySqlX.XDevAPI;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CapaDatos.Repository
 {
@@ -28,7 +29,7 @@ namespace CapaDatos.Repository
         {
             selectAll = "SELECT * FROM mascotas";
             insert = "INSERT INTO mascotas VALUES (@fechaNac,@nombre,@sexo,@idCliente,@codRaza,@codEspecie)";
-            update = "UPDATE mascotas SET nroHC=@nroHC,fechaNac=@fechaNac,nombre=@nombre,sexo=@sexo,idCLiente=@idCliente,codRaza=@codRaza,codEspecie=@codEspecie WHERE nroHC=@nroHC";
+            update = "UPDATE mascotas SET fechaNac=@fechaNac,nombre=@nombre,sexo=@sexo,idCLiente=@idCliente,codRaza=@codRaza,codEspecie=@codEspecie WHERE nroHC=@nroHC";
             delete = "DELETE FROM mascotas WHERE nroHC=@nroHC";
         }
 

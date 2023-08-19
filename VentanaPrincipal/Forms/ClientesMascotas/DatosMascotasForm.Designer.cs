@@ -44,8 +44,8 @@
             this.txtNombre = new VentanaPrincipal.UserControls.customTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbxMascota = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,7 +56,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(327, 73);
+            this.label1.Location = new System.Drawing.Point(331, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 32);
             this.label1.TabIndex = 27;
@@ -78,9 +78,6 @@
             // 
             // cbxSexo
             // 
-            this.cbxSexo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxSexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.cbxSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -89,7 +86,7 @@
             this.cbxSexo.Items.AddRange(new object[] {
             "H",
             "M"});
-            this.cbxSexo.Location = new System.Drawing.Point(422, 305);
+            this.cbxSexo.Location = new System.Drawing.Point(422, 286);
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(196, 28);
             this.cbxSexo.TabIndex = 30;
@@ -126,7 +123,7 @@
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(696, 225);
+            this.dtpFecha.Location = new System.Drawing.Point(698, 209);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 29);
             this.dtpFecha.TabIndex = 33;
@@ -139,7 +136,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(669, 366);
+            this.label4.Location = new System.Drawing.Point(670, 342);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 21);
             this.label4.TabIndex = 35;
@@ -147,9 +144,6 @@
             // 
             // cbxRaza
             // 
-            this.cbxRaza.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.cbxRaza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -158,7 +152,7 @@
             this.cbxRaza.Items.AddRange(new object[] {
             "H",
             "M"});
-            this.cbxRaza.Location = new System.Drawing.Point(673, 399);
+            this.cbxRaza.Location = new System.Drawing.Point(674, 366);
             this.cbxRaza.Name = "cbxRaza";
             this.cbxRaza.Size = new System.Drawing.Size(152, 28);
             this.cbxRaza.TabIndex = 34;
@@ -171,7 +165,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(418, 366);
+            this.label5.Location = new System.Drawing.Point(419, 342);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 21);
             this.label5.TabIndex = 37;
@@ -179,15 +173,12 @@
             // 
             // cbxEspecie
             // 
-            this.cbxEspecie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxEspecie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.cbxEspecie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEspecie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxEspecie.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEspecie.FormattingEnabled = true;
-            this.cbxEspecie.Location = new System.Drawing.Point(422, 399);
+            this.cbxEspecie.Location = new System.Drawing.Point(423, 366);
             this.cbxEspecie.Name = "cbxEspecie";
             this.cbxEspecie.Size = new System.Drawing.Size(174, 28);
             this.cbxEspecie.TabIndex = 36;
@@ -195,6 +186,7 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -230,6 +222,7 @@
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -254,16 +247,13 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.txtNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
             this.txtNombre.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
             this.txtNombre.BorderSize = 2;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.txtNombre.Location = new System.Drawing.Point(422, 219);
+            this.txtNombre.Location = new System.Drawing.Point(422, 203);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Multiline = false;
             this.txtNombre.Name = "txtNombre";
@@ -293,22 +283,8 @@
             this.panel2.Size = new System.Drawing.Size(300, 504);
             this.panel2.TabIndex = 42;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::VentanaPrincipal.Properties.Resources._179836;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(61, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 161);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // cbxMascota
             // 
-            this.cbxMascota.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.cbxMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -319,6 +295,17 @@
             this.cbxMascota.Size = new System.Drawing.Size(166, 28);
             this.cbxMascota.TabIndex = 43;
             this.cbxMascota.SelectedIndexChanged += new System.EventHandler(this.cbxMascota_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::VentanaPrincipal.Properties.Resources._179836;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(61, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(166, 161);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // DatosMascotasForm
             // 

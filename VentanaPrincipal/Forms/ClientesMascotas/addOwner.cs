@@ -34,11 +34,15 @@ namespace VentanaPrincipal
         {
             InitializeComponent();
             this.cliente = cliente;
+            DatosGenerales dg = new DatosGenerales(cliente);
+            AddOwnedForm(dg);
+            loadform(dg);
         }
 
-        public void cargarCliente(Cliente cliente)
+        public void cargarCliente(string nroDoc)
         {
-            this.cliente = cliente;
+            CN_Cliente clienteNegocio = new CN_Cliente();
+            this.cliente = clienteNegocio.findByDoc(nroDoc);
             btnMascotas.Enabled = true;
         }
 
@@ -65,16 +69,13 @@ namespace VentanaPrincipal
         private void btnCliente_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            DatosGenerales dg;
             if (cliente == null)
-            {
-                DatosGenerales dg = new DatosGenerales();
-                AddOwnedForm(dg);
-                loadform(dg);
-            } else
-            {
-                loadform(new DatosGenerales(cliente));
-            }
-            
+                dg = new DatosGenerales();
+            else
+                dg = new DatosGenerales(cliente);
+            AddOwnedForm(dg);
+            loadform(dg);
         }
 
         private void btnMascotas_Click(object sender, EventArgs e)
@@ -102,6 +103,9 @@ namespace VentanaPrincipal
             
         }
 
-        
+        private void panelDisplay_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

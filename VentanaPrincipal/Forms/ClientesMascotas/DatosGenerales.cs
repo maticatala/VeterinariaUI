@@ -1,5 +1,6 @@
 ﻿using CapaEntidades.Entities;
 using CapaNegocio.Models;
+using CapaNegocio.ValueObjects;
 using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
@@ -15,60 +16,49 @@ namespace VentanaPrincipal.Forms.Clientes
 {
     public partial class DatosGenerales : Form
     {
-        Cliente clienteOriginal;
+        CN_Cliente clienteNegocio = new CN_Cliente();
+        Cliente cliente = new Cliente();
+        int idCliente = -1;
 
         public DatosGenerales()
         {
             InitializeComponent();
             btnDelete.Enabled = false;
+            clienteNegocio.State = EntityState.Added;
         }
 
         public DatosGenerales(Cliente cliente)
         {
             InitializeComponent();
+            this.cliente = cliente;
+            lblUserName.Text = cliente.Nombre+" "+cliente.Apellido;
             txtNumeroDocumento.Text = cliente.NumeroDocumento;
             cbTipoDocumento.Text = cliente.TipoDocumento;
             txtNombre.Text = cliente.Nombre;
             txtApellido.Text = cliente.Apellido;
             txtCalle.Text = cliente.Calle;
             txtAltura.Text = cliente.Altura;
+            clienteNegocio.State = EntityState.Modified;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             formAdd ventanaAddOwner = Owner as formAdd;
-            CN_Cliente clienteNegocio = new CN_Cliente();
-            Cliente clienteActual = new Cliente();
-            clienteActual.NumeroDocumento = txtNumeroDocumento.Text;
-            clienteActual.TipoDocumento = cbTipoDocumento.Text;
-            clienteActual.Nombre = txtNombre.Text;
-            clienteActual.Apellido = txtApellido.Text;
-            clienteActual.Calle = txtCalle.Text;
-            clienteActual.Altura = txtAltura.Text;
+            cliente.NumeroDocumento = txtNumeroDocumento.Text;
+            cliente.TipoDocumento = cbTipoDocumento.Text;
+            cliente.Nombre = txtNombre.Text;
+            cliente.Apellido = txtApellido.Text;
+            cliente.Calle = txtCalle.Text;
+            cliente.Altura = txtAltura.Text;
 
-            bool valid = new Helps.DataValidation(clienteActual).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
+            clienteNegocio.Cliente = cliente;
+
+            bool valid = new Helps.DataValidation(cliente).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
             if (valid)
             {
-                try
-                {
-                    string result;
-                    if (clienteOriginal == null)
-                    {
-                        result = clienteNegocio.Add(clienteActual);
-                        ventanaAddOwner.cargarCliente(clienteNegocio.findByDoc(clienteActual.NumeroDocumento));
-                    }
-                    else
-                    {
-                        result = clienteNegocio.Update(clienteActual);
-                    }
-
-                    MessageBox.Show(result);
-                }
-                catch (Exception ex)
-                {
-                    // Manejo de otras excepciones
-                    MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                string result = clienteNegocio.SaveChanges();
+                MessageBox.Show(result);
+                ventanaAddOwner.cargarCliente(cliente.NumeroDocumento);
             }
         }
 
@@ -80,6 +70,14 @@ namespace VentanaPrincipal.Forms.Clientes
             txtApellido.Text = string.Empty;
             txtCalle.Text = string.Empty;
             txtAltura.Text = string.Empty;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            clienteNegocio.State = EntityState.Deleted;
+            clienteNegocio.Cliente = cliente;
+            string result = clienteNegocio.SaveChanges();
+            MessageBox.Show(result);
         }
     }
 }

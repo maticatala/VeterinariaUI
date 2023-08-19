@@ -19,6 +19,7 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
     {
         CN_Mascota mascotaNegocio = new CN_Mascota();
         Cliente cliente = new Cliente();
+        Mascota mascota = new Mascota();
         List<Mascota> listaMascotas;
 
         public DatosMascotasForm(Cliente cliente)
@@ -27,9 +28,6 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
             this.cliente = cliente;
             cargarEspecies();
             verificarMascotas();
-            //Recuperar mascotas del cliente
-            //Si no tiene mascotas deshabilitar campos y no hacer nada hasta que se haga click en agregar mascota
-            //Si tiene mascotas Habilitar campos con sus datos y poner el estado en modificado
         }
 
         private void verificarMascotas()
@@ -41,6 +39,8 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
             {
                 cargarMascotas();
                 mascotaNegocio.State = EntityState.Modified;
+                btnDelete.Enabled = true;
+                cbxMascota.Enabled = true;
             }
             else
                 deshabilitarCampos();
@@ -53,7 +53,6 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
             cbxSexo.Enabled = true;
             cbxRaza.Enabled = false;
             cbxEspecie.Enabled = true;
-            btnDelete.Enabled = true;
         }
 
         private void deshabilitarCampos()
@@ -64,14 +63,17 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
             cbxRaza.Enabled = false;
             cbxEspecie.Enabled = false;
             cbxMascota.Enabled = false;
+            btnDelete.Enabled = false;
+
+            cbxMascota.DataSource = null;
+            cbxMascota.Items.Clear();
+            limpiarCampos();
         }
 
         private void cargarMascotas()
         {
-            //Llena el cbx de mascotas
-            cbxMascota.Enabled = false;
-            cbxMascota.DataSource = null;
-            cbxMascota.Items.Clear();
+            habilitarCampos();
+
             cbxMascota.ValueMember = "nroHC";
             cbxMascota.DisplayMember = "nombre";
             cbxMascota.DataSource = listaMascotas;
@@ -89,11 +91,9 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
 
             CN_Especie cN_Especie = new CN_Especie();
             cbxEspecie.DataSource = cN_Especie.getAll();
-
-            cbxEspecie.SelectedItem = null;
         }
 
-        private void cbxEspecie_SelectionChangeCommitted(object sender, EventArgs e)
+        private void findRazas()
         {
             cbxRaza.DataSource = null;
             cbxRaza.Items.Clear();
@@ -104,37 +104,37 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
 
             CN_Raza cN_Raza = new CN_Raza();
             cbxRaza.DataSource = cN_Raza.findByEspecie(codEspecie);
-
-            cbxRaza.SelectedItem = null;
-            cbxRaza.Enabled = true;
         }
+
+        private void limpiarCampos()
+        {
+            txtNombre.Text = string.Empty;
+            cbxSexo.SelectedItem = null;
+            cbxEspecie.SelectedItem = null;
+            cbxRaza.SelectedItem = null;
+        }
+
+        //EVENTOS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Mascota mascotaActual = new Mascota();
             dtpFecha.CustomFormat = "MM-dd-yyyy";
-            mascotaActual.FechaNac = dtpFecha.Value.Date;
-            mascotaActual.Nombre = txtNombre.Text;
-            mascotaActual.Sexo = Convert.ToChar(cbxSexo.Text);
-            mascotaActual.IdCliente = cliente.IdCliente;
-            mascotaActual.CodEspecie = Convert.ToInt32(cbxEspecie.SelectedValue.ToString());
-            mascotaActual.CodRaza = Convert.ToInt32(cbxRaza.SelectedValue.ToString());
+            mascota.FechaNac = dtpFecha.Value.Date;
+            mascota.Nombre = txtNombre.Text;
+            mascota.Sexo = Convert.ToChar(cbxSexo.Text);
+            mascota.IdCliente = cliente.IdCliente;
+            mascota.CodEspecie = Convert.ToInt32(cbxEspecie.SelectedValue.ToString());
+            mascota.CodRaza = Convert.ToInt32(cbxRaza.SelectedValue.ToString());
 
-            mascotaNegocio.Mascota = mascotaActual;
-           
-            bool valid = new Helps.DataValidation(mascotaActual).Validate();
+            mascotaNegocio.Mascota = mascota;
+
+            bool valid = new Helps.DataValidation(mascota).Validate();
             if (valid)
             {
-                string result = mascotaNegocio.SaveChanges(); ;
+                string result = mascotaNegocio.SaveChanges();
                 MessageBox.Show(result);
                 verificarMascotas();
             }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            mascotaNegocio.State = EntityState.Added;
-            habilitarCampos();
         }
 
         private void cbxMascota_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,8 +144,34 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
             dtpFecha.Value = masctotaActual.FechaNac;
             txtNombre.Text = masctotaActual.Nombre;
             cbxSexo.Text = Convert.ToString(masctotaActual.Sexo);
-            cbxEspecie.SelectedValue = Convert.ToString(masctotaActual.CodEspecie);
-            cbxEspecie.SelectedValue = Convert.ToString(masctotaActual.CodRaza);
+            cbxEspecie.SelectedItem = Convert.ToString(masctotaActual.CodEspecie);
+            findRazas();
+            cbxRaza.Enabled = true;
+            cbxRaza.SelectedItem = Convert.ToString(masctotaActual.CodRaza);
+
+            mascota = masctotaActual;
+        }
+
+        private void cbxEspecie_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            findRazas();
+            cbxRaza.Enabled = true;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            mascotaNegocio.State = EntityState.Added;
+            limpiarCampos();
+            habilitarCampos();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            mascotaNegocio.State = EntityState.Deleted;
+            mascotaNegocio.Mascota = mascota;
+            string result = mascotaNegocio.SaveChanges();
+            MessageBox.Show(result);
+            verificarMascotas();
         }
     }
 }

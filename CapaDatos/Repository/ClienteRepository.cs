@@ -93,20 +93,8 @@ namespace CapaDatos.Repository
             parameters.Add(new SqlParameter("@apellido", cliente.Apellido));
             parameters.Add(new SqlParameter("@calle", cliente.Calle));
             parameters.Add(new SqlParameter("@altura", cliente.Altura));
-
-            try
-            {
-                return ExecuteNonQuery(update);
-            }
-            catch (SqlException ex)
-            {
-                if (ex != null && ex.Number == 2627)
-                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
-                    throw new RegistroDuplicadoException("Registro duplicado");
-                else
-                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
-                    throw ex;
-            }
+            
+            return ExecuteNonQuery(update);
         }
 
         public int Remove(int idCliente)
@@ -138,17 +126,18 @@ namespace CapaDatos.Repository
             string sql = $"select * from mascotas where idCliente={idCliente}";
             var tableResult = ExecuteReader(sql);
             var listMascotas = new List<Mascota>();
+
             foreach (DataRow item in tableResult.Rows)
             {
                 listMascotas.Add(new Mascota
                 {
-                    NroHC = (int)item[0],
+                    NroHC = Convert.ToInt32(item[0]),
                     FechaNac = (DateTime)item[1],
                     Nombre = item[2].ToString(),
-                    Sexo = (char)item[3],
-                    IdCliente = (int)item[4],
-                    CodRaza = (int)item[5],
-                    CodEspecie = (int)item[6],
+                    Sexo = Convert.ToChar(item[3]),
+                    IdCliente = Convert.ToInt32(item[4]),
+                    CodRaza = Convert.ToInt32(item[5]),
+                    CodEspecie = Convert.ToInt32(item[6])
                 });
             }
             return listMascotas;

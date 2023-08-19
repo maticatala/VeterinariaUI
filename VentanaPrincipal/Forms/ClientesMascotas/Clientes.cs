@@ -20,6 +20,20 @@ namespace VentanaPrincipal
         private void dueñosForm_Load(object sender, EventArgs e)
         {
             cargarTabla();
+            if (cgvOwners.Rows.Count > 0)
+            {
+                cgvOwners.Rows[0].Selected = true;
+                DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
+                Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
+                List<Mascota> mascotasCliente = new List<Mascota>();
+                mascotasCliente = cN_Cliente.getMacotas(clienteSeleccionado.IdCliente);
+                dgvMascotas.DataSource = mascotasCliente;
+            }
+        }
+
+        private void CgvOwners_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void cargarTabla()
@@ -50,14 +64,28 @@ namespace VentanaPrincipal
         {
             DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
             Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
-            MessageBox.Show(clienteSeleccionado.IdCliente.ToString());
+
+            formAdd formAddOwner = new formAdd(clienteSeleccionado);
+            formAddOwner.ShowDialog();
+            cargarTabla();
         }
 
         private void cgvOwners_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
             Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
-            MessageBox.Show(cN_Cliente.getMacotas(clienteSeleccionado.IdCliente).Count.ToString());
+            List<Mascota> mascotasCliente = new List<Mascota>();
+            mascotasCliente = cN_Cliente.getMacotas(clienteSeleccionado.IdCliente);
+            dgvMascotas.DataSource = mascotasCliente;
+        }
+
+        private void cgvOwners_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
+            Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
+            List<Mascota> mascotasCliente = new List<Mascota>();
+            mascotasCliente = cN_Cliente.getMacotas(clienteSeleccionado.IdCliente);
+            dgvMascotas.DataSource = mascotasCliente;
         }
     }
 }

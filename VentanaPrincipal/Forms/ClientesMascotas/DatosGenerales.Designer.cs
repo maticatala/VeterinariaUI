@@ -70,7 +70,7 @@
             this.lblAltura.AutoSize = true;
             this.lblAltura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAltura.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblAltura.Location = new System.Drawing.Point(564, 413);
+            this.lblAltura.Location = new System.Drawing.Point(668, 408);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(52, 21);
             this.lblAltura.TabIndex = 21;
@@ -84,7 +84,7 @@
             this.lblCalle.AutoSize = true;
             this.lblCalle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblCalle.Location = new System.Drawing.Point(393, 413);
+            this.lblCalle.Location = new System.Drawing.Point(497, 408);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(44, 21);
             this.lblCalle.TabIndex = 18;
@@ -98,7 +98,7 @@
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblApellido.Location = new System.Drawing.Point(556, 140);
+            this.lblApellido.Location = new System.Drawing.Point(686, 135);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(67, 21);
             this.lblApellido.TabIndex = 17;
@@ -106,9 +106,6 @@
             // 
             // cbTipoDocumento
             // 
-            this.cbTipoDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTipoDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.cbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -117,9 +114,9 @@
             this.cbTipoDocumento.Items.AddRange(new object[] {
             "DNI",
             "PASAPORTE"});
-            this.cbTipoDocumento.Location = new System.Drawing.Point(560, 350);
+            this.cbTipoDocumento.Location = new System.Drawing.Point(664, 345);
             this.cbTipoDocumento.Name = "cbTipoDocumento";
-            this.cbTipoDocumento.Size = new System.Drawing.Size(394, 28);
+            this.cbTipoDocumento.Size = new System.Drawing.Size(185, 28);
             this.cbTipoDocumento.TabIndex = 19;
             // 
             // lblNombre
@@ -130,7 +127,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNombre.Location = new System.Drawing.Point(391, 140);
+            this.lblNombre.Location = new System.Drawing.Point(495, 135);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 21);
             this.lblNombre.TabIndex = 15;
@@ -144,7 +141,7 @@
             this.lblTipoDocumento.AutoSize = true;
             this.lblTipoDocumento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoDocumento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTipoDocumento.Location = new System.Drawing.Point(385, 352);
+            this.lblTipoDocumento.Location = new System.Drawing.Point(489, 347);
             this.lblTipoDocumento.Name = "lblTipoDocumento";
             this.lblTipoDocumento.Size = new System.Drawing.Size(144, 21);
             this.lblTipoDocumento.TabIndex = 13;
@@ -158,7 +155,7 @@
             this.lblNumeroDocumento.AutoSize = true;
             this.lblNumeroDocumento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroDocumento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(384, 237);
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(488, 232);
             this.lblNumeroDocumento.Name = "lblNumeroDocumento";
             this.lblNumeroDocumento.Size = new System.Drawing.Size(172, 21);
             this.lblNumeroDocumento.TabIndex = 11;
@@ -166,37 +163,31 @@
             // 
             // txtAltura
             // 
-            this.txtAltura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAltura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.txtAltura.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
             this.txtAltura.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
             this.txtAltura.BorderSize = 2;
             this.txtAltura.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAltura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.txtAltura.Location = new System.Drawing.Point(560, 435);
+            this.txtAltura.Location = new System.Drawing.Point(664, 430);
             this.txtAltura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAltura.Multiline = false;
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Padding = new System.Windows.Forms.Padding(7);
             this.txtAltura.PasswordChar = false;
-            this.txtAltura.Size = new System.Drawing.Size(388, 35);
+            this.txtAltura.Size = new System.Drawing.Size(185, 35);
             this.txtAltura.TabIndex = 22;
             this.txtAltura.UnderlinedStyle = true;
             // 
             // txtCalle
             // 
-            this.txtCalle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.txtCalle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
             this.txtCalle.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
             this.txtCalle.BorderSize = 2;
             this.txtCalle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.txtCalle.Location = new System.Drawing.Point(389, 435);
+            this.txtCalle.Location = new System.Drawing.Point(493, 430);
             this.txtCalle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCalle.Multiline = false;
             this.txtCalle.Name = "txtCalle";
@@ -208,64 +199,55 @@
             // 
             // txtNumeroDocumento
             // 
-            this.txtNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumeroDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.txtNumeroDocumento.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
             this.txtNumeroDocumento.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
             this.txtNumeroDocumento.BorderSize = 2;
             this.txtNumeroDocumento.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(388, 279);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(492, 274);
             this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNumeroDocumento.Multiline = false;
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.Padding = new System.Windows.Forms.Padding(7);
             this.txtNumeroDocumento.PasswordChar = false;
-            this.txtNumeroDocumento.Size = new System.Drawing.Size(555, 35);
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(357, 35);
             this.txtNumeroDocumento.TabIndex = 16;
             this.txtNumeroDocumento.UnderlinedStyle = true;
             // 
             // txtApellido
             // 
-            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.txtApellido.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
             this.txtApellido.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
             this.txtApellido.BorderSize = 2;
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.txtApellido.Location = new System.Drawing.Point(552, 162);
+            this.txtApellido.Location = new System.Drawing.Point(682, 157);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtApellido.Multiline = false;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Padding = new System.Windows.Forms.Padding(7);
             this.txtApellido.PasswordChar = false;
-            this.txtApellido.Size = new System.Drawing.Size(391, 35);
+            this.txtApellido.Size = new System.Drawing.Size(167, 35);
             this.txtApellido.TabIndex = 14;
             this.txtApellido.UnderlinedStyle = true;
             // 
             // txtNombre
             // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.txtNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
             this.txtNombre.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
             this.txtNombre.BorderSize = 2;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.txtNombre.Location = new System.Drawing.Point(388, 162);
+            this.txtNombre.Location = new System.Drawing.Point(492, 157);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Multiline = false;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Padding = new System.Windows.Forms.Padding(7);
             this.txtNombre.PasswordChar = false;
-            this.txtNombre.Size = new System.Drawing.Size(391, 35);
+            this.txtNombre.Size = new System.Drawing.Size(156, 35);
             this.txtNombre.TabIndex = 12;
             this.txtNombre.UnderlinedStyle = true;
             // 
@@ -309,6 +291,7 @@
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panel1
             // 
@@ -326,18 +309,19 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblUserName.Location = new System.Drawing.Point(74, 247);
+            this.lblUserName.Location = new System.Drawing.Point(78, 247);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(145, 32);
             this.lblUserName.TabIndex = 14;
             this.lblUserName.Text = "USERNAME";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::VentanaPrincipal.Properties.Resources._179836;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(166, 161);
             this.pictureBox1.TabIndex = 13;

@@ -46,8 +46,8 @@ namespace CapaNegocio.Models
                         mensaje = "Añadido correctamente";
                         break;
                     case EntityState.Modified:
-                        mascotaRepository.Add(mascota);
-                        mensaje = "Añadido correctamente";
+                        mascotaRepository.Update(mascota);
+                        mensaje = "Modificado correctamente";
                         break;
                     case EntityState.Deleted:
                         mascotaRepository.Remove(mascota.NroHC);
