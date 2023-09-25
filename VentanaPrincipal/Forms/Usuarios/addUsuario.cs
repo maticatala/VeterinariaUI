@@ -1,4 +1,4 @@
-﻿using CapaEntidadaes.Entities;
+﻿using CapaEntidades.Entities;
 using CapaNegocio.Models;
 using System;
 using System.Windows.Forms;

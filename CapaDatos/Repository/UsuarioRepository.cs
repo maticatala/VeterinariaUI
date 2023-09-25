@@ -1,7 +1,7 @@
 ﻿//using MySql.Data.MySqlClient;
 using CapaDatos.Contracts;
 using CapaDatos.Exceptions;
-using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using NPOI.SS.Formula.Functions;
 using Org.BouncyCastle.Bcpg;
 using System;
@@ -49,10 +49,8 @@ namespace CapaDatos.Repository
             catch (SqlException ex)
             {
                 if (ex != null && ex.Number == 1062)
-                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
                     throw new RegistroDuplicadoException("Registro duplicado");
                 else
-                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
                     throw ex;
             }
         }

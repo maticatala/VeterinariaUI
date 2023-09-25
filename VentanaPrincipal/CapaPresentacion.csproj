@@ -242,29 +242,35 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Clientes\addOwner.cs">
+    <Compile Include="Forms\ClientesMascotas\addOwner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Clientes\addOwner.Designer.cs">
+    <Compile Include="Forms\ClientesMascotas\addOwner.Designer.cs">
       <DependentUpon>addOwner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Clientes\Clientes.cs">
+    <Compile Include="Forms\ClientesMascotas\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Clientes\Clientes.Designer.cs">
+    <Compile Include="Forms\ClientesMascotas\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientesMascotas\DatosGenerales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientesMascotas\DatosGenerales.Designer.cs">
+      <DependentUpon>DatosGenerales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientesMascotas\DatosMascotasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientesMascotas\DatosMascotasForm.Designer.cs">
+      <DependentUpon>DatosMascotasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Mascotas\mascotasForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Mascotas\mascotasForm.Designer.cs">
-      <DependentUpon>mascotasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Usuarios\addUsuario.cs">
       <SubType>Form</SubType>
@@ -291,17 +297,20 @@
     <Compile Include="UserControls\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Forms\Clientes\addOwner.resx">
+    <EmbeddedResource Include="Forms\ClientesMascotas\addOwner.resx">
       <DependentUpon>addOwner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Clientes\Clientes.resx">
+    <EmbeddedResource Include="Forms\ClientesMascotas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientesMascotas\DatosGenerales.resx">
+      <DependentUpon>DatosGenerales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientesMascotas\DatosMascotasForm.resx">
+      <DependentUpon>DatosMascotasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Mascotas\mascotasForm.resx">
-      <DependentUpon>mascotasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\addUsuario.resx">
       <DependentUpon>addUsuario.cs</DependentUpon>
@@ -327,6 +336,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaEntidades.Cliente.datasource" />
+    <None Include="Properties\DataSources\CapaEntidades.Entities.Mascota.datasource" />
     <None Include="Properties\DataSources\Owner.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
