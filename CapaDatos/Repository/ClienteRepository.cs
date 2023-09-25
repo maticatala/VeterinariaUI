@@ -6,10 +6,11 @@ using System.Data;
 //using MySql.Data.MySqlClient;
 //using MySql.Data;
 //using MySqlX.XDevAPI;
-using CapaDatos.Contracts;
+//using CapaDatos.Contracts;
 using CapaEntidades.Entities;
 using CapaDatos.Exceptions;
 using System.Data.SqlClient;
+using CapaDatos.Contracts;
 
 namespace CapaDatos.Repository
 {
@@ -27,14 +28,14 @@ namespace CapaDatos.Repository
         {
             selectAll = "SELECT * FROM clientes";
             insert = "INSERT INTO clientes VALUES (@nroDoc,@tipoDoc,@nombre,@apellido,@calle,@altura)";
-            update = "UPDATE clientes SET nroDoc=@nroDoc,tipoDoc=@tipoDoc,nombre=@nombre,apellido=@apellido,calle=@calle,altura=@altura WHERE nroDoc=@oldNroDoc and tipoDoc=@oldTipoDoc";
-            delete = "DELETE FROM clientes WHERE nroDoc=@nroDoc and tipoDoc=@tipoDoc";
+            update = "UPDATE clientes SET nroDoc=@nroDoc,tipoDoc=@tipoDoc,nombre=@nombre,apellido=@apellido,calle=@calle,altura=@altura WHERE idCliente=@idCliente";
+            delete = "DELETE FROM clientes WHERE idCliente=@idCliente";
         }
         public int Add(Cliente cliente) //Llega como parametro una instancia de cliente desde la capa de negocios. Retorna un entero, que especifica cuantos registros se añadieron 
         {
-            parameters = new List<SqlParameter>();//Creamos una lista de parametros
-            
+            parameters = new List<SqlParameter>();
             //Agregamos a la lista de parametros cada uno de ellos utilizando las property de la clase Cliente
+
             parameters.Add(new SqlParameter("@nroDoc", cliente.NumeroDocumento));
             parameters.Add(new SqlParameter("@tipoDoc", cliente.TipoDocumento));
             parameters.Add(new SqlParameter("@nombre", cliente.Nombre));
@@ -49,7 +50,7 @@ namespace CapaDatos.Repository
                 return ExecuteNonQuery(insert);
             } catch (SqlException ex)
             {
-                if (ex != null && ex.Number == 1062)
+                if (ex != null && ex.Number == 2627)
                     //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
                     throw new RegistroDuplicadoException("Registro duplicado");
                 else
@@ -69,61 +70,77 @@ namespace CapaDatos.Repository
             {
                 listClientes.Add(new Cliente
                 {
-                    NumeroDocumento = item[0].ToString(),
-                    TipoDocumento = item[1].ToString(),
-                    Nombre = item[2].ToString(),
-                    Apellido = item[3].ToString(),
-                    Calle = item[4].ToString(),
-                    Altura = item[5].ToString()
+                    IdCliente = (int)item[0],
+                    NumeroDocumento = item[1].ToString(),
+                    TipoDocumento = item[2].ToString(),
+                    Nombre = item[3].ToString(),
+                    Apellido = item[4].ToString(),
+                    Calle = item[5].ToString(),
+                    Altura = item[6].ToString()
                 });
             }
             return listClientes;
         }
 
-        public int Remove(String nroDoc, String tipoDoc)
-        {
-            parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@nroDoc", nroDoc));
-            parameters.Add(new SqlParameter("@tipoDoc", tipoDoc));
-            return ExecuteNonQuery(delete);
-
-        }
-
         public int Update(Cliente cliente)
         {
-            throw new NotImplementedException();
-        }
-
-        public int Remove(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Update(Cliente cliente, string nroDoc, string tipoDoc)
-        {
             parameters = new List<SqlParameter>();
+
+            parameters.Add(new SqlParameter("@idCliente", cliente.IdCliente));
             parameters.Add(new SqlParameter("@nroDoc", cliente.NumeroDocumento));
             parameters.Add(new SqlParameter("@tipoDoc", cliente.TipoDocumento));
             parameters.Add(new SqlParameter("@nombre", cliente.Nombre));
             parameters.Add(new SqlParameter("@apellido", cliente.Apellido));
             parameters.Add(new SqlParameter("@calle", cliente.Calle));
             parameters.Add(new SqlParameter("@altura", cliente.Altura));
-            parameters.Add(new SqlParameter("@oldNroDoc", nroDoc));
-            parameters.Add(new SqlParameter("@oldTipoDOc", tipoDoc));
             
-            try
+            return ExecuteNonQuery(update);
+        }
+
+        public int Remove(int idCliente)
+        {
+            parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@idCliente", idCliente));
+            return ExecuteNonQuery(delete);
+        }
+
+        public Cliente findByDoc(string nroDoc)
+        {
+            string sql = $"SELECT * FROM clientes WHERE nroDoc='{nroDoc}'";
+            DataRow item = ExecuteReader(sql).Rows[0];
+            Cliente cliente = new Cliente() 
             {
-                return ExecuteNonQuery(update);
-            }
-            catch (SqlException ex)
+                IdCliente = (int)item[0],
+                NumeroDocumento = item[1].ToString(),
+                TipoDocumento = item[2].ToString(),
+                Nombre = item[3].ToString(),
+                Apellido = item[4].ToString(),
+                Calle = item[5].ToString(),
+                Altura = item[6].ToString()
+            };
+            return cliente;
+        }
+
+        public List<Mascota> getMascotas(int idCliente)
+        {
+            string sql = $"select * from mascotas where idCliente={idCliente}";
+            var tableResult = ExecuteReader(sql);
+            var listMascotas = new List<Mascota>();
+
+            foreach (DataRow item in tableResult.Rows)
             {
-                if (ex != null && ex.Number == 1062)
-                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
-                    throw new RegistroDuplicadoException("Registro duplicado");
-                else
-                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
-                    throw ex;
+                listMascotas.Add(new Mascota
+                {
+                    NroHC = Convert.ToInt32(item[0]),
+                    FechaNac = (DateTime)item[1],
+                    Nombre = item[2].ToString(),
+                    Sexo = Convert.ToChar(item[3]),
+                    IdCliente = Convert.ToInt32(item[4]),
+                    CodRaza = Convert.ToInt32(item[5]),
+                    CodEspecie = Convert.ToInt32(item[6])
+                });
             }
+            return listMascotas;
         }
     }
 }

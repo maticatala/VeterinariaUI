@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
-using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using FontAwesome.Sharp;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
@@ -110,13 +110,6 @@ namespace VentanaPrincipal
         {
             ActivateButton(sender, RGBColors.color_dark);
             loadform(new dueñosForm());
-        }
-
-        private void btnMascotas_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color_dark);
-            
-            loadform(mascotasForm.singletonMascotas());
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
