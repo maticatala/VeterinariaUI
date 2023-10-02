@@ -189,6 +189,11 @@ namespace VentanaPrincipal
             my = e.Y;
         }
 
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void panelControls_MouseMove(object sender, MouseEventArgs e)
         {
             if (m == 1)

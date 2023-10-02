@@ -198,7 +198,7 @@
             this.btnServicios.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnServicios.Size = new System.Drawing.Size(220, 60);
             this.btnServicios.TabIndex = 6;
-            this.btnServicios.Text = "Servicios";
+            this.btnServicios.Text = "Practicas";
             this.btnServicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnServicios.UseVisualStyleBackColor = false;
@@ -227,7 +227,7 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             this.btnRegistrar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrar.IconSize = 32;
@@ -242,6 +242,7 @@
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnLogOut
             // 
