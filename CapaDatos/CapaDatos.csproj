@@ -144,6 +144,7 @@
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Contracts\IClienteRepository.cs" />
     <Compile Include="Contracts\IMascotaRepository.cs" />
+    <Compile Include="Contracts\IPracticaRepository.cs" />
     <Compile Include="Contracts\IRazaRepository.cs" />
     <Compile Include="Contracts\IUsuarioRepository.cs" />
     <Compile Include="Exceptions\RegistroDuplicadoException.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Repository\EspecieRepository.cs" />
     <Compile Include="Repository\MascotaRepository.cs" />
     <Compile Include="Repository\MasterRepository.cs" />
+    <Compile Include="Repository\PracticaRepository.cs" />
     <Compile Include="Repository\RazaRepository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

@@ -250,6 +250,7 @@
             this.txtNombre.Size = new System.Drawing.Size(156, 35);
             this.txtNombre.TabIndex = 12;
             this.txtNombre.UnderlinedStyle = true;
+            this.txtNombre.Load += new System.EventHandler(this.txtNombre_Load);
             // 
             // btnAdd
             // 

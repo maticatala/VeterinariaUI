@@ -79,5 +79,10 @@ namespace VentanaPrincipal.Forms.Clientes
             string result = clienteNegocio.SaveChanges();
             MessageBox.Show(result);
         }
+
+        private void txtNombre_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidades.Entities;
 using FontAwesome.Sharp;
+using VentanaPrincipal.Forms.Practicas;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
 //using Color = System.Drawing.Color;
@@ -99,6 +100,7 @@ namespace VentanaPrincipal
         private void btnServicios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
+            loadform(new practicasForm());
         }
 
         private void btnHistoriaClinica_Click(object sender, EventArgs e)

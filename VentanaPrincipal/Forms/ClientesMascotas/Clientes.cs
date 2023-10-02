@@ -48,6 +48,7 @@ namespace VentanaPrincipal
             }
         }
 
+      
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             cgvOwners.DataSource = cN_Cliente.FindByFilter(txtBuscar.Text);
@@ -86,6 +87,21 @@ namespace VentanaPrincipal
             List<Mascota> mascotasCliente = new List<Mascota>();
             mascotasCliente = cN_Cliente.getMacotas(clienteSeleccionado.IdCliente);
             dgvMascotas.DataSource = mascotasCliente;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cgvOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvMascotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
