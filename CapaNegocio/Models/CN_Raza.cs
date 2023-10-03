@@ -22,5 +22,25 @@ namespace CapaNegocio.Models
         {
             return razaRepository.findByEspecie(codEspecie);
         }
+
+        public List<Raza> findByNombreAndEspecie(string nombre, int codEspecie)
+        {
+            return razaRepository.findByNombreAndEspecie(nombre, codEspecie);
+        }
+
+        public string add(Raza raza)
+        {
+            string message;
+            try
+            {
+                razaRepository.Add(raza);
+                message = "Añadido exitosamente";
+            }
+            catch (Exception ex)
+            {
+                message = ex.ToString();
+            }
+            return message;
+        }
     }
 }

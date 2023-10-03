@@ -9,5 +9,6 @@ namespace CapaDatos.Contracts
 {
     public interface IEspecieRepository : IGenericRepository<Especie, int>
     {
+        IEnumerable<Especie> FindByNombre(string nombre);
     }
 }

@@ -90,5 +90,22 @@ namespace CapaDatos.Repository
                 throw ex;
             }
         }
+
+        public IEnumerable<Especie> FindByNombre(string nombre)
+        {
+            string sql = $"SELECT * FROM especies WHERE nombreEspecie like '%{nombre}%'";
+
+            var tableResult = ExecuteReader(sql);
+            var listEspecies = new List<Especie>();
+            foreach (DataRow item in tableResult.Rows)
+            {
+                listEspecies.Add(new Especie
+                {
+                    CodEspecie = (int)item[0],
+                    NombreEspecie = item[1].ToString()
+                });
+            }
+            return listEspecies;
+        } 
     }
 }

@@ -189,6 +189,12 @@ namespace VentanaPrincipal
             my = e.Y;
         }
 
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color_dark);
+            loadform(new Forms.RazasEspecies.razasEspeciesForm());
+        }
+
         private void panelControls_MouseMove(object sender, MouseEventArgs e)
         {
             if (m == 1)
