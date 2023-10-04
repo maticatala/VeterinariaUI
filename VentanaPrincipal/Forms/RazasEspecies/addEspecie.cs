@@ -31,6 +31,23 @@ namespace VentanaPrincipal.Forms.RazasEspecies
             raza.CodEspecie = codEspecie;
         }
 
+        public formAdd(Especie oldEspecie)
+        {
+            InitializeComponent();
+            especie.CodEspecie = oldEspecie.CodEspecie;
+            especie.NombreEspecie = oldEspecie.NombreEspecie;
+            txtNombreEspecie.Text = especie.NombreEspecie;
+            raza.CodEspecie = -1;
+        }
+
+        public formAdd(Raza oldRaza)
+        {
+            InitializeComponent();
+            raza.CodRaza = oldRaza.CodRaza;
+            raza.NombreRaza = oldRaza.NombreRaza;
+            raza.CodEspecie = oldRaza.CodEspecie;
+            txtNombreEspecie.Text = raza.NombreRaza;
+        }
 
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -44,12 +61,27 @@ namespace VentanaPrincipal.Forms.RazasEspecies
             if(raza.CodEspecie == -1) 
             {
                 especie.NombreEspecie = txtNombreEspecie.Text;
-                result = cN_Especie.add(especie);
+                if (especie.CodEspecie == 0)
+                {
+                    result = cN_Especie.Add(especie);
+                }
+                else
+                {
+                    result = cN_Especie.Update(especie);
+                }
             }
             else
             {
                 raza.NombreRaza = txtNombreEspecie.Text;
-                result = cN_Raza.add(raza);
+                if (raza.CodRaza == 0)
+                {
+                    result = cN_Raza.Add(raza);
+                }
+                else
+                {
+                    result = cN_Raza.Update(raza);
+                }
+                
             }
             
             MessageBox.Show(result);

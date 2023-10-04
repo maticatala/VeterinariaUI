@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace CapaNegocio.Models
 {
@@ -23,7 +24,7 @@ namespace CapaNegocio.Models
             razaRepository = new RazaRepository();
         }
 
-        public string add(Especie especie)
+        public string Add(Especie especie)
         {
             string message;
             try
@@ -61,6 +62,36 @@ namespace CapaNegocio.Models
             listRazas = razaDataModel.ToList();
             return listRazas;
 
+        }
+
+        public string Delete(int codEspecie)
+        {
+            string message;
+            try
+            {
+                especieRepository.Remove(codEspecie);
+                message = "Eliminado exitosamente";
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
+            return message;
+        }
+
+        public string Update(Especie newEspecie)
+        {
+            string message;
+            try
+            {
+               especieRepository.Update(newEspecie);
+                message = "Modificado exitosamente";
+            }
+            catch (Exception ex)
+            {
+                message = ex.ToString();
+            }
+            return message;
         }
     }
 }

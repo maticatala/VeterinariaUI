@@ -104,7 +104,7 @@ namespace CapaDatos.Repository
         public int Remove(int codRaza)
         {
             parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@codEspecie", codRaza));
+            parameters.Add(new SqlParameter("@codRaza", codRaza));
 
             try
             {
@@ -121,7 +121,7 @@ namespace CapaDatos.Repository
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@codRaza", raza.CodRaza));
             parameters.Add(new SqlParameter("@codEspecie", raza.CodEspecie));
-            parameters.Add(new SqlParameter("@nombreEspecie", raza.NombreRaza));
+            parameters.Add(new SqlParameter("@nombreRaza", raza.NombreRaza));
 
             try
             {

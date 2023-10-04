@@ -28,7 +28,7 @@ namespace CapaNegocio.Models
             return razaRepository.findByNombreAndEspecie(nombre, codEspecie);
         }
 
-        public string add(Raza raza)
+        public string Add(Raza raza)
         {
             string message;
             try
@@ -39,6 +39,36 @@ namespace CapaNegocio.Models
             catch (Exception ex)
             {
                 message = ex.ToString();
+            }
+            return message;
+        }
+
+        public string Delete(int codRaza)
+        {
+            string message;
+            try
+            {
+                razaRepository.Remove(codRaza);
+                message = "Eliminada exitosamente";
+            }
+            catch(Exception ex)
+            {
+                message=ex.ToString();
+            }
+            return message;
+        }
+
+        public string Update(Raza raza)
+        {
+            string message;
+            try
+            {
+                razaRepository.Update(raza);
+                message = "Modificado exitosamente";
+            }
+            catch(Exception ex)
+            {
+                message = (ex.ToString());
             }
             return message;
         }

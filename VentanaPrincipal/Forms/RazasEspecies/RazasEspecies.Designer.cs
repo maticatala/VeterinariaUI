@@ -41,21 +41,22 @@
             this.codRazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreRazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrarRaza = new System.Windows.Forms.DataGridViewImageColumn();
             this.razaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvEspecies = new System.Windows.Forms.DataGridView();
+            this.codEspecieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEspecieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrarEspecie = new System.Windows.Forms.DataGridViewImageColumn();
             this.especieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelSearch = new System.Windows.Forms.Panel();
-            this.btnAddRaza = new VentanaPrincipal.RJButton();
             this.txtBuscarRaza = new System.Windows.Forms.TextBox();
             this.lblRaza = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBuscarEspecie = new System.Windows.Forms.TextBox();
-            this.btnAddEspecie = new VentanaPrincipal.RJButton();
             this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.codEspecieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEspecieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAddRaza = new VentanaPrincipal.RJButton();
+            this.btnAddEspecie = new VentanaPrincipal.RJButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRazas)).BeginInit();
@@ -119,7 +120,8 @@
             this.dgvRazas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codRazaDataGridViewTextBoxColumn,
             this.nombreRazaDataGridViewTextBoxColumn,
-            this.CodEspecie});
+            this.CodEspecie,
+            this.borrarRaza});
             this.dgvRazas.DataSource = this.razaBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -153,10 +155,14 @@
             this.dgvRazas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRazas.Size = new System.Drawing.Size(802, 556);
             this.dgvRazas.TabIndex = 1;
+            this.dgvRazas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellClick);
+            this.dgvRazas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellDoubleClick);
+            this.dgvRazas.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellMouseEnter);
             // 
             // codRazaDataGridViewTextBoxColumn
             // 
             this.codRazaDataGridViewTextBoxColumn.DataPropertyName = "CodRaza";
+            this.codRazaDataGridViewTextBoxColumn.FillWeight = 117.9144F;
             this.codRazaDataGridViewTextBoxColumn.HeaderText = "CodRaza";
             this.codRazaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.codRazaDataGridViewTextBoxColumn.Name = "codRazaDataGridViewTextBoxColumn";
@@ -165,6 +171,7 @@
             // nombreRazaDataGridViewTextBoxColumn
             // 
             this.nombreRazaDataGridViewTextBoxColumn.DataPropertyName = "NombreRaza";
+            this.nombreRazaDataGridViewTextBoxColumn.FillWeight = 117.9144F;
             this.nombreRazaDataGridViewTextBoxColumn.HeaderText = "NombreRaza";
             this.nombreRazaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreRazaDataGridViewTextBoxColumn.Name = "nombreRazaDataGridViewTextBoxColumn";
@@ -178,6 +185,15 @@
             this.CodEspecie.Name = "CodEspecie";
             this.CodEspecie.ReadOnly = true;
             this.CodEspecie.Visible = false;
+            // 
+            // borrarRaza
+            // 
+            this.borrarRaza.FillWeight = 64.17112F;
+            this.borrarRaza.HeaderText = "";
+            this.borrarRaza.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.borrarRaza.MinimumWidth = 6;
+            this.borrarRaza.Name = "borrarRaza";
+            this.borrarRaza.ReadOnly = true;
             // 
             // razaBindingSource1
             // 
@@ -208,7 +224,7 @@
             this.dgvEspecies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codEspecieDataGridViewTextBoxColumn,
             this.nombreEspecieDataGridViewTextBoxColumn,
-            this.borrar});
+            this.borrarEspecie});
             this.dgvEspecies.DataSource = this.especieBindingSource;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
@@ -243,6 +259,36 @@
             this.dgvEspecies.Size = new System.Drawing.Size(532, 556);
             this.dgvEspecies.TabIndex = 0;
             this.dgvEspecies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellClick);
+            this.dgvEspecies.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellDoubleClick);
+            this.dgvEspecies.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellMouseEnter);
+            // 
+            // codEspecieDataGridViewTextBoxColumn
+            // 
+            this.codEspecieDataGridViewTextBoxColumn.DataPropertyName = "CodEspecie";
+            this.codEspecieDataGridViewTextBoxColumn.FillWeight = 117.9144F;
+            this.codEspecieDataGridViewTextBoxColumn.HeaderText = "CodEspecie";
+            this.codEspecieDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codEspecieDataGridViewTextBoxColumn.Name = "codEspecieDataGridViewTextBoxColumn";
+            this.codEspecieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreEspecieDataGridViewTextBoxColumn
+            // 
+            this.nombreEspecieDataGridViewTextBoxColumn.DataPropertyName = "NombreEspecie";
+            this.nombreEspecieDataGridViewTextBoxColumn.FillWeight = 117.9144F;
+            this.nombreEspecieDataGridViewTextBoxColumn.HeaderText = "NombreEspecie";
+            this.nombreEspecieDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreEspecieDataGridViewTextBoxColumn.Name = "nombreEspecieDataGridViewTextBoxColumn";
+            this.nombreEspecieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // borrarEspecie
+            // 
+            this.borrarEspecie.FillWeight = 64.17112F;
+            this.borrarEspecie.HeaderText = "";
+            this.borrarEspecie.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.borrarEspecie.MinimumWidth = 6;
+            this.borrarEspecie.Name = "borrarEspecie";
+            this.borrarEspecie.ReadOnly = true;
+            this.borrarEspecie.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // especieBindingSource
             // 
@@ -265,30 +311,6 @@
             this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.panelSearch.Size = new System.Drawing.Size(1350, 158);
             this.panelSearch.TabIndex = 1;
-            // 
-            // btnAddRaza
-            // 
-            this.btnAddRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddRaza.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAddRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddRaza.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddRaza.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddRaza.BorderRadius = 5;
-            this.btnAddRaza.BorderSize = 0;
-            this.btnAddRaza.FlatAppearance.BorderSize = 0;
-            this.btnAddRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRaza.ForeColor = System.Drawing.Color.White;
-            this.btnAddRaza.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddRaza.Location = new System.Drawing.Point(986, 59);
-            this.btnAddRaza.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddRaza.Name = "btnAddRaza";
-            this.btnAddRaza.Size = new System.Drawing.Size(200, 55);
-            this.btnAddRaza.TabIndex = 8;
-            this.btnAddRaza.Text = "Nueva Raza";
-            this.btnAddRaza.TextColor = System.Drawing.Color.White;
-            this.btnAddRaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddRaza.UseVisualStyleBackColor = false;
-            this.btnAddRaza.Click += new System.EventHandler(this.btnAddRaza_Click);
             // 
             // txtBuscarRaza
             // 
@@ -351,6 +373,30 @@
             this.txtBuscarEspecie.TabIndex = 3;
             this.txtBuscarEspecie.TextChanged += new System.EventHandler(this.txtBuscarEspecie_TextChanged);
             // 
+            // btnAddRaza
+            // 
+            this.btnAddRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddRaza.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderRadius = 5;
+            this.btnAddRaza.BorderSize = 0;
+            this.btnAddRaza.FlatAppearance.BorderSize = 0;
+            this.btnAddRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRaza.ForeColor = System.Drawing.Color.White;
+            this.btnAddRaza.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddRaza.Location = new System.Drawing.Point(986, 59);
+            this.btnAddRaza.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRaza.Name = "btnAddRaza";
+            this.btnAddRaza.Size = new System.Drawing.Size(200, 55);
+            this.btnAddRaza.TabIndex = 8;
+            this.btnAddRaza.Text = "Nueva Raza";
+            this.btnAddRaza.TextColor = System.Drawing.Color.White;
+            this.btnAddRaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddRaza.UseVisualStyleBackColor = false;
+            this.btnAddRaza.Click += new System.EventHandler(this.btnAddRaza_Click);
+            // 
             // btnAddEspecie
             // 
             this.btnAddEspecie.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -373,34 +419,6 @@
             this.btnAddEspecie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddEspecie.UseVisualStyleBackColor = false;
             this.btnAddEspecie.Click += new System.EventHandler(this.btnAddEspecie_Click);
-            // 
-            // codEspecieDataGridViewTextBoxColumn
-            // 
-            this.codEspecieDataGridViewTextBoxColumn.DataPropertyName = "CodEspecie";
-            this.codEspecieDataGridViewTextBoxColumn.FillWeight = 117.9144F;
-            this.codEspecieDataGridViewTextBoxColumn.HeaderText = "CodEspecie";
-            this.codEspecieDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codEspecieDataGridViewTextBoxColumn.Name = "codEspecieDataGridViewTextBoxColumn";
-            this.codEspecieDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreEspecieDataGridViewTextBoxColumn
-            // 
-            this.nombreEspecieDataGridViewTextBoxColumn.DataPropertyName = "NombreEspecie";
-            this.nombreEspecieDataGridViewTextBoxColumn.FillWeight = 117.9144F;
-            this.nombreEspecieDataGridViewTextBoxColumn.HeaderText = "NombreEspecie";
-            this.nombreEspecieDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreEspecieDataGridViewTextBoxColumn.Name = "nombreEspecieDataGridViewTextBoxColumn";
-            this.nombreEspecieDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // borrar
-            // 
-            this.borrar.FillWeight = 64.17112F;
-            this.borrar.HeaderText = "";
-            this.borrar.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
-            this.borrar.MinimumWidth = 6;
-            this.borrar.Name = "borrar";
-            this.borrar.ReadOnly = true;
-            this.borrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // razasEspeciesForm
             // 
@@ -446,8 +464,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codRazaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreRazaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodEspecie;
+        private System.Windows.Forms.DataGridViewImageColumn borrarRaza;
         private System.Windows.Forms.DataGridViewTextBoxColumn codEspecieDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEspecieDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn borrar;
+        private System.Windows.Forms.DataGridViewImageColumn borrarEspecie;
     }
 }

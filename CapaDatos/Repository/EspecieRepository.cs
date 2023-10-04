@@ -71,7 +71,14 @@ namespace CapaDatos.Repository
                 return ExecuteNonQuery(delete);
             } catch (SqlException ex)
             {
-                throw ex;
+                if (ex.Number == 547)
+                {
+                    throw new EliminadoInvalidoException("La especie no se puede borrar debido a que tiene razas cargadas");
+                }
+                else
+                {
+                    throw ex;
+                }
             }
         }
 
