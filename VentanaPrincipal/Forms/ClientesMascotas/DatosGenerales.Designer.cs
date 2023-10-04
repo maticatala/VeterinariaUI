@@ -363,6 +363,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DatosGenerales";
             this.Text = "DatosGenerales";
+            this.Load += new System.EventHandler(this.DatosGenerales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -89,5 +89,10 @@ namespace Sistema
         {
 
         }
+
+        private void frmRegistro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

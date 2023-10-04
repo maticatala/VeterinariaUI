@@ -162,6 +162,10 @@ namespace VentanaPrincipal
             lvlUsername.Text = user.N_usuario;
             lblRol.Text = user.Tipo_usuario;
 
+
+            btnDashboard.PerformClick();
+
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -103,5 +103,30 @@ namespace VentanaPrincipal
         {
 
         }
+
+        private void panelSearch_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtMascota_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMascota_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDueño_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBusqueda_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

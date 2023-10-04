@@ -13,6 +13,8 @@ namespace CapaEntidadaes.Entities
     {
         private int CodPractica;
         private string descripcion;
+
+        [Required(ErrorMessage = "El campo Practica es requerido")]
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int codPractica { get =>CodPractica; set =>CodPractica = value; }
     }

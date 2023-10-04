@@ -60,6 +60,7 @@ namespace VentanaPrincipal.Forms.Clientes
                 MessageBox.Show(result);
                 ventanaAddOwner.cargarCliente(cliente.NumeroDocumento);
             }
+            this.Close();
         }
 
         private void Limpiar()
@@ -78,9 +79,15 @@ namespace VentanaPrincipal.Forms.Clientes
             clienteNegocio.Cliente = cliente;
             string result = clienteNegocio.SaveChanges();
             MessageBox.Show(result);
+            this.Close();
         }
 
         private void txtNombre_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DatosGenerales_Load(object sender, EventArgs e)
         {
 
         }

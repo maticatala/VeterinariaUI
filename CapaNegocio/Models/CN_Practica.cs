@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio.Models
 {
-    public class cN_Practica
+    public class CN_Practica
     {
         private IPracticaRepository practicaRepository;
         private List<Practica> listPracticas;
@@ -20,7 +20,7 @@ namespace CapaNegocio.Models
         public EntityState State { private get; set; }
         public Practica Practica { get => practica; set => practica = value; }
 
-        public cN_Practica()
+        public CN_Practica()
         {
             practicaRepository = new PracticaRepository();
         }
@@ -65,7 +65,11 @@ namespace CapaNegocio.Models
             listPracticas = practicaDataModel.ToList();
             return listPracticas;
         }
-
-
+        public IEnumerable<Practica> findByFilter(string filter)
+        {
+            return listPracticas.FindAll(
+                e => e.codPractica.ToString().Contains(filter) ||
+                e.Descripcion.Contains(filter.ToLower()));
+        }
     }
 }

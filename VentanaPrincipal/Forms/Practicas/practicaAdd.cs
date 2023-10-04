@@ -2,6 +2,7 @@
 using CapaEntidades.Entities;
 using CapaNegocio.Models;
 using CapaNegocio.ValueObjects;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,19 +17,21 @@ namespace VentanaPrincipal.Forms.Practicas
 {
     public partial class practicaAdd : Form
     {
-        cN_Practica practicaNegocio = new cN_Practica();
+        CN_Practica practicaNegocio = new CN_Practica();
         Practica practica = new Practica();
         int codPractica = -1;
         public practicaAdd()
         {
             InitializeComponent();
+            btnDelete.Enabled = false;
+            practicaNegocio.State = EntityState.Added;
         }
         
         public practicaAdd(Practica practica)
         {
             InitializeComponent();
             this.practica = practica;
-            txtDescripcion.Text = practica.Descripcion;
+            txtPractica.Text = practica.Descripcion;
             practicaNegocio.State = EntityState.Modified;
         }
         private void practicaAdd_Load(object sender, EventArgs e)
@@ -43,7 +46,8 @@ namespace VentanaPrincipal.Forms.Practicas
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            practica.Descripcion = txtDescripcion.Text;
+            
+            practica.Descripcion = txtPractica.Text;
             practicaNegocio.Practica = practica;
 
             bool valid = new Helps.DataValidation(practica).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
@@ -55,9 +59,23 @@ namespace VentanaPrincipal.Forms.Practicas
             }
         }
 
+        private void Limpiar()
+        {
+            txtPractica.Text = string.Empty;
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            practicaNegocio.State = EntityState.Deleted;
+            practicaNegocio.Practica = practica;
+            string result = practicaNegocio.SaveChanges();
+            MessageBox.Show(result);
             this.Close();
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
