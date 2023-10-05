@@ -67,5 +67,11 @@ namespace CapaNegocio.Models
             }
             return mensaje;
         }
+        public IEnumerable<Mascota> FindByFilter(string filter)
+        {
+            return listMascotas.FindAll(
+                e => e.NroHC.ToString().Contains(filter.ToLower()) ||
+                e.Nombre.ToLower().Contains(filter.ToLower()));
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidades.Entities;
 using FontAwesome.Sharp;
+using VentanaPrincipal.Forms.RazasEspecies;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
 //using Color = System.Drawing.Color;
@@ -191,7 +192,8 @@ namespace VentanaPrincipal
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender, RGBColors.color_dark);
+            loadform(new razasEspeciesForm());
         }
 
         private void panelControls_MouseMove(object sender, MouseEventArgs e)
