@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidadaes.Entities;
-
+using CapaEntidades.Entities;
 using CapaNegocio.Models;
 
 namespace VentanaPrincipal.Forms.RazasEspecies

@@ -1,6 +1,7 @@
 ﻿using CapaDatos.Contracts;
 using CapaDatos.Exceptions;
 using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -132,5 +133,6 @@ namespace CapaDatos.Repository
                 throw ex;
             }
         }
+        
     }
 }

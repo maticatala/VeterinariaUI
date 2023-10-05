@@ -1,6 +1,7 @@
 ﻿using CapaDatos.Contracts;
 using CapaDatos.Repository;
 using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

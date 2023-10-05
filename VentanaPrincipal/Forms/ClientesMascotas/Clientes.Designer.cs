@@ -57,12 +57,12 @@ namespace VentanaPrincipal
             this.lblDueño = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnAddOwner = new VentanaPrincipal.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ownerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddOwner = new VentanaPrincipal.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cgvOwners)).BeginInit();
@@ -112,8 +112,7 @@ namespace VentanaPrincipal
             this.dgvMascotas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMascotas.EnableHeadersVisualStyles = false;
             this.dgvMascotas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.dgvMascotas.Location = new System.Drawing.Point(814, 4);
-            this.dgvMascotas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMascotas.Location = new System.Drawing.Point(610, 3);
             this.dgvMascotas.Name = "dgvMascotas";
             this.dgvMascotas.ReadOnly = true;
             this.dgvMascotas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -127,8 +126,9 @@ namespace VentanaPrincipal
             this.dgvMascotas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMascotas.RowTemplate.Height = 55;
             this.dgvMascotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMascotas.Size = new System.Drawing.Size(532, 556);
+            this.dgvMascotas.Size = new System.Drawing.Size(400, 453);
             this.dgvMascotas.TabIndex = 2;
+            this.dgvMascotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMascotas_CellContentClick);
             // 
             // nroHCDataGridViewTextBoxColumn
             // 
@@ -209,8 +209,7 @@ namespace VentanaPrincipal
             this.cgvOwners.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cgvOwners.EnableHeadersVisualStyles = false;
             this.cgvOwners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.cgvOwners.Location = new System.Drawing.Point(4, 4);
-            this.cgvOwners.Margin = new System.Windows.Forms.Padding(4);
+            this.cgvOwners.Location = new System.Drawing.Point(3, 3);
             this.cgvOwners.Name = "cgvOwners";
             this.cgvOwners.ReadOnly = true;
             this.cgvOwners.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -227,7 +226,7 @@ namespace VentanaPrincipal
             this.cgvOwners.RowTemplate.Height = 55;
             this.cgvOwners.RowTemplate.ReadOnly = true;
             this.cgvOwners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cgvOwners.Size = new System.Drawing.Size(802, 556);
+            this.cgvOwners.Size = new System.Drawing.Size(601, 453);
             this.cgvOwners.TabIndex = 0;
             this.cgvOwners.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvOwners_CellClick);
             this.cgvOwners.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvOwners_CellDoubleClick);
@@ -300,11 +299,10 @@ namespace VentanaPrincipal
             this.panelSearch.Controls.Add(this.txtBuscar);
             this.panelSearch.Controls.Add(this.btnAddOwner);
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearch.Location = new System.Drawing.Point(27, 25);
-            this.panelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.panelSearch.Location = new System.Drawing.Point(20, 20);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
-            this.panelSearch.Size = new System.Drawing.Size(1350, 158);
+            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.panelSearch.Size = new System.Drawing.Size(1013, 128);
             this.panelSearch.TabIndex = 1;
             // 
             // txtMascota
@@ -312,21 +310,20 @@ namespace VentanaPrincipal
             this.txtMascota.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMascota.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMascota.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtMascota.Location = new System.Drawing.Point(487, 84);
-            this.txtMascota.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMascota.Location = new System.Drawing.Point(365, 68);
             this.txtMascota.Name = "txtMascota";
-            this.txtMascota.Size = new System.Drawing.Size(325, 22);
+            this.txtMascota.Size = new System.Drawing.Size(244, 18);
             this.txtMascota.TabIndex = 7;
+            this.txtMascota.TextChanged += new System.EventHandler(this.txtMascota_TextChanged);
             // 
             // lblMascota
             // 
             this.lblMascota.AutoSize = true;
             this.lblMascota.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMascota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblMascota.Location = new System.Drawing.Point(483, 59);
-            this.lblMascota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMascota.Location = new System.Drawing.Point(362, 48);
             this.lblMascota.Name = "lblMascota";
-            this.lblMascota.Size = new System.Drawing.Size(75, 23);
+            this.lblMascota.Size = new System.Drawing.Size(59, 17);
             this.lblMascota.TabIndex = 6;
             this.lblMascota.Text = "Mascota";
             // 
@@ -335,10 +332,9 @@ namespace VentanaPrincipal
             this.lblDueño.AutoSize = true;
             this.lblDueño.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDueño.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblDueño.Location = new System.Drawing.Point(21, 59);
-            this.lblDueño.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDueño.Location = new System.Drawing.Point(16, 48);
             this.lblDueño.Name = "lblDueño";
-            this.lblDueño.Size = new System.Drawing.Size(61, 23);
+            this.lblDueño.Size = new System.Drawing.Size(48, 17);
             this.lblDueño.TabIndex = 5;
             this.lblDueño.Text = "Dueño";
             // 
@@ -346,10 +342,9 @@ namespace VentanaPrincipal
             // 
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(20, 11);
-            this.lblBusqueda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBusqueda.Location = new System.Drawing.Point(15, 9);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(102, 28);
+            this.lblBusqueda.Size = new System.Drawing.Size(82, 21);
             this.lblBusqueda.TabIndex = 4;
             this.lblBusqueda.Text = "Busqueda";
             // 
@@ -358,35 +353,11 @@ namespace VentanaPrincipal
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtBuscar.Location = new System.Drawing.Point(25, 84);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Location = new System.Drawing.Point(19, 68);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(325, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(244, 18);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // btnAddOwner
-            // 
-            this.btnAddOwner.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddOwner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddOwner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddOwner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddOwner.BorderRadius = 5;
-            this.btnAddOwner.BorderSize = 0;
-            this.btnAddOwner.FlatAppearance.BorderSize = 0;
-            this.btnAddOwner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddOwner.ForeColor = System.Drawing.Color.White;
-            this.btnAddOwner.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddOwner.Location = new System.Drawing.Point(1115, 64);
-            this.btnAddOwner.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddOwner.Name = "btnAddOwner";
-            this.btnAddOwner.Size = new System.Drawing.Size(200, 55);
-            this.btnAddOwner.TabIndex = 1;
-            this.btnAddOwner.Text = "Nuevo";
-            this.btnAddOwner.TextColor = System.Drawing.Color.White;
-            this.btnAddOwner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddOwner.UseVisualStyleBackColor = false;
-            this.btnAddOwner.Click += new System.EventHandler(this.btnAddOwner_Click);
             // 
             // panel1
             // 
@@ -395,10 +366,9 @@ namespace VentanaPrincipal
             this.panel1.Controls.Add(this.panelSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
-            this.panel1.Size = new System.Drawing.Size(1404, 772);
+            this.panel1.Padding = new System.Windows.Forms.Padding(20);
+            this.panel1.Size = new System.Drawing.Size(1053, 627);
             this.panel1.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -409,12 +379,11 @@ namespace VentanaPrincipal
             this.tableLayoutPanel1.Controls.Add(this.dgvMascotas, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cgvOwners, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 183);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 148);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 564);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 459);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // dataGridViewImageColumn1
@@ -437,15 +406,36 @@ namespace VentanaPrincipal
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 125;
             // 
+            // btnAddOwner
+            // 
+            this.btnAddOwner.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddOwner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddOwner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddOwner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddOwner.BorderRadius = 5;
+            this.btnAddOwner.BorderSize = 0;
+            this.btnAddOwner.FlatAppearance.BorderSize = 0;
+            this.btnAddOwner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOwner.ForeColor = System.Drawing.Color.White;
+            this.btnAddOwner.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddOwner.Location = new System.Drawing.Point(837, 52);
+            this.btnAddOwner.Name = "btnAddOwner";
+            this.btnAddOwner.Size = new System.Drawing.Size(150, 45);
+            this.btnAddOwner.TabIndex = 1;
+            this.btnAddOwner.Text = "Nuevo";
+            this.btnAddOwner.TextColor = System.Drawing.Color.White;
+            this.btnAddOwner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddOwner.UseVisualStyleBackColor = false;
+            this.btnAddOwner.Click += new System.EventHandler(this.btnAddOwner_Click);
+            // 
             // dueñosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1404, 772);
+            this.ClientSize = new System.Drawing.Size(1053, 627);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dueñosForm";
             this.Text = "Dueños";
             this.Load += new System.EventHandler(this.dueñosForm_Load);
