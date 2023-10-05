@@ -10,5 +10,7 @@ namespace CapaDatos.Contracts
     public interface IRazaRepository : IGenericRepository<Raza, int>
     {
         List<Raza> findByEspecie(int codEspecie);
+
+        List<Raza> findByNombreAndEspecie(string nombre, int codEspecie);
     }
 }

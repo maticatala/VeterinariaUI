@@ -59,6 +59,14 @@ namespace VentanaPrincipal.Forms.Clientes
                 string result = clienteNegocio.SaveChanges();
                 MessageBox.Show(result);
                 ventanaAddOwner.cargarCliente(cliente.NumeroDocumento);
+                this.Close();
+
+                // Verifica si el formulario Form2 está abierto
+                if (Application.OpenForms["formAdd"] != null)
+                {
+                    // Si está abierto, cierra el formulario Form2
+                    Application.OpenForms["formAdd"].Close();
+                }
             }
         }
 
@@ -78,6 +86,14 @@ namespace VentanaPrincipal.Forms.Clientes
             clienteNegocio.Cliente = cliente;
             string result = clienteNegocio.SaveChanges();
             MessageBox.Show(result);
+            this.Close();
+
+            // Verifica si el formulario Form2 está abierto
+            if (Application.OpenForms["formAdd"] != null)
+            {
+                // Si está abierto, cierra el formulario Form2
+                Application.OpenForms["formAdd"].Close();
+            }
         }
     }
 }
