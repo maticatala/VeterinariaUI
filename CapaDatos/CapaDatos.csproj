@@ -147,7 +147,7 @@
     <Compile Include="Contracts\IPracticaRepository.cs" />
     <Compile Include="Contracts\IRazaRepository.cs" />
     <Compile Include="Contracts\IUsuarioRepository.cs" />
-    <Compile Include="Exceptions\EliminadoInvalidoException.cs" />
+    <Compile Include="Contracts\IVeterinarioRepository.cs" />
     <Compile Include="Exceptions\RegistroDuplicadoException.cs" />
     <Compile Include="Exceptions\RegistroInexistenteException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,6 +159,7 @@
     <Compile Include="Repository\RazaRepository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\VeterinarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

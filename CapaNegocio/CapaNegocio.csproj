@@ -52,6 +52,7 @@
     <Compile Include="Models\CN_Practica.cs" />
     <Compile Include="Models\CN_Raza.cs" />
     <Compile Include="Models\CN_Usuario.cs" />
+    <Compile Include="Models\CN_Veterinario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueObjects\EntityState.cs" />
   </ItemGroup>
