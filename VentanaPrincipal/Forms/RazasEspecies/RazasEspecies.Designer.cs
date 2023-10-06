@@ -1,0 +1,461 @@
+﻿namespace VentanaPrincipal.Forms.RazasEspecies
+{
+    partial class razasEspeciesForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvRazas = new System.Windows.Forms.DataGridView();
+            this.codRazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreRazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrarRaza = new System.Windows.Forms.DataGridViewImageColumn();
+            this.razaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvEspecies = new System.Windows.Forms.DataGridView();
+            this.codEspecieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEspecieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrarEspecie = new System.Windows.Forms.DataGridViewImageColumn();
+            this.especieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelSearch = new System.Windows.Forms.Panel();
+            this.btnAddRaza = new VentanaPrincipal.RJButton();
+            this.txtBuscarRaza = new System.Windows.Forms.TextBox();
+            this.lblRaza = new System.Windows.Forms.Label();
+            this.lblEspecie = new System.Windows.Forms.Label();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.txtBuscarEspecie = new System.Windows.Forms.TextBox();
+            this.btnAddEspecie = new VentanaPrincipal.RJButton();
+            this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRazas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.especieBindingSource)).BeginInit();
+            this.panelSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.razaBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.panelSearch);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.panel1.Size = new System.Drawing.Size(1053, 627);
+            this.panel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvRazas, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvEspecies, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 148);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 459);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // dgvRazas
+            // 
+            this.dgvRazas.AllowUserToAddRows = false;
+            this.dgvRazas.AllowUserToDeleteRows = false;
+            this.dgvRazas.AllowUserToResizeColumns = false;
+            this.dgvRazas.AllowUserToResizeRows = false;
+            this.dgvRazas.AutoGenerateColumns = false;
+            this.dgvRazas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRazas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRazas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRazas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvRazas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRazas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvRazas.ColumnHeadersHeight = 45;
+            this.dgvRazas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvRazas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codRazaDataGridViewTextBoxColumn,
+            this.nombreRazaDataGridViewTextBoxColumn,
+            this.CodEspecie,
+            this.borrarRaza});
+            this.dgvRazas.DataSource = this.razaBindingSource1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRazas.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvRazas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRazas.EnableHeadersVisualStyles = false;
+            this.dgvRazas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.dgvRazas.Location = new System.Drawing.Point(408, 3);
+            this.dgvRazas.Name = "dgvRazas";
+            this.dgvRazas.ReadOnly = true;
+            this.dgvRazas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvRazas.RowHeadersVisible = false;
+            this.dgvRazas.RowHeadersWidth = 51;
+            this.dgvRazas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRazas.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvRazas.RowTemplate.Height = 55;
+            this.dgvRazas.RowTemplate.ReadOnly = true;
+            this.dgvRazas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRazas.Size = new System.Drawing.Size(602, 453);
+            this.dgvRazas.TabIndex = 1;
+            this.dgvRazas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellClick);
+            this.dgvRazas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellDoubleClick);
+            this.dgvRazas.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellMouseEnter);
+            // 
+            // codRazaDataGridViewTextBoxColumn
+            // 
+            this.codRazaDataGridViewTextBoxColumn.DataPropertyName = "CodRaza";
+            this.codRazaDataGridViewTextBoxColumn.FillWeight = 117.9144F;
+            this.codRazaDataGridViewTextBoxColumn.HeaderText = "CodRaza";
+            this.codRazaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codRazaDataGridViewTextBoxColumn.Name = "codRazaDataGridViewTextBoxColumn";
+            this.codRazaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreRazaDataGridViewTextBoxColumn
+            // 
+            this.nombreRazaDataGridViewTextBoxColumn.DataPropertyName = "NombreRaza";
+            this.nombreRazaDataGridViewTextBoxColumn.FillWeight = 117.9144F;
+            this.nombreRazaDataGridViewTextBoxColumn.HeaderText = "NombreRaza";
+            this.nombreRazaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreRazaDataGridViewTextBoxColumn.Name = "nombreRazaDataGridViewTextBoxColumn";
+            this.nombreRazaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // CodEspecie
+            // 
+            this.CodEspecie.DataPropertyName = "CodEspecie";
+            this.CodEspecie.HeaderText = "CodEspecie";
+            this.CodEspecie.MinimumWidth = 6;
+            this.CodEspecie.Name = "CodEspecie";
+            this.CodEspecie.ReadOnly = true;
+            this.CodEspecie.Visible = false;
+            // 
+            // borrarRaza
+            // 
+            this.borrarRaza.FillWeight = 64.17112F;
+            this.borrarRaza.HeaderText = "";
+            this.borrarRaza.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.borrarRaza.MinimumWidth = 6;
+            this.borrarRaza.Name = "borrarRaza";
+            this.borrarRaza.ReadOnly = true;
+            // 
+            // razaBindingSource1
+            // 
+            this.razaBindingSource1.DataSource = typeof(CapaEntidadaes.Entities.Raza);
+            // 
+            // dgvEspecies
+            // 
+            this.dgvEspecies.AllowUserToAddRows = false;
+            this.dgvEspecies.AllowUserToDeleteRows = false;
+            this.dgvEspecies.AllowUserToResizeColumns = false;
+            this.dgvEspecies.AllowUserToResizeRows = false;
+            this.dgvEspecies.AutoGenerateColumns = false;
+            this.dgvEspecies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEspecies.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEspecies.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEspecies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvEspecies.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvEspecies.ColumnHeadersHeight = 45;
+            this.dgvEspecies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEspecies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codEspecieDataGridViewTextBoxColumn,
+            this.nombreEspecieDataGridViewTextBoxColumn,
+            this.borrarEspecie});
+            this.dgvEspecies.DataSource = this.especieBindingSource;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecies.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvEspecies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEspecies.EnableHeadersVisualStyles = false;
+            this.dgvEspecies.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.dgvEspecies.Location = new System.Drawing.Point(3, 3);
+            this.dgvEspecies.Name = "dgvEspecies";
+            this.dgvEspecies.ReadOnly = true;
+            this.dgvEspecies.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvEspecies.RowHeadersVisible = false;
+            this.dgvEspecies.RowHeadersWidth = 51;
+            this.dgvEspecies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEspecies.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvEspecies.RowTemplate.Height = 55;
+            this.dgvEspecies.RowTemplate.ReadOnly = true;
+            this.dgvEspecies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEspecies.Size = new System.Drawing.Size(399, 453);
+            this.dgvEspecies.TabIndex = 0;
+            this.dgvEspecies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellClick);
+            this.dgvEspecies.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellDoubleClick);
+            this.dgvEspecies.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellMouseEnter);
+            // 
+            // codEspecieDataGridViewTextBoxColumn
+            // 
+            this.codEspecieDataGridViewTextBoxColumn.DataPropertyName = "CodEspecie";
+            this.codEspecieDataGridViewTextBoxColumn.FillWeight = 117.9144F;
+            this.codEspecieDataGridViewTextBoxColumn.HeaderText = "CodEspecie";
+            this.codEspecieDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codEspecieDataGridViewTextBoxColumn.Name = "codEspecieDataGridViewTextBoxColumn";
+            this.codEspecieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreEspecieDataGridViewTextBoxColumn
+            // 
+            this.nombreEspecieDataGridViewTextBoxColumn.DataPropertyName = "NombreEspecie";
+            this.nombreEspecieDataGridViewTextBoxColumn.FillWeight = 117.9144F;
+            this.nombreEspecieDataGridViewTextBoxColumn.HeaderText = "NombreEspecie";
+            this.nombreEspecieDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreEspecieDataGridViewTextBoxColumn.Name = "nombreEspecieDataGridViewTextBoxColumn";
+            this.nombreEspecieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // borrarEspecie
+            // 
+            this.borrarEspecie.FillWeight = 64.17112F;
+            this.borrarEspecie.HeaderText = "";
+            this.borrarEspecie.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.borrarEspecie.MinimumWidth = 6;
+            this.borrarEspecie.Name = "borrarEspecie";
+            this.borrarEspecie.ReadOnly = true;
+            this.borrarEspecie.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // especieBindingSource
+            // 
+            this.especieBindingSource.DataSource = typeof(CapaEntidadaes.Entities.Especie);
+            // 
+            // panelSearch
+            // 
+            this.panelSearch.BackColor = System.Drawing.Color.Transparent;
+            this.panelSearch.Controls.Add(this.btnAddRaza);
+            this.panelSearch.Controls.Add(this.txtBuscarRaza);
+            this.panelSearch.Controls.Add(this.lblRaza);
+            this.panelSearch.Controls.Add(this.lblEspecie);
+            this.panelSearch.Controls.Add(this.lblBusqueda);
+            this.panelSearch.Controls.Add(this.txtBuscarEspecie);
+            this.panelSearch.Controls.Add(this.btnAddEspecie);
+            this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSearch.Location = new System.Drawing.Point(20, 20);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.panelSearch.Size = new System.Drawing.Size(1013, 128);
+            this.panelSearch.TabIndex = 1;
+            // 
+            // btnAddRaza
+            // 
+            this.btnAddRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddRaza.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderRadius = 5;
+            this.btnAddRaza.BorderSize = 0;
+            this.btnAddRaza.FlatAppearance.BorderSize = 0;
+            this.btnAddRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRaza.ForeColor = System.Drawing.Color.White;
+            this.btnAddRaza.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddRaza.Location = new System.Drawing.Point(759, 48);
+            this.btnAddRaza.Name = "btnAddRaza";
+            this.btnAddRaza.Size = new System.Drawing.Size(150, 45);
+            this.btnAddRaza.TabIndex = 8;
+            this.btnAddRaza.Text = "Nueva Raza";
+            this.btnAddRaza.TextColor = System.Drawing.Color.White;
+            this.btnAddRaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddRaza.UseVisualStyleBackColor = false;
+            this.btnAddRaza.Click += new System.EventHandler(this.btnAddRaza_Click);
+            // 
+            // txtBuscarRaza
+            // 
+            this.txtBuscarRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBuscarRaza.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscarRaza.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarRaza.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtBuscarRaza.Location = new System.Drawing.Point(490, 68);
+            this.txtBuscarRaza.Name = "txtBuscarRaza";
+            this.txtBuscarRaza.Size = new System.Drawing.Size(244, 18);
+            this.txtBuscarRaza.TabIndex = 7;
+            this.txtBuscarRaza.TextChanged += new System.EventHandler(this.txtBuscarRaza_TextChanged);
+            // 
+            // lblRaza
+            // 
+            this.lblRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblRaza.AutoSize = true;
+            this.lblRaza.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRaza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lblRaza.Location = new System.Drawing.Point(487, 48);
+            this.lblRaza.Name = "lblRaza";
+            this.lblRaza.Size = new System.Drawing.Size(36, 17);
+            this.lblRaza.TabIndex = 6;
+            this.lblRaza.Text = "Raza";
+            // 
+            // lblEspecie
+            // 
+            this.lblEspecie.AutoSize = true;
+            this.lblEspecie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspecie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lblEspecie.Location = new System.Drawing.Point(16, 48);
+            this.lblEspecie.Name = "lblEspecie";
+            this.lblEspecie.Size = new System.Drawing.Size(52, 17);
+            this.lblEspecie.TabIndex = 5;
+            this.lblEspecie.Text = "Especie";
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.Location = new System.Drawing.Point(15, 9);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(82, 21);
+            this.lblBusqueda.TabIndex = 4;
+            this.lblBusqueda.Text = "Busqueda";
+            // 
+            // txtBuscarEspecie
+            // 
+            this.txtBuscarEspecie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscarEspecie.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarEspecie.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtBuscarEspecie.Location = new System.Drawing.Point(19, 68);
+            this.txtBuscarEspecie.Name = "txtBuscarEspecie";
+            this.txtBuscarEspecie.Size = new System.Drawing.Size(244, 18);
+            this.txtBuscarEspecie.TabIndex = 3;
+            this.txtBuscarEspecie.TextChanged += new System.EventHandler(this.txtBuscarEspecie_TextChanged);
+            // 
+            // btnAddEspecie
+            // 
+            this.btnAddEspecie.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddEspecie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddEspecie.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddEspecie.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddEspecie.BorderRadius = 5;
+            this.btnAddEspecie.BorderSize = 0;
+            this.btnAddEspecie.FlatAppearance.BorderSize = 0;
+            this.btnAddEspecie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEspecie.ForeColor = System.Drawing.Color.White;
+            this.btnAddEspecie.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddEspecie.Location = new System.Drawing.Point(299, 48);
+            this.btnAddEspecie.Name = "btnAddEspecie";
+            this.btnAddEspecie.Size = new System.Drawing.Size(150, 45);
+            this.btnAddEspecie.TabIndex = 1;
+            this.btnAddEspecie.Text = "Nueva Especie";
+            this.btnAddEspecie.TextColor = System.Drawing.Color.White;
+            this.btnAddEspecie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddEspecie.UseVisualStyleBackColor = false;
+            this.btnAddEspecie.Click += new System.EventHandler(this.btnAddEspecie_Click);
+            // 
+            // razasEspeciesForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(1053, 627);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "razasEspeciesForm";
+            this.Text = "RazasEspecies";
+            this.Load += new System.EventHandler(this.razasEspeciesForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRazas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.razaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.especieBindingSource)).EndInit();
+            this.panelSearch.ResumeLayout(false);
+            this.panelSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.razaBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelSearch;
+        private System.Windows.Forms.TextBox txtBuscarRaza;
+        private System.Windows.Forms.Label lblRaza;
+        private System.Windows.Forms.Label lblEspecie;
+        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.TextBox txtBuscarEspecie;
+        private RJButton btnAddEspecie;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView dgvEspecies;
+        private System.Windows.Forms.BindingSource razaBindingSource;
+        private System.Windows.Forms.BindingSource especieBindingSource;
+        private System.Windows.Forms.DataGridView dgvRazas;
+        private System.Windows.Forms.BindingSource razaBindingSource1;
+        private RJButton btnAddRaza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codRazaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreRazaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodEspecie;
+        private System.Windows.Forms.DataGridViewImageColumn borrarRaza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codEspecieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEspecieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn borrarEspecie;
+    }
+}

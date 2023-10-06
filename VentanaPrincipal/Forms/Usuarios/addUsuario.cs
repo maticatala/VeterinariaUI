@@ -1,26 +1,43 @@
 ﻿using CapaEntidades.Entities;
 using CapaNegocio.Models;
+using CapaNegocio.ValueObjects;
+using MySqlX.XDevAPI;
 using System;
 using System.Windows.Forms;
 using VentanaPrincipal;
+using VentanaPrincipal.Forms.Clientes;
 using VentanaPrincipal.Helps;
 
 namespace Sistema
 {
     public partial class frmRegistro : Form
     {
-        Usuario usuarioOriginal;
+        CN_Usuario usuarioNegocio = new CN_Usuario();
+        Usuario usuario = new Usuario();
+        int id = -1;
 
         public frmRegistro()
         {
             InitializeComponent();
+            usuarioNegocio.State = EntityState.Added;
         }
 
+        public frmRegistro(Usuario oldusuario)
+        {
+            InitializeComponent();
+            usuario.N_usuario = oldusuario.N_usuario;
+            usuario.Tipo_usuario = oldusuario.Tipo_usuario.ToString();
+            usuario.Password = oldusuario.Password;
+            txtNombre.Text = usuario.N_usuario;
+            txtPassword.Text = usuario.Password;
+            cbUsuario.Text = usuario.Tipo_usuario;
+            usuarioNegocio.State = EntityState.Modified;
+            
+        }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
         }
-
         private void btnRegistrar_Click_1(object sender, EventArgs e)
         {
             CN_Usuario usuarioNegocio = new CN_Usuario();
@@ -45,7 +62,7 @@ namespace Sistema
                 try
                 {
                     string result;
-                    if (usuarioOriginal == null)
+                    if (usuario == null)
                     {
                         result = usuarioNegocio.Add(usuarioActual);
                     }
@@ -88,6 +105,32 @@ namespace Sistema
         private void txtConPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegistrar_Click_2(object sender, EventArgs e)
+        {
+            usuario.N_usuario = txtNombre.Text;
+            usuario.Password = txtPassword.Text;
+            usuario.Tipo_usuario = cbUsuario.Text;
+            usuarioNegocio.Usuario = usuario;
+
+            bool valid = new VentanaPrincipal.Helps.DataValidation(usuario).Validate();
+            if (valid)
+            {
+                string result = usuarioNegocio.SaveChanges();
+                MessageBox.Show(result);
+                this.Close();
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            usuarioNegocio.State = EntityState.Deleted;
+            usuarioNegocio.Usuario = usuario;
+            string result = usuarioNegocio.SaveChanges();
+            MessageBox.Show(result);
+            this.Close();
         }
     }
 }

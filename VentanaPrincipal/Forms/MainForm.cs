@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidades.Entities;
 using FontAwesome.Sharp;
+using Sistema;
+using VentanaPrincipal.Forms.RazasEspecies;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
 //using Color = System.Drawing.Color;
@@ -156,6 +158,7 @@ namespace VentanaPrincipal
             if (user.Tipo_usuario != "ADMINISTRADOR")
             {
                 btnRegistrar.Visible = false;
+                btnUsuarios.Visible = false;
             }
             lvlUsername.Text = user.N_usuario;
             lblRol.Text = user.Tipo_usuario;
@@ -192,6 +195,12 @@ namespace VentanaPrincipal
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color_dark);
+            loadform(new Usuarios());
         }
 
         private void panelControls_MouseMove(object sender, MouseEventArgs e)
