@@ -60,10 +60,6 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{9867c7a3-db43-494c-bdb7-63dcbf3e7e7d}</Project>
-      <Name>CapaDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaEntidadaes\CapaEntidades.csproj">
       <Project>{6937a9aa-2848-49db-8674-0b9e1be87957}</Project>
       <Name>CapaEntidades</Name>
