@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidades.Entities;
 using FontAwesome.Sharp;
+using VentanaPrincipal.Forms;
+using Sistema;
 using VentanaPrincipal.Forms.Practicas;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;

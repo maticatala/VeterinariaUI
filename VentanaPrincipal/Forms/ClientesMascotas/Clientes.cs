@@ -92,6 +92,7 @@ namespace VentanaPrincipal
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+            //dgvMascotas.DataSource = CN_Mascota.FindByFilter(txtMascota.Text);
         }
 
         private void cgvOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
