@@ -48,7 +48,6 @@ namespace VentanaPrincipal
             this.btnHistoriaClinica = new FontAwesome.Sharp.IconButton();
             this.btnDueños = new FontAwesome.Sharp.IconButton();
             this.btnMascotas = new FontAwesome.Sharp.IconButton();
-            this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lvlUsername = new System.Windows.Forms.Label();
@@ -635,7 +634,7 @@ namespace VentanaPrincipal
         private System.Windows.Forms.Panel mainForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPage;
-        private Panel mainForm;
+        //private Panel mainForm;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lvlUsername;
         private System.Windows.Forms.Label lblHola;

@@ -92,7 +92,7 @@ namespace VentanaPrincipal
 
         private void txtMascota_TextChanged(object sender, EventArgs e)
         {
-            dgvMascotas.DataSource = CN_Mascota.FindByFilter(txtMascota.Text);
+            //dgvMascotas.DataSource = CN_Mascota.FindByFilter(txtMascota.Text);
         }
 
         private void dgvMascotas_CellContentClick(object sender, DataGridViewCellEventArgs e)

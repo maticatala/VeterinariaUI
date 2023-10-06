@@ -1,4 +1,6 @@
 ﻿using CapaEntidades.Entities;
+using System;
+using System.Windows.Forms;
 
 namespace VentanaPrincipal
 {
@@ -548,5 +550,10 @@ namespace VentanaPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn codEspecieDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private PaintEventHandler panel1_Paint;
+        private PaintEventHandler panelSearch_Paint;
+        private EventHandler lblMascota_Click;
+        private EventHandler lblDueño_Click;
+        private EventHandler lblBusqueda_Click;
     }
 }
