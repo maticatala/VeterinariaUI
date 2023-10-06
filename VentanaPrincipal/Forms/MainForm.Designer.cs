@@ -1,4 +1,8 @@
-﻿namespace VentanaPrincipal
+﻿using FontAwesome.Sharp;
+using System;
+using System.Windows.Forms;
+
+namespace VentanaPrincipal
 {
     partial class MainForm
     {
@@ -52,6 +56,7 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPage = new System.Windows.Forms.Label();
+            this.mainForm = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnMax = new FontAwesome.Sharp.IconButton();
@@ -626,8 +631,10 @@
         private System.Windows.Forms.Label lblNombre;
         private FontAwesome.Sharp.IconButton btnLogOut;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel mainForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPage;
+        private Panel mainForm;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lvlUsername;
         private System.Windows.Forms.Label lblHola;
