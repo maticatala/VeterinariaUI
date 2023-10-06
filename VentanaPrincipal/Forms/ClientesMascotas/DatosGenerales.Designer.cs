@@ -1,4 +1,6 @@
-﻿namespace VentanaPrincipal.Forms.Clientes
+﻿using System;
+
+namespace VentanaPrincipal.Forms.Clientes
 {
     partial class DatosGenerales
     {
@@ -393,5 +395,8 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private EventHandler txtNombre_Load;
+
+        public EventHandler DatosGenerales_Load { get; private set; }
     }
 }

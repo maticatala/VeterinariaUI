@@ -19,6 +19,7 @@ using Sistema;
 //using VentanaPrincipal.Forms.RazasEspecies;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
+using VentanaPrincipal.Forms.RazasEspecies;
 //using Color = System.Drawing.Color;
 
 namespace VentanaPrincipal
@@ -202,7 +203,7 @@ namespace VentanaPrincipal
             my = e.Y;
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void BtnRegistrar_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
             loadform(new razasEspeciesForm());
