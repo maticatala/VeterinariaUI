@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidadaes.Entities;
 using FontAwesome.Sharp;
+using Sistema;
 using VentanaPrincipal.Forms;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
