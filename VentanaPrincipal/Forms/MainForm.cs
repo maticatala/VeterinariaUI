@@ -223,6 +223,7 @@ namespace VentanaPrincipal
         private void btnVeterinarios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
+            loadform(new razasEspeciesForm());
             loadform(new Forms.Veterinarios.veterinariosForm());
         }
 
