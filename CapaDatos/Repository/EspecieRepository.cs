@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -114,5 +115,25 @@ namespace CapaDatos.Repository
             }
             return listEspecies;
         } 
+    }
+
+    [Serializable]
+    internal class EliminadoInvalidoException : Exception
+    {
+        public EliminadoInvalidoException()
+        {
+        }
+
+        public EliminadoInvalidoException(string message) : base(message)
+        {
+        }
+
+        public EliminadoInvalidoException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
+        protected EliminadoInvalidoException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
     }
 }
