@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidades.Entities;
 using FontAwesome.Sharp;
-using Sistema;
 using VentanaPrincipal.Forms;
 using Sistema;
 using VentanaPrincipal.Forms.RazasEspecies;
