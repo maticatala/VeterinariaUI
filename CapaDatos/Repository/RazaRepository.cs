@@ -1,6 +1,7 @@
 ﻿using CapaDatos.Contracts;
 using CapaDatos.Exceptions;
 using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -24,7 +25,7 @@ namespace CapaDatos.Repository
         public RazaRepository()
         {
             selectAll = "SELECT * FROM razas";
-            insert = "INSERT INTO razas VALUES (@nombreRaza, @codEspecie)";
+            insert = "INSERT INTO razas VALUES (@codEspecie, @nombreRaza)";
             update = "UPDATE razas SET nombreRaza=@nombreRaza, codEspecie=@codEspecie WHERE codRaza=@codRaza";
             delete = "DELETE FROM razas WHERE codRaza=@codRaza";
         }
@@ -66,6 +67,24 @@ namespace CapaDatos.Repository
             return listRazas;
         }
 
+        public List<Raza> findByNombreAndEspecie(string nombre, int codEspecie)
+        {
+            string sql = $"SELECT * FROM razas WHERE codEspecie={codEspecie} and nombreRaza like '%{nombre}%'";
+            var tableResult = ExecuteReader( sql );
+            var listRazas = new List<Raza>();
+
+            foreach (DataRow item in tableResult.Rows)
+            {
+                listRazas.Add(new Raza
+                {
+                    CodRaza = (int)item[0],
+                    CodEspecie = (int)item[1],
+                    NombreRaza = item[2].ToString()
+                });
+            }
+            return listRazas;
+        }
+
         public IEnumerable<Raza> GetAll()
         {
             var tableResult = ExecuteReader(selectAll);
@@ -86,7 +105,7 @@ namespace CapaDatos.Repository
         public int Remove(int codRaza)
         {
             parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@codEspecie", codRaza));
+            parameters.Add(new SqlParameter("@codRaza", codRaza));
 
             try
             {
@@ -103,7 +122,7 @@ namespace CapaDatos.Repository
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@codRaza", raza.CodRaza));
             parameters.Add(new SqlParameter("@codEspecie", raza.CodEspecie));
-            parameters.Add(new SqlParameter("@nombreEspecie", raza.NombreRaza));
+            parameters.Add(new SqlParameter("@nombreRaza", raza.NombreRaza));
 
             try
             {
@@ -114,5 +133,6 @@ namespace CapaDatos.Repository
                 throw ex;
             }
         }
+        
     }
 }

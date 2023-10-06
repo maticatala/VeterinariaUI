@@ -147,6 +147,7 @@
     <Compile Include="Contracts\IPracticaRepository.cs" />
     <Compile Include="Contracts\IRazaRepository.cs" />
     <Compile Include="Contracts\IUsuarioRepository.cs" />
+    <Compile Include="Exceptions\EliminadoInvalidoException.cs" />
     <Compile Include="Exceptions\RegistroDuplicadoException.cs" />
     <Compile Include="Exceptions\RegistroInexistenteException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

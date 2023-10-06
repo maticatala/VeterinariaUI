@@ -11,7 +11,7 @@ namespace VentanaPrincipal
 {
     public partial class dueñosForm : Form
     {
-        private CN_Cliente cN_Cliente = new CN_Cliente();
+        private CN_Cliente CN_Mascota = new CN_Cliente();
 
         public dueñosForm()
         {
@@ -27,7 +27,7 @@ namespace VentanaPrincipal
                 DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
                 Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
                 List<Mascota> mascotasCliente = new List<Mascota>();
-                mascotasCliente = cN_Cliente.getMacotas(clienteSeleccionado.IdCliente);
+                mascotasCliente = CN_Mascota.getMacotas(clienteSeleccionado.IdCliente);
                 dgvMascotas.DataSource = mascotasCliente;
             }
         }
@@ -41,7 +41,13 @@ namespace VentanaPrincipal
         {
             try
             {
-                cgvOwners.DataSource = cN_Cliente.getAll();
+                cgvOwners.DataSource = CN_Mascota.getAll();
+                cgvOwners.Rows[0].Selected = true;
+                DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
+                Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
+                List<Mascota> mascotasCliente = new List<Mascota>();
+                mascotasCliente = CN_Mascota.getMacotas(clienteSeleccionado.IdCliente);
+                dgvMascotas.DataSource = mascotasCliente;
             } 
             catch (Exception ex)
             {
@@ -52,7 +58,7 @@ namespace VentanaPrincipal
       
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            cgvOwners.DataSource = cN_Cliente.FindByFilter(txtBuscar.Text);
+            cgvOwners.DataSource = CN_Mascota.FindByFilter(txtBuscar.Text);
         }
 
         private void btnAddOwner_Click(object sender, EventArgs e)
@@ -77,7 +83,7 @@ namespace VentanaPrincipal
             DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
             Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
             List<Mascota> mascotasCliente = new List<Mascota>();
-            mascotasCliente = cN_Cliente.getMacotas(clienteSeleccionado.IdCliente);
+            mascotasCliente = CN_Mascota.getMacotas(clienteSeleccionado.IdCliente);
             dgvMascotas.DataSource = mascotasCliente;
         }
 
@@ -86,7 +92,7 @@ namespace VentanaPrincipal
             DataGridViewRow filaSeleccionada = cgvOwners.SelectedRows[0];
             Cliente clienteSeleccionado = (Cliente)filaSeleccionada.DataBoundItem;
             List<Mascota> mascotasCliente = new List<Mascota>();
-            mascotasCliente = cN_Cliente.getMacotas(clienteSeleccionado.IdCliente);
+            mascotasCliente = CN_Mascota.getMacotas(clienteSeleccionado.IdCliente);
             dgvMascotas.DataSource = mascotasCliente;
         }
 

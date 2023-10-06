@@ -204,6 +204,12 @@ namespace VentanaPrincipal
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color_dark);
+            loadform(new razasEspeciesForm());
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
 
         }
 

@@ -125,6 +125,7 @@ namespace VentanaPrincipal
             this.dgvMascotas.ReadOnly = true;
             this.dgvMascotas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMascotas.RowHeadersVisible = false;
+            this.dgvMascotas.RowHeadersWidth = 51;
             this.dgvMascotas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
@@ -136,6 +137,30 @@ namespace VentanaPrincipal
             this.dgvMascotas.Size = new System.Drawing.Size(400, 453);
             this.dgvMascotas.TabIndex = 2;
             this.dgvMascotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMascotas_CellContentClick);
+            // 
+            // nroHCDataGridViewTextBoxColumn
+            // 
+            this.nroHCDataGridViewTextBoxColumn.DataPropertyName = "NroHC";
+            this.nroHCDataGridViewTextBoxColumn.HeaderText = "NroHC";
+            this.nroHCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nroHCDataGridViewTextBoxColumn.Name = "nroHCDataGridViewTextBoxColumn";
+            this.nroHCDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // codRazaDataGridViewTextBoxColumn
+            // 
+            this.codRazaDataGridViewTextBoxColumn.DataPropertyName = "CodRaza";
+            this.codRazaDataGridViewTextBoxColumn.HeaderText = "CodRaza";
+            this.codRazaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codRazaDataGridViewTextBoxColumn.Name = "codRazaDataGridViewTextBoxColumn";
+            this.codRazaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nroHCDataGridViewTextBoxColumn
             // 
@@ -217,6 +242,7 @@ namespace VentanaPrincipal
             this.cgvOwners.ReadOnly = true;
             this.cgvOwners.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.cgvOwners.RowHeadersVisible = false;
+            this.cgvOwners.RowHeadersWidth = 51;
             this.cgvOwners.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +265,7 @@ namespace VentanaPrincipal
             this.NumeroDocumento.DataPropertyName = "NumeroDocumento";
             this.NumeroDocumento.FillWeight = 60F;
             this.NumeroDocumento.HeaderText = "Documento";
+            this.NumeroDocumento.MinimumWidth = 6;
             this.NumeroDocumento.Name = "NumeroDocumento";
             this.NumeroDocumento.ReadOnly = true;
             // 
@@ -247,6 +274,7 @@ namespace VentanaPrincipal
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TipoDocumento";
             this.dataGridViewTextBoxColumn2.FillWeight = 50F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
@@ -255,6 +283,7 @@ namespace VentanaPrincipal
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Nombre";
             this.dataGridViewTextBoxColumn3.FillWeight = 45F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -263,6 +292,7 @@ namespace VentanaPrincipal
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Apellido";
             this.dataGridViewTextBoxColumn4.FillWeight = 45F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -271,6 +301,7 @@ namespace VentanaPrincipal
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Calle";
             this.dataGridViewTextBoxColumn5.FillWeight = 50F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Calle";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
@@ -279,6 +310,7 @@ namespace VentanaPrincipal
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Altura";
             this.dataGridViewTextBoxColumn6.FillWeight = 43F;
             this.dataGridViewTextBoxColumn6.HeaderText = "Altura";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
@@ -415,6 +447,7 @@ namespace VentanaPrincipal
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::VentanaPrincipal.Properties.Resources.pen_solid;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 15;
@@ -423,8 +456,10 @@ namespace VentanaPrincipal
             // 
             this.dataGridViewImageColumn2.HeaderText = "";
             this.dataGridViewImageColumn2.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 125;
             // 
             // btnAddOwner
             // 

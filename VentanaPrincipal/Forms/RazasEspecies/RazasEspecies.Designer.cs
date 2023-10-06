@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvRazas = new System.Windows.Forms.DataGridView();
@@ -55,6 +55,8 @@
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBuscarEspecie = new System.Windows.Forms.TextBox();
+            this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddRaza = new VentanaPrincipal.RJButton();
             this.btnAddEspecie = new VentanaPrincipal.RJButton();
             this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
@@ -73,9 +75,10 @@
             this.panel1.Controls.Add(this.panelSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
-            this.panel1.Size = new System.Drawing.Size(1053, 627);
+            this.panel1.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.panel1.Size = new System.Drawing.Size(1404, 772);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -86,11 +89,12 @@
             this.tableLayoutPanel1.Controls.Add(this.dgvRazas, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvEspecies, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 148);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 183);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 459);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 564);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dgvRazas
@@ -105,14 +109,14 @@
             this.dgvRazas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRazas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dgvRazas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRazas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRazas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRazas.ColumnHeadersHeight = 45;
             this.dgvRazas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRazas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -121,36 +125,37 @@
             this.CodEspecie,
             this.borrarRaza});
             this.dgvRazas.DataSource = this.razaBindingSource1;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRazas.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRazas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRazas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRazas.EnableHeadersVisualStyles = false;
             this.dgvRazas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.dgvRazas.Location = new System.Drawing.Point(408, 3);
+            this.dgvRazas.Location = new System.Drawing.Point(544, 4);
+            this.dgvRazas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRazas.Name = "dgvRazas";
             this.dgvRazas.ReadOnly = true;
             this.dgvRazas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvRazas.RowHeadersVisible = false;
             this.dgvRazas.RowHeadersWidth = 51;
             this.dgvRazas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvRazas.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRazas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRazas.RowTemplate.Height = 55;
             this.dgvRazas.RowTemplate.ReadOnly = true;
             this.dgvRazas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRazas.Size = new System.Drawing.Size(602, 453);
+            this.dgvRazas.Size = new System.Drawing.Size(802, 556);
             this.dgvRazas.TabIndex = 1;
             this.dgvRazas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellClick);
             this.dgvRazas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellDoubleClick);
@@ -208,14 +213,14 @@
             this.dgvEspecies.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEspecies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dgvEspecies.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEspecies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEspecies.ColumnHeadersHeight = 45;
             this.dgvEspecies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEspecies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -223,36 +228,37 @@
             this.nombreEspecieDataGridViewTextBoxColumn,
             this.borrarEspecie});
             this.dgvEspecies.DataSource = this.especieBindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEspecies.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecies.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEspecies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEspecies.EnableHeadersVisualStyles = false;
             this.dgvEspecies.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.dgvEspecies.Location = new System.Drawing.Point(3, 3);
+            this.dgvEspecies.Location = new System.Drawing.Point(4, 4);
+            this.dgvEspecies.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEspecies.Name = "dgvEspecies";
             this.dgvEspecies.ReadOnly = true;
             this.dgvEspecies.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvEspecies.RowHeadersVisible = false;
             this.dgvEspecies.RowHeadersWidth = 51;
             this.dgvEspecies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEspecies.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEspecies.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEspecies.RowTemplate.Height = 55;
             this.dgvEspecies.RowTemplate.ReadOnly = true;
             this.dgvEspecies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecies.Size = new System.Drawing.Size(399, 453);
+            this.dgvEspecies.Size = new System.Drawing.Size(532, 556);
             this.dgvEspecies.TabIndex = 0;
             this.dgvEspecies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellClick);
             this.dgvEspecies.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellDoubleClick);
@@ -301,10 +307,11 @@
             this.panelSearch.Controls.Add(this.txtBuscarEspecie);
             this.panelSearch.Controls.Add(this.btnAddEspecie);
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearch.Location = new System.Drawing.Point(20, 20);
+            this.panelSearch.Location = new System.Drawing.Point(27, 25);
+            this.panelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panelSearch.Size = new System.Drawing.Size(1013, 128);
+            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
+            this.panelSearch.Size = new System.Drawing.Size(1350, 158);
             this.panelSearch.TabIndex = 1;
             // 
             // btnAddRaza
@@ -336,9 +343,10 @@
             this.txtBuscarRaza.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscarRaza.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarRaza.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtBuscarRaza.Location = new System.Drawing.Point(490, 68);
+            this.txtBuscarRaza.Location = new System.Drawing.Point(653, 84);
+            this.txtBuscarRaza.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarRaza.Name = "txtBuscarRaza";
-            this.txtBuscarRaza.Size = new System.Drawing.Size(244, 18);
+            this.txtBuscarRaza.Size = new System.Drawing.Size(325, 22);
             this.txtBuscarRaza.TabIndex = 7;
             this.txtBuscarRaza.TextChanged += new System.EventHandler(this.txtBuscarRaza_TextChanged);
             // 
@@ -348,9 +356,10 @@
             this.lblRaza.AutoSize = true;
             this.lblRaza.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRaza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblRaza.Location = new System.Drawing.Point(487, 48);
+            this.lblRaza.Location = new System.Drawing.Point(649, 59);
+            this.lblRaza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRaza.Name = "lblRaza";
-            this.lblRaza.Size = new System.Drawing.Size(36, 17);
+            this.lblRaza.Size = new System.Drawing.Size(47, 23);
             this.lblRaza.TabIndex = 6;
             this.lblRaza.Text = "Raza";
             // 
@@ -359,9 +368,10 @@
             this.lblEspecie.AutoSize = true;
             this.lblEspecie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEspecie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblEspecie.Location = new System.Drawing.Point(16, 48);
+            this.lblEspecie.Location = new System.Drawing.Point(21, 59);
+            this.lblEspecie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEspecie.Name = "lblEspecie";
-            this.lblEspecie.Size = new System.Drawing.Size(52, 17);
+            this.lblEspecie.Size = new System.Drawing.Size(66, 23);
             this.lblEspecie.TabIndex = 5;
             this.lblEspecie.Text = "Especie";
             // 
@@ -369,9 +379,10 @@
             // 
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(15, 9);
+            this.lblBusqueda.Location = new System.Drawing.Point(20, 11);
+            this.lblBusqueda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(82, 21);
+            this.lblBusqueda.Size = new System.Drawing.Size(102, 28);
             this.lblBusqueda.TabIndex = 4;
             this.lblBusqueda.Text = "Busqueda";
             // 
@@ -380,11 +391,36 @@
             this.txtBuscarEspecie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscarEspecie.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarEspecie.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtBuscarEspecie.Location = new System.Drawing.Point(19, 68);
+            this.txtBuscarEspecie.Location = new System.Drawing.Point(25, 84);
+            this.txtBuscarEspecie.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarEspecie.Name = "txtBuscarEspecie";
-            this.txtBuscarEspecie.Size = new System.Drawing.Size(244, 18);
+            this.txtBuscarEspecie.Size = new System.Drawing.Size(325, 22);
             this.txtBuscarEspecie.TabIndex = 3;
             this.txtBuscarEspecie.TextChanged += new System.EventHandler(this.txtBuscarEspecie_TextChanged);
+            // 
+            // btnAddRaza
+            // 
+            this.btnAddRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddRaza.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderRadius = 5;
+            this.btnAddRaza.BorderSize = 0;
+            this.btnAddRaza.FlatAppearance.BorderSize = 0;
+            this.btnAddRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRaza.ForeColor = System.Drawing.Color.White;
+            this.btnAddRaza.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddRaza.Location = new System.Drawing.Point(986, 59);
+            this.btnAddRaza.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRaza.Name = "btnAddRaza";
+            this.btnAddRaza.Size = new System.Drawing.Size(200, 55);
+            this.btnAddRaza.TabIndex = 8;
+            this.btnAddRaza.Text = "Nueva Raza";
+            this.btnAddRaza.TextColor = System.Drawing.Color.White;
+            this.btnAddRaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddRaza.UseVisualStyleBackColor = false;
+            this.btnAddRaza.Click += new System.EventHandler(this.btnAddRaza_Click);
             // 
             // btnAddEspecie
             // 
@@ -398,9 +434,10 @@
             this.btnAddEspecie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEspecie.ForeColor = System.Drawing.Color.White;
             this.btnAddEspecie.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddEspecie.Location = new System.Drawing.Point(299, 48);
+            this.btnAddEspecie.Location = new System.Drawing.Point(371, 59);
+            this.btnAddEspecie.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEspecie.Name = "btnAddEspecie";
-            this.btnAddEspecie.Size = new System.Drawing.Size(150, 45);
+            this.btnAddEspecie.Size = new System.Drawing.Size(200, 55);
             this.btnAddEspecie.TabIndex = 1;
             this.btnAddEspecie.Text = "Nueva Especie";
             this.btnAddEspecie.TextColor = System.Drawing.Color.White;
@@ -410,10 +447,10 @@
             // 
             // razasEspeciesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1053, 627);
+            this.ClientSize = new System.Drawing.Size(1404, 772);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

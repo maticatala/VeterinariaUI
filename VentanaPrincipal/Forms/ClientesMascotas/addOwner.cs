@@ -24,7 +24,6 @@ namespace VentanaPrincipal
         {
             InitializeComponent();
             btnMascotas.Enabled = false;
-
             currentBtn = btnCliente;
             DatosGenerales dg = new DatosGenerales();
             AddOwnedForm(dg);
@@ -101,7 +100,7 @@ namespace VentanaPrincipal
 
         private void formAdd_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void panelDisplay_Paint(object sender, PaintEventArgs e)
