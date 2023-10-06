@@ -87,5 +87,10 @@ namespace VentanaPrincipal.Forms.RazasEspecies
             MessageBox.Show(result);
             this.Close();
         }
+
+        private void lblNombreEspecie_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

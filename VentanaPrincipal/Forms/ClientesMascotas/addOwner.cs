@@ -11,6 +11,7 @@ using CapaNegocio.Models;
 using FontAwesome.Sharp;
 using VentanaPrincipal.Forms.Clientes;
 using VentanaPrincipal.Forms.ClientesMascotas;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace VentanaPrincipal
 {
@@ -107,4 +108,4 @@ namespace VentanaPrincipal
 
         }
     }
-}
+    }

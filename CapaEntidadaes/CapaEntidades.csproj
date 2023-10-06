@@ -45,8 +45,10 @@
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Especie.cs" />
     <Compile Include="Entities\Mascota.cs" />
+    <Compile Include="Entities\Practica.cs" />
     <Compile Include="Entities\Raza.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\Veterinario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

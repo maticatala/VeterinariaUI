@@ -5,6 +5,7 @@ using CapaEntidades.Entities;
 
 //Referencias
 using CapaNegocio.Models;
+using VentanaPrincipal.Forms.Usuarios;
 
 namespace VentanaPrincipal
 {
@@ -54,6 +55,7 @@ namespace VentanaPrincipal
             }
         }
 
+      
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             cgvOwners.DataSource = CN_Mascota.FindByFilter(txtBuscar.Text);
@@ -96,12 +98,18 @@ namespace VentanaPrincipal
 
         private void txtMascota_TextChanged(object sender, EventArgs e)
         {
-            dgvMascotas.DataSource = CN_Mascota.FindByFilter(txtMascota.Text);
+            //dgvMascotas.DataSource = CN_Mascota.FindByFilter(txtMascota.Text);
         }
 
         private void dgvMascotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void cgvOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
+

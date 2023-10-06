@@ -49,6 +49,7 @@
             this.borrarEspecie = new System.Windows.Forms.DataGridViewImageColumn();
             this.especieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelSearch = new System.Windows.Forms.Panel();
+            this.btnAddRaza = new VentanaPrincipal.RJButton();
             this.txtBuscarRaza = new System.Windows.Forms.TextBox();
             this.lblRaza = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddRaza = new VentanaPrincipal.RJButton();
             this.btnAddEspecie = new VentanaPrincipal.RJButton();
+            this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRazas)).BeginInit();
@@ -312,6 +314,29 @@
             this.panelSearch.Size = new System.Drawing.Size(1350, 158);
             this.panelSearch.TabIndex = 1;
             // 
+            // btnAddRaza
+            // 
+            this.btnAddRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddRaza.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnAddRaza.BorderRadius = 5;
+            this.btnAddRaza.BorderSize = 0;
+            this.btnAddRaza.FlatAppearance.BorderSize = 0;
+            this.btnAddRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRaza.ForeColor = System.Drawing.Color.White;
+            this.btnAddRaza.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnAddRaza.Location = new System.Drawing.Point(759, 48);
+            this.btnAddRaza.Name = "btnAddRaza";
+            this.btnAddRaza.Size = new System.Drawing.Size(150, 45);
+            this.btnAddRaza.TabIndex = 8;
+            this.btnAddRaza.Text = "Nueva Raza";
+            this.btnAddRaza.TextColor = System.Drawing.Color.White;
+            this.btnAddRaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddRaza.UseVisualStyleBackColor = false;
+            this.btnAddRaza.Click += new System.EventHandler(this.btnAddRaza_Click);
+            // 
             // txtBuscarRaza
             // 
             this.txtBuscarRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -428,6 +453,7 @@
             this.ClientSize = new System.Drawing.Size(1404, 772);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "razasEspeciesForm";
             this.Text = "RazasEspecies";
             this.Load += new System.EventHandler(this.razasEspeciesForm_Load);

@@ -1,4 +1,6 @@
-﻿namespace VentanaPrincipal.Forms.Clientes
+﻿using System;
+
+namespace VentanaPrincipal.Forms.Clientes
 {
     partial class DatosGenerales
     {
@@ -250,6 +252,7 @@
             this.txtNombre.Size = new System.Drawing.Size(156, 35);
             this.txtNombre.TabIndex = 12;
             this.txtNombre.UnderlinedStyle = true;
+            this.txtNombre.Load += new System.EventHandler(this.txtNombre_Load);
             // 
             // btnAdd
             // 
@@ -362,6 +365,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DatosGenerales";
             this.Text = "DatosGenerales";
+            this.Load += new System.EventHandler(this.DatosGenerales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -391,5 +395,8 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private EventHandler txtNombre_Load;
+
+        public EventHandler DatosGenerales_Load { get; private set; }
     }
 }

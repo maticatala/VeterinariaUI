@@ -10,6 +10,7 @@ using System.Data;
 using CapaEntidades.Entities;
 using CapaDatos.Exceptions;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using CapaDatos.Contracts;
 
 namespace CapaDatos.Repository
@@ -141,6 +142,15 @@ namespace CapaDatos.Repository
                 });
             }
             return listMascotas;
+        }
+
+        public int getCount()
+        {
+            string query = "SELECT COUNT(*) AS TotalRows FROM clientes";
+            var tableResult = ExecuteReader(query);
+            DataRow dr = tableResult.Rows[0];
+            int resultado = (int)dr[0];
+            return resultado;
         }
     }
 }

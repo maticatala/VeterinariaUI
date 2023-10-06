@@ -49,8 +49,10 @@
     <Compile Include="Models\CN_Cliente.cs" />
     <Compile Include="Models\CN_Especie.cs" />
     <Compile Include="Models\CN_Mascota.cs" />
+    <Compile Include="Models\CN_Practica.cs" />
     <Compile Include="Models\CN_Raza.cs" />
     <Compile Include="Models\CN_Usuario.cs" />
+    <Compile Include="Models\CN_Veterinario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueObjects\EntityState.cs" />
   </ItemGroup>
@@ -59,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{9867c7a3-db43-494c-bdb7-63dcbf3e7e7d}</Project>
+      <Project>{9867C7A3-DB43-494C-BDB7-63DCBF3E7E7D}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapaEntidadaes\CapaEntidades.csproj">
