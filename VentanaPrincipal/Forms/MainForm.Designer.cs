@@ -623,6 +623,7 @@ namespace VentanaPrincipal
         #endregion
         private FontAwesome.Sharp.IconButton btnDashboard;
         private FontAwesome.Sharp.IconButton btnDueños;
+        private IconButton btnMascotas;
         private FontAwesome.Sharp.IconButton btnHistoriaClinica;
         private FontAwesome.Sharp.IconButton btnServicios;
         private System.Windows.Forms.Panel panelLogo;
@@ -648,6 +649,8 @@ namespace VentanaPrincipal
         private FontAwesome.Sharp.IconButton btnUsuarios;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.Panel mainPanel;
+        private EventHandler btnMascotas_Click;
+        private EventHandler lblPage_Click;
     }
 }
 

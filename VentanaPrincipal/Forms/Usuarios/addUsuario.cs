@@ -132,5 +132,10 @@ namespace Sistema
             MessageBox.Show(result);
             this.Close();
         }
+
+        private void frmRegistro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

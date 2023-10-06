@@ -49,6 +49,7 @@ namespace VentanaPrincipal
             }
         }
 
+      
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             cgvOwners.DataSource = cN_Cliente.FindByFilter(txtBuscar.Text);

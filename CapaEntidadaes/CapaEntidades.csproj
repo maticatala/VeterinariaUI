@@ -45,6 +45,7 @@
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Especie.cs" />
     <Compile Include="Entities\Mascota.cs" />
+    <Compile Include="Entities\Practica.cs" />
     <Compile Include="Entities\Raza.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

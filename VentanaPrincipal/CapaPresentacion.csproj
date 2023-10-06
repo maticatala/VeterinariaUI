@@ -279,6 +279,18 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Practicas\practicaAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Practicas\practicaAdd.Designer.cs">
+      <DependentUpon>practicaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Practicas\practicasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Practicas\practicasForm.Designer.cs">
+      <DependentUpon>practicasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Usuarios\addUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,16 +327,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>veterinariaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="veterinariaDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Forms\ClientesMascotas\addOwner.resx">
       <DependentUpon>addOwner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientesMascotas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientesMascotas\DatosGenerales.resx">
       <DependentUpon>DatosGenerales.cs</DependentUpon>
@@ -337,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Practicas\practicaAdd.resx">
+      <DependentUpon>practicaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Practicas\practicasForm.resx">
+      <DependentUpon>practicasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\addUsuario.resx">
       <DependentUpon>addUsuario.cs</DependentUpon>
@@ -387,17 +401,6 @@
     </None>
     <None Include="veterinariaDataSet.xss">
       <DependentUpon>veterinariaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="veterinariaDataSet1.xsc">
-      <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="veterinariaDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>veterinariaDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="veterinariaDataSet1.xss">
-      <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

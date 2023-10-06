@@ -49,6 +49,7 @@
     <Compile Include="Models\CN_Cliente.cs" />
     <Compile Include="Models\CN_Especie.cs" />
     <Compile Include="Models\CN_Mascota.cs" />
+    <Compile Include="Models\CN_Practica.cs" />
     <Compile Include="Models\CN_Raza.cs" />
     <Compile Include="Models\CN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
