@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +11,8 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using CapaEntidades.Entities;
 using FontAwesome.Sharp;
+using Sistema;
+using VentanaPrincipal.Forms;
 using Sistema;
 using VentanaPrincipal.Forms.RazasEspecies;
 using VentanaPrincipal.Forms.Usuarios;
@@ -96,6 +99,7 @@ namespace VentanaPrincipal
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
+            loadform(new dashboardForm());
         }
 
         private void btnServicios_Click(object sender, EventArgs e)
@@ -116,8 +120,7 @@ namespace VentanaPrincipal
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            
-            Reset();
+            btnDashboard.PerformClick();
         }
 
         //RESETEAR EL ESTILO DE LOS BOTONES
@@ -162,7 +165,10 @@ namespace VentanaPrincipal
             }
             lvlUsername.Text = user.N_usuario;
             lblRol.Text = user.Tipo_usuario;
+            
+            //Llamar al evento click de dashboard
 
+            btnDashboard.PerformClick();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

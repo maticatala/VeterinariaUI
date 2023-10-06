@@ -91,6 +91,11 @@ namespace CapaNegocio.Models
                 e.Altura.ToString().Contains(filter)); //Consulta lambda
         }
 
+        public int getCount()
+        {
+            return clienteRepository.getCount();
+        }
+
         public List<Mascota> getMacotas(int idCliente)
         {
             return clienteRepository.getMascotas(idCliente);

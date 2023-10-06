@@ -229,6 +229,7 @@
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -253,6 +254,12 @@
     </Compile>
     <Compile Include="Forms\ClientesMascotas\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dashboardForm.Designer.cs">
+      <DependentUpon>dashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClientesMascotas\DatosGenerales.cs">
       <SubType>Form</SubType>
@@ -324,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientesMascotas\DatosMascotasForm.resx">
       <DependentUpon>DatosMascotasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dashboardForm.resx">
+      <DependentUpon>dashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

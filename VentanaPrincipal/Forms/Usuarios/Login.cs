@@ -82,5 +82,15 @@ namespace VentanaPrincipal.Forms.Usuarios
             txtUsuario.Text = string.Empty;
             txtPassword.Text = string.Empty;
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
