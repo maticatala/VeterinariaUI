@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAnimales = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblVeterinarios = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblDueños = new System.Windows.Forms.Label();
@@ -56,9 +56,9 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblAnimales);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(395, 53);
@@ -66,15 +66,15 @@
             this.panel2.Size = new System.Drawing.Size(208, 123);
             this.panel2.TabIndex = 3;
             // 
-            // label3
+            // lblAnimales
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(84, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 37);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "0";
+            this.lblAnimales.AutoSize = true;
+            this.lblAnimales.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblAnimales.Location = new System.Drawing.Point(84, 61);
+            this.lblAnimales.Name = "lblAnimales";
+            this.lblAnimales.Size = new System.Drawing.Size(33, 37);
+            this.lblAnimales.TabIndex = 4;
+            this.lblAnimales.Text = "0";
             // 
             // label6
             // 
@@ -90,9 +90,9 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lblVeterinarios);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(705, 53);
@@ -100,22 +100,22 @@
             this.panel3.Size = new System.Drawing.Size(208, 123);
             this.panel3.TabIndex = 3;
             // 
-            // label5
+            // lblVeterinarios
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(90, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 37);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "0";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lblVeterinarios.AutoSize = true;
+            this.lblVeterinarios.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblVeterinarios.Location = new System.Drawing.Point(83, 61);
+            this.lblVeterinarios.Name = "lblVeterinarios";
+            this.lblVeterinarios.Size = new System.Drawing.Size(33, 37);
+            this.lblVeterinarios.TabIndex = 5;
+            this.lblVeterinarios.Text = "0";
+            this.lblVeterinarios.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(31, 17);
+            this.label7.Location = new System.Drawing.Point(20, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(172, 37);
             this.label7.TabIndex = 4;
@@ -146,7 +146,8 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblDueños);
             this.panel1.Controls.Add(this.label4);
@@ -227,8 +228,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblAnimales;
+        private System.Windows.Forms.Label lblVeterinarios;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblDueños;
         private System.Windows.Forms.Panel panel1;

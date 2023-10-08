@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cgvUsuarios = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.txtMascota = new System.Windows.Forms.TextBox();
             this.lblMascota = new System.Windows.Forms.Label();
@@ -40,77 +39,16 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAddOwner = new VentanaPrincipal.RJButton();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);;
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipousuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).BeginInit();
+            this.cgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cgvUsuarios
-            // 
-            this.cgvUsuarios.AllowUserToAddRows = false;
-            this.cgvUsuarios.AllowUserToDeleteRows = false;
-            this.cgvUsuarios.AllowUserToResizeColumns = false;
-            this.cgvUsuarios.AllowUserToResizeRows = false;
-            this.cgvUsuarios.AutoGenerateColumns = false;
-            this.cgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cgvUsuarios.BackgroundColor = System.Drawing.Color.White;
-            this.cgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.cgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.cgvUsuarios.ColumnHeadersHeight = 45;
-            this.cgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.cgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nusuarioDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.tipousuarioDataGridViewTextBoxColumn});
-            this.cgvUsuarios.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cgvUsuarios.DataSource = this.usuariosBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cgvUsuarios.DefaultCellStyle = dataGridViewCellStyle5;
-            this.cgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cgvUsuarios.EnableHeadersVisualStyles = false;
-            this.cgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.cgvUsuarios.Location = new System.Drawing.Point(0, 128);
-            this.cgvUsuarios.Name = "cgvUsuarios";
-            this.cgvUsuarios.ReadOnly = true;
-            this.cgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.cgvUsuarios.RowHeadersVisible = false;
-            this.cgvUsuarios.RowHeadersWidth = 51;
-            this.cgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.cgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.cgvUsuarios.RowTemplate.Height = 55;
-            this.cgvUsuarios.RowTemplate.ReadOnly = true;
-            this.cgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cgvUsuarios.Size = new System.Drawing.Size(800, 322);
-            this.cgvUsuarios.TabIndex = 2;
-            this.cgvUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellDoubleClick);
             // 
             // panelSearch
             // 
@@ -192,7 +130,7 @@
             this.btnAddOwner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddOwner.ForeColor = System.Drawing.Color.White;
             this.btnAddOwner.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddOwner.Location = new System.Drawing.Point(624, 52);
+            this.btnAddOwner.Location = new System.Drawing.Point(1214, 66);
             this.btnAddOwner.Name = "btnAddOwner";
             this.btnAddOwner.Size = new System.Drawing.Size(150, 45);
             this.btnAddOwner.TabIndex = 1;
@@ -201,47 +139,100 @@
             this.btnAddOwner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddOwner.UseVisualStyleBackColor = false;
             // 
-            // veterinariaDataSet1
+            // cgvUsuarios
             // 
-            //this.veterinariaDataSet1.DataSetName = "veterinariaDataSet1";
-            //this.veterinariaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cgvUsuarios.AllowUserToAddRows = false;
+            this.cgvUsuarios.AllowUserToDeleteRows = false;
+            this.cgvUsuarios.AllowUserToResizeColumns = false;
+            this.cgvUsuarios.AllowUserToResizeRows = false;
+            this.cgvUsuarios.AutoGenerateColumns = false;
+            this.cgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cgvUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.cgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.cgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.cgvUsuarios.ColumnHeadersHeight = 45;
+            this.cgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.cgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.cgvUsuarios.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cgvUsuarios.DataSource = this.usuarioBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            this.cgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cgvUsuarios.EnableHeadersVisualStyles = false;
+            this.cgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.cgvUsuarios.Location = new System.Drawing.Point(0, 128);
+            this.cgvUsuarios.Name = "cgvUsuarios";
+            this.cgvUsuarios.ReadOnly = true;
+            this.cgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.cgvUsuarios.RowHeadersVisible = false;
+            this.cgvUsuarios.RowHeadersWidth = 51;
+            this.cgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.cgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.cgvUsuarios.RowTemplate.Height = 55;
+            this.cgvUsuarios.RowTemplate.ReadOnly = true;
+            this.cgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cgvUsuarios.Size = new System.Drawing.Size(800, 322);
+            this.cgvUsuarios.TabIndex = 2;
+            this.cgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellContentClick_1);
+            this.cgvUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellDoubleClick);
             // 
-            // usuariosBindingSource
+            // usuarioBindingSource
             // 
-            //this.usuariosBindingSource.DataMember = "usuarios";
-            //this.usuariosBindingSource.DataSource = this.veterinariaDataSet1;
+            this.usuarioBindingSource.DataSource = typeof(CapaEntidades.Entities.Usuario);
             // 
-            // usuariosTableAdapter
+            // dataGridViewTextBoxColumn1
             // 
-            //this.usuariosTableAdapter.ClearBeforeFill = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "N_usuario";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // nusuarioDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.nusuarioDataGridViewTextBoxColumn.DataPropertyName = "n_usuario";
-            this.nusuarioDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nusuarioDataGridViewTextBoxColumn.Name = "nusuarioDataGridViewTextBoxColumn";
-            this.nusuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Password";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // passwordDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipousuarioDataGridViewTextBoxColumn
-            // 
-            this.tipousuarioDataGridViewTextBoxColumn.DataPropertyName = "tipo_usuario";
-            this.tipousuarioDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipousuarioDataGridViewTextBoxColumn.Name = "tipousuarioDataGridViewTextBoxColumn";
-            this.tipousuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Tipo_usuario";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Usuarios
             // 
@@ -253,18 +244,15 @@
             this.Name = "Usuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.usuarioForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).EndInit();
             this.panelSearch.ResumeLayout(false);
             this.panelSearch.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView cgvUsuarios;
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.TextBox txtMascota;
         private System.Windows.Forms.Label lblMascota;
@@ -277,5 +265,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nusuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipousuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView cgvUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
     }
 }

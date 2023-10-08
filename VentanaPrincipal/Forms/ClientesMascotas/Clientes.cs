@@ -110,6 +110,11 @@ namespace VentanaPrincipal
         {
 
         }
+
+        private void mascotaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

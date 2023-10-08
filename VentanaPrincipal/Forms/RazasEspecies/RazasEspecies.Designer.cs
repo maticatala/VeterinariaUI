@@ -56,9 +56,9 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBuscarEspecie = new System.Windows.Forms.TextBox();
             this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnAddRaza = new VentanaPrincipal.RJButton();
+            //this.btnAddRaza = new VentanaPrincipal.RJButton();
             this.btnAddEspecie = new VentanaPrincipal.RJButton();
-            this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRazas)).BeginInit();

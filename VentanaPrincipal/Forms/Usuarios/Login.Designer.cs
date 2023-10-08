@@ -166,7 +166,7 @@
             this.lblPage.AutoSize = true;
             this.lblPage.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblPage.Location = new System.Drawing.Point(157, 53);
+            this.lblPage.Location = new System.Drawing.Point(163, 53);
             this.lblPage.Name = "lblPage";
             this.lblPage.Size = new System.Drawing.Size(89, 37);
             this.lblPage.TabIndex = 14;

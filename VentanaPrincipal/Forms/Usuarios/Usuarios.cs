@@ -16,6 +16,9 @@ namespace VentanaPrincipal.Forms.Usuarios
     public partial class Usuarios : Form
     {
         private CN_Usuario CN_Usuario = new CN_Usuario();
+
+        public object usuariosTableAdapter { get; private set; }
+
         public Usuarios()
         {
             InitializeComponent();
@@ -80,6 +83,11 @@ namespace VentanaPrincipal.Forms.Usuarios
         {
             // TODO: This line of code loads data into the 'veterinariaDataSet1.usuarios' table. You can move, or remove it, as needed.
             //this.usuariosTableAdapter.Fill(this.veterinariaDataSet1.usuarios);
+
+        }
+
+        private void cgvUsuarios_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
