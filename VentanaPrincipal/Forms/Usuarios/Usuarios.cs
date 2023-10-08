@@ -15,7 +15,7 @@ namespace VentanaPrincipal.Forms.Usuarios
 {
     public partial class Usuarios : Form
     {
-        private CN_Usuario CN_Usuario = new CN_Usuario();
+        private CN_Usuario Cn_Usuario = new CN_Usuario();
 
         public object usuariosTableAdapter { get; private set; }
 
@@ -38,7 +38,7 @@ namespace VentanaPrincipal.Forms.Usuarios
         {
             try
             {
-                cgvUsuarios.DataSource = CN_Usuario.getAll();
+                cgvUsuarios.DataSource = Cn_Usuario.getAll();
                 cgvUsuarios.Rows[0].Selected = true;
                 DataGridViewRow filaseleccionada = cgvUsuarios.SelectedRows[0];
                 Usuario usuarioSeleccionado = (Usuario)filaseleccionada.DataBoundItem;
@@ -75,7 +75,7 @@ namespace VentanaPrincipal.Forms.Usuarios
 
                 frmRegistro agregar = new frmRegistro(usuarioSeleccionado);
                 agregar.ShowDialog();
-                cgvUsuarios.DataSource = CN_Usuario.getAll();
+                cgvUsuarios.DataSource = Cn_Usuario.getAll();
             }
         }
 

@@ -68,12 +68,12 @@ namespace CapaNegocio.Models
             return mensaje;
         }
 
-        public List<Usuario> GetAll()
-        {
-            var usuarioDataModel = usuarioRepository.GetAll();
-            listUsuarios = usuarioDataModel.ToList();
-            return listUsuarios;
-        }
+        //public List<Usuario> GetAll()
+        //{
+        //    var usuarioDataModel = usuarioRepository.GetAll();
+        //    listUsuarios = usuarioDataModel.ToList();
+        //    return listUsuarios;
+        //}
 
         public Usuario LoginUser(string username, string password)
         {
