@@ -134,14 +134,6 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
                 string result = mascotaNegocio.SaveChanges();
                 MessageBox.Show(result);
                 verificarMascotas();
-                this.Close();
-
-                // Verifica si el formulario Form2 está abierto
-                if (Application.OpenForms["formAdd"] != null)
-                {
-                    // Si está abierto, cierra el formulario Form2
-                    Application.OpenForms["formAdd"].Close();
-                }
             }
         }
 
@@ -180,14 +172,6 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
             string result = mascotaNegocio.SaveChanges();
             MessageBox.Show(result);
             verificarMascotas();
-            this.Close();
-
-            // Verifica si el formulario Form2 está abierto
-            if (Application.OpenForms["formAdd"] != null)
-            {
-                // Si está abierto, cierra el formulario Form2
-                Application.OpenForms["formAdd"].Close();
-            }
         }
     }
 }
