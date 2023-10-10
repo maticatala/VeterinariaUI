@@ -384,6 +384,7 @@ namespace VentanaPrincipal
             this.lvlUsername.TabIndex = 2;
             this.lvlUsername.Text = "Matias";
             this.lvlUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lvlUsername.Click += new System.EventHandler(this.lvlUsername_Click);
             // 
             // lblHola
             // 

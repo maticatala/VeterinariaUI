@@ -38,6 +38,7 @@ namespace VentanaPrincipal
             leftBorderBtn.Size = new Size(7, 60);
             Controls.Add(leftBorderBtn);
             this.user = user;
+            
         }
         //Structs
         private struct RGBColors
@@ -166,6 +167,9 @@ namespace VentanaPrincipal
             {
                 btnRegistrar.Visible = false;
                 btnUsuarios.Visible = false;
+                lvlUsername.Text = user.N_usuario;
+                lblRol.Text = user.Tipo_usuario;
+
             }
             lvlUsername.Text = user.N_usuario;
             lblRol.Text = user.Tipo_usuario;
@@ -226,6 +230,11 @@ namespace VentanaPrincipal
             ActivateButton(sender, RGBColors.color_dark);
             loadform(new razasEspeciesForm());
             loadform(new Forms.Veterinarios.veterinariosForm());
+        }
+
+        private void lvlUsername_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void panelControls_MouseMove(object sender, MouseEventArgs e)
