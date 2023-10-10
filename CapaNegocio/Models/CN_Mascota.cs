@@ -73,5 +73,9 @@ namespace CapaNegocio.Models
                 e => e.NroHC.ToString().Contains(filter.ToLower()) ||
                 e.Nombre.ToLower().Contains(filter.ToLower()));
         }
+        public int getCount()
+        {
+            return mascotaRepository.getCount();
+        }
     }
 }

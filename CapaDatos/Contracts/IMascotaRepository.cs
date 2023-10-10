@@ -9,6 +9,6 @@ namespace CapaDatos.Contracts
 {
     public interface IMascotaRepository : IGenericRepository<Mascota, int>
     {
-
+        int getCount();
     }
 }

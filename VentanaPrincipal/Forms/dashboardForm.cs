@@ -22,6 +22,10 @@ namespace VentanaPrincipal.Forms
         {
             CN_Cliente cliente = new CN_Cliente();
             lblDueños.Text = cliente.getCount().ToString();
+            CN_Veterinario veterinario = new CN_Veterinario();
+            lblVeterinarios.Text = veterinario.getCount().ToString();
+            CN_Mascota mascota = new CN_Mascota();
+            lblAnimales.Text = mascota.getCount().ToString();
         }
 
         private void horaFecha_Tick(object sender, EventArgs e)

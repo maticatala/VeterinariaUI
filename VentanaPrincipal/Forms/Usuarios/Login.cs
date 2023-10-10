@@ -35,6 +35,7 @@ namespace VentanaPrincipal.Forms.Usuarios
                 this.Hide();
                 frm.Show();
                 frm.FormClosed += Logout;
+                
             } catch (Exception ex)
             {
                 msgErrror(ex.Message);

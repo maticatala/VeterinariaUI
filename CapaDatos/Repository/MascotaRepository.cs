@@ -90,5 +90,13 @@ namespace CapaDatos.Repository
 
             return ExecuteNonQuery(update);
         }
+        public int getCount()
+        {
+            string query = "SELECT COUNT(*) AS TotalRows FROM mascotas";
+            var tableResult = ExecuteReader(query);
+            DataRow dr = tableResult.Rows[0];
+            int resultado = (int)dr[0];
+            return resultado;
+        }
     }
 }

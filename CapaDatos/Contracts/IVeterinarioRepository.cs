@@ -12,5 +12,8 @@ namespace CapaDatos.Contracts
     public interface IVeterinarioRepository : IGenericRepository<Veterinario, string>
     {
         int Update(Veterinario vet, string matricula);
+
+
+        int getCount();
     }
 }

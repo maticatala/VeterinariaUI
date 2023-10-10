@@ -316,6 +316,12 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Usuarios\Session.cs" />
+    <Compile Include="Forms\Usuarios\usuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios\usuarioForm.Designer.cs">
+      <DependentUpon>usuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Veterinarios\addVeterinario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,12 +333,6 @@
     </Compile>
     <Compile Include="Forms\Veterinarios\VeterinariosForm.Designer.cs">
       <DependentUpon>VeterinariosForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Usuarios\Usuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Usuarios\Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Helps\DataValidation.cs" />
     <Compile Include="Program.cs" />
@@ -350,6 +350,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>veterinariaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="veterinariaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\ClientesMascotas\addOwner.resx">
       <DependentUpon>addOwner.cs</DependentUpon>
@@ -388,12 +393,12 @@
     <EmbeddedResource Include="Forms\Usuarios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\usuarioForm.resx">
+      <DependentUpon>usuarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Veterinarios\VeterinariosForm.resx">
       <DependentUpon>VeterinariosForm.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Usuarios\Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -437,6 +442,17 @@
     </None>
     <None Include="veterinariaDataSet.xss">
       <DependentUpon>veterinariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet1.xsc">
+      <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>veterinariaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="veterinariaDataSet1.xss">
+      <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

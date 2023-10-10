@@ -57,6 +57,10 @@ namespace CapaNegocio.Models
                 e.Altura.ToString().Contains(filter) ||
                 e.Telefono.ToString().Contains(filter)); //Consulta lambda
         }
+        public int getCount()
+        {
+            return veterinarioRepository.getCount();
+        }
 
     }
 }

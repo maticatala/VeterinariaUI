@@ -19,6 +19,7 @@ namespace Sistema
         public frmRegistro()
         {
             InitializeComponent();
+            btnDelete.Enabled = false;
             usuarioNegocio.State = EntityState.Added;
         }
 

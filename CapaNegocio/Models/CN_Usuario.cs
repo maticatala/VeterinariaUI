@@ -68,18 +68,17 @@ namespace CapaNegocio.Models
             return mensaje;
         }
 
-        public List<Usuario> GetAll()
-        {
-            var usuarioDataModel = usuarioRepository.GetAll();
-            listUsuarios = usuarioDataModel.ToList();
-            return listUsuarios;
-        }
+        //public List<Usuario> GetAll()
+        //{
+        //    var usuarioDataModel = usuarioRepository.GetAll();
+        //    listUsuarios = usuarioDataModel.ToList();
+        //    return listUsuarios;
+        //}
 
         public Usuario LoginUser(string username, string password)
         {
             return usuarioRepository.getOne(username, password);
         }
-
         public List<Usuario> getAll()
         {
             var usuarioDataModel = usuarioRepository.GetAll();
@@ -87,6 +86,7 @@ namespace CapaNegocio.Models
             listUsuarios = usuarioDataModel.ToList();
             return listUsuarios;
         }
+
         public IEnumerable<Usuario> FindByFilter(string filter)
         {
             return listUsuarios.FindAll(

@@ -26,7 +26,7 @@ namespace VentanaPrincipal.Forms.Practicas
         private void practicasForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'veterinariaDataSet.practicas' table. You can move, or remove it, as needed.
-            this.practicasTableAdapter.Fill(this.veterinariaDataSet.practicas);
+            this.practicasTableAdapter.Fill(this.veterinariaDataSet.usuarios);
             cargarTablaPracticas();
             if(cgvPracticas.Rows.Count > 0) 
             {

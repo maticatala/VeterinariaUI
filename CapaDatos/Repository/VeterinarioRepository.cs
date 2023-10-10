@@ -112,5 +112,13 @@ namespace CapaDatos.Repository
             }
             return listVeterinarios;
         }
+        public int getCount()
+        {
+            string query = "SELECT COUNT(*) AS TotalRows FROM veterinarios";
+            var tableResult = ExecuteReader(query);
+            DataRow dr = tableResult.Rows[0];
+            int resultado = (int)dr[0];
+            return resultado;
+        }
     }
 }
