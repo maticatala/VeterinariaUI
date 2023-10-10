@@ -79,7 +79,6 @@ namespace CapaNegocio.Models
         {
             return usuarioRepository.getOne(username, password);
         }
-
         public List<Usuario> getAll()
         {
             var usuarioDataModel = usuarioRepository.GetAll();
@@ -87,6 +86,7 @@ namespace CapaNegocio.Models
             listUsuarios = usuarioDataModel.ToList();
             return listUsuarios;
         }
+
         public IEnumerable<Usuario> FindByFilter(string filter)
         {
             return listUsuarios.FindAll(

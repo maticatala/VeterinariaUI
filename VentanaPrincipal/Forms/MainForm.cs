@@ -218,7 +218,7 @@ namespace VentanaPrincipal
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
-            loadform(new Usuarios());
+            loadform(new usuarioForm());
         }
 
         private void btnVeterinarios_Click(object sender, EventArgs e)

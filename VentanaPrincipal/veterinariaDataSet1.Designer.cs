@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace VentanaPrincipal {
     
     
@@ -20,17 +22,17 @@ namespace VentanaPrincipal {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("veterinariaDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("veterinariaDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class veterinariaDataSet : global::System.Data.DataSet {
+    public partial class veterinariaDataSet1 : global::System.Data.DataSet {
         
-        private practicasDataTable tablepracticas;
+        private usuariosDataTable tableusuarios;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public veterinariaDataSet() {
+        public veterinariaDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +43,7 @@ namespace VentanaPrincipal {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected veterinariaDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected veterinariaDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +56,8 @@ namespace VentanaPrincipal {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["practicas"] != null)) {
-                    base.Tables.Add(new practicasDataTable(ds.Tables["practicas"]));
+                if ((ds.Tables["usuarios"] != null)) {
+                    base.Tables.Add(new usuariosDataTable(ds.Tables["usuarios"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +81,9 @@ namespace VentanaPrincipal {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public practicasDataTable usuarios {
+        public usuariosDataTable usuarios {
             get {
-                return this.tablepracticas;
+                return this.tableusuarios;
             }
         }
         
@@ -127,7 +129,7 @@ namespace VentanaPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            veterinariaDataSet cln = ((veterinariaDataSet)(base.Clone()));
+            veterinariaDataSet1 cln = ((veterinariaDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +154,8 @@ namespace VentanaPrincipal {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["practicas"] != null)) {
-                    base.Tables.Add(new practicasDataTable(ds.Tables["practicas"]));
+                if ((ds.Tables["usuarios"] != null)) {
+                    base.Tables.Add(new usuariosDataTable(ds.Tables["usuarios"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +190,10 @@ namespace VentanaPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablepracticas = ((practicasDataTable)(base.Tables["practicas"]));
+            this.tableusuarios = ((usuariosDataTable)(base.Tables["usuarios"]));
             if ((initTable == true)) {
-                if ((this.tablepracticas != null)) {
-                    this.tablepracticas.InitVars();
+                if ((this.tableusuarios != null)) {
+                    this.tableusuarios.InitVars();
                 }
             }
         }
@@ -199,18 +201,18 @@ namespace VentanaPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "veterinariaDataSet";
+            this.DataSetName = "veterinariaDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/veterinariaDataSet.xsd";
+            this.Namespace = "http://tempuri.org/veterinariaDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablepracticas = new practicasDataTable();
-            base.Tables.Add(this.tablepracticas);
+            this.tableusuarios = new usuariosDataTable();
+            base.Tables.Add(this.tableusuarios);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializepracticas() {
+        private bool ShouldSerializeusuarios() {
             return false;
         }
         
@@ -225,7 +227,7 @@ namespace VentanaPrincipal {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            veterinariaDataSet ds = new veterinariaDataSet();
+            veterinariaDataSet1 ds = new veterinariaDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -268,25 +270,34 @@ namespace VentanaPrincipal {
             xs.Add(dsSchema);
             return type;
         }
-        
+
+        internal void Fill(usuariosDataTable usuarios)
+        {
+            throw new NotImplementedException();
+        }
+
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void practicasRowChangeEventHandler(object sender, practicasRowChangeEvent e);
+        public delegate void usuariosRowChangeEventHandler(object sender, usuariosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class practicasDataTable : global::System.Data.TypedTableBase<practicasRow> {
+        public partial class usuariosDataTable : global::System.Data.TypedTableBase<usuariosRow> {
             
-            private global::System.Data.DataColumn columncodPractica;
+            private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columndescripcion;
+            private global::System.Data.DataColumn columnn_usuario;
+            
+            private global::System.Data.DataColumn columnpassword;
+            
+            private global::System.Data.DataColumn columntipo_usuario;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public practicasDataTable() {
-                this.TableName = "practicas";
+            public usuariosDataTable() {
+                this.TableName = "usuarios";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +305,7 @@ namespace VentanaPrincipal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal practicasDataTable(global::System.Data.DataTable table) {
+            internal usuariosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +322,40 @@ namespace VentanaPrincipal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected practicasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected usuariosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn codPracticaColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columncodPractica;
+                    return this.columnid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn descripcionColumn {
+            public global::System.Data.DataColumn n_usuarioColumn {
                 get {
-                    return this.columndescripcion;
+                    return this.columnn_usuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn passwordColumn {
+                get {
+                    return this.columnpassword;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tipo_usuarioColumn {
+                get {
+                    return this.columntipo_usuario;
                 }
             }
             
@@ -343,53 +370,56 @@ namespace VentanaPrincipal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public practicasRow this[int index] {
+            public usuariosRow this[int index] {
                 get {
-                    return ((practicasRow)(this.Rows[index]));
+                    return ((usuariosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event practicasRowChangeEventHandler practicasRowChanging;
+            public event usuariosRowChangeEventHandler usuariosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event practicasRowChangeEventHandler practicasRowChanged;
+            public event usuariosRowChangeEventHandler usuariosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event practicasRowChangeEventHandler practicasRowDeleting;
+            public event usuariosRowChangeEventHandler usuariosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event practicasRowChangeEventHandler practicasRowDeleted;
+            public event usuariosRowChangeEventHandler usuariosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddpracticasRow(practicasRow row) {
+            public void AddusuariosRow(usuariosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public practicasRow AddpracticasRow(string descripcion) {
-                practicasRow rowpracticasRow = ((practicasRow)(this.NewRow()));
+            public usuariosRow AddusuariosRow(string n_usuario, string password, string tipo_usuario) {
+                usuariosRow rowusuariosRow = ((usuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        descripcion};
-                rowpracticasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowpracticasRow);
-                return rowpracticasRow;
+                        n_usuario,
+                        password,
+                        tipo_usuario};
+                rowusuariosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowusuariosRow);
+                return rowusuariosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public practicasRow FindBycodPractica(int codPractica) {
-                return ((practicasRow)(this.Rows.Find(new object[] {
-                            codPractica})));
+            public usuariosRow FindByidtipo_usuario(int id, string tipo_usuario) {
+                return ((usuariosRow)(this.Rows.Find(new object[] {
+                            id,
+                            tipo_usuario})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                practicasDataTable cln = ((practicasDataTable)(base.Clone()));
+                usuariosDataTable cln = ((usuariosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,58 +427,69 @@ namespace VentanaPrincipal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new practicasDataTable();
+                return new usuariosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columncodPractica = base.Columns["codPractica"];
-                this.columndescripcion = base.Columns["descripcion"];
+                this.columnid = base.Columns["id"];
+                this.columnn_usuario = base.Columns["n_usuario"];
+                this.columnpassword = base.Columns["password"];
+                this.columntipo_usuario = base.Columns["tipo_usuario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columncodPractica = new global::System.Data.DataColumn("codPractica", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncodPractica);
-                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescripcion);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnn_usuario = new global::System.Data.DataColumn("n_usuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnn_usuario);
+                this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpassword);
+                this.columntipo_usuario = new global::System.Data.DataColumn("tipo_usuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_usuario);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columncodPractica}, true));
-                this.columncodPractica.AutoIncrement = true;
-                this.columncodPractica.AutoIncrementSeed = -1;
-                this.columncodPractica.AutoIncrementStep = -1;
-                this.columncodPractica.AllowDBNull = false;
-                this.columncodPractica.ReadOnly = true;
-                this.columncodPractica.Unique = true;
-                this.columndescripcion.MaxLength = 300;
+                                this.columnid,
+                                this.columntipo_usuario}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnn_usuario.AllowDBNull = false;
+                this.columnn_usuario.MaxLength = 45;
+                this.columnpassword.AllowDBNull = false;
+                this.columnpassword.MaxLength = 45;
+                this.columntipo_usuario.AllowDBNull = false;
+                this.columntipo_usuario.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public practicasRow NewpracticasRow() {
-                return ((practicasRow)(this.NewRow()));
+            public usuariosRow NewusuariosRow() {
+                return ((usuariosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new practicasRow(builder);
+                return new usuariosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(practicasRow);
+                return typeof(usuariosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.practicasRowChanged != null)) {
-                    this.practicasRowChanged(this, new practicasRowChangeEvent(((practicasRow)(e.Row)), e.Action));
+                if ((this.usuariosRowChanged != null)) {
+                    this.usuariosRowChanged(this, new usuariosRowChangeEvent(((usuariosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -456,8 +497,8 @@ namespace VentanaPrincipal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.practicasRowChanging != null)) {
-                    this.practicasRowChanging(this, new practicasRowChangeEvent(((practicasRow)(e.Row)), e.Action));
+                if ((this.usuariosRowChanging != null)) {
+                    this.usuariosRowChanging(this, new usuariosRowChangeEvent(((usuariosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -465,8 +506,8 @@ namespace VentanaPrincipal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.practicasRowDeleted != null)) {
-                    this.practicasRowDeleted(this, new practicasRowChangeEvent(((practicasRow)(e.Row)), e.Action));
+                if ((this.usuariosRowDeleted != null)) {
+                    this.usuariosRowDeleted(this, new usuariosRowChangeEvent(((usuariosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -474,14 +515,14 @@ namespace VentanaPrincipal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.practicasRowDeleting != null)) {
-                    this.practicasRowDeleting(this, new practicasRowChangeEvent(((practicasRow)(e.Row)), e.Action));
+                if ((this.usuariosRowDeleting != null)) {
+                    this.usuariosRowDeleting(this, new usuariosRowChangeEvent(((usuariosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovepracticasRow(practicasRow row) {
+            public void RemoveusuariosRow(usuariosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -490,7 +531,7 @@ namespace VentanaPrincipal {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                veterinariaDataSet ds = new veterinariaDataSet();
+                veterinariaDataSet1 ds = new veterinariaDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -508,7 +549,7 @@ namespace VentanaPrincipal {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "practicasDataTable";
+                attribute2.FixedValue = "usuariosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -552,54 +593,59 @@ namespace VentanaPrincipal {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class practicasRow : global::System.Data.DataRow {
+        public partial class usuariosRow : global::System.Data.DataRow {
             
-            private practicasDataTable tablepracticas;
+            private usuariosDataTable tableusuarios;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal practicasRow(global::System.Data.DataRowBuilder rb) : 
+            internal usuariosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablepracticas = ((practicasDataTable)(this.Table));
+                this.tableusuarios = ((usuariosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int codPractica {
+            public int id {
                 get {
-                    return ((int)(this[this.tablepracticas.codPracticaColumn]));
+                    return ((int)(this[this.tableusuarios.idColumn]));
                 }
                 set {
-                    this[this.tablepracticas.codPracticaColumn] = value;
+                    this[this.tableusuarios.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string descripcion {
+            public string n_usuario {
                 get {
-                    try {
-                        return ((string)(this[this.tablepracticas.descripcionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'descripcion\' in table \'practicas\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableusuarios.n_usuarioColumn]));
                 }
                 set {
-                    this[this.tablepracticas.descripcionColumn] = value;
+                    this[this.tableusuarios.n_usuarioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsdescripcionNull() {
-                return this.IsNull(this.tablepracticas.descripcionColumn);
+            public string password {
+                get {
+                    return ((string)(this[this.tableusuarios.passwordColumn]));
+                }
+                set {
+                    this[this.tableusuarios.passwordColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetdescripcionNull() {
-                this[this.tablepracticas.descripcionColumn] = global::System.Convert.DBNull;
+            public string tipo_usuario {
+                get {
+                    return ((string)(this[this.tableusuarios.tipo_usuarioColumn]));
+                }
+                set {
+                    this[this.tableusuarios.tipo_usuarioColumn] = value;
+                }
             }
         }
         
@@ -607,22 +653,22 @@ namespace VentanaPrincipal {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class practicasRowChangeEvent : global::System.EventArgs {
+        public class usuariosRowChangeEvent : global::System.EventArgs {
             
-            private practicasRow eventRow;
+            private usuariosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public practicasRowChangeEvent(practicasRow row, global::System.Data.DataRowAction action) {
+            public usuariosRowChangeEvent(usuariosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public practicasRow Row {
+            public usuariosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -638,7 +684,7 @@ namespace VentanaPrincipal {
         }
     }
 }
-namespace VentanaPrincipal.veterinariaDataSetTableAdapters {
+namespace VentanaPrincipal.veterinariaDataSet1TableAdapters {
     
     
     /// <summary>
@@ -650,7 +696,7 @@ namespace VentanaPrincipal.veterinariaDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class practicasTableAdapter : global::System.ComponentModel.Component {
+    public partial class usuariosTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -664,7 +710,7 @@ namespace VentanaPrincipal.veterinariaDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public practicasTableAdapter() {
+        public usuariosTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -761,35 +807,45 @@ namespace VentanaPrincipal.veterinariaDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "practicas";
-            tableMapping.ColumnMappings.Add("codPractica", "codPractica");
-            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
+            tableMapping.DataSetTable = "usuarios";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("n_usuario", "n_usuario");
+            tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("tipo_usuario", "tipo_usuario");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[practicas] WHERE (([codPractica] = @Original_codPractica) AND " +
-                "((@IsNull_descripcion = 1 AND [descripcion] IS NULL) OR ([descripcion] = @Origin" +
-                "al_descripcion)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[usuarios] WHERE (([id] = @Original_id) AND ([n_usuario] = @Ori" +
+                "ginal_n_usuario) AND ([password] = @Original_password) AND ([tipo_usuario] = @Or" +
+                "iginal_tipo_usuario))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codPractica", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codPractica", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_descripcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_n_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "n_usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tipo_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[practicas] ([descripcion]) VALUES (@descripcion);\r\nSELECT codP" +
-                "ractica, descripcion FROM practicas WHERE (codPractica = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[usuarios] ([n_usuario], [password], [tipo_usuario]) VALUES (@n" +
+                "_usuario, @password, @tipo_usuario);\r\nSELECT id, n_usuario, password, tipo_usuar" +
+                "io FROM usuarios WHERE (id = SCOPE_IDENTITY()) AND (tipo_usuario = @tipo_usuario" +
+                ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@n_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "n_usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[practicas] SET [descripcion] = @descripcion WHERE (([codPractica] = @Original_codPractica) AND ((@IsNull_descripcion = 1 AND [descripcion] IS NULL) OR ([descripcion] = @Original_descripcion)));
-SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[usuarios] SET [n_usuario] = @n_usuario, [password] = @password, [tipo_usuario] = @tipo_usuario WHERE (([id] = @Original_id) AND ([n_usuario] = @Original_n_usuario) AND ([password] = @Original_password) AND ([tipo_usuario] = @Original_tipo_usuario));
+SELECT id, n_usuario, password, tipo_usuario FROM usuarios WHERE (id = @id) AND (tipo_usuario = @tipo_usuario)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codPractica", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codPractica", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_descripcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codPractica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "codPractica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@n_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "n_usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_n_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "n_usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tipo_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -805,7 +861,7 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT codPractica, descripcion FROM dbo.practicas";
+            this._commandCollection[0].CommandText = "SELECT id, n_usuario, password, tipo_usuario FROM dbo.usuarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -813,7 +869,7 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(veterinariaDataSet.practicasDataTable dataTable) {
+        public virtual int Fill(veterinariaDataSet1.usuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -826,9 +882,9 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual veterinariaDataSet.practicasDataTable GetData() {
+        public virtual veterinariaDataSet1.usuariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            veterinariaDataSet.practicasDataTable dataTable = new veterinariaDataSet.practicasDataTable();
+            veterinariaDataSet1.usuariosDataTable dataTable = new veterinariaDataSet1.usuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -836,15 +892,15 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(veterinariaDataSet.practicasDataTable dataTable) {
+        public virtual int Update(veterinariaDataSet1.usuariosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(veterinariaDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "practicas");
+        public virtual int Update(veterinariaDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "usuarios");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -866,15 +922,25 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_codPractica, string Original_descripcion) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_codPractica));
-            if ((Original_descripcion == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Delete(int Original_id, string Original_n_usuario, string Original_password, string Original_tipo_usuario) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_n_usuario == null)) {
+                throw new global::System.ArgumentNullException("Original_n_usuario");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_descripcion));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_n_usuario));
+            }
+            if ((Original_password == null)) {
+                throw new global::System.ArgumentNullException("Original_password");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_password));
+            }
+            if ((Original_tipo_usuario == null)) {
+                throw new global::System.ArgumentNullException("Original_tipo_usuario");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_tipo_usuario));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -896,12 +962,24 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string descripcion) {
-            if ((descripcion == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(string n_usuario, string password, string tipo_usuario) {
+            if ((n_usuario == null)) {
+                throw new global::System.ArgumentNullException("n_usuario");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(n_usuario));
+            }
+            if ((password == null)) {
+                throw new global::System.ArgumentNullException("password");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(password));
+            }
+            if ((tipo_usuario == null)) {
+                throw new global::System.ArgumentNullException("tipo_usuario");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(tipo_usuario));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -923,23 +1001,45 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, int Original_codPractica, string Original_descripcion, int codPractica) {
-            if ((descripcion == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Update(string n_usuario, string password, string tipo_usuario, int Original_id, string Original_n_usuario, string Original_password, string Original_tipo_usuario, int id) {
+            if ((n_usuario == null)) {
+                throw new global::System.ArgumentNullException("n_usuario");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(n_usuario));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_codPractica));
-            if ((Original_descripcion == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((password == null)) {
+                throw new global::System.ArgumentNullException("password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_descripcion));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(password));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(codPractica));
+            if ((tipo_usuario == null)) {
+                throw new global::System.ArgumentNullException("tipo_usuario");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(tipo_usuario));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id));
+            if ((Original_n_usuario == null)) {
+                throw new global::System.ArgumentNullException("Original_n_usuario");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_n_usuario));
+            }
+            if ((Original_password == null)) {
+                throw new global::System.ArgumentNullException("Original_password");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_password));
+            }
+            if ((Original_tipo_usuario == null)) {
+                throw new global::System.ArgumentNullException("Original_tipo_usuario");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_tipo_usuario));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -960,8 +1060,8 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, int Original_codPractica, string Original_descripcion) {
-            return this.Update(descripcion, Original_codPractica, Original_descripcion, Original_codPractica);
+        public virtual int Update(string n_usuario, string password, int Original_id, string Original_n_usuario, string Original_password, string Original_tipo_usuario) {
+            return this.Update(n_usuario, password, Original_tipo_usuario, Original_id, Original_n_usuario, Original_password, Original_tipo_usuario, Original_id);
         }
     }
     
@@ -977,7 +1077,7 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         
         private UpdateOrderOption _updateOrder;
         
-        private practicasTableAdapter _practicasTableAdapter;
+        private usuariosTableAdapter _usuariosTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -999,12 +1099,12 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public practicasTableAdapter practicasTableAdapter {
+        public usuariosTableAdapter usuariosTableAdapter {
             get {
-                return this._practicasTableAdapter;
+                return this._usuariosTableAdapter;
             }
             set {
-                this._practicasTableAdapter = value;
+                this._usuariosTableAdapter = value;
             }
         }
         
@@ -1027,9 +1127,9 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._practicasTableAdapter != null) 
-                            && (this._practicasTableAdapter.Connection != null))) {
-                    return this._practicasTableAdapter.Connection;
+                if (((this._usuariosTableAdapter != null) 
+                            && (this._usuariosTableAdapter.Connection != null))) {
+                    return this._usuariosTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1044,7 +1144,7 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._practicasTableAdapter != null)) {
+                if ((this._usuariosTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1056,14 +1156,14 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(veterinariaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(veterinariaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._practicasTableAdapter != null)) {
+            if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._practicasTableAdapter.Update(updatedRows));
+                    result = (result + this._usuariosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1075,13 +1175,13 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(veterinariaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(veterinariaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._practicasTableAdapter != null)) {
+            if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._practicasTableAdapter.Update(addedRows));
+                    result = (result + this._usuariosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1093,13 +1193,13 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(veterinariaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(veterinariaDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._practicasTableAdapter != null)) {
+            if ((this._usuariosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.usuarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._practicasTableAdapter.Update(deletedRows));
+                    result = (result + this._usuariosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1135,15 +1235,15 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(veterinariaDataSet dataSet) {
+        public virtual int UpdateAll(veterinariaDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._practicasTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._practicasTableAdapter.Connection) == false))) {
+            if (((this._usuariosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._usuariosTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1179,13 +1279,13 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._practicasTableAdapter != null)) {
-                    revertConnections.Add(this._practicasTableAdapter, this._practicasTableAdapter.Connection);
-                    this._practicasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._practicasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._practicasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._practicasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._practicasTableAdapter.Adapter);
+                if ((this._usuariosTableAdapter != null)) {
+                    revertConnections.Add(this._usuariosTableAdapter, this._usuariosTableAdapter.Connection);
+                    this._usuariosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._usuariosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._usuariosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._usuariosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._usuariosTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1246,9 +1346,9 @@ SELECT codPractica, descripcion FROM practicas WHERE (codPractica = @codPractica
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._practicasTableAdapter != null)) {
-                    this._practicasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._practicasTableAdapter]));
-                    this._practicasTableAdapter.Transaction = null;
+                if ((this._usuariosTableAdapter != null)) {
+                    this._usuariosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usuariosTableAdapter]));
+                    this._usuariosTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

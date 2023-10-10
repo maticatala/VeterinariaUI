@@ -30,7 +30,7 @@ namespace CapaDatos.Repository
         {
             selectAll = "SELECT * FROM usuarios";
             insert = "INSERT INTO usuarios (n_usuario, password, tipo_usuario) VALUES(@n_usuario, @password, @tipo_usuario)";
-            update = "UPDATE usuarios SET n_usuario=@n_usuario, password=@password,tipo_usuario=@tipo_usuario, conPassword=@conPassword";
+            update = "UPDATE usuarios SET n_usuario=@n_usuario, password=@password,tipo_usuario=@tipo_usuario";
             delete = "DELETE FROM usuarios WHERE id=@id,n_usuario=@n_usuario and tipo_usuario=@tipo_usuario";
 
         }
