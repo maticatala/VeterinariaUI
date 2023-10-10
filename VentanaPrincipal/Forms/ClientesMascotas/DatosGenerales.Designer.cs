@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VentanaPrincipal.Forms.Clientes
+﻿namespace VentanaPrincipal.Forms.Clientes
 {
     partial class DatosGenerales
     {
@@ -30,7 +28,6 @@ namespace VentanaPrincipal.Forms.Clientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.lblAltura = new System.Windows.Forms.Label();
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -38,31 +35,21 @@ namespace VentanaPrincipal.Forms.Clientes
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblTipoDocumento = new System.Windows.Forms.Label();
             this.lblNumeroDocumento = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new VentanaPrincipal.RJButton();
             this.txtAltura = new VentanaPrincipal.UserControls.customTextBox();
             this.txtCalle = new VentanaPrincipal.UserControls.customTextBox();
             this.txtNumeroDocumento = new VentanaPrincipal.UserControls.customTextBox();
             this.txtApellido = new VentanaPrincipal.UserControls.customTextBox();
             this.txtNombre = new VentanaPrincipal.UserControls.customTextBox();
             this.btnAdd = new VentanaPrincipal.RJButton();
-            this.btnDelete = new VentanaPrincipal.RJButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblUserName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(331, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 32);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "DATOS GENERALES";
             // 
             // lblAltura
             // 
@@ -163,6 +150,35 @@ namespace VentanaPrincipal.Forms.Clientes
             this.lblNumeroDocumento.TabIndex = 11;
             this.lblNumeroDocumento.Text = "Numero de documento";
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1065, 70);
+            this.panel2.TabIndex = 15;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.btnDelete.BorderRadius = 5;
+            this.btnDelete.BorderSize = 1;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
+            this.btnDelete.Location = new System.Drawing.Point(318, 516);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(141, 46);
+            this.btnDelete.TabIndex = 25;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // txtAltura
             // 
             this.txtAltura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
@@ -252,7 +268,6 @@ namespace VentanaPrincipal.Forms.Clientes
             this.txtNombre.Size = new System.Drawing.Size(156, 35);
             this.txtNombre.TabIndex = 12;
             this.txtNombre.UnderlinedStyle = true;
-            this.txtNombre.Load += new System.EventHandler(this.txtNombre_Load);
             // 
             // btnAdd
             // 
@@ -275,37 +290,27 @@ namespace VentanaPrincipal.Forms.Clientes
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDelete
+            // label1
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDelete.BorderRadius = 5;
-            this.btnDelete.BorderSize = 1;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.Location = new System.Drawing.Point(318, 516);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(141, 46);
-            this.btnDelete.TabIndex = 25;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(331, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 32);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "DATOS GENERALES";
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.panel1.Controls.Add(this.lblUserName);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 504);
-            this.panel1.TabIndex = 27;
+            this.pictureBox1.BackgroundImage = global::VentanaPrincipal.Properties.Resources._179836;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(67, 60);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(166, 161);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // lblUserName
             // 
@@ -319,24 +324,16 @@ namespace VentanaPrincipal.Forms.Clientes
             this.lblUserName.Text = "USERNAME";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // panel1
             // 
-            this.pictureBox1.BackgroundImage = global::VentanaPrincipal.Properties.Resources._179836;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 161);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1065, 70);
-            this.panel2.TabIndex = 15;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.lblUserName);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 504);
+            this.panel1.TabIndex = 27;
             // 
             // DatosGenerales
             // 
@@ -365,18 +362,15 @@ namespace VentanaPrincipal.Forms.Clientes
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DatosGenerales";
             this.Text = "DatosGenerales";
-            this.Load += new System.EventHandler(this.DatosGenerales_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private UserControls.customTextBox txtAltura;
         private UserControls.customTextBox txtCalle;
         private UserControls.customTextBox txtNumeroDocumento;
@@ -391,12 +385,10 @@ namespace VentanaPrincipal.Forms.Clientes
         private System.Windows.Forms.Label lblNumeroDocumento;
         private RJButton btnAdd;
         private RJButton btnDelete;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private EventHandler txtNombre_Load;
-
-        public EventHandler DatosGenerales_Load { get; private set; }
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Panel panel1;
     }
 }

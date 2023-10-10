@@ -163,7 +163,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.lblHora.Location = new System.Drawing.Point(666, 411);
+            this.lblHora.Location = new System.Drawing.Point(692, 409);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(208, 76);
             this.lblHora.TabIndex = 0;
@@ -176,7 +176,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.Silver;
-            this.lblFecha.Location = new System.Drawing.Point(707, 494);
+            this.lblFecha.Location = new System.Drawing.Point(733, 492);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(126, 46);
             this.lblFecha.TabIndex = 1;
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(995, 579);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);

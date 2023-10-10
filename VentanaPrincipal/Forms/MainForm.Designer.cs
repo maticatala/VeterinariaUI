@@ -132,7 +132,7 @@ namespace VentanaPrincipal
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(220, 49);
+            this.btnDashboard.Size = new System.Drawing.Size(220, 60);
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,11 +152,11 @@ namespace VentanaPrincipal
             this.btnDueños.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDueños.IconSize = 32;
             this.btnDueños.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDueños.Location = new System.Drawing.Point(0, 135);
+            this.btnDueños.Location = new System.Drawing.Point(0, 146);
             this.btnDueños.Margin = new System.Windows.Forms.Padding(0);
             this.btnDueños.Name = "btnDueños";
             this.btnDueños.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnDueños.Size = new System.Drawing.Size(220, 49);
+            this.btnDueños.Size = new System.Drawing.Size(220, 60);
             this.btnDueños.TabIndex = 4;
             this.btnDueños.Text = "Dueños";
             this.btnDueños.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,7 +176,7 @@ namespace VentanaPrincipal
             this.btnHistoriaClinica.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHistoriaClinica.IconSize = 32;
             this.btnHistoriaClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistoriaClinica.Location = new System.Drawing.Point(0, 184);
+            this.btnHistoriaClinica.Location = new System.Drawing.Point(0, 206);
             this.btnHistoriaClinica.Margin = new System.Windows.Forms.Padding(0);
             this.btnHistoriaClinica.Name = "btnHistoriaClinica";
             this.btnHistoriaClinica.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
@@ -200,11 +200,11 @@ namespace VentanaPrincipal
             this.btnServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnServicios.IconSize = 32;
             this.btnServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServicios.Location = new System.Drawing.Point(0, 244);
+            this.btnServicios.Location = new System.Drawing.Point(0, 266);
             this.btnServicios.Margin = new System.Windows.Forms.Padding(0);
             this.btnServicios.Name = "btnServicios";
             this.btnServicios.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnServicios.Size = new System.Drawing.Size(220, 49);
+            this.btnServicios.Size = new System.Drawing.Size(220, 60);
             this.btnServicios.TabIndex = 6;
             this.btnServicios.Text = "Servicios";
             this.btnServicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,7 +242,7 @@ namespace VentanaPrincipal
             this.btnVeterinarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVeterinarios.IconSize = 32;
             this.btnVeterinarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVeterinarios.Location = new System.Drawing.Point(0, 402);
+            this.btnVeterinarios.Location = new System.Drawing.Point(0, 446);
             this.btnVeterinarios.Margin = new System.Windows.Forms.Padding(0);
             this.btnVeterinarios.Name = "btnVeterinarios";
             this.btnVeterinarios.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
@@ -266,11 +266,11 @@ namespace VentanaPrincipal
             this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUsuarios.IconSize = 32;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 353);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 386);
             this.btnUsuarios.Margin = new System.Windows.Forms.Padding(0);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnUsuarios.Size = new System.Drawing.Size(220, 49);
+            this.btnUsuarios.Size = new System.Drawing.Size(220, 60);
             this.btnUsuarios.TabIndex = 9;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -290,7 +290,7 @@ namespace VentanaPrincipal
             this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrar.IconSize = 32;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(0, 293);
+            this.btnRegistrar.Location = new System.Drawing.Point(0, 326);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);

@@ -30,8 +30,8 @@ namespace VentanaPrincipal.Forms
 
         private void horaFecha_Tick(object sender, EventArgs e)
         {
-            lblFecha.Text = DateTime.Now.ToShortDateString();
-            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblFecha.Text = DateTime.Now.ToString("d/MM/yyyy");
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
