@@ -19,7 +19,6 @@ namespace VentanaPrincipal.Forms.Practicas
     {
         CN_Practica practicaNegocio = new CN_Practica();
         Practica practica = new Practica();
-        int codPractica = -1;
         public practicaAdd()
         {
             InitializeComponent();
@@ -32,6 +31,8 @@ namespace VentanaPrincipal.Forms.Practicas
             InitializeComponent();
             this.practica = practica;
             txtPractica.Text = practica.Descripcion;
+            float precioFloat = practica.Precio;
+            txtPrecio.Text = precioFloat.ToString();
             practicaNegocio.State = EntityState.Modified;
         }
         private void practicaAdd_Load(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace VentanaPrincipal.Forms.Practicas
         {
             
             practica.Descripcion = txtPractica.Text;
+            practica.Precio = float.Parse(txtPrecio.Text);
             practicaNegocio.Practica = practica;
 
             bool valid = new Helps.DataValidation(practica).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
@@ -55,8 +57,7 @@ namespace VentanaPrincipal.Forms.Practicas
             {
                 string result = practicaNegocio.SaveChanges();
                 MessageBox.Show(result);
-                this.Close();
-            }
+                }
         }
 
         private void Limpiar()
@@ -76,6 +77,11 @@ namespace VentanaPrincipal.Forms.Practicas
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

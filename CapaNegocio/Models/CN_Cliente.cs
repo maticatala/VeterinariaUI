@@ -10,6 +10,7 @@ using System;
 using System.Windows.Forms;
 using CapaNegocio.ValueObjects;
 using System.Data.SqlClient;
+using CapaEntidadaes.Entities;
 
 namespace CapaNegocio.Models
 {
@@ -74,6 +75,7 @@ namespace CapaNegocio.Models
         {
             return clienteRepository.findByDoc(nroDoc);
         }
+
 
         public IEnumerable<Cliente> FindById(string filter) 
         {

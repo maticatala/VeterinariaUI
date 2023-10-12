@@ -76,6 +76,24 @@ namespace CapaDatos.Repository
             return ExecuteNonQuery(delete);
         }
 
+        public List<Mascota> findByDueño(int idCliente)
+        {
+            string sql = $"SELECT * FROM mascotas WHERE idCliente={idCliente}";
+            var tableResult = ExecuteReader(sql);
+            var listMascotas = new List<Mascota>();
+
+            foreach (DataRow item in tableResult.Rows)
+            {
+                listMascotas.Add(new Mascota
+                {
+                    NroHC = (int)item[0],
+                    IdCliente = (int)item[1],
+                    Nombre = item[2].ToString()
+                });
+            }
+            return listMascotas;
+        }
+        
         public int Update(Mascota mascota)
         {
             parameters = new List<SqlParameter>();

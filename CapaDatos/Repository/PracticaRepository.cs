@@ -25,8 +25,8 @@ namespace CapaDatos.Repository
         public PracticaRepository()
         {
             selectAll = "SELECT * FROM practicas";
-            insert = "INSERT INTO practicas VALUES (@descripcion)";
-            update = "UPDATE practicas SET descripcion=@descripcion";
+            insert = "INSERT INTO practicas VALUES (@descripcion,@precio)";
+            update = "UPDATE practicas SET descripcion=@descripcion, precio=@precio";
             delete = "DELETE FROM practicas WHERE codPractica=@codPractica";
         }
        
@@ -35,6 +35,7 @@ namespace CapaDatos.Repository
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@codPractica", practica.codPractica));
             parameters.Add(new SqlParameter("@descripcion", practica.Descripcion));
+            parameters.Add(new SqlParameter("@precio", practica.Precio));
 
             try
             {
@@ -62,8 +63,9 @@ namespace CapaDatos.Repository
                 listPractica.Add(new Practica
                 {
                     codPractica = (int)item[0],
-                    Descripcion = item[1].ToString()
-                });
+                    Descripcion = item[1].ToString(),
+                    Precio = (float)item[2],
+                }) ;
             }
             return listPractica;
         }
@@ -74,6 +76,7 @@ namespace CapaDatos.Repository
 
             parameters.Add(new SqlParameter("@codPractica", practica.codPractica));
             parameters.Add(new SqlParameter("@descripcion", practica.Descripcion));
+            parameters.Add(new SqlParameter("@precio", practica.Precio));
 
             return ExecuteNonQuery(update);
         }

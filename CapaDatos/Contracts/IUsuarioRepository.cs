@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Contracts
 {
-   public interface IUsuarioRepository:IGenericRepository<Usuario, string>
+   public interface IUsuarioRepository:IGenericRepository<Usuario,string>
     {
-        int Remove(string id, string id_tipo);
-        int Update(Usuario usuario, string id, string id_tipo);
+        int RemoveUsuario(int id);
         Usuario getOne(string username, string password);
     }
 }

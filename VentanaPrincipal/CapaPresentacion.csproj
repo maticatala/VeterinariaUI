@@ -255,10 +255,22 @@
     <Compile Include="Forms\ClientesMascotas\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\dashboardForm.cs">
+    <Compile Include="Forms\HistoriaClinica\addHC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\dashboardForm.Designer.cs">
+    <Compile Include="Forms\HistoriaClinica\addHC.Designer.cs">
+      <DependentUpon>addHC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HistoriaClinica\historiaClinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistoriaClinica\historiaClinica.Designer.cs">
+      <DependentUpon>historiaClinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm\dashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\dashboardForm.Designer.cs">
       <DependentUpon>dashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClientesMascotas\DatosGenerales.cs">
@@ -273,10 +285,10 @@
     <Compile Include="Forms\ClientesMascotas\DatosMascotasForm.Designer.cs">
       <DependentUpon>DatosMascotasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RazasEspecies\addEspecie.cs">
@@ -356,6 +368,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="veterinariaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>veterinariaDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="veterinariaDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>veterinariaDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="veterinariaDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>veterinariaDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="veterinariaDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>veterinariaDataSet5.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\ClientesMascotas\addOwner.resx">
       <DependentUpon>addOwner.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,10 +401,16 @@
     <EmbeddedResource Include="Forms\ClientesMascotas\DatosMascotasForm.resx">
       <DependentUpon>DatosMascotasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\dashboardForm.resx">
+    <EmbeddedResource Include="Forms\HistoriaClinica\addHC.resx">
+      <DependentUpon>addHC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoriaClinica\historiaClinica.resx">
+      <DependentUpon>historiaClinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm\dashboardForm.resx">
       <DependentUpon>dashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RazasEspecies\addEspecie.resx">
@@ -418,6 +456,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaEntidadaes.Entities.Especie.datasource" />
+    <None Include="Properties\DataSources\CapaEntidadaes.Entities.Practica.datasource" />
     <None Include="Properties\DataSources\CapaEntidadaes.Entities.Raza.datasource" />
     <None Include="Properties\DataSources\CapaEntidades.Cliente.datasource" />
     <None Include="Properties\DataSources\CapaEntidades.Entities.Mascota.datasource" />
@@ -453,6 +492,50 @@
     </None>
     <None Include="veterinariaDataSet1.xss">
       <DependentUpon>veterinariaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet2.xsc">
+      <DependentUpon>veterinariaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>veterinariaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="veterinariaDataSet2.xss">
+      <DependentUpon>veterinariaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet3.xsc">
+      <DependentUpon>veterinariaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>veterinariaDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="veterinariaDataSet3.xss">
+      <DependentUpon>veterinariaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet4.xsc">
+      <DependentUpon>veterinariaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>veterinariaDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="veterinariaDataSet4.xss">
+      <DependentUpon>veterinariaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet5.xsc">
+      <DependentUpon>veterinariaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="veterinariaDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>veterinariaDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="veterinariaDataSet5.xss">
+      <DependentUpon>veterinariaDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

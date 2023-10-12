@@ -15,7 +15,7 @@ namespace VentanaPrincipal.Forms.Practicas
 {
     public partial class practicasForm : Form
     {
-        private CN_Practica CN_Practica = new CN_Practica();
+        private CN_Practica cN_Practica = new CN_Practica();
         public practicasForm()
         {
             InitializeComponent();
@@ -25,13 +25,16 @@ namespace VentanaPrincipal.Forms.Practicas
 
         private void practicasForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'veterinariaDataSet.practicas' table. You can move, or remove it, as needed.
-            this.practicasTableAdapter.Fill(this.veterinariaDataSet.usuarios);
+            // TODO: This line of code loads data into the 'veterinariaDataSet2.practicas' table. You can move, or remove it, as needed.
+            //this.practicasTableAdapter.Fill(this.veterinariaDataSet2.practicas);
+            // TODO: This line of code loads data into the 'veterinariaDataSet3.practicas' table. You can move, or remove it, as needed.
+            //this.practicasTableAdapter.Fill(this.veterinariaDataSet3.practicas);
+
             cargarTablaPracticas();
             if(cgvPracticas.Rows.Count > 0) 
             {
                 DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
-                Practica practicaSeleccionada = (Practica)filaSeleccionada.DataBoundItem;
+                Cliente clienteSeleccionado = (Cliente) filaSeleccionada.DataBoundItem;
             }
             
         }
@@ -39,7 +42,7 @@ namespace VentanaPrincipal.Forms.Practicas
         {
             try
             {
-                cgvPracticas.DataSource = CN_Practica.findByFilter(txtBuscar.Text);
+                cgvPracticas.DataSource = cN_Practica.findByFilter(txtBuscar.Text);
             }
             catch (Exception ex)
             {
@@ -48,15 +51,6 @@ namespace VentanaPrincipal.Forms.Practicas
 
         }
 
-        private void cgvPracticas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
-            Practica practicaSeleccionada = (Practica)filaSeleccionada.DataBoundItem;
-
-            practicaAdd practicaAdd = new practicaAdd(practicaSeleccionada);
-            practicaAdd.ShowDialog();
-            cargarTablaPracticas();
-        }
         private void lblBusqueda_Click(object sender, EventArgs e)
         {
 
@@ -65,7 +59,7 @@ namespace VentanaPrincipal.Forms.Practicas
         {
             try
             {
-                cgvPracticas.DataSource = CN_Practica.getAll();
+                cgvPracticas.DataSource = cN_Practica.getAll();
             }
             catch (Exception ex)
             {
@@ -81,19 +75,39 @@ namespace VentanaPrincipal.Forms.Practicas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            practicaAdd practicaAdd = new practicaAdd();
-            practicaAdd.ShowDialog();
-            cargarTablaPracticas();
+            
         }
 
         private void cgvPracticas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
         }
 
         private void practicasBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            practicaAdd practicaAdd = new practicaAdd();
+            practicaAdd.ShowDialog();
+            cargarTablaPracticas();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cgvPracticas_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
+            Practica practicaSeleccionada = (Practica)filaSeleccionada.DataBoundItem;
+
+            practicaAdd addPractica = new practicaAdd(practicaSeleccionada);
+            addPractica.ShowDialog();
+            cargarTablaPracticas();
         }
     }
 }

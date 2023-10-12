@@ -17,7 +17,7 @@ namespace VentanaPrincipal.Forms.Usuarios
     public partial class usuarioForm : Form
 
     {
-        private CN_Usuario CN_Usuario = new CN_Usuario();
+        private CN_Usuario Cn_Usuario = new CN_Usuario();
         public usuarioForm()
         {
             InitializeComponent();
@@ -26,11 +26,13 @@ namespace VentanaPrincipal.Forms.Usuarios
 
         private void usuarioForm_Load(object sender, EventArgs e)
         {
-            
-            this.usuariosTableAdapter.Fill(this.veterinariaDataSet.usuarios);
+            // TODO: This line of code loads data into the 'veterinariaDataSet3.usuarios' table. You can move, or remove it, as needed.
+            this.usuariosTableAdapter.Fill(this.veterinariaDataSet3.usuarios);
+
             cargarTablas();
             if (cgvUsuarios.Rows.Count > 0)
             {
+                cgvUsuarios.Rows[0].Selected = true;
                 DataGridViewRow filaSeleccionada = cgvUsuarios.SelectedRows[0];
                 Usuario usuarioSeleccionado = (Usuario)filaSeleccionada.DataBoundItem;
             }
@@ -39,7 +41,6 @@ namespace VentanaPrincipal.Forms.Usuarios
         {
             DataGridViewRow filaSeleccionada = cgvUsuarios.SelectedRows[0];
             Usuario usuarioSeleccionado = (Usuario)filaSeleccionada.DataBoundItem;
-
             frmRegistro addUsuario = new frmRegistro(usuarioSeleccionado);
             addUsuario.ShowDialog();
             cargarTablas();
@@ -49,7 +50,7 @@ namespace VentanaPrincipal.Forms.Usuarios
         {
             try
             {
-                cgvUsuarios.DataSource = CN_Usuario.getAll();
+                cgvUsuarios.DataSource = Cn_Usuario.getAll();
             }
             catch (Exception ex)
             {
@@ -73,12 +74,23 @@ namespace VentanaPrincipal.Forms.Usuarios
         {
             try
             {
-                cgvUsuarios.DataSource = CN_Usuario.FindByFilter(txtBuscar.Text);
+                cgvUsuarios.DataSource = Cn_Usuario.FindByFilter(txtBuscar.Text);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void usuarioBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow filaSeleccionada = cgvUsuarios.SelectedRows[0];
+            Usuario usuarioSeleccionado = (Usuario)filaSeleccionada.DataBoundItem;
         }
     }
 }

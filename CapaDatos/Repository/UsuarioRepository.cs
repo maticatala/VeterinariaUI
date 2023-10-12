@@ -31,8 +31,8 @@ namespace CapaDatos.Repository
             selectAll = "SELECT * FROM usuarios";
             insert = "INSERT INTO usuarios (n_usuario, password, tipo_usuario) VALUES(@n_usuario, @password, @tipo_usuario)";
             update = "UPDATE usuarios SET n_usuario=@n_usuario, password=@password,tipo_usuario=@tipo_usuario";
-            delete = "DELETE FROM usuarios WHERE id=@id,n_usuario=@n_usuario and tipo_usuario=@tipo_usuario";
-
+            delete = "DELETE FROM usuarios WHERE id=@id";
+            
         }
 
         public int Add(Usuario usuario)
@@ -48,14 +48,14 @@ namespace CapaDatos.Repository
             }
             catch (SqlException ex)
             {
-                if (ex != null && ex.Number == 1062)
+                if (ex != null && ex.Number == 2627)
                     throw new RegistroDuplicadoException("Registro duplicado");
                 else
                     throw ex;
             }
         }
 
-        public IEnumerable<Usuario> GetAll()
+        IEnumerable<Usuario> IGenericRepository<Usuario, string>.GetAll()
         {
             var tableResult = ExecuteReader(selectAll);
             var listUsuario = new List<Usuario>();
@@ -99,34 +99,20 @@ namespace CapaDatos.Repository
         }
 
 
-        public int Remove(String n_usuario, String tipo_usuario)
+        public int RemoveUsuario(int id)
         {
             parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@n_usuario", n_usuario));
-            parameters.Add(new SqlParameter("@tipo_usuario", tipo_usuario));
+            parameters.Add(new SqlParameter("@id",id));
             return ExecuteNonQuery(delete);
-
         }
 
         public int Update(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Remove(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public int Update(Usuario usuario, string n_u, string t_u)
         {
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@n_usuario", usuario.N_usuario));
             parameters.Add(new SqlParameter("@password", usuario.Password));
             parameters.Add(new SqlParameter("@tipo_usuario", usuario.Tipo_usuario));
-            parameters.Add(new SqlParameter("@oldN_Usuario", n_u));
-            parameters.Add(new SqlParameter("oldT_Usuario",t_u));
+            
 
             try
             {
@@ -143,12 +129,31 @@ namespace CapaDatos.Repository
             }
         }
 
-        IEnumerable<Usuario> IGenericRepository<Usuario, string>.GetAll()
+        //public IEnumerable<Usuario> GetAll()
+        //{
+        //    //Declaramos una variable implicita de nombre tableResult que sera igual método ExecuteReader del repositorio maestro, este metodo requiere que enviemos una cadena de comando sql y devuelve un DataTable
+        //    var tableResult = ExecuteReader(selectAll);
+        //    var listUsuarios = new List<Usuario>();
+        //    //Por cada iteracion agregamos un nuevo objeto empleado a la lista de empleados
+        //    foreach (DataRow item in tableResult.Rows)
+        //    {
+        //        listUsuarios.Add(new Usuario
+        //        {
+        //            Id = (int)item[0],
+        //            N_usuario = item[1].ToString(),
+        //            Password = item[2].ToString(),
+        //            Tipo_usuario = item[3].ToString()
+        //        });
+        //    }
+        //    return listUsuarios;
+        //}
+
+        public string ctrlLogin(string usuario, string password)
         {
             throw new NotImplementedException();
         }
 
-        public string ctrlLogin(string usuario, string password)
+        public int Remove(string id)
         {
             throw new NotImplementedException();
         }

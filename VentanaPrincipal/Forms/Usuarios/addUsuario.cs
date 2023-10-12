@@ -32,6 +32,7 @@ namespace Sistema
             txtNombre.Text = usuario.N_usuario;
             txtPassword.Text = usuario.Password;
             cbUsuario.Text = usuario.Tipo_usuario;
+            txtConPassword.Text = usuario.Password;
             usuarioNegocio.State = EntityState.Modified;
             
         }

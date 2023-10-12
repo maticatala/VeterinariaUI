@@ -67,12 +67,23 @@ namespace CapaNegocio.Models
             }
             return mensaje;
         }
+        public List<Mascota> findByDueño(int idCliente)
+        {
+            return mascotaRepository.findByDueño(idCliente);
+        }
+
+        //public List<Raza> findByNombreAndEspecie(string nombre, int codEspecie)
+        //{
+        //    return razaRepository.findByNombreAndEspecie(nombre, codEspecie);
+        //}
         public IEnumerable<Mascota> FindByFilter(string filter)
         {
             return listMascotas.FindAll(
                 e => e.NroHC.ToString().Contains(filter.ToLower()) ||
                 e.Nombre.ToLower().Contains(filter.ToLower()));
         }
+
+
         public int getCount()
         {
             return mascotaRepository.getCount();

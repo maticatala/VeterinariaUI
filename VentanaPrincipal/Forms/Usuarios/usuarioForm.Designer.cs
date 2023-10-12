@@ -35,19 +35,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDueño = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.veterinariaDataSet = new VentanaPrincipal.veterinariaDataSet();
-            this.usuariosTableAdapter = new VentanaPrincipal.veterinariaDataSetTableAdapters.practicasTableAdapter();
             this.btnNuevo = new VentanaPrincipal.RJButton();
+            this.cgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.veterinariaDataSet3 = new VentanaPrincipal.veterinariaDataSet3();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter = new VentanaPrincipal.veterinariaDataSet3TableAdapters.usuariosTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipousuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,6 +85,28 @@
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnNuevo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnNuevo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
+            this.btnNuevo.BorderRadius = 5;
+            this.btnNuevo.BorderSize = 0;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
+            this.btnNuevo.Location = new System.Drawing.Point(624, 52);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(150, 45);
+            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.Text = "Agregar";
+            this.btnNuevo.TextColor = System.Drawing.Color.White;
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // cgvUsuarios
             // 
             this.cgvUsuarios.AllowUserToAddRows = false;
@@ -112,7 +134,7 @@
             this.nusuarioDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.tipousuarioDataGridViewTextBoxColumn});
-            this.cgvUsuarios.DataSource = this.usuarioBindingSource;
+            this.cgvUsuarios.DataSource = this.usuariosBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -143,69 +165,50 @@
             this.cgvUsuarios.RowTemplate.ReadOnly = true;
             this.cgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cgvUsuarios.Size = new System.Drawing.Size(800, 322);
-            this.cgvUsuarios.TabIndex = 0;
-            this.cgvUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellDoubleClick);
+            this.cgvUsuarios.TabIndex = 4;
+            this.cgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellClick);
+            this.cgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.cgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellDoubleClick);
             // 
-            // usuarioBindingSource
+            // veterinariaDataSet3
             // 
-            this.usuarioBindingSource.DataSource = typeof(CapaEntidades.Entities.Usuario);
+            this.veterinariaDataSet3.DataSetName = "veterinariaDataSet3";
+            this.veterinariaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // veterinariaDataSet
+            // usuariosBindingSource
             // 
-            this.veterinariaDataSet.DataSetName = "veterinariaDataSet";
-            this.veterinariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.veterinariaDataSet3;
             // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnNuevo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnNuevo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnNuevo.BorderRadius = 5;
-            this.btnNuevo.BorderSize = 0;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnNuevo.Location = new System.Drawing.Point(624, 52);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(150, 45);
-            this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.Text = "Agregar";
-            this.btnNuevo.TextColor = System.Drawing.Color.White;
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nusuarioDataGridViewTextBoxColumn
             // 
-            this.nusuarioDataGridViewTextBoxColumn.DataPropertyName = "N_usuario";
-            this.nusuarioDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nusuarioDataGridViewTextBoxColumn.DataPropertyName = "n_usuario";
+            this.nusuarioDataGridViewTextBoxColumn.HeaderText = "n_usuario";
             this.nusuarioDataGridViewTextBoxColumn.Name = "nusuarioDataGridViewTextBoxColumn";
             this.nusuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tipousuarioDataGridViewTextBoxColumn
             // 
-            this.tipousuarioDataGridViewTextBoxColumn.DataPropertyName = "Tipo_usuario";
-            this.tipousuarioDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipousuarioDataGridViewTextBoxColumn.DataPropertyName = "tipo_usuario";
+            this.tipousuarioDataGridViewTextBoxColumn.HeaderText = "tipo_usuario";
             this.tipousuarioDataGridViewTextBoxColumn.Name = "tipousuarioDataGridViewTextBoxColumn";
             this.tipousuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -223,8 +226,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,9 +239,9 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private RJButton btnNuevo;
         private System.Windows.Forms.DataGridView cgvUsuarios;
-        private System.Windows.Forms.BindingSource usuarioBindingSource;
-        private veterinariaDataSet veterinariaDataSet;
-        private veterinariaDataSetTableAdapters.practicasTableAdapter usuariosTableAdapter;
+        private veterinariaDataSet3 veterinariaDataSet3;
+        private System.Windows.Forms.BindingSource usuariosBindingSource;
+        private veterinariaDataSet3TableAdapters.usuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nusuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
