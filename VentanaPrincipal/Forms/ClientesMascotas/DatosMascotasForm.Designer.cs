@@ -182,6 +182,7 @@
             this.cbxEspecie.Name = "cbxEspecie";
             this.cbxEspecie.Size = new System.Drawing.Size(174, 28);
             this.cbxEspecie.TabIndex = 36;
+            this.cbxEspecie.SelectedIndexChanged += new System.EventHandler(this.cbxEspecie_SelectedIndexChanged);
             this.cbxEspecie.SelectionChangeCommitted += new System.EventHandler(this.cbxEspecie_SelectionChangeCommitted);
             // 
             // btnNuevo

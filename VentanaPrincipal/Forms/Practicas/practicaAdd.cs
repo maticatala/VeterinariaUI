@@ -31,7 +31,7 @@ namespace VentanaPrincipal.Forms.Practicas
             InitializeComponent();
             this.practica = practica;
             txtPractica.Text = practica.Descripcion;
-            float precioFloat = practica.Precio;
+            double precioFloat = practica.Precio;
             txtPrecio.Text = precioFloat.ToString();
             practicaNegocio.State = EntityState.Modified;
         }
@@ -58,6 +58,7 @@ namespace VentanaPrincipal.Forms.Practicas
                 string result = practicaNegocio.SaveChanges();
                 MessageBox.Show(result);
                 }
+            this.Close();
         }
 
         private void Limpiar()

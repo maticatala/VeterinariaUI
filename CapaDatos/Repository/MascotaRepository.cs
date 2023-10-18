@@ -36,7 +36,6 @@ namespace CapaDatos.Repository
         public int Add(Mascota mascota)
         {
             parameters = new List<SqlParameter>();
-
             parameters.Add(new SqlParameter("@fechaNac", mascota.FechaNac));
             parameters.Add(new SqlParameter("@nombre", mascota.Nombre));
             parameters.Add(new SqlParameter("@sexo", mascota.Sexo));
@@ -76,7 +75,7 @@ namespace CapaDatos.Repository
             return ExecuteNonQuery(delete);
         }
 
-        public List<Mascota> findByDueño(int idCliente)
+        public List<Mascota> buscarPorDueño(int idCliente)
         {
             string sql = $"SELECT * FROM mascotas WHERE idCliente={idCliente}";
             var tableResult = ExecuteReader(sql);
@@ -86,14 +85,17 @@ namespace CapaDatos.Repository
             {
                 listMascotas.Add(new Mascota
                 {
-                    NroHC = (int)item[0],
-                    IdCliente = (int)item[1],
-                    Nombre = item[2].ToString()
+                    NroHC = Convert.ToInt32(item[0]),
+                    FechaNac = (DateTime)item[1],
+                    Nombre = item[2].ToString(),
+                    Sexo = (char)item[3],
+                    IdCliente = (int)item[4],
+                    CodRaza = (int)item[5],
+                    CodEspecie = (int)item[6],
                 });
             }
             return listMascotas;
         }
-        
         public int Update(Mascota mascota)
         {
             parameters = new List<SqlParameter>();

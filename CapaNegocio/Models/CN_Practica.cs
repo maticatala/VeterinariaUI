@@ -65,6 +65,11 @@ namespace CapaNegocio.Models
             listPracticas = practicaDataModel.ToList();
             return listPracticas;
         }
+
+        public List<Practica> getPractica(int codPractica)
+        {
+            return practicaRepository.getPractica(codPractica);
+        }
         public IEnumerable<Practica> findByFilter(string filter)
         {
             return listPracticas.FindAll(

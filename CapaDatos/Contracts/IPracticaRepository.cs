@@ -9,6 +9,6 @@ namespace CapaDatos.Contracts
 {
     public interface IPracticaRepository:IGenericRepository<Practica,int>
     {
-        
+        List<Practica> getPractica(int codPractica);
     }
 }

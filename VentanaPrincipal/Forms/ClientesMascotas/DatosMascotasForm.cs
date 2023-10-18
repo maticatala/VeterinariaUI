@@ -173,5 +173,10 @@ namespace VentanaPrincipal.Forms.ClientesMascotas
             MessageBox.Show(result);
             verificarMascotas();
         }
+
+        private void cbxEspecie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

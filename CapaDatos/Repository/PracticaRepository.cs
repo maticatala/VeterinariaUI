@@ -64,7 +64,8 @@ namespace CapaDatos.Repository
                 {
                     codPractica = (int)item[0],
                     Descripcion = item[1].ToString(),
-                    Precio = (float)item[2],
+                    Precio = Convert.ToDouble(item[2]),
+                    
                 }) ;
             }
             return listPractica;
@@ -81,6 +82,23 @@ namespace CapaDatos.Repository
             return ExecuteNonQuery(update);
         }
 
+        public List<Practica> getPractica(int codPractica)
+        {
+            string sql = $"select * from practicas where codPractica={codPractica}";
+            var tableResult = ExecuteReader(sql);
+            var listPracticas = new List<Practica>();
+
+            foreach (DataRow item in tableResult.Rows)
+            {
+                listPracticas.Add(new Practica
+                {
+                    codPractica = Convert.ToInt32(item[0]),
+                    Descripcion = item[1].ToString(),
+                    Precio = Convert.ToDouble(item[2])
+                });
+            }
+            return listPracticas;
+        }
         public int Remove(int codPractica)
         {
             parameters = new List<SqlParameter>();

@@ -25,17 +25,14 @@ namespace VentanaPrincipal.Forms.Practicas
 
         private void practicasForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'veterinariaDataSet2.practicas' table. You can move, or remove it, as needed.
-            //this.practicasTableAdapter.Fill(this.veterinariaDataSet2.practicas);
-            // TODO: This line of code loads data into the 'veterinariaDataSet3.practicas' table. You can move, or remove it, as needed.
-            //this.practicasTableAdapter.Fill(this.veterinariaDataSet3.practicas);
 
             cargarTablaPracticas();
             if(cgvPracticas.Rows.Count > 0) 
             {
                 DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
-                Cliente clienteSeleccionado = (Cliente) filaSeleccionada.DataBoundItem;
+                Practica practicaSeleccionada = (Practica) filaSeleccionada.DataBoundItem;
             }
+
             
         }
         private void txtCodigo_TextChanged(object sender, EventArgs e)
@@ -81,6 +78,7 @@ namespace VentanaPrincipal.Forms.Practicas
         private void cgvPracticas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
+            Practica practicaSeleccionada = (Practica)filaSeleccionada.DataBoundItem;
         }
 
         private void practicasBindingSource_CurrentChanged(object sender, EventArgs e)

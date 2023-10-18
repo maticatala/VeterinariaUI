@@ -13,11 +13,11 @@ namespace CapaEntidadaes.Entities
     {
         private int CodPractica;
         private string descripcion;
-        private float precio;
+        private double precio;
 
         [Required(ErrorMessage = "El campo Practica es requerido")]
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int codPractica { get =>CodPractica; set =>CodPractica = value; }
-        public float Precio { get => precio; set => precio = value; }
+        public double Precio { get => precio; set => precio = value; }
     }
 }

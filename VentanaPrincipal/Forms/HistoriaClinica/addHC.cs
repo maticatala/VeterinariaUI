@@ -1,4 +1,5 @@
-﻿using CapaEntidades.Entities;
+﻿using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using CapaNegocio.Models;
 using CapaNegocio.ValueObjects;
 using System;
@@ -15,9 +16,13 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
 {
     public partial class addHC : Form
     {
-        CN_Mascota mascotaNegocio = new CN_Mascota();
+        //CN_Mascota mascotaNegocio = new CN_Mascota();
+        CN_Atencion atencionNegocio = new CN_Atencion();
+        Atencion atencion = new Atencion();
         Cliente cliente = new Cliente();
         Veterinario veterinario = new Veterinario();
+        Mascota mascota = new Mascota();
+        List<Atencion> listAtenciones;
         List<Mascota> listaMascotas;
         public addHC()
         {
@@ -29,13 +34,15 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
         
         private void cargarDueños()
         {
-            CN_Cliente cN_Cliente = new CN_Cliente();
-            List<Cliente> owners = cN_Cliente.getAll(); // Implementa esta función para obtener la lista de dueños
+            
+            cbxDueño.DataSource = null;
+            cbxDueño.Items.Clear();
 
-            foreach (Cliente dueño in owners)
-            {
-                cbxDueño.Items.Add(dueño.Nombre);
-            }
+            cbxDueño.ValueMember = "idCliente";
+            cbxDueño.DisplayMember = "nombre";
+
+            CN_Cliente cN_Cliente = new CN_Cliente();
+            cbxDueño.DataSource = cN_Cliente.getAll();
 
         }
 
@@ -65,18 +72,6 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
             cbxMascota.DataSource = listaMascotas;
         }
 
-        private void verificarMascotas()
-        {
-            CN_Cliente cN_cliente = new CN_Cliente();
-            listaMascotas = cN_cliente.getMacotas(cliente.IdCliente);
-
-            if (listaMascotas.Count != 0)
-            {
-                cargarMascotas();
-                mascotaNegocio.State = EntityState.Modified;
-                cbxMascota.Enabled = true;
-            }
-        }
 
         private void cargarPracticas()
         {
@@ -92,36 +87,41 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
             cbxMascota.DataSource = null;
             cbxMascota.Items.Clear();
 
-            int nroHC = Convert.ToInt32(cbxDueño.SelectedValue.ToString());
+            int idCliente = Convert.ToInt32(cbxDueño.SelectedValue.ToString());
+
             cbxMascota.ValueMember = "nroHC";
             cbxMascota.DisplayMember = "nombre";
-
+            
             CN_Mascota cN_Mascota = new CN_Mascota();
-            cbxMascota.DataSource = cN_Mascota.findByDueño(nroHC);
+            cbxMascota.DataSource = cN_Mascota.buscarPorDueño(idCliente);
         }
 
         private void cbxDueño_SelectionChangeCommitted(object sender, EventArgs e)
         {
             findMascotas();
-            cbxMascota.Enabled = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            dtpFecha.CustomFormat = "MM-dd-yyyy";
+            atencion.NroHC = Convert.ToInt32(cbxMascota.SelectedValue.ToString());
+            atencion.Matricula = Convert.ToInt32(cbxVeterinario.SelectedValue.ToString());
+            atencion.FechaYHora = dtpFecha.Value.Date;
 
+            atencionNegocio.Atencion = atencion;
+
+            bool valid = new Helps.DataValidation(atencion).Validate();
+            if (valid)
+            {
+                string result = atencionNegocio.SaveChanges();
+                MessageBox.Show(result);
+            }
+            this.Close();
         }
 
-        private void cbxDueño_SelectedIndexChanged(object sender, EventArgs e)
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
-            CN_Cliente cN_cliente = new CN_Cliente();
-            listaMascotas = cN_cliente.getMacotas(cliente.IdCliente);
 
-            if (listaMascotas.Count != 0)
-            {
-                cargarMascotas();
-                mascotaNegocio.State = EntityState.Modified;
-                cbxMascota.Enabled = true;
-            }
         }
     }
 }
