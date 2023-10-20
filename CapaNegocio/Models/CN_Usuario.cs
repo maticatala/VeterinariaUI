@@ -87,5 +87,16 @@ namespace CapaNegocio.Models
                 e.N_usuario.ToLower().Contains(filter.ToLower()) ||
                 e.Tipo_usuario.ToString().Contains(filter)); //Consulta lambda
         }
+        public string Update(Usuario usu, int oldId)
+        {
+            usuarioRepository.Update(usu, oldId);
+            return "Actualizado correctamente";
+        }
+
+        public string delete(int id)
+        {
+            usuarioRepository.RemoveUsuario(id);
+            return "Eliminado correctamente";
+        }
     }
 }

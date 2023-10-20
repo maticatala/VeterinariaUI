@@ -23,8 +23,8 @@ namespace CapaDatos.Repository
         public AtencionRepository()
         {
             selectAll = "SELECT * FROM atenciones";
-            insert = "INSERT INTO atenciones VALUES (@nroHC,@nroMatricula,@fechaYHora,@resultado)";
-            update = "UPDATE atenciones SET nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora,resultado=@resultado WHERE nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora";
+            insert = "INSERT INTO atenciones VALUES (@nroHC,@nroMatricula,@fechaYHora,@resultado, @precio)";
+            update = "UPDATE atenciones SET nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora,resultado=@resultado, precio=@precio WHERE nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora";
             delete = "DELETE FROM clientes WHERE nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora";
         }
 
@@ -37,6 +37,7 @@ namespace CapaDatos.Repository
             parameters.Add(new SqlParameter("@nroMatricula", atencion.Matricula));
             parameters.Add(new SqlParameter("@fechaYHora", atencion.FechaYHora));
             parameters.Add(new SqlParameter("@resultado", atencion.Resultado));
+            parameters.Add(new SqlParameter("@precio", atencion.Precio));
 
 
             //Ejecutamos el metodo ExecuteNonQuery de la clase repositorio maestra, este metodo requiere que enviemos un comando sql
@@ -69,7 +70,8 @@ namespace CapaDatos.Repository
                     NroHC = (int)item[0],
                     Matricula = (int)item[1],
                     FechaYHora = (DateTime)item[2],
-                    Resultado = item[3].ToString()
+                    Resultado = item[3].ToString(),
+                    Precio = Convert.ToDouble(item[4])
                 });
             }
             return listAtenciones;
@@ -83,6 +85,7 @@ namespace CapaDatos.Repository
             parameters.Add(new SqlParameter("@nroMatricula", atencion.Matricula));
             parameters.Add(new SqlParameter("@fechaYHora", atencion.FechaYHora));
             parameters.Add(new SqlParameter("@Resultado", atencion.Resultado));
+            parameters.Add(new SqlParameter("@precio", atencion.Precio));
 
             return ExecuteNonQuery(update);
         }

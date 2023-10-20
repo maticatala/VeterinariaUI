@@ -23,15 +23,17 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
 
         private void historiaClinica_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'veterinariaDataSet6.atenciones' table. You can move, or remove it, as needed.
+            this.atencionesTableAdapter1.Fill(this.veterinariaDataSet6.atenciones);
             // TODO: This line of code loads data into the 'veterinariaDataSet4.atenciones' table. You can move, or remove it, as needed.
-            this.atencionesTableAdapter.Fill(this.veterinariaDataSet4.atenciones);
+            //this.atencionesTableAdapter.Fill(this.veterinariaDataSet4.atenciones);
 
         }
         private void cargarTabla()
         {
             try
             {
-                //cgvAtencion.DataSource = CN_Atencion.getAll();
+                cgvAtencion.DataSource = CN_Atencion.getAll();
             }
             catch (Exception ex)
             {
@@ -42,7 +44,40 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
         {
             addHC hClinicaNew = new addHC();
             hClinicaNew.ShowDialog();
-            cargarTabla();
+            //cargarTabla();
+        }
+
+        private void cgvAtencion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                string nameColumn = cgvAtencion.Columns[e.ColumnIndex].Name;
+                if(nameColumn =="pdf") 
+                {
+                    report reporte = new report();
+                    reporte.ShowDialog();
+                }
+            }
+        }
+
+        private void cgvAtencion_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtener la celda sobre la que el mouse ha entrado
+                DataGridViewCell cell = cgvAtencion.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                // Verificar si la celda contiene una imagen (icono, etc.)
+                if (cell is DataGridViewImageCell && cell.Value != null)
+                {
+                    cgvAtencion.Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    // Cambiar el cursor a su valor predeterminado en caso contrario
+                    cgvAtencion.Cursor = Cursors.Default;
+                }
+            }
         }
     }
 }

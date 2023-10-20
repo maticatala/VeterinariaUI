@@ -15,7 +15,7 @@ using CapaEntidadaes.Entities;
 
 namespace CapaDatos.Repository
 {
-    public class PracticaRepository: MasterRepository,IPracticaRepository
+    public class PracticaRepository: MasterRepository, IPracticaRepository
     {
         private string selectAll;
         private string insert;
@@ -26,14 +26,13 @@ namespace CapaDatos.Repository
         {
             selectAll = "SELECT * FROM practicas";
             insert = "INSERT INTO practicas VALUES (@descripcion,@precio)";
-            update = "UPDATE practicas SET descripcion=@descripcion, precio=@precio";
+            update = "UPDATE practicas SET descripcion=@descripcion, precio=@precio where codPractica=@oldPractica";
             delete = "DELETE FROM practicas WHERE codPractica=@codPractica";
         }
        
         public int Add(Practica practica)
         {
             parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@codPractica", practica.codPractica));
             parameters.Add(new SqlParameter("@descripcion", practica.Descripcion));
             parameters.Add(new SqlParameter("@precio", practica.Precio));
 
@@ -62,7 +61,7 @@ namespace CapaDatos.Repository
             {
                 listPractica.Add(new Practica
                 {
-                    codPractica = (int)item[0],
+                    CodPractica = (int)item[0],
                     Descripcion = item[1].ToString(),
                     Precio = Convert.ToDouble(item[2]),
                     
@@ -71,13 +70,14 @@ namespace CapaDatos.Repository
             return listPractica;
         }
 
-        public int Update(Practica practica)
+        public int Update(Practica practica, int Pra)
         {
             parameters = new List<SqlParameter>();
 
-            parameters.Add(new SqlParameter("@codPractica", practica.codPractica));
+            parameters.Add(new SqlParameter("@codPractica", practica.CodPractica));
             parameters.Add(new SqlParameter("@descripcion", practica.Descripcion));
             parameters.Add(new SqlParameter("@precio", practica.Precio));
+            parameters.Add(new SqlParameter("@oldPractica", Pra));
 
             return ExecuteNonQuery(update);
         }
@@ -92,7 +92,7 @@ namespace CapaDatos.Repository
             {
                 listPracticas.Add(new Practica
                 {
-                    codPractica = Convert.ToInt32(item[0]),
+                    CodPractica = Convert.ToInt32(item[0]),
                     Descripcion = item[1].ToString(),
                     Precio = Convert.ToDouble(item[2])
                 });
@@ -106,8 +106,10 @@ namespace CapaDatos.Repository
             return ExecuteNonQuery(delete);
         }
 
-
-
+        public int Update(Practica entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     

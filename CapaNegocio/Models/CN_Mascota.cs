@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaEntidades.Entities;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Models
 {
@@ -70,6 +71,7 @@ namespace CapaNegocio.Models
         public List<Mascota> buscarPorDueño(int idCliente)
         {
             return mascotaRepository.buscarPorDueño(idCliente);
+            
         }
 
         public IEnumerable<Mascota> FindByFilter(string filter)

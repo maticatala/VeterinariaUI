@@ -34,56 +34,69 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
         
         private void cargarDueños()
         {
-            
+
             cbxDueño.DataSource = null;
             cbxDueño.Items.Clear();
+
 
             cbxDueño.ValueMember = "idCliente";
             cbxDueño.DisplayMember = "nombre";
 
             CN_Cliente cN_Cliente = new CN_Cliente();
             cbxDueño.DataSource = cN_Cliente.getAll();
+            cbxDueño.SelectedIndex = -1;
 
         }
 
         private void cargarVeterinarios()
         {
-            CN_Veterinario cN_Veterniario = new CN_Veterinario();
-            List<Veterinario> veterinarios = cN_Veterniario.getAll(); // Implementa esta función para obtener la lista de dueños
+            cbxVeterinario.DataSource = null;
+            cbxVeterinario.Items.Clear();
 
-            foreach (Veterinario veterinario in veterinarios)
-            {
-                cbxVeterinario.Items.Add(veterinario.Nombre);
-            }
+            cbxVeterinario.ValueMember = "matricula";
+            cbxVeterinario.DisplayMember = "nombre";
+
+            CN_Veterinario cN_Veterinario = new CN_Veterinario();
+            cbxVeterinario.DataSource = cN_Veterinario.getAll();
+            cbxVeterinario.SelectedIndex = -1;
         }
 
 
         private void addHC_Load(object sender, EventArgs e)
         {
             cargarDueños();
-            //verificarMascotas();
             cargarVeterinarios();
             cargarPracticas();
         }
         private void cargarMascotas()
         {
-            cbxMascota.ValueMember = "nroHC";
-            cbxMascota.DisplayMember = "nombre";
-            cbxMascota.DataSource = listaMascotas;
-        }
 
+            CN_Mascota cN_Mascota = new CN_Mascota();
+            List<Mascota> mascotas = cN_Mascota.getAll();
+
+            foreach (Mascota mascota in mascotas)
+            {
+                cbxMascota.Items.Add(mascota.Nombre);
+            }
+        }
+       
 
         private void cargarPracticas()
         {
+
             cbxPracticas.DataSource = null;
             cbxPracticas.Items.Clear();
+
             cbxPracticas.ValueMember = "codPractica";
             cbxPracticas.DisplayMember = "descripcion";
+
             CN_Practica cN_Practica = new CN_Practica();
             cbxPracticas.DataSource = cN_Practica.getAll();
+            cbxPracticas.SelectedIndex = -1;
         }
         private void findMascotas()
         {
+
             cbxMascota.DataSource = null;
             cbxMascota.Items.Clear();
 
@@ -91,9 +104,10 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
 
             cbxMascota.ValueMember = "nroHC";
             cbxMascota.DisplayMember = "nombre";
-            
-            CN_Mascota cN_Mascota = new CN_Mascota();
-            cbxMascota.DataSource = cN_Mascota.buscarPorDueño(idCliente);
+
+            CN_Cliente cN_Cliente = new CN_Cliente();
+            cbxMascota.DataSource = cN_Cliente.getMacotas(idCliente);
+
         }
 
         private void cbxDueño_SelectionChangeCommitted(object sender, EventArgs e)
@@ -107,7 +121,7 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
             atencion.NroHC = Convert.ToInt32(cbxMascota.SelectedValue.ToString());
             atencion.Matricula = Convert.ToInt32(cbxVeterinario.SelectedValue.ToString());
             atencion.FechaYHora = dtpFecha.Value.Date;
-
+            atencion.Resultado = txtResultado.Text;
             atencionNegocio.Atencion = atencion;
 
             bool valid = new Helps.DataValidation(atencion).Validate();

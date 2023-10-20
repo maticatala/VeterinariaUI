@@ -30,7 +30,7 @@ namespace CapaDatos.Repository
         {
             selectAll = "SELECT * FROM usuarios";
             insert = "INSERT INTO usuarios (n_usuario, password, tipo_usuario) VALUES(@n_usuario, @password, @tipo_usuario)";
-            update = "UPDATE usuarios SET n_usuario=@n_usuario, password=@password,tipo_usuario=@tipo_usuario";
+            update = "UPDATE usuarios SET n_usuario=@n_usuario, password=@password,tipo_usuario=@tipo_usuario where id=@oldId";
             delete = "DELETE FROM usuarios WHERE id=@id";
             
         }
@@ -106,13 +106,14 @@ namespace CapaDatos.Repository
             return ExecuteNonQuery(delete);
         }
 
-        public int Update(Usuario usuario)
+        public int Update(Usuario usuario, int id)
         {
             parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@n_usuario", usuario.N_usuario));
             parameters.Add(new SqlParameter("@password", usuario.Password));
             parameters.Add(new SqlParameter("@tipo_usuario", usuario.Tipo_usuario));
-            
+            parameters.Add(new SqlParameter("@oldId", id));
+
 
             try
             {
@@ -128,32 +129,17 @@ namespace CapaDatos.Repository
                     throw ex;
             }
         }
-
-        //public IEnumerable<Usuario> GetAll()
-        //{
-        //    //Declaramos una variable implicita de nombre tableResult que sera igual método ExecuteReader del repositorio maestro, este metodo requiere que enviemos una cadena de comando sql y devuelve un DataTable
-        //    var tableResult = ExecuteReader(selectAll);
-        //    var listUsuarios = new List<Usuario>();
-        //    //Por cada iteracion agregamos un nuevo objeto empleado a la lista de empleados
-        //    foreach (DataRow item in tableResult.Rows)
-        //    {
-        //        listUsuarios.Add(new Usuario
-        //        {
-        //            Id = (int)item[0],
-        //            N_usuario = item[1].ToString(),
-        //            Password = item[2].ToString(),
-        //            Tipo_usuario = item[3].ToString()
-        //        });
-        //    }
-        //    return listUsuarios;
-        //}
-
         public string ctrlLogin(string usuario, string password)
         {
             throw new NotImplementedException();
         }
 
         public int Remove(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Update(Usuario entity)
         {
             throw new NotImplementedException();
         }

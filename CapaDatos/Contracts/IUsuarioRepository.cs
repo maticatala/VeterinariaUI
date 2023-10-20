@@ -11,5 +11,6 @@ namespace CapaDatos.Contracts
     {
         int RemoveUsuario(int id);
         Usuario getOne(string username, string password);
+        int Update(Usuario usu, int id);
     }
 }

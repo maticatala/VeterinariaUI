@@ -90,6 +90,7 @@
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(196, 28);
             this.cbxSexo.TabIndex = 30;
+            this.cbxSexo.SelectedIndexChanged += new System.EventHandler(this.cbxSexo_SelectedIndexChanged);
             // 
             // label2
             // 

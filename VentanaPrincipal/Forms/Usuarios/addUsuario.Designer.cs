@@ -32,13 +32,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbUsuario = new System.Windows.Forms.ComboBox();
             this.lblConfirmar = new System.Windows.Forms.Label();
             this.btnRegistrar = new VentanaPrincipal.RJButton();
             this.txtConPassword = new VentanaPrincipal.UserControls.customTextBox();
             this.txtPassword = new VentanaPrincipal.UserControls.customTextBox();
             this.txtNombre = new VentanaPrincipal.UserControls.customTextBox();
-            this.btnDelete = new VentanaPrincipal.RJButton();
+            this.cbUsuario = new System.Windows.Forms.ComboBox();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -89,23 +89,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Usuario";
             // 
-            // cbUsuario
-            // 
-            this.cbUsuario.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.cbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUsuario.FormattingEnabled = true;
-            this.cbUsuario.Items.AddRange(new object[] {
-            "ADMINISTRADOR",
-            "USUARIO"});
-            this.cbUsuario.Location = new System.Drawing.Point(73, 81);
-            this.cbUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.cbUsuario.Name = "cbUsuario";
-            this.cbUsuario.Size = new System.Drawing.Size(270, 28);
-            this.cbUsuario.TabIndex = 18;
-            this.cbUsuario.SelectedIndexChanged += new System.EventHandler(this.cbUsuario_SelectedIndexChanged);
-            // 
             // lblConfirmar
             // 
             this.lblConfirmar.AutoSize = true;
@@ -126,7 +109,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(217, 457);
+            this.btnRegistrar.Location = new System.Drawing.Point(123, 469);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(138, 40);
             this.btnRegistrar.TabIndex = 24;
@@ -189,26 +172,35 @@
             this.txtNombre.TabIndex = 20;
             this.txtNombre.UnderlinedStyle = true;
             // 
-            // btnDelete
+            // cbUsuario
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDelete.BorderRadius = 5;
-            this.btnDelete.BorderSize = 1;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.Location = new System.Drawing.Point(40, 457);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(137, 40);
-            this.btnDelete.TabIndex = 26;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.cbUsuario.AutoCompleteCustomSource.AddRange(new string[] {
+            "ADMINISTRADOR",
+            "USUARIO"});
+            this.cbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.cbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUsuario.FormattingEnabled = true;
+            this.cbUsuario.Items.AddRange(new object[] {
+            "ADMNISTRADOR",
+            "USUARIO"});
+            this.cbUsuario.Location = new System.Drawing.Point(73, 79);
+            this.cbUsuario.Name = "cbUsuario";
+            this.cbUsuario.Size = new System.Drawing.Size(273, 28);
+            this.cbUsuario.TabIndex = 32;
+            // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMessage.Location = new System.Drawing.Point(84, 417);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(237, 21);
+            this.lblErrorMessage.TabIndex = 33;
+            this.lblErrorMessage.Text = "Las contraseñas no coinciden!";
+            this.lblErrorMessage.Visible = false;
             // 
             // frmRegistro
             // 
@@ -216,13 +208,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(402, 539);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.lblErrorMessage);
+            this.Controls.Add(this.cbUsuario);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtConPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblConfirmar);
-            this.Controls.Add(this.cbUsuario);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -244,12 +236,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbUsuario;
         private System.Windows.Forms.Label lblConfirmar;
         private VentanaPrincipal.UserControls.customTextBox txtNombre;
         private VentanaPrincipal.UserControls.customTextBox txtPassword;
         private VentanaPrincipal.UserControls.customTextBox txtConPassword;
         private VentanaPrincipal.RJButton btnRegistrar;
-        private VentanaPrincipal.RJButton btnDelete;
+        private System.Windows.Forms.ComboBox cbUsuario;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }

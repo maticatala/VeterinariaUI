@@ -36,18 +36,25 @@
             this.lblDueño = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cgvAtencion = new System.Windows.Forms.DataGridView();
-            this.veterinariaDataSet4 = new VentanaPrincipal.veterinariaDataSet4();
             this.atencionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.atencionesTableAdapter = new VentanaPrincipal.veterinariaDataSet4TableAdapters.atencionesTableAdapter();
+            this.veterinariaDataSet6 = new VentanaPrincipal.veterinariaDataSet6();
+            this.atencionesTableAdapter1 = new VentanaPrincipal.veterinariaDataSet6TableAdapters.atencionesTableAdapter();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnNuevo = new VentanaPrincipal.RJButton();
             this.nroHCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroMatriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaYHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resultadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNuevo = new VentanaPrincipal.RJButton();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pdf = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvAtencion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.atencionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,13 +112,17 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cgvAtencion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.cgvAtencion.ColumnHeadersHeight = 45;
+            this.cgvAtencion.ColumnHeadersHeight = 55;
             this.cgvAtencion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.cgvAtencion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nroHCDataGridViewTextBoxColumn,
             this.nroMatriculaDataGridViewTextBoxColumn,
             this.fechaYHoraDataGridViewTextBoxColumn,
-            this.resultadoDataGridViewTextBoxColumn});
+            this.resultadoDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn,
+            this.edit,
+            this.delete,
+            this.pdf});
             this.cgvAtencion.DataSource = this.atencionesBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -135,55 +146,50 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
             this.cgvAtencion.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.cgvAtencion.RowTemplate.Height = 55;
             this.cgvAtencion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cgvAtencion.Size = new System.Drawing.Size(800, 322);
             this.cgvAtencion.TabIndex = 9;
-            // 
-            // veterinariaDataSet4
-            // 
-            this.veterinariaDataSet4.DataSetName = "veterinariaDataSet4";
-            this.veterinariaDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cgvAtencion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvAtencion_CellContentClick);
+            this.cgvAtencion.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvAtencion_CellMouseEnter);
             // 
             // atencionesBindingSource
             // 
             this.atencionesBindingSource.DataMember = "atenciones";
-            this.atencionesBindingSource.DataSource = this.veterinariaDataSet4;
+            this.atencionesBindingSource.DataSource = this.veterinariaDataSet6;
             // 
-            // atencionesTableAdapter
+            // veterinariaDataSet6
             // 
-            this.atencionesTableAdapter.ClearBeforeFill = true;
+            this.veterinariaDataSet6.DataSetName = "veterinariaDataSet6";
+            this.veterinariaDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nroHCDataGridViewTextBoxColumn
+            // atencionesTableAdapter1
             // 
-            this.nroHCDataGridViewTextBoxColumn.DataPropertyName = "nroHC";
-            this.nroHCDataGridViewTextBoxColumn.HeaderText = "nroHC";
-            this.nroHCDataGridViewTextBoxColumn.Name = "nroHCDataGridViewTextBoxColumn";
-            this.nroHCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.atencionesTableAdapter1.ClearBeforeFill = true;
             // 
-            // nroMatriculaDataGridViewTextBoxColumn
+            // dataGridViewImageColumn1
             // 
-            this.nroMatriculaDataGridViewTextBoxColumn.DataPropertyName = "nroMatricula";
-            this.nroMatriculaDataGridViewTextBoxColumn.HeaderText = "nroMatricula";
-            this.nroMatriculaDataGridViewTextBoxColumn.Name = "nroMatriculaDataGridViewTextBoxColumn";
-            this.nroMatriculaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewImageColumn1.HeaderText = "Accion";
+            this.dataGridViewImageColumn1.Image = global::VentanaPrincipal.Properties.Resources.edit_FILL0_wght400_GRAD0_opsz24;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
             // 
-            // fechaYHoraDataGridViewTextBoxColumn
+            // dataGridViewImageColumn2
             // 
-            this.fechaYHoraDataGridViewTextBoxColumn.DataPropertyName = "fechaYHora";
-            this.fechaYHoraDataGridViewTextBoxColumn.HeaderText = "fechaYHora";
-            this.fechaYHoraDataGridViewTextBoxColumn.Name = "fechaYHoraDataGridViewTextBoxColumn";
-            this.fechaYHoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
             // 
-            // resultadoDataGridViewTextBoxColumn
+            // dataGridViewImageColumn3
             // 
-            this.resultadoDataGridViewTextBoxColumn.DataPropertyName = "resultado";
-            this.resultadoDataGridViewTextBoxColumn.HeaderText = "resultado";
-            this.resultadoDataGridViewTextBoxColumn.Name = "resultadoDataGridViewTextBoxColumn";
-            this.resultadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::VentanaPrincipal.Properties.Resources.Arturo_Wibawa_Akar_File_512;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
             // 
             // btnNuevo
             // 
@@ -207,6 +213,62 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // nroHCDataGridViewTextBoxColumn
+            // 
+            this.nroHCDataGridViewTextBoxColumn.DataPropertyName = "nroHC";
+            this.nroHCDataGridViewTextBoxColumn.HeaderText = "NroHC";
+            this.nroHCDataGridViewTextBoxColumn.Name = "nroHCDataGridViewTextBoxColumn";
+            this.nroHCDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nroMatriculaDataGridViewTextBoxColumn
+            // 
+            this.nroMatriculaDataGridViewTextBoxColumn.DataPropertyName = "nroMatricula";
+            this.nroMatriculaDataGridViewTextBoxColumn.HeaderText = "Nro Matricula";
+            this.nroMatriculaDataGridViewTextBoxColumn.Name = "nroMatriculaDataGridViewTextBoxColumn";
+            this.nroMatriculaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaYHoraDataGridViewTextBoxColumn
+            // 
+            this.fechaYHoraDataGridViewTextBoxColumn.DataPropertyName = "fechaYHora";
+            this.fechaYHoraDataGridViewTextBoxColumn.HeaderText = "Fecha y Hora";
+            this.fechaYHoraDataGridViewTextBoxColumn.Name = "fechaYHoraDataGridViewTextBoxColumn";
+            this.fechaYHoraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // resultadoDataGridViewTextBoxColumn
+            // 
+            this.resultadoDataGridViewTextBoxColumn.DataPropertyName = "resultado";
+            this.resultadoDataGridViewTextBoxColumn.HeaderText = "Resultado";
+            this.resultadoDataGridViewTextBoxColumn.Name = "resultadoDataGridViewTextBoxColumn";
+            this.resultadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // edit
+            // 
+            this.edit.HeaderText = "";
+            this.edit.Image = global::VentanaPrincipal.Properties.Resources.edit_FILL0_wght400_GRAD0_opsz24;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "Accion";
+            this.delete.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            // 
+            // pdf
+            // 
+            this.pdf.HeaderText = "";
+            this.pdf.Image = global::VentanaPrincipal.Properties.Resources.Arturo_Wibawa_Akar_File_24;
+            this.pdf.Name = "pdf";
+            this.pdf.ReadOnly = true;
+            // 
             // historiaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,8 +283,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvAtencion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atencionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,12 +296,19 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private RJButton btnNuevo;
         private System.Windows.Forms.DataGridView cgvAtencion;
-        private veterinariaDataSet4 veterinariaDataSet4;
+        private veterinariaDataSet6 veterinariaDataSet6;
         private System.Windows.Forms.BindingSource atencionesBindingSource;
-        private veterinariaDataSet4TableAdapters.atencionesTableAdapter atencionesTableAdapter;
+        private veterinariaDataSet6TableAdapters.atencionesTableAdapter atencionesTableAdapter1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroHCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroMatriculaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaYHoraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn resultadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn edit;
+        private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.DataGridViewImageColumn pdf;
     }
 }

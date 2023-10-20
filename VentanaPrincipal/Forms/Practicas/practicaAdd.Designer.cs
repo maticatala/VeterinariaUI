@@ -30,7 +30,6 @@
         {
             this.txt = new System.Windows.Forms.Label();
             this.txtPractica = new VentanaPrincipal.UserControls.customTextBox();
-            this.btnDelete = new VentanaPrincipal.RJButton();
             this.btnAdd = new VentanaPrincipal.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrecio = new VentanaPrincipal.UserControls.customTextBox();
@@ -45,7 +44,7 @@
             this.txt.Size = new System.Drawing.Size(224, 32);
             this.txt.TabIndex = 1;
             this.txt.Text = "Ingrese la Practica";
-            this.txt.Click += new System.EventHandler(this.label1_Click);
+            //this.txt.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPractica
             // 
@@ -65,27 +64,6 @@
             this.txtPractica.TabIndex = 27;
             this.txtPractica.UnderlinedStyle = true;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDelete.BorderRadius = 5;
-            this.btnDelete.BorderSize = 1;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.Location = new System.Drawing.Point(69, 302);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(114, 36);
-            this.btnDelete.TabIndex = 26;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -98,7 +76,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnAdd.Location = new System.Drawing.Point(271, 302);
+            this.btnAdd.Location = new System.Drawing.Point(161, 298);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(114, 36);
             this.btnAdd.TabIndex = 24;
@@ -145,14 +123,13 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPractica);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "practicaAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Practica";
-            this.Load += new System.EventHandler(this.practicaAdd_Load);
+            //this.Load += new System.EventHandler(this.practicaAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +138,6 @@
         #endregion
         private System.Windows.Forms.Label txt;
         private RJButton btnAdd;
-        private RJButton btnDelete;
         private UserControls.customTextBox txtPractica;
         private System.Windows.Forms.Label label1;
         private UserControls.customTextBox txtPrecio;

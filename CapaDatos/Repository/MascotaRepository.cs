@@ -77,22 +77,31 @@ namespace CapaDatos.Repository
 
         public List<Mascota> buscarPorDueño(int idCliente)
         {
-            string sql = $"SELECT * FROM mascotas WHERE idCliente={idCliente}";
+            string sql = $"select * from mascotas where idCliente={idCliente}";
             var tableResult = ExecuteReader(sql);
             var listMascotas = new List<Mascota>();
 
             foreach (DataRow item in tableResult.Rows)
             {
-                listMascotas.Add(new Mascota
+                try
                 {
-                    NroHC = Convert.ToInt32(item[0]),
-                    FechaNac = (DateTime)item[1],
-                    Nombre = item[2].ToString(),
-                    Sexo = (char)item[3],
-                    IdCliente = (int)item[4],
-                    CodRaza = (int)item[5],
-                    CodEspecie = (int)item[6],
-                });
+                    listMascotas.Add(new Mascota
+                    {
+                        NroHC = Convert.ToInt32(item[0]),
+                        FechaNac = (DateTime)item[1],
+                        Nombre = item[2].ToString(),
+                        Sexo = Convert.ToChar(item[3]),
+                        IdCliente = Convert.ToInt32(item[4]),
+                        CodRaza = Convert.ToInt32(item[5]),
+                        CodEspecie = Convert.ToInt32(item[6])
+                    });
+                }
+                catch (Exception ex)
+                {
+                    // Manejar la excepción aquí (puedes imprimir un mensaje de error o hacer algo más)
+                    Console.WriteLine("Error al convertir valor: " + ex.Message);
+                }
+
             }
             return listMascotas;
         }

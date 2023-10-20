@@ -37,17 +37,19 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnNuevo = new VentanaPrincipal.RJButton();
             this.cgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.veterinariaDataSet3 = new VentanaPrincipal.veterinariaDataSet3();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.veterinariaDataSet3 = new VentanaPrincipal.veterinariaDataSet3();
             this.usuariosTableAdapter = new VentanaPrincipal.veterinariaDataSet3TableAdapters.usuariosTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipousuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -133,7 +135,9 @@
             this.idDataGridViewTextBoxColumn,
             this.nusuarioDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
-            this.tipousuarioDataGridViewTextBoxColumn});
+            this.tipousuarioDataGridViewTextBoxColumn,
+            this.edit,
+            this.delete});
             this.cgvUsuarios.DataSource = this.usuariosBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -158,8 +162,8 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
             this.cgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.cgvUsuarios.RowTemplate.Height = 55;
             this.cgvUsuarios.RowTemplate.ReadOnly = true;
@@ -169,16 +173,17 @@
             this.cgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellClick);
             this.cgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.cgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellDoubleClick);
-            // 
-            // veterinariaDataSet3
-            // 
-            this.veterinariaDataSet3.DataSetName = "veterinariaDataSet3";
-            this.veterinariaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cgvUsuarios.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.cgvUsuarios_CellMouseEnter);
             // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "usuarios";
             this.usuariosBindingSource.DataSource = this.veterinariaDataSet3;
+            // 
+            // veterinariaDataSet3
+            // 
+            this.veterinariaDataSet3.DataSetName = "veterinariaDataSet3";
+            this.veterinariaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuariosTableAdapter
             // 
@@ -187,30 +192,44 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nusuarioDataGridViewTextBoxColumn
             // 
             this.nusuarioDataGridViewTextBoxColumn.DataPropertyName = "n_usuario";
-            this.nusuarioDataGridViewTextBoxColumn.HeaderText = "n_usuario";
+            this.nusuarioDataGridViewTextBoxColumn.HeaderText = "Nombre Usuario";
             this.nusuarioDataGridViewTextBoxColumn.Name = "nusuarioDataGridViewTextBoxColumn";
             this.nusuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Contraseña";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tipousuarioDataGridViewTextBoxColumn
             // 
             this.tipousuarioDataGridViewTextBoxColumn.DataPropertyName = "tipo_usuario";
-            this.tipousuarioDataGridViewTextBoxColumn.HeaderText = "tipo_usuario";
+            this.tipousuarioDataGridViewTextBoxColumn.HeaderText = "Tipo Usuario";
             this.tipousuarioDataGridViewTextBoxColumn.Name = "tipousuarioDataGridViewTextBoxColumn";
             this.tipousuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // edit
+            // 
+            this.edit.HeaderText = "Accion";
+            this.edit.Image = global::VentanaPrincipal.Properties.Resources.edit_FILL0_wght400_GRAD0_opsz24;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "";
+            this.delete.Image = global::VentanaPrincipal.Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
             // 
             // usuarioForm
             // 
@@ -226,8 +245,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariaDataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +265,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nusuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipousuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn edit;
+        private System.Windows.Forms.DataGridViewImageColumn delete;
     }
 }
