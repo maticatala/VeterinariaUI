@@ -280,6 +280,11 @@
     <Compile Include="Forms\HistoriaClinica\addHC.Designer.cs">
       <DependentUpon>addHC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HistoriaClinica\Ds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HistoriaClinica\historiaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +509,17 @@
     <EmbeddedResource Include="UserControls\RJButton.resx">
       <DependentUpon>RJButton.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Forms\HistoriaClinica\Ds.xsc">
+      <DependentUpon>Ds.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\HistoriaClinica\Ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\HistoriaClinica\Ds.xss">
+      <DependentUpon>Ds.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaEntidadaes.Entities.Especie.datasource" />
     <None Include="Properties\DataSources\CapaEntidadaes.Entities.Practica.datasource" />

@@ -25,7 +25,7 @@ namespace CapaDatos.Repository
             selectAll = "SELECT * FROM atenciones";
             insert = "INSERT INTO atenciones VALUES (@nroHC,@nroMatricula,@fechaYHora,@resultado, @precio)";
             update = "UPDATE atenciones SET nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora,resultado=@resultado, precio=@precio WHERE nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora";
-            delete = "DELETE FROM clientes WHERE nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora";
+            delete = "DELETE FROM clientes WHERE nroHC=@nroHC";
         }
 
         public int Add(Atencion atencion) //Llega como parametro una instancia de cliente desde la capa de negocios. Retorna un entero, que especifica cuantos registros se añadieron 

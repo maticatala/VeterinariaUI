@@ -14,8 +14,11 @@ using System.Windows.Forms;
 
 namespace VentanaPrincipal.Forms.HistoriaClinica
 {
+
     public partial class addHC : Form
+
     {
+        private Atencion atencionOriginal;
         //CN_Mascota mascotaNegocio = new CN_Mascota();
         CN_Atencion atencionNegocio = new CN_Atencion();
         Atencion atencion = new Atencion();
@@ -27,7 +30,6 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
         public addHC()
         {
             InitializeComponent();
-            btnDelete.Enabled = false;
         }
 
 
@@ -61,6 +63,17 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
             cbxVeterinario.SelectedIndex = -1;
         }
 
+        public addHC (Atencion at)
+        {
+            InitializeComponent();
+            atencionOriginal = at;
+            cbxDueño.Text = at.ToString();
+            cbxMascota.Text = at.ToString();
+            cbxPracticas.Text = at.ToString();
+            cbxVeterinario.Text = at.ToString();
+            txtResultado.Text = at.ToString();
+
+        }
 
         private void addHC_Load(object sender, EventArgs e)
         {

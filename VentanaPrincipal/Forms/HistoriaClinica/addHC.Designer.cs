@@ -38,7 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cbxMascota = new System.Windows.Forms.ComboBox();
-            this.btnDelete = new VentanaPrincipal.RJButton();
             this.btnAdd = new VentanaPrincipal.RJButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtResultado = new VentanaPrincipal.UserControls.customTextBox();
@@ -159,26 +158,6 @@
             this.cbxMascota.Size = new System.Drawing.Size(174, 28);
             this.cbxMascota.TabIndex = 45;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDelete.BorderRadius = 5;
-            this.btnDelete.BorderSize = 1;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.Location = new System.Drawing.Point(107, 351);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(141, 46);
-            this.btnDelete.TabIndex = 42;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,7 +219,6 @@
             this.Controls.Add(this.cbxMascota);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cbxPracticas);
             this.Controls.Add(this.cbxVeterinario);
@@ -269,7 +247,6 @@
         private System.Windows.Forms.ComboBox cbxVeterinario;
         private System.Windows.Forms.ComboBox cbxPracticas;
         private RJButton btnAdd;
-        private RJButton btnDelete;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.ComboBox cbxMascota;

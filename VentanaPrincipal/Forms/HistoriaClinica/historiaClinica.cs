@@ -1,4 +1,5 @@
-﻿using CapaNegocio.Models;
+﻿using CapaEntidadaes.Entities;
+using CapaNegocio.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,18 +46,41 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
             addHC hClinicaNew = new addHC();
             hClinicaNew.ShowDialog();
             //cargarTabla();
+            this.atencionesTableAdapter1.Fill(this.veterinariaDataSet6.atenciones);
         }
 
         private void cgvAtencion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 string nameColumn = cgvAtencion.Columns[e.ColumnIndex].Name;
-                if(nameColumn =="pdf") 
+                if(nameColumn == "edit")
                 {
-                    report reporte = new report();
-                    reporte.ShowDialog();
+                    Atencion at = new Atencion()
+                    {
+                        NroHC = Convert.ToInt32(cgvAtencion.CurrentRow.Cells[0].Value.ToString()),
+                        Matricula = Convert.ToInt32(cgvAtencion.CurrentRow.Cells[0].Value.ToString()),
+
+                        FechaYHora = Convert.ToDateTime(cgvAtencion.CurrentRow. Cells[0].Value),
+
+                        Resultado = cgvAtencion.CurrentRow.Cells[0].Value.ToString(),
+
+                        Precio = Convert.ToDouble(cgvAtencion.CurrentRow.Cells[0].Value.ToString()),
+
+                    };
+                    addHC agregarHC = new addHC(at);
+                    agregarHC.ShowDialog();
                 }
+                else if (nameColumn == "delete")
+                {
+                    DialogResult opt = MessageBox.Show("¿Desea eliminar permanentemente el Veterinario?", "Cuidado", MessageBoxButtons.OKCancel);
+                    if (opt == DialogResult.OK)
+                    {
+                        int nroHC = Convert.ToInt32(cgvAtencion.CurrentRow.Cells[0].Value.ToString());
+                        string result = CN_Atencion.delete(nroHC);
+                    }
+                }
+                this.atencionesTableAdapter1.Fill(this.veterinariaDataSet6.atenciones);
             }
         }
 
@@ -78,6 +102,17 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
                     cgvAtencion.Cursor = Cursors.Default;
                 }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            report reporte = new report();
+            reporte.ShowDialog();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            cgvAtencion.DataSource = CN_Atencion.FindByFilter(txtBuscar.Text);
         }
     }
 }

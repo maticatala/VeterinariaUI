@@ -59,6 +59,19 @@ namespace CapaNegocio.Models
             return mensaje;
         }
 
+        public IEnumerable<Atencion> FindByFilter(string filter)
+        {
+            return listAtenciones.FindAll(
+                e => e.NroHC.ToString().Contains(filter) ||
+                e.Matricula.ToString().Contains(filter.ToLower()) ||
+                e.Resultado.ToString().Contains(filter.ToLower()) ||
+                e.Precio.ToString().Contains(filter));//Consulta lambda
+        }
+        public string delete(int nroHC)
+        {
+            atencionRepository.Remove(nroHC);
+            return "Eliminado correctamente";
+        }
         public List<Atencion> getAll()
         {
             var atencionDataModel = atencionRepository.GetAll();
