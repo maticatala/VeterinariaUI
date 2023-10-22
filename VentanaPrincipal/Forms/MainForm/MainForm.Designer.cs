@@ -37,7 +37,6 @@ namespace VentanaPrincipal
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnInicio = new System.Windows.Forms.PictureBox();
-            this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.btnDueños = new FontAwesome.Sharp.IconButton();
             this.btnHistoriaClinica = new FontAwesome.Sharp.IconButton();
             this.btnServicios = new FontAwesome.Sharp.IconButton();
@@ -60,6 +59,7 @@ namespace VentanaPrincipal
             this.btnMin = new FontAwesome.Sharp.IconButton();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -87,12 +87,12 @@ namespace VentanaPrincipal
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(130)))));
-            this.label1.Location = new System.Drawing.Point(82, 43);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(96, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 17);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Sucursal Default";
+            this.label1.Text = "Sucursal UTN";
             // 
             // lblNombre
             // 
@@ -115,30 +115,6 @@ namespace VentanaPrincipal
             this.btnInicio.TabIndex = 0;
             this.btnInicio.TabStop = false;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.BarChart;
-            this.btnDashboard.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDashboard.IconSize = 32;
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 86);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(220, 60);
-            this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnDueños
             // 
@@ -214,7 +190,7 @@ namespace VentanaPrincipal
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelMenu.BackColor = System.Drawing.Color.Silver;
             this.panelMenu.Controls.Add(this.btnVeterinarios);
             this.panelMenu.Controls.Add(this.btnUsuarios);
             this.panelMenu.Controls.Add(this.btnRegistrar);
@@ -229,6 +205,7 @@ namespace VentanaPrincipal
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 641);
             this.panelMenu.TabIndex = 1;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // btnVeterinarios
             // 
@@ -237,7 +214,7 @@ namespace VentanaPrincipal
             this.btnVeterinarios.FlatAppearance.BorderSize = 0;
             this.btnVeterinarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVeterinarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnVeterinarios.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnVeterinarios.IconChar = FontAwesome.Sharp.IconChar.UserMd;
             this.btnVeterinarios.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             this.btnVeterinarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVeterinarios.IconSize = 32;
@@ -261,7 +238,7 @@ namespace VentanaPrincipal
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
             this.btnUsuarios.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUsuarios.IconSize = 32;
@@ -285,7 +262,7 @@ namespace VentanaPrincipal
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Dog;
             this.btnRegistrar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrar.IconSize = 32;
@@ -296,7 +273,7 @@ namespace VentanaPrincipal
             this.btnRegistrar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnRegistrar.Size = new System.Drawing.Size(220, 60);
             this.btnRegistrar.TabIndex = 8;
-            this.btnRegistrar.Text = "Registro";
+            this.btnRegistrar.Text = "Registro R/E";
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -368,9 +345,9 @@ namespace VentanaPrincipal
             this.panel2.Controls.Add(this.lblHola);
             this.panel2.Controls.Add(this.lblRol);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(829, 12);
+            this.panel2.Location = new System.Drawing.Point(795, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(90, 51);
+            this.panel2.Size = new System.Drawing.Size(124, 51);
             this.panel2.TabIndex = 1;
             // 
             // lvlUsername
@@ -378,12 +355,13 @@ namespace VentanaPrincipal
             this.lvlUsername.Dock = System.Windows.Forms.DockStyle.Right;
             this.lvlUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvlUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lvlUsername.Location = new System.Drawing.Point(31, 0);
+            this.lvlUsername.Location = new System.Drawing.Point(43, 0);
             this.lvlUsername.Name = "lvlUsername";
-            this.lvlUsername.Size = new System.Drawing.Size(59, 25);
+            this.lvlUsername.Size = new System.Drawing.Size(81, 25);
             this.lvlUsername.TabIndex = 2;
             this.lvlUsername.Text = "Matias";
             this.lvlUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lvlUsername.Click += new System.EventHandler(this.lvlUsername_Click);
             // 
             // lblHola
             // 
@@ -392,10 +370,11 @@ namespace VentanaPrincipal
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             this.lblHola.Location = new System.Drawing.Point(0, 0);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(37, 25);
+            this.lblHola.Size = new System.Drawing.Size(63, 25);
             this.lblHola.TabIndex = 1;
             this.lblHola.Text = "Hola,";
             this.lblHola.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHola.Click += new System.EventHandler(this.lblHola_Click);
             // 
             // lblRol
             // 
@@ -404,7 +383,7 @@ namespace VentanaPrincipal
             this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             this.lblRol.Location = new System.Drawing.Point(0, 25);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(90, 26);
+            this.lblRol.Size = new System.Drawing.Size(124, 26);
             this.lblRol.TabIndex = 0;
             this.lblRol.Text = "Admin";
             this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -514,6 +493,31 @@ namespace VentanaPrincipal
             this.mainPanel.TabIndex = 3;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            this.btnDashboard.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDashboard.IconSize = 32;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 86);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(220, 60);
+            this.btnDashboard.TabIndex = 2;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,7 +548,6 @@ namespace VentanaPrincipal
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnDashboard;
         private FontAwesome.Sharp.IconButton btnDueños;
         private IconButton btnMascotas;
         private FontAwesome.Sharp.IconButton btnHistoriaClinica;
@@ -575,6 +578,7 @@ namespace VentanaPrincipal
         private EventHandler btnMascotas_Click;
         private EventHandler lblPage_Click;
         private FontAwesome.Sharp.IconButton btnVeterinarios;
+        private IconButton btnDashboard;
     }
 }
 

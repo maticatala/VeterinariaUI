@@ -42,35 +42,22 @@ namespace VentanaPrincipal.Forms.Veterinarios
             }
         }
 
-        private void cgvVeterinarios_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            // Verificar que el evento se haya producido en una celda del cuerpo del DataGridView
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Obtener la celda sobre la que el mouse ha entrado
-                DataGridViewCell cell = cgvVeterinarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-                // Verificar si la celda contiene una imagen (icono, etc.)
-                if (cell is DataGridViewImageCell && cell.Value != null)
-                {
-                    cgvVeterinarios.Cursor = Cursors.Hand;
-                }
-                else
-                {
-                    // Cambiar el cursor a su valor predeterminado en caso contrario
-                    cgvVeterinarios.Cursor = Cursors.Default;
-                }
-            }
-        }
 
-        private void btnAddVeterinario_Click(object sender, EventArgs e)
+
+        private void btnAddVeterinario_Click_1(object sender, EventArgs e)
         {
             addVeterinario formAddVeterinario = new addVeterinario();
             formAddVeterinario.ShowDialog();
             cargarTabla();
         }
 
-        private void cgvVeterinarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void cgvVeterinarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cgvVeterinarios_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -104,11 +91,29 @@ namespace VentanaPrincipal.Forms.Veterinarios
             }
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void cgvVeterinarios_CellMouseEnter_1(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtener la celda sobre la que el mouse ha entrado
+                DataGridViewCell cell = cgvVeterinarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                // Verificar si la celda contiene una imagen (icono, etc.)
+                if (cell is DataGridViewImageCell && cell.Value != null)
+                {
+                    cgvVeterinarios.Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    // Cambiar el cursor a su valor predeterminado en caso contrario
+                    cgvVeterinarios.Cursor = Cursors.Default;
+                }
+            }
+        }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
             cgvVeterinarios.DataSource = cN_Veterinario.FindByFilter(txtBuscar.Text);
-            
         }
     }
 }

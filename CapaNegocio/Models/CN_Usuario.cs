@@ -50,7 +50,7 @@ namespace CapaNegocio.Models
                         mensaje = "Modificado correctamente";
                         break;
                     case EntityState.Deleted:
-                        usuarioRepository.Remove(usuario.Id.ToString());
+                        usuarioRepository.RemoveUsuario(usuario.Id);
                         mensaje = "Eliminado correctamente";
                         break;
                 }
@@ -67,13 +67,6 @@ namespace CapaNegocio.Models
             }
             return mensaje;
         }
-
-        //public List<Usuario> GetAll()
-        //{
-        //    var usuarioDataModel = usuarioRepository.GetAll();
-        //    listUsuarios = usuarioDataModel.ToList();
-        //    return listUsuarios;
-        //}
 
         public Usuario LoginUser(string username, string password)
         {
@@ -93,6 +86,17 @@ namespace CapaNegocio.Models
                 e => e.Id.ToString().Contains(filter) ||
                 e.N_usuario.ToLower().Contains(filter.ToLower()) ||
                 e.Tipo_usuario.ToString().Contains(filter)); //Consulta lambda
+        }
+        public string Update(Usuario usu, int oldId)
+        {
+            usuarioRepository.Update(usu, oldId);
+            return "Actualizado correctamente";
+        }
+
+        public string delete(int id)
+        {
+            usuarioRepository.RemoveUsuario(id);
+            return "Eliminado correctamente";
         }
     }
 }

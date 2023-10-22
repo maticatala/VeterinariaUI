@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaEntidades.Entities;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Models
 {
@@ -67,12 +68,20 @@ namespace CapaNegocio.Models
             }
             return mensaje;
         }
+        public List<Mascota> buscarPorDueño(int idCliente)
+        {
+            return mascotaRepository.buscarPorDueño(idCliente);
+            
+        }
+
         public IEnumerable<Mascota> FindByFilter(string filter)
         {
             return listMascotas.FindAll(
                 e => e.NroHC.ToString().Contains(filter.ToLower()) ||
                 e.Nombre.ToLower().Contains(filter.ToLower()));
         }
+
+
         public int getCount()
         {
             return mascotaRepository.getCount();

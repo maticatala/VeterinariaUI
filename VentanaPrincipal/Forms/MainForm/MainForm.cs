@@ -20,6 +20,7 @@ using VentanaPrincipal.Forms.Practicas;
 using VentanaPrincipal.Forms.Usuarios;
 using Color = System.Drawing.Color;
 using VentanaPrincipal.Forms.RazasEspecies;
+using VentanaPrincipal.Forms.HistoriaClinica;
 //using Color = System.Drawing.Color;
 
 namespace VentanaPrincipal
@@ -38,6 +39,7 @@ namespace VentanaPrincipal
             leftBorderBtn.Size = new Size(7, 60);
             Controls.Add(leftBorderBtn);
             this.user = user;
+            
         }
         //Structs
         private struct RGBColors
@@ -89,7 +91,7 @@ namespace VentanaPrincipal
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(246, 246, 249);
+                currentBtn.BackColor = Color.Silver;
                 currentBtn.ForeColor = RGBColors.color_dark;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = RGBColors.color_dark;
@@ -114,6 +116,7 @@ namespace VentanaPrincipal
         private void btnHistoriaClinica_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color_dark);
+            loadform(new historiaClinica());
         }
 
         private void btnDueños_Click(object sender, EventArgs e)
@@ -166,6 +169,10 @@ namespace VentanaPrincipal
             {
                 btnRegistrar.Visible = false;
                 btnUsuarios.Visible = false;
+                btnVeterinarios.Visible = false;
+                lvlUsername.Text = user.N_usuario;
+                lblRol.Text = user.Tipo_usuario;
+
             }
             lvlUsername.Text = user.N_usuario;
             lblRol.Text = user.Tipo_usuario;
@@ -226,6 +233,21 @@ namespace VentanaPrincipal
             ActivateButton(sender, RGBColors.color_dark);
             loadform(new razasEspeciesForm());
             loadform(new Forms.Veterinarios.veterinariosForm());
+        }
+
+        private void lvlUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHola_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
 
         private void panelControls_MouseMove(object sender, MouseEventArgs e)

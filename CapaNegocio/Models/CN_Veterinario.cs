@@ -21,7 +21,7 @@ namespace CapaNegocio.Models
             veterinarioRepository = new VeterinarioRepository();
         }
 
-        public IEnumerable<Veterinario> getAll()
+        public List<Veterinario> getAll()
         {
             var veterinarioDataModel = veterinarioRepository.GetAll();
             listVeterinarios = new List<Veterinario>();
@@ -61,6 +61,5 @@ namespace CapaNegocio.Models
         {
             return veterinarioRepository.getCount();
         }
-
     }
 }

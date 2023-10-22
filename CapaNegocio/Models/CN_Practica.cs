@@ -26,6 +26,7 @@ namespace CapaNegocio.Models
         }
         public string SaveChanges()
         {
+            
             string mensaje = null;
             try
             {
@@ -40,7 +41,7 @@ namespace CapaNegocio.Models
                         mensaje = "Modificado correctamente";
                         break;
                     case EntityState.Deleted:
-                        practicaRepository.Remove(practica.codPractica);
+                        practicaRepository.Remove(practica.CodPractica);
                         mensaje = "Eliminado correctamente";
                         break;
                 }
@@ -58,6 +59,29 @@ namespace CapaNegocio.Models
             return mensaje;
         }
 
+        public IEnumerable<Practica> FindByFilter(string filter)
+        {
+            return listPracticas.FindAll(
+                e => e.CodPractica.ToString().Contains(filter) ||
+                e.Descripcion.ToLower().Contains(filter.ToLower()) ||
+                e.Precio.ToString().Contains(filter.ToLower()));
+        }
+
+        public string Delete(int codPractica)
+        {
+            string message;
+            try
+            {
+                practicaRepository.Remove(codPractica);
+                message = "Eliminada exitosamente";
+            }
+            catch (Exception ex)
+            {
+                message = ex.ToString();
+            }
+            return message;
+        }
+
         public List<Practica> getAll()
         {
             var practicaDataModel = practicaRepository.GetAll();
@@ -65,11 +89,27 @@ namespace CapaNegocio.Models
             listPracticas = practicaDataModel.ToList();
             return listPracticas;
         }
+
+        public List<Practica> getPractica(int codPractica)
+        {
+            return practicaRepository.getPractica(codPractica);
+        }
         public IEnumerable<Practica> findByFilter(string filter)
         {
             return listPracticas.FindAll(
-                e => e.codPractica.ToString().Contains(filter) ||
+                e => e.CodPractica.ToString().Contains(filter) ||
                 e.Descripcion.Contains(filter.ToLower()));
+        }
+        public string Add(Practica pra)
+        {
+            practicaRepository.Add(pra);
+            return "Registrado correctamente";
+        }
+
+        public string Update(Practica practica, int oldPractica)
+        {
+            practicaRepository.Update(practica, oldPractica);
+            return "Actualizado correctamente";
         }
     }
 }

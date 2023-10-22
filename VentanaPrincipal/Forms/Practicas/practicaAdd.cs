@@ -17,45 +17,50 @@ namespace VentanaPrincipal.Forms.Practicas
 {
     public partial class practicaAdd : Form
     {
-        CN_Practica practicaNegocio = new CN_Practica();
-        Practica practica = new Practica();
-        int codPractica = -1;
+        private Practica practicaOriginal;
         public practicaAdd()
         {
             InitializeComponent();
-            btnDelete.Enabled = false;
-            practicaNegocio.State = EntityState.Added;
+            
+             //practicaNegocio.State = EntityState.Added;
         }
         
         public practicaAdd(Practica practica)
         {
             InitializeComponent();
-            this.practica = practica;
+            practicaOriginal = practica;
+            //this.practica = practica;
             txtPractica.Text = practica.Descripcion;
-            practicaNegocio.State = EntityState.Modified;
-        }
-        private void practicaAdd_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            double precioFloat = practica.Precio;
+            txtPrecio.Text = precioFloat.ToString();
+            //practicaNegocio.State = EntityState.Modified;
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            CN_Practica cN_Practica = new CN_Practica();
+            Practica practica = new Practica();
+
             practica.Descripcion = txtPractica.Text;
-            practicaNegocio.Practica = practica;
+            practica.Precio = Convert.ToDouble(txtPrecio.Text);
+            //practicaNegocio.Practica = practica;
 
             bool valid = new Helps.DataValidation(practica).Validate(); //Si la validacion es true entonces podemos invocar el metodo de guardar cambios.
             if (valid)
             {
-                string result = practicaNegocio.SaveChanges();
+                string result;
+                if (practicaOriginal != null)
+                {
+                    result = cN_Practica.Update(practica, practicaOriginal.CodPractica);
+                }
+                else
+                {
+                    result = cN_Practica.Add(practica);
+                }
+
                 MessageBox.Show(result);
-                this.Close();
+                Close();
             }
         }
 
@@ -66,16 +71,21 @@ namespace VentanaPrincipal.Forms.Practicas
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            practicaNegocio.State = EntityState.Deleted;
-            practicaNegocio.Practica = practica;
-            string result = practicaNegocio.SaveChanges();
-            MessageBox.Show(result);
+            //practicaNegocio.State = EntityState.Deleted;
+            //practicaNegocio.Practica = practica;
+            //string result = practicaNegocio.SaveChanges();
+            //MessageBox.Show(result);
             this.Close();
         }
 
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

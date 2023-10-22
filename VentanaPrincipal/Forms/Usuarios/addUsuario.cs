@@ -1,9 +1,11 @@
-﻿using CapaEntidades.Entities;
+﻿using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using CapaNegocio.Models;
 using CapaNegocio.ValueObjects;
 using MySqlX.XDevAPI;
 using System;
 using System.Windows.Forms;
+using System.Windows.Interop;
 using VentanaPrincipal;
 using VentanaPrincipal.Forms.Clientes;
 using VentanaPrincipal.Helps;
@@ -12,77 +14,24 @@ namespace Sistema
 {
     public partial class frmRegistro : Form
     {
-        CN_Usuario usuarioNegocio = new CN_Usuario();
-        Usuario usuario = new Usuario();
-        int id = -1;
+        private Usuario usuarioOriginal;
 
         public frmRegistro()
         {
             InitializeComponent();
-            btnDelete.Enabled = false;
-            usuarioNegocio.State = EntityState.Added;
+            //usuarioNegocio.State = EntityState.Added;
         }
 
-        public frmRegistro(Usuario oldusuario)
+        public frmRegistro(Usuario usuario)
         {
             InitializeComponent();
-            usuario.N_usuario = oldusuario.N_usuario;
-            usuario.Tipo_usuario = oldusuario.Tipo_usuario.ToString();
-            usuario.Password = oldusuario.Password;
+            usuarioOriginal = usuario;
             txtNombre.Text = usuario.N_usuario;
             txtPassword.Text = usuario.Password;
             cbUsuario.Text = usuario.Tipo_usuario;
-            usuarioNegocio.State = EntityState.Modified;
+            txtConPassword.Text = usuario.Password;
+            //usuarioNegocio.State = EntityState.Modified;
             
-        }
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void btnRegistrar_Click_1(object sender, EventArgs e)
-        {
-            CN_Usuario usuarioNegocio = new CN_Usuario();
-            Usuario usuarioActual = new Usuario();
-            usuarioActual.N_usuario = txtNombre.Text;
-            usuarioActual.Tipo_usuario = cbUsuario.Text;
-
-
-            bool valid = new DataValidation(usuarioActual).Validate();
-
-            if (txtPassword.Text == txtConPassword.Text)
-                usuarioActual.Password = txtPassword.Text;
-            else
-            {
-                lblConfirmar.Text = "Las contraseñas no coinciden";
-                valid = false;
-            }
-                
-
-            if (valid)
-            {
-                try
-                {
-                    string result;
-                    if (usuario == null)
-                    {
-                        result = usuarioNegocio.Add(usuarioActual);
-                    }
-                    this.Close();
-
-                    MainForm frm = new MainForm(usuarioActual);
-                    frm.Visible = true;
-                    this.Visible = false;
-
-                }
-                catch (Exception ex)
-                {
-                    // Manejo de otras excepciones
-                    MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Limpiar();
-                }
-            }
-
-
         }
         private void Limpiar()
         {
@@ -93,45 +42,54 @@ namespace Sistema
             txtPassword.Text = string.Empty;
         }
 
-        private void cbUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtConPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegistrar_Click_2(object sender, EventArgs e)
         {
-            usuario.N_usuario = txtNombre.Text;
-            usuario.Password = txtPassword.Text;
-            usuario.Tipo_usuario = cbUsuario.Text;
-            usuarioNegocio.Usuario = usuario;
+            CN_Usuario usuarioNegocio = new CN_Usuario();
+            Usuario usuarioActual = new Usuario();
 
-            bool valid = new VentanaPrincipal.Helps.DataValidation(usuario).Validate();
+            usuarioActual.N_usuario = txtNombre.Text;
+            usuarioActual.Tipo_usuario = cbUsuario.Text;
+
+
+            bool valid = new DataValidation(usuarioActual).Validate();
+
+            if (txtPassword.Text == txtConPassword.Text)
+                usuarioActual.Password = txtPassword.Text;
+            else
+            {
+                lblErrorMessage.Visible = true;
+                valid = false;
+            }
+
+
             if (valid)
             {
-                string result = usuarioNegocio.SaveChanges();
-                MessageBox.Show(result);
-                this.Close();
+                try
+                {
+                    string result;
+                    if (usuarioOriginal != null)
+                    {
 
+                        result = usuarioNegocio.Update(usuarioActual, usuarioOriginal.Id);
+                    }
+                    else
+                    {
+                        result = usuarioNegocio.Add(usuarioActual);
+                    }
+                    this.Close();
+                    MessageBox.Show(result);
+                    //MainForm frm = new MainForm(usuarioActual);
+                    //frm.Visible = true;
+                    //this.Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de otras excepciones
+                    MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Limpiar();
+                }
             }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            usuarioNegocio.State = EntityState.Deleted;
-            usuarioNegocio.Usuario = usuario;
-            string result = usuarioNegocio.SaveChanges();
-            MessageBox.Show(result);
-            this.Close();
         }
 
         private void frmRegistro_Load(object sender, EventArgs e)

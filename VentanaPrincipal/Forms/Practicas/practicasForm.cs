@@ -10,12 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaNegocio.Models;
 using CapaEntidadaes.Entities;
+using VentanaPrincipal.Forms.Veterinarios;
 
 namespace VentanaPrincipal.Forms.Practicas
 {
     public partial class practicasForm : Form
     {
-        private CN_Practica CN_Practica = new CN_Practica();
+        private CN_Practica cN_Practica = new CN_Practica();
+        private Practica practicaSeleccionada;
         public practicasForm()
         {
             InitializeComponent();
@@ -25,21 +27,17 @@ namespace VentanaPrincipal.Forms.Practicas
 
         private void practicasForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'veterinariaDataSet.practicas' table. You can move, or remove it, as needed.
-            this.practicasTableAdapter.Fill(this.veterinariaDataSet.usuarios);
+
             cargarTablaPracticas();
-            if(cgvPracticas.Rows.Count > 0) 
-            {
-                DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
-                Practica practicaSeleccionada = (Practica)filaSeleccionada.DataBoundItem;
-            }
+           
+
             
         }
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                cgvPracticas.DataSource = CN_Practica.findByFilter(txtBuscar.Text);
+                cgvPracticas.DataSource = cN_Practica.findByFilter(txtBuscar.Text);
             }
             catch (Exception ex)
             {
@@ -48,15 +46,6 @@ namespace VentanaPrincipal.Forms.Practicas
 
         }
 
-        private void cgvPracticas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow filaSeleccionada = cgvPracticas.SelectedRows[0];
-            Practica practicaSeleccionada = (Practica)filaSeleccionada.DataBoundItem;
-
-            practicaAdd practicaAdd = new practicaAdd(practicaSeleccionada);
-            practicaAdd.ShowDialog();
-            cargarTablaPracticas();
-        }
         private void lblBusqueda_Click(object sender, EventArgs e)
         {
 
@@ -65,7 +54,7 @@ namespace VentanaPrincipal.Forms.Practicas
         {
             try
             {
-                cgvPracticas.DataSource = CN_Practica.getAll();
+                cgvPracticas.DataSource = cN_Practica.getAll();
             }
             catch (Exception ex)
             {
@@ -79,21 +68,77 @@ namespace VentanaPrincipal.Forms.Practicas
         }
 
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            practicaAdd practicaAdd = new practicaAdd();
-            practicaAdd.ShowDialog();
-            cargarTablaPracticas();
-        }
-
         private void cgvPracticas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                string nameColumn = cgvPracticas.Columns[e.ColumnIndex].Name;
+                if (nameColumn == "edit")
+                {
+                    Practica pra = new Practica()
+                    {
+                        CodPractica = Convert.ToInt32(cgvPracticas.CurrentRow.Cells[0].Value),
+                        Descripcion = cgvPracticas.CurrentRow.Cells[1].Value.ToString(),
+                    Precio = Convert.ToDouble(cgvPracticas.CurrentRow.Cells[2].Value),
+
+                    };
+                    practicaAdd practicaAdd = new practicaAdd(pra);
+                    practicaAdd.ShowDialog();
+
+                }
+                else if (nameColumn == "delete")
+                {
+                    DialogResult opt = MessageBox.Show("¿Desea eliminar permanentemente el Veterinario?", "Cuidado", MessageBoxButtons.OKCancel);
+                    if (opt == DialogResult.OK)
+                    {
+                        string codPractica = cgvPracticas.CurrentRow.Cells[0].Value.ToString();
+                        string result = cN_Practica.Delete(Convert.ToInt32(codPractica));
+                    }
+                }
+                cargarTablaPracticas();
+            }
 
         }
 
         private void practicasBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            practicaAdd practicaAdd = new practicaAdd();
+            practicaAdd.ShowDialog();
+            cargarTablaPracticas();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            cgvPracticas.DataSource = cN_Practica.FindByFilter(txtBuscar.Text);
+        }
+
+        private void cgvPracticas_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void cgvPracticas_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtener la celda sobre la que el mouse ha entrado
+                DataGridViewCell cell = cgvPracticas.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                // Verificar si la celda contiene una imagen (icono, etc.)
+                if (cell is DataGridViewImageCell && cell.Value != null)
+                {
+                    cgvPracticas.Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    // Cambiar el cursor a su valor predeterminado en caso contrario
+                    cgvPracticas.Cursor = Cursors.Default;
+                }
+            }
         }
     }
 }

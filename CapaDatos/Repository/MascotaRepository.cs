@@ -36,7 +36,6 @@ namespace CapaDatos.Repository
         public int Add(Mascota mascota)
         {
             parameters = new List<SqlParameter>();
-
             parameters.Add(new SqlParameter("@fechaNac", mascota.FechaNac));
             parameters.Add(new SqlParameter("@nombre", mascota.Nombre));
             parameters.Add(new SqlParameter("@sexo", mascota.Sexo));
@@ -76,6 +75,36 @@ namespace CapaDatos.Repository
             return ExecuteNonQuery(delete);
         }
 
+        public List<Mascota> buscarPorDueño(int idCliente)
+        {
+            string sql = $"select * from mascotas where idCliente={idCliente}";
+            var tableResult = ExecuteReader(sql);
+            var listMascotas = new List<Mascota>();
+
+            foreach (DataRow item in tableResult.Rows)
+            {
+                try
+                {
+                    listMascotas.Add(new Mascota
+                    {
+                        NroHC = Convert.ToInt32(item[0]),
+                        FechaNac = (DateTime)item[1],
+                        Nombre = item[2].ToString(),
+                        Sexo = Convert.ToChar(item[3]),
+                        IdCliente = Convert.ToInt32(item[4]),
+                        CodRaza = Convert.ToInt32(item[5]),
+                        CodEspecie = Convert.ToInt32(item[6])
+                    });
+                }
+                catch (Exception ex)
+                {
+                    // Manejar la excepción aquí (puedes imprimir un mensaje de error o hacer algo más)
+                    Console.WriteLine("Error al convertir valor: " + ex.Message);
+                }
+
+            }
+            return listMascotas;
+        }
         public int Update(Mascota mascota)
         {
             parameters = new List<SqlParameter>();

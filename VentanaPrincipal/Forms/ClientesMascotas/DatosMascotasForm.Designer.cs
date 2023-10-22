@@ -90,6 +90,7 @@
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(196, 28);
             this.cbxSexo.TabIndex = 30;
+            this.cbxSexo.SelectedIndexChanged += new System.EventHandler(this.cbxSexo_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -182,6 +183,7 @@
             this.cbxEspecie.Name = "cbxEspecie";
             this.cbxEspecie.Size = new System.Drawing.Size(174, 28);
             this.cbxEspecie.TabIndex = 36;
+            this.cbxEspecie.SelectedIndexChanged += new System.EventHandler(this.cbxEspecie_SelectedIndexChanged);
             this.cbxEspecie.SelectionChangeCommitted += new System.EventHandler(this.cbxEspecie_SelectionChangeCommitted);
             // 
             // btnNuevo

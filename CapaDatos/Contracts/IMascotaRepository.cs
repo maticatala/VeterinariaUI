@@ -1,4 +1,5 @@
-﻿using CapaEntidades.Entities;
+﻿using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace CapaDatos.Contracts
 {
     public interface IMascotaRepository : IGenericRepository<Mascota, int>
     {
+        List<Mascota> buscarPorDueño(int idCliente);
         int getCount();
     }
 }
