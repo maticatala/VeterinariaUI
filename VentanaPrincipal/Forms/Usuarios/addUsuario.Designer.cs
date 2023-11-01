@@ -183,7 +183,7 @@
             this.cbUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUsuario.FormattingEnabled = true;
             this.cbUsuario.Items.AddRange(new object[] {
-            "ADMNISTRADOR",
+            "ADMINISTRADOR",
             "USUARIO"});
             this.cbUsuario.Location = new System.Drawing.Point(73, 79);
             this.cbUsuario.Name = "cbUsuario";

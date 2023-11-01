@@ -25,7 +25,13 @@ namespace VentanaPrincipal.Forms.RazasEspecies
 
         private void razasEspeciesForm_Load(object sender, EventArgs e)
         {
-            dgvEspecies.DataSource = cN_Especie.getAll();
+
+            dgvEspecies.DataSource = cN_Especie.getAll(); // Primero carga los datos
+
+            if (dgvEspecies.Rows.Count > 0)
+            {
+                dgvEspecies.Rows[0].Selected = true; // Luego selecciona la primera fila
+            }
         }
 
         private void txtBuscarEspecie_TextChanged(object sender, EventArgs e)
@@ -37,7 +43,7 @@ namespace VentanaPrincipal.Forms.RazasEspecies
         {
             DataGridViewRow filaSeleccionada = dgvEspecies.SelectedRows[0];
             this.especieSeleccionada = filaSeleccionada.DataBoundItem as Especie;
-            
+                
             string nameColumn = dgvEspecies.Columns[e.ColumnIndex].Name;
             if (nameColumn == "borrarEspecie")
             {

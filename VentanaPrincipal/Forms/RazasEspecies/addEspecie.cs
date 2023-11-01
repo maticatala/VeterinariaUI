@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio.Models;
 using CapaEntidadaes.Entities;
+using CapaEntidades.Entities;
 
 namespace VentanaPrincipal.Forms.RazasEspecies
 {
@@ -57,35 +58,40 @@ namespace VentanaPrincipal.Forms.RazasEspecies
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string result;
-            if(raza.CodEspecie == -1) 
+            bool valid = new Helps.DataValidation(raza).Validate();
+            if (valid)
             {
-                especie.NombreEspecie = txtNombreEspecie.Text;
-                if (especie.CodEspecie == 0)
+                string result;
+                if (raza.CodEspecie == -1)
                 {
-                    result = cN_Especie.Add(especie);
+                    especie.NombreEspecie = txtNombreEspecie.Text;
+                    if (especie.CodEspecie == 0)
+                    {
+                        result = cN_Especie.Add(especie);
+                    }
+                    else
+                    {
+                        result = cN_Especie.Update(especie);
+                    }
                 }
                 else
                 {
-                    result = cN_Especie.Update(especie);
+                    raza.NombreRaza = txtNombreEspecie.Text;
+                    if (raza.CodRaza == 0)
+                    {
+                        result = cN_Raza.Add(raza);
+                    }
+                    else
+                    {
+                        result = cN_Raza.Update(raza);
+                    }
+
                 }
-            }
-            else
-            {
-                raza.NombreRaza = txtNombreEspecie.Text;
-                if (raza.CodRaza == 0)
-                {
-                    result = cN_Raza.Add(raza);
-                }
-                else
-                {
-                    result = cN_Raza.Update(raza);
-                }
-                
+
+                MessageBox.Show(result);
+                this.Close();
             }
             
-            MessageBox.Show(result);
-            this.Close();
         }
 
         private void lblNombreEspecie_Click(object sender, EventArgs e)

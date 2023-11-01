@@ -66,6 +66,7 @@ namespace VentanaPrincipal.Forms.Veterinarios
                 {
                     Veterinario vet = new Veterinario()
                     {
+
                         Matricula = cgvVeterinarios.CurrentRow.Cells[0].Value.ToString(),
                         Nombre = cgvVeterinarios.CurrentRow.Cells[1].Value.ToString(),
                         Apellido = cgvVeterinarios.CurrentRow.Cells[2].Value.ToString(),

@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaNegocio.Models
 {
@@ -63,8 +64,8 @@ namespace CapaNegocio.Models
         {
             return listAtenciones.FindAll(
                 e => e.NroHC.ToString().Contains(filter) ||
-                e.Matricula.ToString().Contains(filter.ToLower()) ||
-                e.Resultado.ToString().Contains(filter.ToLower()) ||
+                e.Matricula.ToString().Contains(filter) ||
+                e.Resultado.Contains(filter.ToLower()) ||
                 e.Precio.ToString().Contains(filter));//Consulta lambda
         }
         public string delete(int nroHC)

@@ -88,7 +88,7 @@ namespace VentanaPrincipal.Forms.Practicas
                 }
                 else if (nameColumn == "delete")
                 {
-                    DialogResult opt = MessageBox.Show("¿Desea eliminar permanentemente el Veterinario?", "Cuidado", MessageBoxButtons.OKCancel);
+                    DialogResult opt = MessageBox.Show("¿Desea eliminar permanentemente la practica?", "Cuidado", MessageBoxButtons.OKCancel);
                     if (opt == DialogResult.OK)
                     {
                         string codPractica = cgvPracticas.CurrentRow.Cells[0].Value.ToString();

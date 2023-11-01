@@ -45,10 +45,10 @@ namespace VentanaPrincipal
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.btnRegistrar = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
+            this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.btnMascotas = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lvlUsername = new System.Windows.Forms.Label();
             this.lblHola = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,9 +57,9 @@ namespace VentanaPrincipal
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnMax = new FontAwesome.Sharp.IconButton();
             this.btnMin = new FontAwesome.Sharp.IconButton();
-            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            //this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.btnDashboard = new FontAwesome.Sharp.IconButton();
+            this.lvlUsername = new System.Windows.Forms.Label();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -303,6 +303,31 @@ namespace VentanaPrincipal
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            this.btnDashboard.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDashboard.IconSize = 32;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 86);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(220, 60);
+            this.btnDashboard.TabIndex = 2;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
             // btnMascotas
             // 
             this.btnMascotas.BackColor = System.Drawing.Color.Transparent;
@@ -350,19 +375,6 @@ namespace VentanaPrincipal
             this.panel2.Size = new System.Drawing.Size(124, 51);
             this.panel2.TabIndex = 1;
             // 
-            // lvlUsername
-            // 
-            this.lvlUsername.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lvlUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lvlUsername.Location = new System.Drawing.Point(43, 0);
-            this.lvlUsername.Name = "lvlUsername";
-            this.lvlUsername.Size = new System.Drawing.Size(81, 25);
-            this.lvlUsername.TabIndex = 2;
-            this.lvlUsername.Text = "Matias";
-            this.lvlUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lvlUsername.Click += new System.EventHandler(this.lvlUsername_Click);
-            // 
             // lblHola
             // 
             this.lblHola.Dock = System.Windows.Forms.DockStyle.Left;
@@ -370,7 +382,7 @@ namespace VentanaPrincipal
             this.lblHola.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
             this.lblHola.Location = new System.Drawing.Point(0, 0);
             this.lblHola.Name = "lblHola";
-            this.lblHola.Size = new System.Drawing.Size(63, 25);
+            this.lblHola.Size = new System.Drawing.Size(85, 25);
             this.lblHola.TabIndex = 1;
             this.lblHola.Text = "Hola,";
             this.lblHola.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -479,10 +491,10 @@ namespace VentanaPrincipal
             // 
             // mySqlCommand1
             // 
-            this.mySqlCommand1.CacheAge = 0;
-            this.mySqlCommand1.Connection = null;
-            this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
+            //this.mySqlCommand1.CacheAge = 0;
+            //this.mySqlCommand1.Connection = null;
+            //this.mySqlCommand1.EnableCaching = false;
+            //this.mySqlCommand1.Transaction = null;
             // 
             // mainPanel
             // 
@@ -493,30 +505,17 @@ namespace VentanaPrincipal
             this.mainPanel.TabIndex = 3;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
-            // btnDashboard
+            // lvlUsername
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.BarChart;
-            this.btnDashboard.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDashboard.IconSize = 32;
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 86);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(220, 60);
-            this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.lvlUsername.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lvlUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvlUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
+            this.lvlUsername.Location = new System.Drawing.Point(54, 0);
+            this.lvlUsername.Name = "lvlUsername";
+            this.lvlUsername.Size = new System.Drawing.Size(70, 25);
+            this.lvlUsername.TabIndex = 3;
+            this.lvlUsername.Text = "Matias";
+            this.lvlUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -563,7 +562,6 @@ namespace VentanaPrincipal
         private System.Windows.Forms.Label lblPage;
         //private Panel mainForm;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lvlUsername;
         private System.Windows.Forms.Label lblHola;
         private System.Windows.Forms.Label lblRol;
         private FontAwesome.Sharp.IconButton btnRegistrar;
@@ -573,12 +571,13 @@ namespace VentanaPrincipal
         private FontAwesome.Sharp.IconButton btnMin;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnUsuarios;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private System.Windows.Forms.Panel mainPanel;
+        //private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private EventHandler btnMascotas_Click;
         private EventHandler lblPage_Click;
         private FontAwesome.Sharp.IconButton btnVeterinarios;
         private IconButton btnDashboard;
+        private Label lvlUsername;
+        private Panel mainPanel;
     }
 }
 

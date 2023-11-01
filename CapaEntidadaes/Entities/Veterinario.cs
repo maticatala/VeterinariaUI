@@ -32,6 +32,8 @@ namespace CapaEntidades.Entities
         [Required(ErrorMessage = "El campo Numero de altura es requerido")]
         [RegularExpression("^[1-9]\\d*$", ErrorMessage = "Debe ingresar un número positivo")]
         public string Altura { get => altura; set => altura = value; }
+        [Required(ErrorMessage = "El campo Telefono es requerido")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "El Telefono solo deben ser numeros")]
         public string Telefono { get => telefono; set => telefono = value; }
 
 

@@ -66,12 +66,13 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
         public addHC (Atencion at)
         {
             InitializeComponent();
+            this.atencion = at;
             atencionOriginal = at;
             cbxDueño.Text = at.ToString();
             cbxMascota.Text = at.ToString();
             cbxPracticas.Text = at.ToString();
-            cbxVeterinario.Text = at.ToString();
-            txtResultado.Text = at.ToString();
+            cbxVeterinario.Text = at.Matricula.ToString();
+            txtResultado.Text = at.Resultado;
 
         }
 
@@ -95,14 +96,11 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
        
 
         private void cargarPracticas()
-        {
-
+        {   
             cbxPracticas.DataSource = null;
             cbxPracticas.Items.Clear();
-
             cbxPracticas.ValueMember = "codPractica";
             cbxPracticas.DisplayMember = "descripcion";
-
             CN_Practica cN_Practica = new CN_Practica();
             cbxPracticas.DataSource = cN_Practica.getAll();
             cbxPracticas.SelectedIndex = -1;
@@ -120,7 +118,17 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
 
             CN_Cliente cN_Cliente = new CN_Cliente();
             cbxMascota.DataSource = cN_Cliente.getMacotas(idCliente);
+           
 
+        }
+
+
+        private void findPrecio()
+        {
+            int codPractica = Convert.ToInt32(cbxPracticas.SelectedValue.ToString());
+
+            CN_Practica cN_Practica = new CN_Practica();
+            cbxPracticas.DataSource = cN_Practica.getPractica(codPractica);
         }
 
         private void cbxDueño_SelectionChangeCommitted(object sender, EventArgs e)
@@ -132,9 +140,10 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
         {
             dtpFecha.CustomFormat = "MM-dd-yyyy";
             atencion.NroHC = Convert.ToInt32(cbxMascota.SelectedValue.ToString());
-            atencion.Matricula = Convert.ToInt32(cbxVeterinario.SelectedValue.ToString());
+            atencion.Matricula = cbxVeterinario.SelectedValue.ToString();
             atencion.FechaYHora = dtpFecha.Value.Date;
             atencion.Resultado = txtResultado.Text;
+            //atencion.Precio = Convert.ToDouble(cbxPracticas.SelectedValue.ToString());
             atencionNegocio.Atencion = atencion;
 
             bool valid = new Helps.DataValidation(atencion).Validate();
@@ -142,13 +151,19 @@ namespace VentanaPrincipal.Forms.HistoriaClinica
             {
                 string result = atencionNegocio.SaveChanges();
                 MessageBox.Show(result);
+                this.Close();
             }
-            this.Close();
+            
         }
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbxPracticas_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            findPrecio();
         }
     }
 }
