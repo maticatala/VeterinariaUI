@@ -99,6 +99,7 @@ namespace CapaDatos.Repository
             }
             return listPracticas;
         }
+
         public int Remove(int codPractica)
         {
             parameters = new List<SqlParameter>();

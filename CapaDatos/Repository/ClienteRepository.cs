@@ -122,7 +122,7 @@ namespace CapaDatos.Repository
             return cliente;
         }
 
-        public List<Mascota> getMascotas(int idCliente)
+        public List<Mascota> GetMascotas(int idCliente)
         {
             string sql = $"select * from mascotas where idCliente={idCliente}";
             var tableResult = ExecuteReader(sql);

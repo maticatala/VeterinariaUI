@@ -94,6 +94,7 @@ namespace CapaNegocio.Models
         {
             return practicaRepository.getPractica(codPractica);
         }
+
         public IEnumerable<Practica> findByFilter(string filter)
         {
             return listPracticas.FindAll(

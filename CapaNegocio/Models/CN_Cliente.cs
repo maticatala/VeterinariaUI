@@ -100,7 +100,7 @@ namespace CapaNegocio.Models
 
         public List<Mascota> getMacotas(int idCliente)
         {
-            return clienteRepository.getMascotas(idCliente);
+            return clienteRepository.GetMascotas(idCliente);
         }
     }
 }

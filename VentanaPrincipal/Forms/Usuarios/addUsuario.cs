@@ -2,7 +2,7 @@
 using CapaEntidades.Entities;
 using CapaNegocio.Models;
 using CapaNegocio.ValueObjects;
-using MySqlX.XDevAPI;
+//using MySqlX.XDevAPI;
 using System;
 using System.Windows.Forms;
 using System.Windows.Interop;
@@ -49,12 +49,15 @@ namespace Sistema
 
             usuarioActual.N_usuario = txtNombre.Text;
             usuarioActual.Tipo_usuario = cbUsuario.Text;
-
+            usuarioActual.Password = txtPassword.Text;
+            
+            
 
             bool valid = new DataValidation(usuarioActual).Validate();
 
             if (txtPassword.Text == txtConPassword.Text)
                 usuarioActual.Password = txtPassword.Text;
+
             else
             {
                 lblErrorMessage.Visible = true;

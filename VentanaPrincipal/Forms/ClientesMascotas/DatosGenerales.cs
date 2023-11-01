@@ -1,7 +1,7 @@
 ﻿using CapaEntidades.Entities;
 using CapaNegocio.Models;
 using CapaNegocio.ValueObjects;
-using MySqlX.XDevAPI;
+//using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

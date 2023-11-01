@@ -1,7 +1,7 @@
 ﻿using CapaNegocio.ValueObjects;
 using CapaEntidades.Entities;
 using CapaNegocio.Models;
-using MySqlX.XDevAPI.Common;
+//using MySqlX.XDevAPI.Common;
 using Org.BouncyCastle.Apache.Bzip2;
 using System;
 using System.Collections.Generic;

@@ -18,7 +18,7 @@ namespace CapaDatos.Contracts
 
         int getCount();
 
-        List<Mascota> getMascotas(int idCliente);
+        List<Mascota> GetMascotas(int idCliente);
     }
 
 }

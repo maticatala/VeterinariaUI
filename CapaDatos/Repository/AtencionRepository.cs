@@ -25,7 +25,7 @@ namespace CapaDatos.Repository
             selectAll = "SELECT * FROM atenciones";
             insert = "INSERT INTO atenciones VALUES (@nroHC,@nroMatricula,@fechaYHora,@resultado, @precio)";
             update = "UPDATE atenciones SET nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora,resultado=@resultado, precio=@precio WHERE nroHC=@nroHC,nroMatricula=@nroMatricula,fechaYHora=@fechaYHora";
-            delete = "DELETE FROM clientes WHERE nroHC=@nroHC";
+            delete = "DELETE FROM atenciones WHERE nroHC=@nroHC";
         }
 
         public int Add(Atencion atencion) //Llega como parametro una instancia de cliente desde la capa de negocios. Retorna un entero, que especifica cuantos registros se añadieron 
@@ -68,7 +68,7 @@ namespace CapaDatos.Repository
                 listAtenciones.Add(new Atencion
                 {
                     NroHC = (int)item[0],
-                    Matricula = (int)item[1],
+                    Matricula = item[1].ToString(),
                     FechaYHora = (DateTime)item[2],
                     Resultado = item[3].ToString(),
                     Precio = Convert.ToDouble(item[4])
@@ -87,7 +87,20 @@ namespace CapaDatos.Repository
             parameters.Add(new SqlParameter("@Resultado", atencion.Resultado));
             parameters.Add(new SqlParameter("@precio", atencion.Precio));
 
-            return ExecuteNonQuery(update);
+
+            try
+            {
+                return ExecuteNonQuery(update);
+            }
+            catch (SqlException ex)
+            {
+                if (ex != null && ex.Number == 1062)
+                    //Si el registro esta duplicado cramos una instancia de la excepcion personalizada RegistroDuplicadoException a la que le pasamos por parametro el mensaje de debe mostrar.
+                    throw new RegistroDuplicadoException("Registro duplicado");
+                else
+                    //Si el problema se debe a otro motivo, lanzamos la excepcion generica
+                    throw ex;
+            }
         }
         public int Remove(int nroHC)
         {

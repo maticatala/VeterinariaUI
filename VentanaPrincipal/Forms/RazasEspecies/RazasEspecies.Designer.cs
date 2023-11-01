@@ -49,16 +49,14 @@
             this.borrarEspecie = new System.Windows.Forms.DataGridViewImageColumn();
             this.especieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelSearch = new System.Windows.Forms.Panel();
-            this.btnAddRaza = new VentanaPrincipal.RJButton();
             this.txtBuscarRaza = new System.Windows.Forms.TextBox();
             this.lblRaza = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBuscarEspecie = new System.Windows.Forms.TextBox();
             this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            //this.btnAddRaza = new VentanaPrincipal.RJButton();
+            this.btnAddRaza = new VentanaPrincipal.RJButton();
             this.btnAddEspecie = new VentanaPrincipal.RJButton();
-            //this.razaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRazas)).BeginInit();
@@ -75,10 +73,9 @@
             this.panel1.Controls.Add(this.panelSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
-            this.panel1.Size = new System.Drawing.Size(1404, 772);
+            this.panel1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.panel1.Size = new System.Drawing.Size(1053, 627);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -89,12 +86,11 @@
             this.tableLayoutPanel1.Controls.Add(this.dgvRazas, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvEspecies, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 183);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 148);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 564);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1013, 459);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dgvRazas
@@ -137,8 +133,7 @@
             this.dgvRazas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRazas.EnableHeadersVisualStyles = false;
             this.dgvRazas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.dgvRazas.Location = new System.Drawing.Point(544, 4);
-            this.dgvRazas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvRazas.Location = new System.Drawing.Point(408, 3);
             this.dgvRazas.Name = "dgvRazas";
             this.dgvRazas.ReadOnly = true;
             this.dgvRazas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -155,7 +150,7 @@
             this.dgvRazas.RowTemplate.Height = 55;
             this.dgvRazas.RowTemplate.ReadOnly = true;
             this.dgvRazas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRazas.Size = new System.Drawing.Size(802, 556);
+            this.dgvRazas.Size = new System.Drawing.Size(602, 453);
             this.dgvRazas.TabIndex = 1;
             this.dgvRazas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellClick);
             this.dgvRazas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRazas_CellDoubleClick);
@@ -240,8 +235,7 @@
             this.dgvEspecies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEspecies.EnableHeadersVisualStyles = false;
             this.dgvEspecies.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(225)))), ((int)(((byte)(235)))));
-            this.dgvEspecies.Location = new System.Drawing.Point(4, 4);
-            this.dgvEspecies.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEspecies.Location = new System.Drawing.Point(3, 3);
             this.dgvEspecies.Name = "dgvEspecies";
             this.dgvEspecies.ReadOnly = true;
             this.dgvEspecies.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -258,7 +252,7 @@
             this.dgvEspecies.RowTemplate.Height = 55;
             this.dgvEspecies.RowTemplate.ReadOnly = true;
             this.dgvEspecies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecies.Size = new System.Drawing.Size(532, 556);
+            this.dgvEspecies.Size = new System.Drawing.Size(399, 453);
             this.dgvEspecies.TabIndex = 0;
             this.dgvEspecies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellClick);
             this.dgvEspecies.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEspecies_CellDoubleClick);
@@ -307,35 +301,11 @@
             this.panelSearch.Controls.Add(this.txtBuscarEspecie);
             this.panelSearch.Controls.Add(this.btnAddEspecie);
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearch.Location = new System.Drawing.Point(27, 25);
-            this.panelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.panelSearch.Location = new System.Drawing.Point(20, 20);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
-            this.panelSearch.Size = new System.Drawing.Size(1350, 158);
+            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.panelSearch.Size = new System.Drawing.Size(1013, 128);
             this.panelSearch.TabIndex = 1;
-            // 
-            // btnAddRaza
-            // 
-            this.btnAddRaza.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddRaza.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAddRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddRaza.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddRaza.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(128)))), ((int)(((byte)(236)))));
-            this.btnAddRaza.BorderRadius = 5;
-            this.btnAddRaza.BorderSize = 0;
-            this.btnAddRaza.FlatAppearance.BorderSize = 0;
-            this.btnAddRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRaza.ForeColor = System.Drawing.Color.White;
-            this.btnAddRaza.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddRaza.Location = new System.Drawing.Point(759, 48);
-            this.btnAddRaza.Name = "btnAddRaza";
-            this.btnAddRaza.Size = new System.Drawing.Size(150, 45);
-            this.btnAddRaza.TabIndex = 8;
-            this.btnAddRaza.Text = "Nueva Raza";
-            this.btnAddRaza.TextColor = System.Drawing.Color.White;
-            this.btnAddRaza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddRaza.UseVisualStyleBackColor = false;
-            this.btnAddRaza.Click += new System.EventHandler(this.btnAddRaza_Click);
             // 
             // txtBuscarRaza
             // 
@@ -343,10 +313,9 @@
             this.txtBuscarRaza.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscarRaza.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarRaza.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtBuscarRaza.Location = new System.Drawing.Point(653, 84);
-            this.txtBuscarRaza.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarRaza.Location = new System.Drawing.Point(490, 68);
             this.txtBuscarRaza.Name = "txtBuscarRaza";
-            this.txtBuscarRaza.Size = new System.Drawing.Size(325, 22);
+            this.txtBuscarRaza.Size = new System.Drawing.Size(244, 18);
             this.txtBuscarRaza.TabIndex = 7;
             this.txtBuscarRaza.TextChanged += new System.EventHandler(this.txtBuscarRaza_TextChanged);
             // 
@@ -356,10 +325,9 @@
             this.lblRaza.AutoSize = true;
             this.lblRaza.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRaza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblRaza.Location = new System.Drawing.Point(649, 59);
-            this.lblRaza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRaza.Location = new System.Drawing.Point(487, 48);
             this.lblRaza.Name = "lblRaza";
-            this.lblRaza.Size = new System.Drawing.Size(47, 23);
+            this.lblRaza.Size = new System.Drawing.Size(36, 17);
             this.lblRaza.TabIndex = 6;
             this.lblRaza.Text = "Raza";
             // 
@@ -368,10 +336,9 @@
             this.lblEspecie.AutoSize = true;
             this.lblEspecie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEspecie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(73)))));
-            this.lblEspecie.Location = new System.Drawing.Point(21, 59);
-            this.lblEspecie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEspecie.Location = new System.Drawing.Point(16, 48);
             this.lblEspecie.Name = "lblEspecie";
-            this.lblEspecie.Size = new System.Drawing.Size(66, 23);
+            this.lblEspecie.Size = new System.Drawing.Size(52, 17);
             this.lblEspecie.TabIndex = 5;
             this.lblEspecie.Text = "Especie";
             // 
@@ -379,10 +346,9 @@
             // 
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(20, 11);
-            this.lblBusqueda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBusqueda.Location = new System.Drawing.Point(15, 9);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(102, 28);
+            this.lblBusqueda.Size = new System.Drawing.Size(82, 21);
             this.lblBusqueda.TabIndex = 4;
             this.lblBusqueda.Text = "Busqueda";
             // 
@@ -391,10 +357,9 @@
             this.txtBuscarEspecie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscarEspecie.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarEspecie.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtBuscarEspecie.Location = new System.Drawing.Point(25, 84);
-            this.txtBuscarEspecie.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarEspecie.Location = new System.Drawing.Point(19, 68);
             this.txtBuscarEspecie.Name = "txtBuscarEspecie";
-            this.txtBuscarEspecie.Size = new System.Drawing.Size(325, 22);
+            this.txtBuscarEspecie.Size = new System.Drawing.Size(244, 18);
             this.txtBuscarEspecie.TabIndex = 3;
             this.txtBuscarEspecie.TextChanged += new System.EventHandler(this.txtBuscarEspecie_TextChanged);
             // 
@@ -411,10 +376,9 @@
             this.btnAddRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddRaza.ForeColor = System.Drawing.Color.White;
             this.btnAddRaza.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddRaza.Location = new System.Drawing.Point(986, 59);
-            this.btnAddRaza.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRaza.Location = new System.Drawing.Point(740, 48);
             this.btnAddRaza.Name = "btnAddRaza";
-            this.btnAddRaza.Size = new System.Drawing.Size(200, 55);
+            this.btnAddRaza.Size = new System.Drawing.Size(150, 45);
             this.btnAddRaza.TabIndex = 8;
             this.btnAddRaza.Text = "Nueva Raza";
             this.btnAddRaza.TextColor = System.Drawing.Color.White;
@@ -434,10 +398,9 @@
             this.btnAddEspecie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEspecie.ForeColor = System.Drawing.Color.White;
             this.btnAddEspecie.Image = global::VentanaPrincipal.Properties.Resources.icons8_plus_math_25;
-            this.btnAddEspecie.Location = new System.Drawing.Point(371, 59);
-            this.btnAddEspecie.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddEspecie.Location = new System.Drawing.Point(278, 48);
             this.btnAddEspecie.Name = "btnAddEspecie";
-            this.btnAddEspecie.Size = new System.Drawing.Size(200, 55);
+            this.btnAddEspecie.Size = new System.Drawing.Size(150, 45);
             this.btnAddEspecie.TabIndex = 1;
             this.btnAddEspecie.Text = "Nueva Especie";
             this.btnAddEspecie.TextColor = System.Drawing.Color.White;
@@ -447,13 +410,13 @@
             // 
             // razasEspeciesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1404, 772);
+            this.ClientSize = new System.Drawing.Size(1053, 627);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "razasEspeciesForm";
             this.Text = "RazasEspecies";
             this.Load += new System.EventHandler(this.razasEspeciesForm_Load);

@@ -15,9 +15,10 @@ namespace CapaEntidadaes.Entities
         private string descripcion;
         private double precio;
 
-        [Required(ErrorMessage = "El campo Practica es requerido")]
+        [Required(ErrorMessage = "El campo Descripcion es requerido")]
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int CodPractica { get =>codPractica; set =>codPractica = value; }
+        [Required(ErrorMessage = "El campo Precio es requerido")]
         public double Precio { get => precio; set => precio = value; }
     }
 }
